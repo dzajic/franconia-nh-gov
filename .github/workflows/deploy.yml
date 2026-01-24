@@ -42,7 +42,7 @@ jobs:
           # Helps if your Eleventy config reads an env var for path prefix.
           # Otherwise, switch to the npx @11ty/eleventy command above.
           ELEVENTY_PATH_PREFIX: ${{ steps.pages.outputs.base_path }}
-        run: npm run build
+        run: npx @11ty/eleventy --config=.eleventy.cjs --pathprefix "${{ steps.pages.outputs.base_path }}"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -60,4 +60,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
