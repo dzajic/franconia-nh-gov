@@ -2,6 +2,8 @@
 layout: base.njk
 title: Library & Museums - TOWN OF FRANCONIA
 permalink: /library-museums/
+imported_from: "http://www.franconianh.org/library--museums.html"
+migrated: false
 ---
 
 [![](http://www.franconianh.org/uploads/1/1/6/8/11680191/1745877.jpg)](/abbie-greanleaf-library/ "100 years with the Abbie Greenleaf Library")
@@ -14,10 +16,7 @@ permalink: /library-museums/
 
 [![](http://www.franconianh.org/uploads/1/1/6/8/11680191/4995340.jpg)](/dow-clock/ "Please Help Fix the Clock Tower")
 
-##   
-  
-[Museum](/heritage-museum/)  
-  
+## [Museum](/heritage-museum/)
 
 [Iron Furnace](/iron-furnace/)  
 [clock](/dow-clock/)

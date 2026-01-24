@@ -14,9 +14,15 @@
     <div class="town-main">
       {% include "partials/mobilebar.njk" %}
 
-      <main class="town-content container-fluid py-4">
-        {{ content | safe }}
-      </main>
+        <hr class="weebly-rule weebly-rule--top">
+
+        <main class="town-content">
+          {{ content | safe }}
+        </main>
+
+        <hr class="weebly-rule weebly-rule--bottom">
+      </div>
+
 
       <footer class="town-footer border-top">
         <div class="container-fluid py-3 small d-flex flex-wrap gap-2 justify-content-between town-muted">

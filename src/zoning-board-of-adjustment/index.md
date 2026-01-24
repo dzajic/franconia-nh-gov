@@ -2,11 +2,13 @@
 layout: base.njk
 title: Zoning Board of Adjustment - TOWN OF FRANCONIA
 permalink: /zoning-board-of-adjustment/
+imported_from: "http://www.franconianh.org/zoning-board-of-adjustment.html"
+migrated: false
 ---
 
 ## Zoning Board of Adjustment
 
-_**Zoning Board of Adjustments Members**_  
+**Zoning Board of Adjustments Members**  
   
 **Peter Grote, Chair - 2025  
 Tim Klotz - 2027  

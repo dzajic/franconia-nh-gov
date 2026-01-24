@@ -2,19 +2,20 @@
 layout: base.njk
 title: Safety Committee - TOWN OF FRANCONIA
 permalink: /safety-committee/
+imported_from: "http://www.franconianh.org/safety-committee.html"
+migrated: false
 ---
 
 Safety Committee  
   
 The mission of the Safety Committee is to stress the importance of Safety in the work place.
+- All injuries are preventable
 
-  * All injuries are preventable
+- Working safely is a condition of employment
 
-  * Working safely is a condition of employment
-
-  * All operating exposures can be safeguarded
-  * Training employees to work safely is essential
-  * Injury prevention saves money
+- All operating exposures can be safeguarded
+- Training employees to work safely is essential
+- Injury prevention saves money
 
   
 All employees are members of the Safety Committee.  
