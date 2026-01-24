@@ -1,0 +1,9 @@
+{% set md = collections.all | where("inputPath", "src/" + file) | first %}
+<section id="{{ id }}" class="section-card my-4">
+  <div class="section-head px-3 py-2">
+    <h2 class="h5 mb-0">{{ title }}</h2>
+  </div>
+  <div class="p-3">
+    {{ md.content | safe }}
+  </div>
+</section>

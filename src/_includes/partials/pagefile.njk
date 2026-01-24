@@ -1,0 +1,6 @@
+{% set md = collections.all | where("inputPath", "src/" + file) | first %}
+{% if md %}
+  {{ md.content | safe }}
+{% else %}
+  <p class="text-danger">Missing content file: {{ file }}</p>
+{% endif %}

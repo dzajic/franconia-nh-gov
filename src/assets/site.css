@@ -1,0 +1,189 @@
+:root {
+  --town-green-dark: #4a7044;
+  --town-green: #5f8a59;
+  --town-beige: #e6e7dc;
+  --town-white: #ffffff;
+  --town-divider: rgba(255,255,255,0.18);
+  scroll-padding-top: 5rem;
+}
+html { scroll-behavior: smooth; }
+/*.town-bg { background: var(--town-beige); }*/
+
+.town-sidebar {
+  width: 360px;
+  min-height: 100vh;
+  position: fixed;
+  top: 0; left: 0;
+  background: var(--town-green);
+  color: var(--town-white);
+  border-right: 6px solid rgba(255,255,255,0.35);
+}
+.town-sidebar-header { background: var(--town-green-dark); }
+
+.town-sidebar {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.town-sidebar .town-nav {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-bottom: 1rem;
+}
+
+
+.town-main { margin-left: 0; min-height: 100vh; }
+@media (min-width: 992px) {
+  .town-main { margin-left: 360px; }
+  .town-content { max-width: 1100px; }
+}
+
+.town-title {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  font-size: 2.6rem;
+}
+
+.town-nav-item {
+  display: block;
+  padding: 0.9rem 1rem;
+  background: rgba(0,0,0,0.12);
+  color: var(--town-white);
+  text-decoration: none;
+  border-bottom: 1px solid var(--town-divider);
+  font-weight: 600;
+}
+.town-nav-item:hover, .town-nav-item:focus { background: rgba(0,0,0,0.22); color: var(--town-white); }
+
+.town-nav-details { border-bottom: 1px solid var(--town-divider); }
+.town-nav-details summary { list-style: none; }
+.town-nav-details summary::-webkit-details-marker { display: none; }
+
+.town-subnav { padding: 0.25rem 0 0.5rem 0; background: rgba(0,0,0,0.08); }
+.town-subnav-item {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: var(--town-white);
+  text-decoration: none;
+  border-top: 1px solid var(--town-divider);
+  font-weight: 500;
+}
+.town-subnav-item:hover { background: rgba(0,0,0,0.18); color: var(--town-white); }
+
+.town-offcanvas.offcanvas { background: var(--town-green); color: var(--town-white); }
+.town-offcanvas .offcanvas-header { background: var(--town-green-dark); color: var(--town-white); }
+.town-offcanvas .form-control { border: 1px solid rgba(255,255,255,0.35); }
+
+.town-content a { text-underline-offset: 0.15em; }
+.town-muted { color: rgba(0,0,0,0.65); }
+
+.section-card {
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 0.25rem;
+  background: #fff;
+}
+.section-card .section-head {
+  border-bottom: 1px solid rgba(0,0,0,0.10);
+  background: rgba(0,0,0,0.03);
+}
+
+.town-topinfo { color: var(--town-green-dark); font-weight: 700; }
+.town-topinfo .addr { font-size: 1.15rem; line-height: 1.35; }
+.town-hero { width: 100%; max-width: 560px; border: 6px solid rgba(0,0,0,0.08); }
+
+/* Dark mode tweaks */
+html[data-bs-theme="dark"] .town-bg { background: #1f1f1f; }
+html[data-bs-theme="dark"] .section-card { background: var(--bs-body-bg); border-color: var(--bs-border-color); }
+html[data-bs-theme="dark"] .section-card .section-head { background: var(--bs-secondary-bg); border-color: var(--bs-border-color); }
+html[data-bs-theme="dark"] .town-muted { color: rgba(255,255,255,0.65); }
+
+
+/* --- Weebly-ish markdown typography (Franconia look) --- */
+
+:root{
+  --weebly-green: #4E8B57;      /* close to screenshot heading green */
+  --weebly-text:  #6F6F6F;      /* soft gray body text */
+  --weebly-rule:  #D9D2C5;      /* beige divider line */
+}
+
+.town-main{
+  color: var(--weebly-text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.town-main p,
+.town-main li{
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: 0.1px;
+}
+
+.town-main p{
+  margin: 0 0 1.25rem 0;
+}
+
+/* Headings: big, green, uppercase */
+.town-main h1,
+.town-main h2,
+.town-main h3{
+  color: var(--weebly-green);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  margin: 2.25rem 0 0.75rem 0;
+}
+
+.town-main h1{ font-size: 25px; }
+.town-main h2{ font-size: 20px; }
+.town-main h3{ font-size: 15px; }
+
+/* First heading on page: no huge top gap */
+.town-main h1:first-child,
+.town-main h2:first-child,
+.town-main h3:first-child{
+  margin-top: 0;
+}
+
+/* Simple beige rule near top like Weebly pages */
+.town-main hr{
+  border: 0;
+  border-top: 6px solid var(--weebly-rule);
+  margin: 0 0 1.5rem 0;
+}
+
+/* Links: green, subtle underline */
+.town-main a{
+  color: var(--weebly-green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.town-main a:hover{
+  text-decoration-thickness: 2px;
+}
+
+/* Lists: roomy, classic bullets */
+.town-main ul,
+.town-main ol{
+  margin: 0.25rem 0 1.5rem 1.5rem;
+  padding: 0;
+}
+.town-main li{ margin: 0.35rem 0; }
+
+/* Optional: reduce card-y look inside content pages */
+.section-card{
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.section-head{
+  background: transparent;
+  border: 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.section-head .h6{ display:none; } /* hides “Content/Quick links” headers if you used them */

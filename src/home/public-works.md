@@ -1,0 +1,3 @@
+- Transfer station hours (placeholder)
+- Plowing / parking notices (placeholder)
+- Report an issue (placeholder)

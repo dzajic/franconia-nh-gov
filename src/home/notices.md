@@ -1,0 +1,2 @@
+- **Winter parking ban**: Placeholder notice text.
+- **Town meeting season**: Placeholder notice text.
