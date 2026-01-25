@@ -5,6 +5,16 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 
+  eleventyConfig.addTransform("proxy-http-images", function (content, outputPath) {
+    if (!outputPath || !outputPath.endsWith(".html")) return content;
+
+    return content.replace(
+      /(src|srcset)="http:\/\/([^"]+)"/g,
+      (_match, attr, url) =>
+        `${attr}="https://images.weserv.nl/?url=${encodeURIComponent(url)}"`
+    );
+  });
+
   return {
     dir: {
       input: "src",
