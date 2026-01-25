@@ -4,9 +4,8 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "npx @11ty/eleventy --config=.eleventy.cjs --serve",
-    "build": "npx @11ty/eleventy",
-    "build-ghpages": "npx @11ty/eleventy --pathprefix=/$GITHUB_REPOSITORY_NAME/"
+    "build": "eleventy --config=.eleventy.cjs",
+    "dev": "npx @11ty/eleventy --config=.eleventy.cjs --serve"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2"

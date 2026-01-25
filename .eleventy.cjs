@@ -1,5 +1,3 @@
-console.log("TESTING");
-
 module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("year", () => {
     return new Date().getFullYear();
@@ -13,5 +11,6 @@ module.exports = function (eleventyConfig) {
       includes: "_includes",
       output: "_site",
     },
+    pathPrefix: process.env.ELEVENTY_PATH_PREFIX || "/",
   };
 };
