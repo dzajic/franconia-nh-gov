@@ -10,7 +10,7 @@
 
 ---
 
-*Prepared as a volunteer effort to explore safer, simpler, and more sustainable ways to manage the town website and significantly reduce the amount of the proposed warrant to migration the website to a new platform.*
+*This document reflects a volunteer-led exploration of practical, low-risk options to modernize and simplify the town website while keeping long-term costs and complexity low.*
 
 ---
 
@@ -86,4 +86,21 @@ As an option (not a requirement), the town could choose to use GitHub as part of
 
 GitHub is simply a management and hosting tool.  
 The website itself remains standard HTML files, and could be moved elsewhere at any time if the town prefers.
+
+### Optional Future Workflow: “Email-to-Update” Submissions
+
+To reduce friction for committee members, the town could adopt an optional workflow where updates are submitted by email, and automatically converted into a draft website change for review.
+
+**How it could work:**
+- Committee members email updates (text + attachments) to a dedicated address.
+- An automated process creates a tracked draft change (a GitHub Pull Request).
+- A designated approver reviews and publishes the change.
+
+**Why this helps:**
+- Email remains the day-to-day user experience for contributors.
+- GitHub preserves the audit trail, change history, and rollback capability.
+- Publishing remains permissioned and consistent.
+
+**Note:** Email-based approval is also possible (e.g., reply “APPROVE” from an allowlisted sender), but could be treated as a later enhancement after the basic workflow is proven.
+
 
