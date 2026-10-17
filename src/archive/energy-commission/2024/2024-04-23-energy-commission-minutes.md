@@ -1,0 +1,26 @@
+---
+title: "Energy Commission Minutes, 2024-04-23"
+layout: document.njk
+permalink: "/archive/energy-commission/2024/2024-04-23-energy-commission-minutes/"
+tags: [document]
+generated: true
+body: "energy-commission"
+type: "minutes"
+doc_date: "2024-04-23"
+doc_year: "2024"
+date_precision: "exact"
+status: unverified
+file: "archive/energy-commission/2024/2024-04-23-energy-commission-minutes.pdf"
+format: "pdf"
+checksum: ""
+legacy_url: "https://www.franconianh.gov/uploads/1/1/6/8/11680191/fec_minutes_-_4_23_2024.pdf"
+legacy_filename: "fec_minutes_-_4_23_2024.pdf"
+link_text: "April (draft),"
+http_status: 404
+missing: true
+needs_review: true
+flags: ["BROKEN-404"]
+text_layer:
+---
+
+Imported from the public document inventory. Check `needs_review` and `flags` before treating the date, board, or type as final. Remove `generated: true` if you edit this file by hand and want later imports to leave it alone.
