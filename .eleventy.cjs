@@ -1,4 +1,4 @@
-const { partitionArchive, compareDocsDesc } = require("./lib/archive-window.cjs");
+const { partitionArchive } = require("./lib/archive-window.cjs");
 const { archiveFileUrl, withPrefix } = require("./lib/urls.cjs");
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -60,25 +60,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("bodyName", (bodies, slug) => {
     const found = (bodies || []).find((body) => body.slug === slug);
     return found ? found.shortName : slug || "";
-  });
-
-  eleventyConfig.addFilter("docsByYear", (docs) => {
-    const groups = new Map();
-    for (const doc of docs || []) {
-      const year = String((doc.data && doc.data.doc_year) || "undated");
-      if (!groups.has(year)) groups.set(year, []);
-      groups.get(year).push(doc);
-    }
-    return [...groups.keys()]
-      .sort((a, b) => {
-        if (a === "undated") return 1;
-        if (b === "undated") return -1;
-        return Number(b) - Number(a);
-      })
-      .map((year) => ({
-        year,
-        items: groups.get(year).sort(compareDocsDesc),
-      }));
   });
 
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
