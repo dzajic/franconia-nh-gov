@@ -1,0 +1,9 @@
+{
+  "description": "Town of Franconia, New Hampshire. Pay a bill, find a form, or read the latest minutes.",
+  "minuteBoards": [
+    "selectboard",
+    "planning-board",
+    "conservation-commission",
+    "energy-commission"
+  ]
+}

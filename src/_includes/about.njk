@@ -1,0 +1,43 @@
+---
+layout: shell.njk
+---
+{% from "partials/icons.njk" import icon %}
+{% from "partials/mark.njk" import furnace %}
+<section class="ahero" aria-labelledby="h1">
+  <div class="in ah">
+    <div class="at">
+      <p class="kick">{{ kicker }}</p>
+      <h1 id="h1">{{ headline }}</h1>
+      <p class="tag">{{ tagline }}</p>
+    </div>
+    {{ furnace("hom", "0 4 64 60", "#173f33") }}
+  </div>
+  {% include "partials/about-ridge.njk" %}
+</section>
+<main id="main" class="in about-main" data-pagefind-body>
+  <section id="visiting" class="visit" aria-labelledby="visiting-h">
+    <h2 id="visiting-h">Visiting</h2>
+    <p><a href="{{ site.visiting.url }}">{{ site.visiting.text }}</a></p>
+  </section>
+  {% for section in sections %}
+    {% if section.style == "sign" %}
+    <section id="{{ section.id }}" class="forest" aria-labelledby="{{ section.id }}-h">
+      <h2 id="{{ section.id }}-h" class="sign"><span class="blaze" aria-hidden="true"></span>{{ section.title }}</h2>
+      {% for paragraph in section.paragraphs %}
+      <p>{{ paragraph | prefixHrefs | safe }}</p>
+      {% endfor %}
+    </section>
+    {% else %}
+    <section id="{{ section.id }}" class="st" aria-labelledby="{{ section.id }}-h">
+      <div class="ico" aria-hidden="true">{{ icon(section.icon) }}</div>
+      <div>
+        <h2 id="{{ section.id }}-h">{{ section.title }}</h2>
+        {% for paragraph in section.paragraphs %}
+        <p>{{ paragraph | prefixHrefs | safe }}</p>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+  {% endfor %}
+  <aside class="agent"><p>Illustrations are simple original hand-drawn shapes, not traced from surveys or photographs.</p></aside>
+</main>

@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Supervisors of the Checklist session",
+    "date": "2026-10-22",
+    "summary": "Time and place: [time / location]",
+    "description": "Sample event from the design prototype, not a confirmed town notice. Voter checklist session. Time and place: [time / location].",
+    "location": "[location]",
+    "href": "/events/",
+    "sample": true
+  },
+  {
+    "name": "Library public hearing",
+    "date": "2026-10-26",
+    "summary": "Abbie Greenleaf Library. Time and place: [time / location]",
+    "description": "Sample event from the design prototype, not a confirmed town notice. Public hearing concerning the Abbie Greenleaf Library. Time and place: [time / location].",
+    "location": "[location]",
+    "href": "/events/",
+    "sample": true
+  },
+  {
+    "name": "General Election",
+    "date": "2026-11-03",
+    "summary": "Polls open. Hours and location: [hours / location]",
+    "description": "Sample event from the design prototype, not a confirmed town notice. Polls open for the November 3 election. Polling hours and location: [hours / location].",
+    "location": "[location]",
+    "href": "/events/",
+    "sample": true
+  }
+]
