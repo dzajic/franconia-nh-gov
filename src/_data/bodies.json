@@ -1,0 +1,177 @@
+[
+  {
+    "slug": "selectboard",
+    "name": "Board of Selectmen",
+    "shortName": "Selectmen",
+    "kind": "board",
+    "page": "/board-of-selectmen/",
+    "phone": "603-823-7752",
+    "hours": "Closed Mondays. Tuesdays–Thursdays 8:00–4:30. Fridays 8:00–1:00.",
+    "hoursNote": "Hours as published on the Board of Selectmen page. The previous homepage listed Fridays until 1:30.",
+    "meets": "[schedule]"
+  },
+  {
+    "slug": "planning-board",
+    "name": "Planning Board",
+    "shortName": "Planning Board",
+    "kind": "board",
+    "page": "/planning-board/",
+    "meets": "2nd and last Tuesday of each month, 6:00pm"
+  },
+  {
+    "slug": "zoning-board",
+    "name": "Zoning Board of Adjustment",
+    "shortName": "Zoning Board",
+    "kind": "board",
+    "page": "/zoning-board-of-adjustment/",
+    "meets": "[schedule]"
+  },
+  {
+    "slug": "capital-improvements-committee",
+    "name": "Capital Improvements Committee",
+    "shortName": "Capital Improvements",
+    "kind": "committee",
+    "page": "/capital-improvements/",
+    "meets": "[schedule]"
+  },
+  {
+    "slug": "conservation-commission",
+    "name": "Conservation Commission",
+    "shortName": "Conservation Commission",
+    "kind": "board",
+    "page": "/conservation-commission/",
+    "meets": "[schedule]"
+  },
+  {
+    "slug": "energy-commission",
+    "name": "Energy Commission",
+    "shortName": "Energy Commission",
+    "kind": "board",
+    "page": "/energy-commission/",
+    "meets": "3rd Tuesday of each month, 4:30pm, Town Hall"
+  },
+  {
+    "slug": "recreation-board",
+    "name": "Recreation Board",
+    "shortName": "Recreation",
+    "kind": "board",
+    "page": "/httplafayetterecreationweeblycom/",
+    "meets": "[schedule]"
+  },
+  {
+    "slug": "trustees-of-trust-funds",
+    "name": "Trustees of the Trust Funds",
+    "shortName": "Trustees of the Trust Funds",
+    "kind": "board",
+    "page": "/trustees-of-the-trust-funds/",
+    "meets": "Third Wednesday of the month, Town Hall"
+  },
+  {
+    "slug": "safety-committee",
+    "name": "Safety Committee",
+    "shortName": "Safety Committee",
+    "kind": "committee",
+    "page": "/safety-committee/",
+    "meets": "Quarterly, rotating between town buildings"
+  },
+  {
+    "slug": "supervisors-of-checklist",
+    "name": "Supervisors of the Checklist",
+    "shortName": "Supervisors of the Checklist",
+    "kind": "board",
+    "page": "/supervisors-of-the-checklist/",
+    "meets": "[schedule]"
+  },
+  {
+    "slug": "cemetery-trustees",
+    "name": "Cemetery Trustees",
+    "shortName": "Cemetery",
+    "kind": "board",
+    "page": "/cemetery/",
+    "phone": "603-348-8421",
+    "phoneNote": "Published for Cemetery Trustee Jayne O'Connor (lot purchase or burial). Not a general town-hall number.",
+    "meets": "[schedule]"
+  },
+  {
+    "slug": "water-department",
+    "name": "Water Department",
+    "shortName": "Water",
+    "kind": "department",
+    "page": "/water/",
+    "phone": "(603) 823-7752 x102",
+    "hours": "Tuesday 11am–4pm, or by appointment",
+    "meets": "Second Thursday of each month, 5:00pm, Town Hall"
+  },
+  {
+    "slug": "town-clerk",
+    "name": "Town Clerk / Tax Collector",
+    "shortName": "Town Clerk",
+    "kind": "department",
+    "page": "/town-clerk-tax/",
+    "meets": "[schedule]"
+  },
+  {
+    "slug": "fire-department",
+    "name": "Fire Department",
+    "shortName": "Fire",
+    "kind": "department",
+    "page": "/fire/",
+    "meets": "[schedule]"
+  },
+  {
+    "slug": "police-department",
+    "name": "Police Department",
+    "shortName": "Police",
+    "kind": "department",
+    "page": "/police/",
+    "meets": "[schedule]"
+  },
+  {
+    "slug": "highway-department",
+    "name": "Highway Department",
+    "shortName": "Highway",
+    "kind": "department",
+    "page": "/highway-dept/",
+    "meets": "[schedule]"
+  },
+  {
+    "slug": "transfer-station",
+    "name": "Transfer Station",
+    "shortName": "Transfer Station",
+    "kind": "department",
+    "page": "/transfer-station/",
+    "meets": "[schedule]"
+  },
+  {
+    "slug": "rink-feasibility-committee",
+    "name": "Rink Feasibility Committee",
+    "shortName": "Rink Feasibility",
+    "kind": "committee",
+    "page": "/rink-feasibility-committee/",
+    "meets": "[schedule]"
+  },
+  {
+    "slug": "heritage-museum",
+    "name": "Heritage Museum",
+    "shortName": "Heritage Museum",
+    "kind": "department",
+    "page": "/heritage-museum/",
+    "meets": "[schedule]"
+  },
+  {
+    "slug": "parks",
+    "name": "Trails & Parks",
+    "shortName": "Trails & Parks",
+    "kind": "department",
+    "page": "/trails-parks/",
+    "meets": "[schedule]"
+  },
+  {
+    "slug": "town",
+    "name": "Town-wide records",
+    "shortName": "Town",
+    "kind": "town",
+    "page": "/archives/",
+    "meets": "[schedule]"
+  }
+]

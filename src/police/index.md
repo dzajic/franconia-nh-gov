@@ -4,6 +4,7 @@ title: Police - TOWN OF FRANCONIA
 permalink: /police/
 imported_from: "http://www.franconianh.org/police.html"
 migrated: false
+archiveBody: police-department
 ---
 
 Police Department

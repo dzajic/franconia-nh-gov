@@ -4,6 +4,7 @@ title: Transfer Station - TOWN OF FRANCONIA
 permalink: /transfer-station/
 imported_from: "http://www.franconianh.org/transfer-station.html"
 migrated: false
+archiveBody: transfer-station
 ---
 
 * * *

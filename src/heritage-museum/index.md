@@ -4,6 +4,7 @@ title: Heritage Museum - TOWN OF FRANCONIA
 permalink: /heritage-museum/
 imported_from: "http://www.franconianh.org/heritage-museum.html"
 migrated: false
+archiveBody: heritage-museum
 ---
 
 ![Picture](http://www.franconianh.org/uploads/1/1/6/8/11680191/museum_orig.jpg)

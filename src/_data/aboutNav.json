@@ -1,0 +1,9 @@
+[
+  { "label": "Town homepage", "href": "/" },
+  { "label": "Community", "hash": "community" },
+  { "label": "Government", "hash": "government" },
+  { "label": "Services", "hash": "services" },
+  { "label": "History", "hash": "history" },
+  { "label": "Forest", "hash": "forest" },
+  { "label": "Visiting", "hash": "visiting" }
+]

@@ -4,6 +4,7 @@ title: Fire - TOWN OF FRANCONIA
 permalink: /fire/
 imported_from: "http://www.franconianh.org/fire.html"
 migrated: false
+archiveBody: fire-department
 ---
 
 **Fire Station: ​(603)823-8821  

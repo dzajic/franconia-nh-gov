@@ -4,6 +4,7 @@ title: Planning Board - TOWN OF FRANCONIA
 permalink: /planning-board/
 imported_from: "http://www.franconianh.org/planning-board.html"
 migrated: false
+archiveBody: planning-board
 ---
 
 ## Planning Board meets the 2nd & last Tuesday of each Month 6:00pm ​Board members MARK HESLER - CHAIR, 2027 Thad Presby - VICE Chair, 2028 PAT GARVIN, 2028 MONICA LAFLAMME, 2027 Eric Meth - Select board, 2028 STEPHEN SCHWARTZ, 2026 JOHN AGOSTINELLI, 2026 ​JOHN DIMARZIO, ALTERNATE, 2026

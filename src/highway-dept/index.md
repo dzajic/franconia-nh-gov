@@ -4,6 +4,7 @@ title: Highway Dept - TOWN OF FRANCONIA
 permalink: /highway-dept/
 imported_from: "http://www.franconianh.org/highway-dept.html"
 migrated: false
+archiveBody: highway-department
 ---
 
 ## Highway Department

@@ -4,6 +4,7 @@ title: Water - TOWN OF FRANCONIA
 permalink: /water/
 imported_from: "http://www.franconianh.org/water.html"
 migrated: false
+archiveBody: water-department
 ---
 
 ## FRANCONIA WATER DEPARTMENT

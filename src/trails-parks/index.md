@@ -4,6 +4,7 @@ title: Trails & Parks - TOWN OF FRANCONIA
 permalink: /trails-parks/
 imported_from: "http://www.franconianh.org/trails--parks.html"
 migrated: false
+archiveBody: parks
 ---
 
 [![](http://www.franconianh.org/uploads/1/1/6/8/11680191/21134.jpeg)](http://www.franconianh.org/uploads/1/1/6/8/11680191/21134_orig.jpeg)

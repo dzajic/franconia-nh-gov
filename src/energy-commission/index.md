@@ -4,6 +4,7 @@ title: Energy Commission - TOWN OF FRANCONIA
 permalink: /energy-commission/
 imported_from: "http://www.franconianh.org/energy-commission.html"
 migrated: false
+archiveBody: energy-commission
 ---
 
 ## Energy Commission

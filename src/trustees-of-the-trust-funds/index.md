@@ -4,6 +4,7 @@ title: Trustees of the Trust Funds - TOWN OF FRANCONIA
 permalink: /trustees-of-the-trust-funds/
 imported_from: "http://www.franconianh.org/trustees-of-the-trust-funds.html"
 migrated: false
+archiveBody: trustees-of-trust-funds
 ---
 
 **Meetings are on the third Wednesday of the month in the Town Hall**
