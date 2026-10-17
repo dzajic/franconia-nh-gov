@@ -12,6 +12,13 @@ export function render(data) {
     officialUrl: data.site.officialUrl,
     note: "Generated from this site's data files. Values in [brackets] are unknown. Events and alerts marked sample are design-prototype content, not confirmed town notices. Phone and street address were copied from the previous public site.",
     contact: data.site.contact,
+    external_resources: [
+      {
+        name: data.site.visiting.name,
+        url: data.site.visiting.url,
+        note: data.site.visiting.text,
+      },
+    ],
     sections: data.directory,
     top_tasks: data.tasks,
     alerts: data.alerts,
@@ -23,6 +30,7 @@ export function render(data) {
       index: absoluteUrl("/archive/index.json"),
       baseUrl: archiveBase(),
       sample: "Selectboard 2025-2026, Planning Board, and Energy Commission are imported. Other boards have pages and no files yet.",
+      recentMonths: data.site.recentMonths,
     },
   };
   return JSON.stringify(payload, null, 2);

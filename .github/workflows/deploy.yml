@@ -5,6 +5,10 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+  schedule:
+    # Monday 12:00 UTC. Recomputes the archive's rolling window.
+    # GitHub runs scheduled workflows from the default branch only, after this file is on main.
+    - cron: "0 12 * * 1"
 
 permissions:
   contents: read

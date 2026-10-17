@@ -2,7 +2,7 @@
 layout: shell.njk
 permalink: /archive/
 title: Document archive
-description: Agendas, minutes, and other public documents for the Town of Franconia, grouped by year.
+description: Agendas, minutes, and other public documents for the Town of Franconia. The last 12 months are expanded; older years are collapsed.
 pageScript: /assets/archive-filter.js
 ---
 <main id="main" class="in page" data-pagefind-body>
@@ -37,21 +37,9 @@ pageScript: /assets/archive-filter.js
     <label class="check"><input id="doc-review" type="checkbox"> Needs review</label>
   </form>
   <p id="filter-count" aria-live="polite"></p>
-  {% set groups = collections.document | docsByYear %}
-  {% for group in groups %}
-  <section class="year-group" data-year="{{ group.year }}">
-    <h2 class="sign"><span class="blaze" aria-hidden="true"></span>{{ group.year }}</h2>
-    <ul class="doclist">
-      {% for doc in group.items %}
-      <li class="{% if doc.data.needs_review %}is-review{% endif %}" data-body="{{ doc.data.body }}" data-type="{{ doc.data.type }}" data-review="{% if doc.data.needs_review %}yes{% else %}no{% endif %}" data-title="{{ doc.data.title }}">
-        <a class="doc-title" href="{{ doc.url | url }}">{{ doc.data.title }}</a>
-        <span class="doc-meta">{{ doc.data.doc_date | prettyDate(doc.data.date_precision) }} · {{ doc.data.type }} · {{ doc.data.format }}{% if doc.data.needs_review %} · <span class="flag">Needs review</span>{% endif %}</span>
-      </li>
-      {% endfor %}
-    </ul>
-  </section>
-  {% else %}
-  <p class="note">No document records have been imported yet. Run <code>npm run import:sample</code>.</p>
-  {% endfor %}
+  {% set window = collections.document | archiveWindow %}
+  {% set showBody = true %}
+  {% set archiveBoard = false %}
+  {% include "partials/archive-window.njk" %}
   <p class="more"><a href="{{ '/archive/index.json' | url }}">Machine-readable index (JSON)</a></p>
 </main>

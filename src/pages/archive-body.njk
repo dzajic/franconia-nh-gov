@@ -7,11 +7,12 @@ pagination:
 permalink: "/archive/{{ board.slug }}/"
 eleventyComputed:
   title: "Documents · {{ board.name }}"
-  description: "Public documents for {{ board.name }}, grouped by year."
+  description: "Public documents for {{ board.name }}. The last 12 months are expanded; older years are collapsed."
 pageScript: /assets/archive-filter.js
 ---
 {% set docs = collections.document | whereBody(board.slug) %}
-{% set groups = docs | docsByYear %}
+{% set window = docs | archiveWindow %}
+{% set archiveBoard = board %}
 <main id="main" class="in page" data-pagefind-body>
   <p class="more"><a href="{{ '/archive/' | url }}">All documents</a></p>
   <h1 class="page-title">{{ board.name }}</h1>
@@ -44,19 +45,5 @@ pageScript: /assets/archive-filter.js
     <label class="check"><input id="doc-review" type="checkbox"> Needs review</label>
   </form>
   <p id="filter-count" aria-live="polite"></p>
-  {% for group in groups %}
-  <section class="year-group">
-    <h2 class="sign"><span class="blaze" aria-hidden="true"></span>{{ group.year }}</h2>
-    <ul class="doclist">
-      {% for doc in group.items %}
-      <li class="{% if doc.data.needs_review %}is-review{% endif %}" data-body="{{ doc.data.body }}" data-type="{{ doc.data.type }}" data-review="{% if doc.data.needs_review %}yes{% else %}no{% endif %}" data-title="{{ doc.data.title }}">
-        <a class="doc-title" href="{{ doc.url | url }}">{{ doc.data.title }}</a>
-        <span class="doc-meta">{{ doc.data.doc_date | prettyDate(doc.data.date_precision) }} · {{ doc.data.type }} · {{ doc.data.format }}{% if doc.data.needs_review %} · <span class="flag">Needs review</span>{% endif %}</span>
-      </li>
-      {% endfor %}
-    </ul>
-  </section>
-  {% else %}
-  <p class="note">No documents have been imported for {{ board.name }} yet. The import script can add them without changing this page.</p>
-  {% endfor %}
+  {% include "partials/archive-window.njk" %}
 </main>

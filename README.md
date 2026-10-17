@@ -128,11 +128,25 @@ A record with `file: archive/selectboard/2026/2026-10-19-selectboard-minutes.pdf
 
 GitHub Actions reads the repository variable `ARCHIVE_BASE_URL` when it is set. If it is empty, the placeholder base is used.
 
+## Archive window
+
+Board archive pages and the global archive expand every document from the last 12 months, grouped by month, newest first. The cutoff is the build date minus 12 months. Older years are collapsed `<details>` sections, with a document count in each summary. Those records stay in the HTML, so Pagefind can search them, and they stay in `/archive/index.json`.
+
+A month-only date is expanded when that month overlaps the window. Undated, year-only, and future-dated records stay in the collapsed year (or Undated) section. Needs review stays as a short rust note on the row.
+
+Set `RECENT_MONTHS` to use a different length (the default is 12):
+
+```bash
+RECENT_MONTHS=18 npm run build
+```
+
+The window moves only when the site is rebuilt. `.github/workflows/deploy.yml` runs every Monday at 12:00 UTC so a merged site keeps advancing. GitHub runs that schedule from the default branch only, after the workflow file is on `main`.
+
 Machine-readable copies of the same records are at `/archive/index.json`. `/town.json` and `/llms.txt` describe the site for people and for software agents. `/sitemap.xml` lists HTML pages. Pages include schema.org `GovernmentOrganization` and `Event` data. Event descriptions say when the event is sample content.
 
 ## Deploy
 
-Pushes to `main` run `.github/workflows/deploy.yml`: install, build with the GitHub Pages base path, check internal links, and deploy the `_site` folder. Pull requests build and check links, and do not deploy.
+Pushes to `main` run `.github/workflows/deploy.yml`: install, build with the GitHub Pages base path, check internal links, and deploy the `_site` folder. Pull requests build and check links, and do not deploy. The same workflow is scheduled for Monday 12:00 UTC so the archive window stays current; that cron takes effect once this file is on `main`, and a scheduled run deploys.
 
 The Pages base path (for this project, `/franconia-nh-gov`) is taken from `actions/configure-pages` and passed as `ELEVENTY_PATH_PREFIX`. Local preview does not set that variable, so links stay at the server root. `SITE_URL` is the Pages origin (`https://dzajic.github.io`), used for canonical URLs, the sitemap, and the JSON feeds.
 
@@ -140,6 +154,6 @@ In the repository settings, Pages should use **GitHub Actions** as the source (t
 
 ## Design
 
-The look follows the approved homepage: spruce `#173f33`, bark `#5a3a24`, cream `#f4ead2`, trail-sign section headers, a sticky header, an alerts bar, five tasks, this-week events, latest minutes, forms, departments, a grouped directory, and a ridge footer. About uses the same header and type, with a short story page. Interior pages keep their old wording inside that frame.
+The look follows the approved homepage: spruce `#173f33`, bark `#5a3a24`, cream `#f4ead2`, trail-sign section headers, a sticky header, an alerts bar, five tasks, this-week events, latest minutes, forms, departments, a grouped directory, and a ridge footer. About is written for people living here or thinking of moving here. Visitors are pointed to the Franconia Notch Chamber of Commerce at https://www.franconianotch.org/. Interior pages keep their old wording inside that frame.
 
 Editors change Markdown and the JSON/YAML data. They do not edit the layout files for ordinary updates.

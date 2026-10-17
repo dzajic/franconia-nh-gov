@@ -1,4 +1,5 @@
-const { archiveFileUrl } = require("./lib/urls.cjs");
+const { partitionArchive } = require("./lib/archive-window.cjs");
+const { archiveFileUrl, withPrefix } = require("./lib/urls.cjs");
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -27,6 +28,9 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("json", (value) => JSON.stringify(value ?? null));
   eleventyConfig.addFilter("archiveFileUrl", (file) => archiveFileUrl(file));
+  eleventyConfig.addFilter("prefixHrefs", (html) =>
+    String(html || "").replace(/href="(\/[^"]*)"/g, (_match, href) => `href="${withPrefix(href)}"`)
+  );
   eleventyConfig.addFilter("prettyDate", prettyDate);
   eleventyConfig.addFilter("monthShort", (value) => {
     const iso = isoDate(value);
@@ -50,6 +54,12 @@ module.exports = function (eleventyConfig) {
     });
     rows.sort((a, b) => String(b.data.doc_date).localeCompare(String(a.data.doc_date)));
     return rows[0] || null;
+  });
+
+  eleventyConfig.addFilter("archiveWindow", (docs) => partitionArchive(docs));
+  eleventyConfig.addFilter("bodyName", (bodies, slug) => {
+    const found = (bodies || []).find((body) => body.slug === slug);
+    return found ? found.shortName : slug || "";
   });
 
   eleventyConfig.addFilter("docsByYear", (docs) => {

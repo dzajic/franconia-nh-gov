@@ -27,6 +27,9 @@ export function render(data) {
     lines.push(`- ${event.date}: ${event.name}${event.sample ? " (sample)" : ""}`);
   }
   lines.push("");
+  lines.push("## External resources");
+  lines.push(`- [${data.site.visiting.name}](${data.site.visiting.url}): ${data.site.visiting.text}`);
+  lines.push("");
   lines.push("## Data");
   lines.push(`- [town.json](${absoluteUrl("/town.json")}): sections, events, contacts, bodies`);
   lines.push(`- [archive/index.json](${absoluteUrl("/archive/index.json")}): one record per imported document`);

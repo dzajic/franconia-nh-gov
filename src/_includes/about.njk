@@ -15,12 +15,16 @@ layout: shell.njk
   {% include "partials/about-ridge.njk" %}
 </section>
 <main id="main" class="in about-main" data-pagefind-body>
+  <section id="visiting" class="visit" aria-labelledby="visiting-h">
+    <h2 id="visiting-h">Visiting</h2>
+    <p><a href="{{ site.visiting.url }}">{{ site.visiting.text }}</a></p>
+  </section>
   {% for section in sections %}
     {% if section.style == "sign" %}
     <section id="{{ section.id }}" class="forest" aria-labelledby="{{ section.id }}-h">
       <h2 id="{{ section.id }}-h" class="sign"><span class="blaze" aria-hidden="true"></span>{{ section.title }}</h2>
       {% for paragraph in section.paragraphs %}
-      <p>{{ paragraph | safe }}</p>
+      <p>{{ paragraph | prefixHrefs | safe }}</p>
       {% endfor %}
     </section>
     {% else %}
@@ -29,7 +33,7 @@ layout: shell.njk
       <div>
         <h2 id="{{ section.id }}-h">{{ section.title }}</h2>
         {% for paragraph in section.paragraphs %}
-        <p>{{ paragraph | safe }}</p>
+        <p>{{ paragraph | prefixHrefs | safe }}</p>
         {% endfor %}
       </div>
     </section>

@@ -6,11 +6,14 @@ if (form) {
   const review = form.querySelector("#doc-review");
   const count = document.querySelector("#filter-count");
 
+  const label = (n) => `${n} document${n === 1 ? "" : "s"}`;
+
   const apply = () => {
     const query = (q && q.value ? q.value : "").trim().toLowerCase();
     const bodyValue = body ? body.value : "";
     const typeValue = type ? type.value : "";
     const reviewOnly = Boolean(review && review.checked);
+    const filtering = Boolean(query || bodyValue || typeValue || reviewOnly);
     let shown = 0;
     let total = 0;
     document.querySelectorAll(".doclist li").forEach((item) => {
@@ -24,11 +27,31 @@ if (form) {
       item.hidden = !ok;
       if (ok) shown += 1;
     });
-    document.querySelectorAll(".year-group").forEach((group) => {
-      group.hidden = ![...group.querySelectorAll(".doclist li")].some((item) => !item.hidden);
+    document.querySelectorAll(".doc-group").forEach((group) => {
+      const items = [...group.querySelectorAll(".doclist li")];
+      const visibleCount = items.filter((item) => !item.hidden).length;
+      group.hidden = visibleCount === 0;
+      if (group.tagName === "DETAILS") {
+        if (filtering && visibleCount > 0) {
+          if (!group.open) group.dataset.forcedOpen = "yes";
+          group.open = true;
+        } else if (!filtering && group.dataset.forcedOpen === "yes") {
+          group.open = false;
+          delete group.dataset.forcedOpen;
+        }
+        const countEl = group.querySelector(".year-count");
+        if (countEl) {
+          const totalInYear = Number(countEl.dataset.total || items.length);
+          countEl.textContent = label(filtering ? visibleCount : totalInYear);
+        }
+      }
     });
+    const older = document.querySelector(".older-label");
+    if (older) {
+      older.hidden = ![...document.querySelectorAll("details.year-fold")].some((group) => !group.hidden);
+    }
     if (count) {
-      count.textContent = shown === total ? `${total} documents` : `${shown} of ${total} documents`;
+      count.textContent = shown === total ? label(total) : `${shown} of ${total} documents`;
     }
   };
 
