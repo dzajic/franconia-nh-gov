@@ -4,6 +4,7 @@ title: Cemetery  - TOWN OF FRANCONIA
 permalink: /cemetery/
 imported_from: "http://www.franconianh.org/cemetery.html"
 migrated: false
+archiveBody: cemetery-trustees
 ---
 
 ## Elmwood&nbsp; Cemetery

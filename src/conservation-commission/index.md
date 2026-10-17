@@ -4,6 +4,7 @@ title: Conservation Commission - TOWN OF FRANCONIA
 permalink: /conservation-commission/
 imported_from: "http://www.franconianh.org/conservation-commission.html"
 migrated: false
+archiveBody: conservation-commission
 ---
 
 ## Conservation Commission

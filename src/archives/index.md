@@ -6,6 +6,8 @@ imported_from: "http://www.franconianh.org/archives.html"
 migrated: false
 ---
 
+The year-by-year document archive is at [Documents](/archive/). This page keeps the report links from the previous site.
+
 **[Solar Project&nbsp; Information](http://www.franconianh.org/uploads/1/1/6/8/11680191/franconia_gm_solar_array_budget.pdf)**
 
 **[2021 Town of Franconia Final Audit Report prepared by Plodzik & Sanderson](http://www.franconianh.org/uploads/1/1/6/8/11680191/2021_town_of_franconia_-_report_final.pdf)**

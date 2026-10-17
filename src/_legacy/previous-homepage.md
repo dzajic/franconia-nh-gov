@@ -1,10 +1,8 @@
 ---
-layout: base.njk
-title: TOWN OF FRANCONIA - Home
-permalink: /
-imported_from: "http://www.franconianh.org/"
-migrated: false
+permalink: false
+eleventyExcludeFromCollections: true
 ---
+
 
 | 
 **421 Main Street&nbsp; &nbsp;&nbsp;  
