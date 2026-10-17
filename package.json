@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "build": "eleventy --config=.eleventy.cjs && pagefind --site _site",
+    "build": "eleventy --config=.eleventy.cjs && node scripts/check-archive-order.mjs && pagefind --site _site",
+    "test": "node --test",
     "dev": "eleventy --config=.eleventy.cjs --serve --port 8080",
     "import:sample": "node scripts/import-documents.mjs --sample --clean",
     "import:all": "node scripts/import-documents.mjs --all --clean",

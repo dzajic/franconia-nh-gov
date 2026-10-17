@@ -140,7 +140,9 @@ Set `RECENT_MONTHS` to use a different length (the default is 12):
 RECENT_MONTHS=18 npm run build
 ```
 
-The window moves only when the site is rebuilt. `.github/workflows/deploy.yml` runs every Monday at 12:00 UTC so a merged site keeps advancing. GitHub runs that schedule from the default branch only, after the workflow file is on `main`.
+The window moves only when the site is rebuilt. The build clock is the UTC date of that run, not a date stored in the records. `.github/workflows/deploy.yml` runs every Monday at 12:00 UTC so a merged site keeps advancing. GitHub runs that schedule from the default branch only, after the workflow file is on `main`.
+
+`npm test` checks the window math. `npm run build` also reads the archive HTML and fails if a page is not newest-first, or if the global archive has records but none fall in the window. A board with only older files prints a warning.
 
 Machine-readable copies of the same records are at `/archive/index.json`. `/town.json` and `/llms.txt` describe the site for people and for software agents. `/sitemap.xml` lists HTML pages. Pages include schema.org `GovernmentOrganization` and `Event` data. Event descriptions say when the event is sample content.
 

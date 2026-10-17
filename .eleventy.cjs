@@ -1,4 +1,4 @@
-const { partitionArchive } = require("./lib/archive-window.cjs");
+const { partitionArchive, compareDocsDesc } = require("./lib/archive-window.cjs");
 const { archiveFileUrl, withPrefix } = require("./lib/urls.cjs");
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -77,10 +77,7 @@ module.exports = function (eleventyConfig) {
       })
       .map((year) => ({
         year,
-        items: groups.get(year).sort((a, b) => {
-          const date = String(b.data.doc_date || "").localeCompare(String(a.data.doc_date || ""));
-          return date || String(a.data.title || "").localeCompare(String(b.data.title || ""));
-        }),
+        items: groups.get(year).sort(compareDocsDesc),
       }));
   });
 
