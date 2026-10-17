@@ -1,0 +1,45 @@
+---
+layout: shell.njk
+permalink: /archive/
+title: Document archive
+description: Agendas, minutes, and other public documents for the Town of Franconia. The last 12 months are expanded; older years are collapsed.
+pageScript: /assets/archive-filter.js
+---
+<main id="main" class="in page" data-pagefind-body>
+  <h1 class="page-title">Document archive</h1>
+  <p class="lede">Agendas, minutes, and other public files. This copy includes a sample import (Selectboard 2025–2026, the Planning Board, and the Energy Commission). Other boards are listed and ready for the full import. Files are not stored in the website repository; each record points at <code>ARCHIVE_BASE_URL</code>.</p>
+  <form class="filters" role="search" data-doc-filter action="{{ '/archive/' | url }}">
+    <label>Search titles
+      <input id="doc-q" type="search" placeholder="Minutes, permit, 2026…" autocomplete="off">
+    </label>
+    <label>Board
+      <select id="doc-body">
+        <option value="">All boards</option>
+        {% for board in bodies %}
+        <option value="{{ board.slug }}">{{ board.shortName }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>Type
+      <select id="doc-type">
+        <option value="">All types</option>
+        <option>agenda</option>
+        <option>minutes</option>
+        <option>notice</option>
+        <option>budget</option>
+        <option>audit</option>
+        <option>ordinance</option>
+        <option>form</option>
+        <option>report</option>
+        <option>other</option>
+      </select>
+    </label>
+    <label class="check"><input id="doc-review" type="checkbox"> Needs review</label>
+  </form>
+  <p id="filter-count" aria-live="polite"></p>
+  {% set window = collections.document | archiveWindow %}
+  {% set showBody = true %}
+  {% set archiveBoard = false %}
+  {% include "partials/archive-window.njk" %}
+  <p class="more"><a href="{{ '/archive/index.json' | url }}">Machine-readable index (JSON)</a></p>
+</main>

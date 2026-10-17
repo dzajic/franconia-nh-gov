@@ -1,0 +1,49 @@
+---
+layout: shell.njk
+pagination:
+  data: bodies
+  size: 1
+  alias: board
+permalink: "/archive/{{ board.slug }}/"
+eleventyComputed:
+  title: "Documents · {{ board.name }}"
+  description: "Public documents for {{ board.name }}. The last 12 months are expanded; older years are collapsed."
+pageScript: /assets/archive-filter.js
+---
+{% set docs = collections.document | whereBody(board.slug) %}
+{% set window = docs | archiveWindow %}
+{% set archiveBoard = board %}
+<main id="main" class="in page" data-pagefind-body>
+  <p class="more"><a href="{{ '/archive/' | url }}">All documents</a></p>
+  <h1 class="page-title">{{ board.name }}</h1>
+  <div class="board-meta">
+    {% if board.page %}<a href="{{ board.page | url }}">Department page</a>{% endif %}
+    <span>Phone: {{ board.phone or "[phone]" }}</span>
+    <span>Hours: {{ board.hours or "[hours]" }}</span>
+    <span>Meets: {{ board.meets or "[schedule]" }}</span>
+  </div>
+  {% if board.phoneNote %}<p class="note">{{ board.phoneNote }}</p>{% endif %}
+  {% if board.hoursNote %}<p class="note">{{ board.hoursNote }}</p>{% endif %}
+  <form class="filters" role="search" data-doc-filter>
+    <label>Search titles
+      <input id="doc-q" type="search" placeholder="Search this board…" autocomplete="off">
+    </label>
+    <label>Type
+      <select id="doc-type">
+        <option value="">All types</option>
+        <option>agenda</option>
+        <option>minutes</option>
+        <option>notice</option>
+        <option>budget</option>
+        <option>audit</option>
+        <option>ordinance</option>
+        <option>form</option>
+        <option>report</option>
+        <option>other</option>
+      </select>
+    </label>
+    <label class="check"><input id="doc-review" type="checkbox"> Needs review</label>
+  </form>
+  <p id="filter-count" aria-live="polite"></p>
+  {% include "partials/archive-window.njk" %}
+</main>
