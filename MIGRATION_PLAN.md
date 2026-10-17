@@ -1,5 +1,9 @@
 # Migration & Redesign Plan
 
+The current demo in this repository uses the resident-first design (spruce, bark, cream) and a document archive. See the README for preview, editing, and deploy. The notes below are the original migration plan.
+
+
+
 ## 1. Goals
 
 * Create a modern, reliable town website that is easy to maintain
