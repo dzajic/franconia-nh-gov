@@ -1,0 +1,30 @@
+<p class="note">Open sections are the last {{ window.months }} months at build time ({{ window.cutoff | prettyDate }} through {{ window.today | prettyDate }}). An exact date in that range is listed by month. A month-only date is included when that month overlaps the window. Undated, year-only, and future-dated records stay in the collapsed years. Set <code>RECENT_MONTHS</code> to change the length. Search and the <a href="{{ '/archive/index.json' | url }}">JSON index</a> include every record.</p>
+{% if window.recent.length == 0 and window.years.length == 0 %}
+<p class="note">{% if archiveBoard %}No documents have been imported for {{ archiveBoard.name }} yet. The import script can add them without changing this page.{% else %}No document records have been imported yet. Run <code>npm run import:sample</code>.{% endif %}</p>
+{% endif %}
+{% for month in window.recent %}
+<section class="month-group doc-group">
+  <h2 class="sign"><span class="blaze" aria-hidden="true"></span>{{ month.label }}</h2>
+  <ul class="doclist">
+    {% for doc in month.items %}
+    {% include "partials/doc-row.njk" %}
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}
+{% if window.years.length %}
+<h2 class="older-label">Earlier records</h2>
+{% for group in window.years %}
+<details class="year-fold doc-group">
+  <summary>
+    <span class="year-name">{{ group.label }}</span>
+    <span class="year-count" data-total="{{ group.count }}">{{ group.count }} document{% if group.count != 1 %}s{% endif %}</span>
+  </summary>
+  <ul class="doclist">
+    {% for doc in group.items %}
+    {% include "partials/doc-row.njk" %}
+    {% endfor %}
+  </ul>
+</details>
+{% endfor %}
+{% endif %}

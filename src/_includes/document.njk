@@ -1,0 +1,41 @@
+---
+layout: shell.njk
+---
+{% set board = bodies | findBody(body) %}
+<main id="main" class="in page" data-pagefind-body>
+  <p class="more"><a href="{{ ('/archive/' + body + '/') | url }}">{% if board %}{{ board.shortName }}{% else %}{{ body }}{% endif %} archive</a></p>
+  <h1 class="page-title">{{ title }}</h1>
+  {% if needs_review %}
+  <div class="review" role="note">
+    <strong>Needs review</strong>
+    <p>A person should check this record before treating it as final. It was inferred from a public filename or link{% if flags and flags.length %}: {{ flags | join(", ") }}{% endif %}. Date precision: {{ date_precision }}.</p>
+  </div>
+  {% endif %}
+  <dl class="meta-dl">
+    <dt>Body</dt><dd>{% if board %}{{ board.name }}{% else %}{{ body }}{% endif %}</dd>
+    <dt>Type</dt><dd>{{ type }}</dd>
+    <dt>Date</dt><dd>{{ doc_date | prettyDate(date_precision) }}{% if date_precision and date_precision != "exact" %} <span class="flag">{{ date_precision }}</span>{% endif %}</dd>
+    <dt>Status</dt><dd>{{ status }}</dd>
+    <dt>Format</dt><dd>{{ format }}</dd>
+    <dt>Checksum</dt><dd><code>{{ checksum }}</code></dd>
+    {% if text_layer == false %}
+    <dt>Text</dt><dd>Scanned or image-only. Needs OCR before full-text search.</dd>
+    {% elif text_layer == true %}
+    <dt>Text</dt><dd>PDF has a text layer.</dd>
+    {% endif %}
+  </dl>
+  <div class="file-actions">
+    <a href="{{ file | archiveFileUrl }}">File in document storage</a>
+    {% if legacy_url and not missing %}
+    <a class="secondary" href="{{ legacy_url }}">Current copy on franconianh.gov</a>
+    {% endif %}
+  </div>
+  {% if missing %}
+  <p class="note">The previous site returned 404 for this file when the inventory was made. The storage link above will work only after the town uploads a copy.</p>
+  {% else %}
+  <p class="note">The storage link uses <code>ARCHIVE_BASE_URL</code> and does not serve a file from this website. Until files are copied to object storage, use the current public copy.</p>
+  {% endif %}
+  {% if content | trim %}
+  <div class="prose">{{ content | safe }}</div>
+  {% endif %}
+</main>
