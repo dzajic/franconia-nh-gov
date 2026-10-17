@@ -1,0 +1,9 @@
+[
+  { "label": "Top tasks", "href": "/", "hash": "tasks" },
+  { "label": "Calendar", "href": "/", "hash": "coming" },
+  { "label": "Minutes", "href": "/", "hash": "minutes" },
+  { "label": "Forms", "href": "/", "hash": "forms" },
+  { "label": "Departments", "href": "/", "hash": "depts" },
+  { "label": "Directory", "href": "/", "hash": "directory" },
+  { "label": "About", "href": "/about/" }
+]

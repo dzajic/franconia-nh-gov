@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title or "Franconia, NH" }}</title>
+    <meta name="description" content="{{ description or home.description }}">
+    <link rel="canonical" href="{{ site.origin }}{{ page.url | url }}">
+    <link rel="alternate" type="text/plain" href="{{ '/llms.txt' | url }}" title="llms.txt">
+    <link rel="alternate" type="application/json" href="{{ '/town.json' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/site.css' | url }}">
+    {% include "partials/jsonld.njk" %}
+  </head>
+  <body class="{{ bodyClass or 'page' }}" data-pagefind="{{ '/pagefind/pagefind.js' | url }}" data-archive-index="{{ '/archive/index.json' | url }}">
+    <a class="skip" href="#main">Skip to main content</a>
+    {% if showAlerts != false and alerts.length %}
+    <aside class="alert" role="region" aria-label="Alerts">
+      <div class="in">
+        <b>Heads up</b>
+        {% for alert in alerts %}
+          {% if not loop.first %}<span class="dot" aria-hidden="true">·</span>{% endif %}
+          <a href="{{ alert.href | url }}">{{ alert.text }}</a>
+        {% endfor %}
+      </div>
+    </aside>
+    {% endif %}
+    {% include "partials/header.njk" %}
+    {{ content | safe }}
+    {% include "partials/footer.njk" %}
+    {% if pageScript %}<script src="{{ pageScript | url }}" defer></script>{% endif %}
+  </body>
+</html>

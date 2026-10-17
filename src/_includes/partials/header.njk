@@ -1,0 +1,40 @@
+{% from "partials/mark.njk" import furnace %}
+<header class="top" data-pagefind-ignore>
+  {% include "partials/header-bands.njk" %}
+  <div class="in hdr">
+    <a class="brand" href="{{ '/' | url }}" aria-label="Town of Franconia, New Hampshire home">
+      {{ furnace("mark", "4 2 56 64", "#5a3a24") }}
+      <span><b>Franconia</b><i>New Hampshire</i></span>
+    </a>
+    {% if showSearch != false %}
+    <form class="search" role="search" action="{{ '/search/' | url }}" method="get">
+      <label for="q" class="sr">Search the town website</label>
+      <input id="q" type="search" name="q" placeholder="Search permits, minutes…" autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+    {% endif %}
+    <nav aria-label="Primary">
+      {% if nav == "about" %}
+        {% for item in aboutNav %}
+          {% if item.hash and item.href %}
+          <a href="{{ item.href | url }}#{{ item.hash }}">{{ item.label }}</a>
+          {% elif item.hash %}
+          <a href="#{{ item.hash }}">{{ item.label }}</a>
+          {% else %}
+          <a href="{{ item.href | url }}"{% if page.url == item.href %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        {% for item in primaryNav %}
+          {% if item.hash and item.href %}
+          <a href="{{ item.href | url }}#{{ item.hash }}">{{ item.label }}</a>
+          {% elif item.hash %}
+          <a href="#{{ item.hash }}">{{ item.label }}</a>
+          {% else %}
+          <a href="{{ item.href | url }}"{% if page.url == item.href %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </nav>
+  </div>
+</header>
