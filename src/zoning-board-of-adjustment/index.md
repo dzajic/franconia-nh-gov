@@ -4,6 +4,7 @@ title: Zoning Board of Adjustment - TOWN OF FRANCONIA
 permalink: /zoning-board-of-adjustment/
 imported_from: "http://www.franconianh.org/zoning-board-of-adjustment.html"
 migrated: false
+archiveBody: zoning-board
 ---
 
 ## Zoning Board of Adjustment

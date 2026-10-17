@@ -1,0 +1,72 @@
+[
+  {
+    "heading": "Town Hall & Services",
+    "pages": [
+      { "title": "Home", "href": "/" },
+      { "title": "Town Facts", "href": "/town-facts/" },
+      { "title": "Town Directory", "href": "/town-directory/" },
+      { "title": "Voter Information", "href": "/voter-information/" },
+      { "title": "Notices", "href": "/notices/" },
+      { "title": "Town Clerk / Tax", "href": "/town-clerk-tax/" },
+      { "title": "Events", "href": "/events/" }
+    ]
+  },
+  {
+    "heading": "Boards & Committees",
+    "pages": [
+      { "title": "Selectmen", "href": "/board-of-selectmen/" },
+      { "title": "Planning Board", "href": "/planning-board/" },
+      { "title": "Capital Improvements", "href": "/capital-improvements/" },
+      { "title": "Supervisors of the Checklist", "href": "/supervisors-of-the-checklist/" },
+      { "title": "Safety Committee", "href": "/safety-committee/" },
+      { "title": "Trustees of the Trust Funds", "href": "/trustees-of-the-trust-funds/" },
+      { "title": "Zoning Board (ZBA)", "href": "/zoning-board-of-adjustment/" },
+      { "title": "Conservation Commission", "href": "/conservation-commission/" },
+      { "title": "Energy Commission", "href": "/energy-commission/" }
+    ]
+  },
+  {
+    "heading": "Safety & Public Works",
+    "pages": [
+      { "title": "Police", "href": "/police/" },
+      { "title": "Fire", "href": "/fire/" },
+      { "title": "Highway", "href": "/highway-dept/" },
+      { "title": "Water", "href": "/water/" },
+      { "title": "Cemetery", "href": "/cemetery/" },
+      { "title": "Transfer Station", "href": "/transfer-station/" }
+    ]
+  },
+  {
+    "heading": "Forms & Applications",
+    "pages": [
+      { "title": "Building Permit", "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/2016_building_permit_application.pdf" },
+      { "title": "Driveway Permit", "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/driveway_permit_application.pdf" },
+      { "title": "Solar Permit", "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/solar_pv_permit_application.pdf" },
+      { "title": "Demolition Permit", "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/franconia_demolition_permit.pdf" },
+      { "title": "Generator Permit", "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/generator_application.pdf" },
+      { "title": "Short-Term Rental", "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/str_app_and_checklist.pdf" },
+      { "title": "Facilities Use", "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/facilities_use_form.pdf" },
+      { "title": "Volunteer", "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/request_to_volunteer.pdf" }
+    ]
+  },
+  {
+    "heading": "Library, Museums & Outdoors",
+    "pages": [
+      { "title": "Abbie Greenleaf Library", "href": "/abbie-greanleaf-library/" },
+      { "title": "Heritage Museum", "href": "/heritage-museum/" },
+      { "title": "Iron Furnace", "href": "/iron-furnace/" },
+      { "title": "Dow Clock", "href": "/dow-clock/" },
+      { "title": "Frost Place", "href": "/frost-place/" },
+      { "title": "Trails & Parks", "href": "/trails-parks/" }
+    ]
+  },
+  {
+    "heading": "Records & Rules",
+    "pages": [
+      { "title": "Archives", "href": "/archive/" },
+      { "title": "Budgets", "href": "/budgets/" },
+      { "title": "Ordinances & Regulations", "href": "/ordinances-regulations/" },
+      { "title": "Meeting Minutes", "href": "/meetings/" }
+    ]
+  }
+]

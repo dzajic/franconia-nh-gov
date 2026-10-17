@@ -1,0 +1,21 @@
+{% macro icon(name) %}
+{% if name == "pay" %}
+<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10h20v14H6zM6 14h20M10 20h5"/></svg>
+{% elif name == "form" %}
+<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h10l5 5v19H9zM19 4v5h5M12 15h9M12 20h9"/></svg>
+{% elif name == "minutes" %}
+<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h22M5 14h22M5 20h14M5 26h10"/></svg>
+{% elif name == "trash" %}
+<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9h16l-1.5 18h-13zM6 9h20M13 9V5h6v4M13 14v9M19 14v9"/></svg>
+{% elif name == "mail" %}
+<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h24v16H4zM4 9l12 9 12-9"/></svg>
+{% elif name == "ledges" %}
+<svg viewBox="0 0 40 40" width="34" aria-hidden="true" focusable="false"><path d="M4 12h22v6H4zM10 20h26v6H10zM6 28h20v6H6z" fill="currentColor"/></svg>
+{% elif name == "peak" %}
+<svg viewBox="0 0 40 40" width="34" aria-hidden="true" focusable="false"><path d="M4 34L18 8L24 14L36 34Z" fill="currentColor"/><path d="M18 8V3" stroke="currentColor" stroke-width="2.5"/></svg>
+{% elif name == "ridge" %}
+<svg viewBox="0 0 40 40" width="34" aria-hidden="true" focusable="false"><path d="M2 34L12 12L18 20L24 8L32 22L38 34Z" fill="currentColor"/></svg>
+{% elif name == "furnace" %}
+<svg viewBox="0 0 40 40" width="34" aria-hidden="true" focusable="false"><path d="M12 36L15 10H25L28 36Z" fill="currentColor"/><rect x="13" y="6" width="14" height="5" fill="currentColor"/></svg>
+{% endif %}
+{% endmacro %}

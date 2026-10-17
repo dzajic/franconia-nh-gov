@@ -1,0 +1,95 @@
+---
+layout: shell.njk
+permalink: /
+title: "Franconia, NH — Town services"
+description: "Town of Franconia, New Hampshire. Pay a bill, find a form, or read the latest minutes."
+bodyClass: home
+---
+{% from "partials/icons.njk" import icon %}
+<main id="main" class="in" data-pagefind-body>
+  <h1 class="sr">Town of Franconia, New Hampshire</h1>
+  <section id="tasks" aria-labelledby="t-h">
+    <h2 id="t-h" class="sign"><span class="blaze" aria-hidden="true"></span>What do you need?</h2>
+    <ul class="tasks">
+      {% for task in tasks %}
+      <li><a href="{{ task.href | url }}">{{ icon(task.icon) }}<strong>{{ task.title }}</strong><span>{{ task.detail }}</span></a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  <div class="cols">
+    <section id="coming" aria-labelledby="c-h">
+      <h2 id="c-h" class="sign"><span class="blaze" aria-hidden="true"></span>Today &amp; this week</h2>
+      <ul class="events">
+        {% for event in events %}
+        <li>
+          <time datetime="{{ event.date }}"><b>{{ event.date | monthShort }}</b><span>{{ event.date | dayNum }}</span></time>
+          <div>
+            <h3><a href="{{ event.href | url }}">{{ event.name }}</a></h3>
+            <p>{{ event.summary }}</p>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+      <p class="more"><a href="{{ '/events/' | url }}">Full calendar &amp; all notices →</a></p>
+    </section>
+    <section id="minutes" aria-labelledby="m-h">
+      <h2 id="m-h" class="sign"><span class="blaze" aria-hidden="true"></span>Latest minutes</h2>
+      <ul class="mins">
+        {% for slug in home.minuteBoards %}
+          {% set board = bodies | findBody(slug) %}
+          {% set doc = collections.document | latestMinutes(slug) %}
+          <li>
+            {% if doc %}
+            <a href="{{ doc.url | url }}"><b>{{ board.shortName }}</b><span>Latest minutes · {{ doc.data.doc_date | prettyDate(doc.data.date_precision) }} · {{ doc.data.format | upper }}</span></a>
+            {% else %}
+            <a href="{{ ('/archive/' + slug + '/') | url }}"><b>{{ board.shortName }}</b><span>Latest minutes · [meeting date] · PDF</span></a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+      <p class="more"><a href="{{ '/archive/' | url }}">All agendas &amp; minutes by board →</a></p>
+    </section>
+    <section id="forms" aria-labelledby="f-h">
+      <h2 id="f-h" class="sign"><span class="blaze" aria-hidden="true"></span>Forms &amp; permits</h2>
+      <ul class="forms">
+        {% for form in forms %}
+        <li><a href="{{ form.href }}">{{ form.title }}</a></li>
+        {% endfor %}
+      </ul>
+      <p class="more"><a href="{{ '/forms-applications/' | url }}">All forms &amp; applications →</a></p>
+    </section>
+  </div>
+  <section id="depts" aria-labelledby="d-h">
+    <h2 id="d-h" class="sign"><span class="blaze" aria-hidden="true"></span>Departments</h2>
+    <ul class="depts">
+      {% for dept in departments %}
+      <li><a href="{{ dept.href | url }}"><b>{{ dept.name }}</b><span>{{ dept.detail }}</span></a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  <section id="directory" aria-labelledby="dir-h">
+    <h2 id="dir-h" class="sign"><span class="blaze" aria-hidden="true"></span>Everything on the site</h2>
+    <div class="dirs">
+      {% for group in directory %}
+      <section class="dg" aria-labelledby="dg{{ loop.index0 }}">
+        <h3 id="dg{{ loop.index0 }}"><span class="blaze" aria-hidden="true"></span>{{ group.heading }}</h3>
+        <ul>
+          {% for item in group.pages %}
+          <li><a href="{% if item.href | startsWith('/') %}{{ item.href | url }}{% else %}{{ item.href }}{% endif %}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endfor %}
+    </div>
+  </section>
+  <section class="story" aria-labelledby="s-h">
+    <div>
+      <h2 id="s-h">A town with a long memory</h2>
+      <p>From the Old Man to the iron furnace to the trails of the White Mountain National Forest, Franconia has a story worth telling well. <a href="{{ '/about/' | url }}">About Franconia →</a></p>
+    </div>
+    <div class="sils">{% include "partials/story-silhouettes.njk" %}</div>
+  </section>
+  <aside class="agent" aria-label="For software agents">
+    <p>Machine-readable: this page embeds JSON-LD; the town publishes <a href="{{ '/llms.txt' | url }}"><code>/llms.txt</code></a> and <a href="{{ '/town.json' | url }}"><code>/town.json</code></a>. Document records are listed at <a href="{{ '/archive/index.json' | url }}"><code>/archive/index.json</code></a>. Bracketed placeholders are not real values. Alert dates are sample content.</p>
+  </aside>
+</main>

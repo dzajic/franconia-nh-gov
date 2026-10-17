@@ -1,0 +1,8 @@
+[
+  { "label": "Town homepage", "href": "/" },
+  { "label": "Old Man", "hash": "profile" },
+  { "label": "Cannon", "hash": "cannon" },
+  { "label": "Ridge", "hash": "ridge" },
+  { "label": "Furnace", "hash": "furnace" },
+  { "label": "Forest", "hash": "forest" }
+]

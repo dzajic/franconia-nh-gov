@@ -1,0 +1,35 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "GovernmentOrganization",
+      "name": {{ site.name | json | safe }},
+      "url": {{ (site.origin + ("/" | url)) | json | safe }},
+      "description": "Demo redesign of the Town of Franconia website. The official site is https://www.franconianh.gov/.",
+      "areaServed": { "@type": "AdministrativeArea", "name": "Franconia, NH" },
+      "telephone": {{ site.contact.phone | json | safe }},
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "421 Main Street, PO Box 900",
+        "addressLocality": "Franconia",
+        "addressRegion": "NH",
+        "postalCode": "03580",
+        "addressCountry": "US"
+      }
+    }
+    {% for event in events %}
+    ,{
+      "@type": "Event",
+      "name": {{ event.name | json | safe }},
+      "startDate": {{ event.date | json | safe }},
+      "description": {{ event.description | json | safe }},
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": { "@type": "Place", "name": {{ event.location | json | safe }} },
+      "organizer": { "@type": "GovernmentOrganization", "name": "Town of Franconia" }
+    }
+    {% endfor %}
+  ]
+}
+</script>

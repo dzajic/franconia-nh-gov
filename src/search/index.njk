@@ -1,0 +1,18 @@
+---
+layout: shell.njk
+permalink: /search/
+title: Search
+description: Search Franconia town pages and document records.
+pageScript: /assets/search.js
+eleventyExcludeFromCollections: false
+---
+<main id="main" class="in page search-page" data-pagefind-body>
+  <h1 class="page-title">Search</h1>
+  <form class="filters" role="search" action="{{ '/search/' | url }}" method="get">
+    <label>Search words
+      <input id="search-q" type="search" name="q" placeholder="Permit, selectboard, furnace…">
+    </label>
+    <button class="btn-blaze" type="submit">Search</button>
+  </form>
+  <div id="search-results" aria-live="polite"></div>
+</main>

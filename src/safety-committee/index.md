@@ -4,6 +4,7 @@ title: Safety Committee - TOWN OF FRANCONIA
 permalink: /safety-committee/
 imported_from: "http://www.franconianh.org/safety-committee.html"
 migrated: false
+archiveBody: safety-committee
 ---
 
 Safety Committee  

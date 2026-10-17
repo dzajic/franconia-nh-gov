@@ -4,6 +4,7 @@ title: Capital Improvements - TOWN OF FRANCONIA
 permalink: /capital-improvements/
 imported_from: "http://www.franconianh.org/capital-improvements.html"
 migrated: false
+archiveBody: capital-improvements-committee
 ---
 
 ## Capital Improvements Plan

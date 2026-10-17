@@ -4,6 +4,7 @@ title: Board of Selectmen - TOWN OF FRANCONIA
 permalink: /board-of-selectmen/
 imported_from: "http://www.franconianh.org/board-of-selectmen.html"
 migrated: false
+archiveBody: selectboard
 ---
 
 SELECTMEN'S OFFICE HOURS  

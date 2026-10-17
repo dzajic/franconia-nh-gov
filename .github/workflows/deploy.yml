@@ -3,6 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -11,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -39,18 +40,28 @@ jobs:
       #   npx @11ty/eleventy --pathprefix "${{ steps.pages.outputs.base_path }}"
       - name: Build
         env:
-          # Helps if your Eleventy config reads an env var for path prefix.
-          # Otherwise, switch to the npx @11ty/eleventy command above.
+          # configure-pages base_path is /<repo> on project sites and empty on user sites.
+          # Eleventy prefixes URLs; files stay at the root of the Pages artifact.
           ELEVENTY_PATH_PREFIX: ${{ steps.pages.outputs.base_path }}
+          SITE_URL: ${{ steps.pages.outputs.origin }}
+          # Optional repository variable. Empty falls back to the placeholder base.
+          ARCHIVE_BASE_URL: ${{ vars.ARCHIVE_BASE_URL }}
         run: npm run build
 
+      - name: Check internal links
+        env:
+          ELEVENTY_PATH_PREFIX: ${{ steps.pages.outputs.base_path }}
+        run: npm run check:links
+
       - name: Upload artifact
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
           # Common Eleventy output dir. Change if yours differs.
           path: _site
 
   deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     needs: build
     environment:

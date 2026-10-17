@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Pay taxes / register vehicle",
+    "detail": "Town Clerk & Tax Collector",
+    "href": "/town-clerk-tax/",
+    "icon": "pay"
+  },
+  {
+    "title": "Permits & forms",
+    "detail": "Building, driveway, solar & more",
+    "href": "/forms-applications/",
+    "icon": "form"
+  },
+  {
+    "title": "Meeting agendas & minutes",
+    "detail": "Every board, one place",
+    "href": "/archive/",
+    "icon": "minutes"
+  },
+  {
+    "title": "Trash & transfer station",
+    "detail": "Schedules and rules",
+    "href": "/transfer-station/",
+    "icon": "trash"
+  },
+  {
+    "title": "Contact the clerk",
+    "detail": "[phone] · [email]",
+    "href": "/town-clerk-tax/",
+    "icon": "mail"
+  }
+]

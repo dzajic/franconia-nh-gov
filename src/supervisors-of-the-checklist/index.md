@@ -4,6 +4,7 @@ title: Supervisors of the Checklist - TOWN OF FRANCONIA
 permalink: /supervisors-of-the-checklist/
 imported_from: "http://www.franconianh.org/supervisors-of-the-checklist.html"
 migrated: false
+archiveBody: supervisors-of-checklist
 ---
 
 **SUPERVISORS OF THE CHECKLIST**  
