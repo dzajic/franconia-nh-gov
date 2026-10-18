@@ -8,8 +8,14 @@
   try {
     picked = (new URLSearchParams(location.search).get("season") || "").toLowerCase();
   } catch (e) {}
-  var season = allowed[picked] ? picked : (months[new Date().getMonth() + 1] || "fall");
+  var stored = "";
+  try { stored = localStorage.getItem("franconia-season") || ""; } catch (e) {}
+  var season = months[new Date().getMonth() + 1] || "fall";
+  if (picked === "default") season = "default";
+  else if (allowed[picked]) season = picked;
+  else if (stored === "off") season = "default";
   document.documentElement.setAttribute("data-season", season);
+  window.franconiaSeason = { months: months, allowed: allowed, storageKey: "franconia-season" };
 })();
 </script>
 <style>
@@ -19,10 +25,15 @@
   --spr: {{ season.colors.spr }};
   --deep: {{ season.colors.deep }};
   --bark: {{ season.colors.bark }};
+  --cream: {{ season.colors.cream }};
   --paper: {{ season.colors.paper }};
+  --card: {{ season.colors.card }};
   --blaze: {{ season.colors.blaze }};
   --rust: {{ season.colors.rust }};
+  --ink: {{ season.colors.ink }};
   --focus: {{ season.colors.focus }};
+  --muted: {{ season.colors.muted }};
+  --line: {{ season.colors.line }};
 }
 {% endfor %}
 }

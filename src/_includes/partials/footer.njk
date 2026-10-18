@@ -13,6 +13,7 @@
     <p><a href="{{ '/about/' | url }}">About Franconia</a> · <a href="{{ site.visiting.url }}">Visiting?</a> · <a href="{{ site.suggestions }}">Suggest a change</a> · <a href="{{ '/archive/' | url }}">Document archive</a></p>
     <p><a href="{{ site.visiting.url }}">{{ site.visiting.text }}</a></p>
     {% endif %}
+    {% include "partials/season-controls.njk" %}
     <p class="small">Design preview, not the official town site. The official site is <a href="{{ site.officialUrl }}">franconianh.gov</a> (franconianh.org redirects there). Dates in the alert bar are sample content from the design prototype. The furnace and ridge marks are original drawings, not traced from landmarks. Phone and street address are carried over from the previous site; bracketed values such as [hours] are still unknown.</p>
   </div>
 </footer>

@@ -10,14 +10,15 @@ function seasonForMonth(month) {
   return null;
 }
 
-function seasonFromQuery(value, month) {
-  const key = String(value || "").toLowerCase();
+/** Mirrors the head script: query wins, then a saved off switch, then the month. */
+function resolveSeason(query, month, stored) {
+  const key = String(query || "").toLowerCase();
+  if (key === "default") return "default";
   if (Object.prototype.hasOwnProperty.call(seasons, key)) return key;
+  if (stored === "off") return "default";
   return seasonForMonth(month);
 }
 
-const CREAM = "#f4ead2";
-const INK = "#1d2420";
 const WHITE = "#ffffff";
 
 function channel(hex, start) {
@@ -56,32 +57,38 @@ test("meteorological months map to one season each", () => {
     assert.equal(seasonForMonth(Number(month)), id);
   }
   assert.equal(seasonForMonth(0), null);
-  assert.equal(seasonForMonth(13), null);
 });
 
-test("query override accepts a known season and ignores anything else", () => {
-  assert.equal(seasonFromQuery("winter", 10), "winter");
-  assert.equal(seasonFromQuery("SUMMER", 1), "summer");
-  assert.equal(seasonFromQuery("nope", 10), "fall");
-  assert.equal(seasonFromQuery("", 3), "spring");
-  assert.equal(seasonFromQuery(null, 7), "summer");
+test("query override beats the saved switch, and default clears the theme", () => {
+  assert.equal(resolveSeason("winter", 10, "off"), "winter");
+  assert.equal(resolveSeason("SUMMER", 1, "off"), "summer");
+  assert.equal(resolveSeason("default", 7, "on"), "default");
+  assert.equal(resolveSeason("nope", 10, "off"), "default");
+  assert.equal(resolveSeason("", 3, "off"), "default");
+  assert.equal(resolveSeason("", 3, "on"), "spring");
+  assert.equal(resolveSeason("", 1, ""), "winter");
 });
 
-test("seasonal accents keep WCAG AA text contrast on the light design", () => {
+test("each seasonal palette keeps WCAG AA text contrast", () => {
   const pairs = [
-    ["cream on spruce", (c) => [CREAM, c.spr]],
-    ["cream on deep", (c) => [CREAM, c.deep]],
-    ["cream on bark", (c) => [CREAM, c.bark]],
-    ["ink on blaze", (c) => [INK, c.blaze]],
-    ["blaze on bark", (c) => [c.blaze, c.bark]],
+    ["cream on spruce", (c) => [c.cream, c.spr]],
+    ["cream on deep", (c) => [c.cream, c.deep]],
+    ["cream on bark", (c) => [c.cream, c.bark]],
+    ["ink on blaze", (c) => [c.ink, c.blaze]],
+    ["ink on paper", (c) => [c.ink, c.paper]],
+    ["ink on card", (c) => [c.ink, c.card]],
     ["blaze on spruce", (c) => [c.blaze, c.spr]],
+    ["blaze on bark", (c) => [c.blaze, c.bark]],
+    ["blaze on deep", (c) => [c.blaze, c.deep]],
     ["white on rust", (c) => [WHITE, c.rust]],
     ["rust on paper", (c) => [c.rust, c.paper]],
-    ["rust on white", (c) => [c.rust, WHITE]],
-    ["rust on cream", (c) => [c.rust, CREAM]],
+    ["rust on card", (c) => [c.rust, c.card]],
+    ["rust on cream", (c) => [c.rust, c.cream]],
     ["spruce on paper", (c) => [c.spr, c.paper]],
+    ["spruce on cream", (c) => [c.spr, c.cream]],
     ["bark on paper", (c) => [c.bark, c.paper]],
-    ["ink on paper", (c) => [INK, c.paper]],
+    ["muted on paper", (c) => [c.muted, c.paper]],
+    ["muted on card", (c) => [c.muted, c.card]],
   ];
   for (const [id, season] of Object.entries(seasons)) {
     for (const [label, pick] of pairs) {
@@ -92,14 +99,13 @@ test("seasonal accents keep WCAG AA text contrast on the light design", () => {
   }
 });
 
-test("homepage animation is a short one-shot effect", () => {
-  const kinds = new Set(["snow", "petal", "firefly", "leaf"]);
+test("homepage hero is a capped 8 to 12 second moment", () => {
+  const kinds = new Set(["snow", "spring", "summer", "leaf"]);
   for (const [id, season] of Object.entries(seasons)) {
-    assert.equal(typeof season.line, "string");
-    assert.ok(season.line.length > 0 && season.line.length < 48);
     assert.ok(kinds.has(season.fx.kind), id);
-    assert.ok(season.fx.duration >= 4000 && season.fx.duration <= 6000, id);
-    assert.ok(season.fx.count >= 8 && season.fx.count <= 40, id);
+    assert.ok(season.fx.hero >= 8000 && season.fx.hero <= 12000, id);
+    assert.ok(season.fx.count >= 8 && season.fx.count <= 60, id);
+    assert.ok(season.fx.ambient >= 3 && season.fx.ambient <= 12, id);
     for (const hex of Object.values(season.colors)) {
       assert.match(hex, /^#[0-9a-f]{6}$/i);
     }

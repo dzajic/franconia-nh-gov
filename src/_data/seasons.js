@@ -1,16 +1,26 @@
 /**
- * Seasonal accents for the town site.
- *
- * Edit this file only. Colors are applied as the existing design tokens
- * (--spr, --deep, --bark, --paper, --blaze, --rust, --focus).
- * --cream and --ink stay put so header type and the furnace mark match.
+ * Seasonal themes for the town site. Edit this file to change colors,
+ * the header line, and the homepage animation.
  *
  * Meteorological seasons: Dec–Feb winter, Mar–May spring, Jun–Aug summer,
- * Sep–Nov fall. The visitor's local month picks the theme. ?season=winter
- * (spring, summer, fall) overrides it for preview.
+ * Sep–Nov fall. The visitor's local month picks the theme.
  *
- * Each palette is checked in test/seasons.test.mjs for WCAG AA:
- * cream text on spruce, deep, and bark; ink on blaze; rust links on paper.
+ * ?season=winter|spring|summer|fall overrides that for the current page.
+ * ?season=default forces the original palette. A footer control remembers
+ * "on" or "off" in localStorage under franconia-season. A query string
+ * wins over that saved choice so a preview link still shows the requested theme.
+ *
+ * prefers-reduced-motion: seasonal colors still apply. Motion does not.
+ * The footer control turns colors off too, for anyone who wants the
+ * original palette. Reduced motion is not the same as "no theme".
+ *
+ * Colors are the design tokens. They stay in @layer seasonal so an
+ * unlayered dark theme can replace them. test/seasons.test.mjs checks
+ * WCAG AA for text on these surfaces.
+ *
+ * fx.hero is the busy first-load moment, in milliseconds (8–12 seconds).
+ * After that the homepage eases into a light ambient state. It plays once
+ * per browser session (sessionStorage franconia-season-fx). Replay starts it again.
  */
 
 const seasons = {
@@ -19,19 +29,25 @@ const seasons = {
     label: "Winter",
     line: "Snow on the ridge",
     colors: {
-      spr: "#1a4556",
-      deep: "#102c38",
-      bark: "#4a4034",
-      paper: "#f3f6f7",
-      blaze: "#d7e6f1",
-      rust: "#8e3a36",
-      focus: "#8e3a36",
+      spr: "#14304d",
+      deep: "#0a1a2e",
+      bark: "#1c4260",
+      cream: "#f4f7fb",
+      paper: "#e4eef6",
+      card: "#f4f8fb",
+      blaze: "#d5e6f5",
+      rust: "#1a4f86",
+      ink: "#0e1c2f",
+      focus: "#1a4f86",
+      muted: "#3a4d63",
+      line: "#b7c9d8",
     },
     fx: {
       kind: "snow",
-      duration: 5200,
-      count: 34,
-      colors: ["#ffffff", "#e7f1f8", "#d7e6f1"],
+      hero: 10000,
+      count: 52,
+      ambient: 10,
+      colors: ["#ffffff", "#e7f2fb", "#d5e6f5", "#f7fbff"],
     },
   },
   spring: {
@@ -39,19 +55,25 @@ const seasons = {
     label: "Spring",
     line: "The Notch greens up",
     colors: {
-      spr: "#1c5c3e",
-      deep: "#0f3c28",
-      bark: "#5c4a2e",
-      paper: "#f6f6ee",
-      blaze: "#f3dc96",
-      rust: "#8a4030",
-      focus: "#8a4030",
+      spr: "#1b6a3c",
+      deep: "#0e3c24",
+      bark: "#3a5834",
+      cream: "#f7f2f8",
+      paper: "#e7f3df",
+      card: "#fbf4fa",
+      blaze: "#f6cce4",
+      rust: "#7a3568",
+      ink: "#17281c",
+      focus: "#7a3568",
+      muted: "#3c5344",
+      line: "#d4c0dc",
     },
     fx: {
-      kind: "petal",
-      duration: 5200,
-      count: 22,
-      colors: ["#f6d5e0", "#f3e4ee", "#f3dc96"],
+      kind: "spring",
+      hero: 10000,
+      count: 20,
+      ambient: 5,
+      colors: ["#f6cce4", "#f3d6f0", "#ffffff", "#f8e4a8", "#c7e6b0"],
     },
   },
   summer: {
@@ -59,19 +81,25 @@ const seasons = {
     label: "Summer",
     line: "Long light over town",
     colors: {
-      spr: "#14624a",
-      deep: "#0c3d2e",
-      bark: "#5a3a24",
-      paper: "#faf6e6",
-      blaze: "#f4cc62",
-      rust: "#9a3b1a",
-      focus: "#9a3b1a",
+      spr: "#0f6890",
+      deep: "#0a4560",
+      bark: "#1c5c32",
+      cream: "#fff6e4",
+      paper: "#fff1cc",
+      card: "#fff9ec",
+      blaze: "#f9dc78",
+      rust: "#8a4214",
+      ink: "#1a2416",
+      focus: "#8a4214",
+      muted: "#3e4a32",
+      line: "#e4cfa0",
     },
     fx: {
-      kind: "firefly",
-      duration: 5200,
+      kind: "summer",
+      hero: 10000,
       count: 18,
-      colors: ["#fff4c2", "#f0c14b", "#e7f6c8"],
+      ambient: 6,
+      colors: ["#fff4c2", "#f9dc78", "#fffaf0", "#e7f6c8"],
     },
   },
   fall: {
@@ -79,19 +107,25 @@ const seasons = {
     label: "Fall",
     line: "Foliage in the Notch",
     colors: {
-      spr: "#3a4328",
-      deep: "#1c2616",
-      bark: "#6b3d1e",
-      paper: "#faf3e8",
-      blaze: "#f0b04a",
-      rust: "#8e3012",
-      focus: "#8e3012",
+      spr: "#6a2c12",
+      deep: "#3c180e",
+      bark: "#7a3812",
+      cream: "#fff1e0",
+      paper: "#f6e0c4",
+      card: "#fff4e6",
+      blaze: "#f6c15c",
+      rust: "#8c1e14",
+      ink: "#2a140c",
+      focus: "#8c1e14",
+      muted: "#5c3a28",
+      line: "#e0bc96",
     },
     fx: {
       kind: "leaf",
-      duration: 5200,
-      count: 20,
-      colors: ["#c4522a", "#e0a526", "#8e3012", "#d4a04a"],
+      hero: 10000,
+      count: 22,
+      ambient: 6,
+      colors: ["#c4451a", "#e07a22", "#8e2e14", "#d4a017", "#a33b22", "#f0c36a"],
     },
   },
 };
