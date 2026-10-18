@@ -1,3 +1,14 @@
 <aside class="preview-note" role="region" aria-label="Website preview" data-pagefind-ignore>
   <p>{{ site.previewNotice.text }}{% if site.previewNotice.url %} <a href="{{ site.previewNotice.url }}">{{ site.previewNotice.linkLabel or "Official site" }}</a>{% endif %}</p>
+  <button type="button" class="preview-note-dismiss" aria-label="Dismiss preview notice"><span aria-hidden="true">×</span></button>
 </aside>
+<script>
+(function () {
+  var bar = document.currentScript && document.currentScript.previousElementSibling;
+  var button = bar && bar.querySelector(".preview-note-dismiss");
+  if (!button) return;
+  button.addEventListener("click", function () {
+    bar.hidden = true;
+  });
+})();
+</script>
