@@ -72,6 +72,22 @@
   <body class="about" data-pagefind="/franconia-nh-gov/pagefind/pagefind.js" data-archive-index="/franconia-nh-gov/archive/index.json" data-site-root="/franconia-nh-gov/">
     <a class="skip" href="#main">Skip to main content</a>
     
+    <aside class="preview-note" role="region" aria-label="Website preview" data-pagefind-ignore>
+  <p>Preview of the future Franconia town website. A demo, not the official site. <a href="https://www.franconianh.gov/">franconianh.gov</a></p>
+  <button type="button" class="preview-note-dismiss" aria-label="Dismiss preview notice"><span aria-hidden="true">×</span></button>
+</aside>
+<script>
+(function () {
+  var bar = document.currentScript && document.currentScript.previousElementSibling;
+  var button = bar && bar.querySelector(".preview-note-dismiss");
+  if (!button) return;
+  button.addEventListener("click", function () {
+    bar.hidden = true;
+  });
+})();
+</script>
+
+    
     
 <header class="top" data-pagefind-ignore>
   <svg class="hband" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><polygon points="0,100 0,78 90,70 180,56 270,36 330,20 372,26 430,40 500,58 560,50 620,34 660,30 700,38 760,52 820,58 870,50 910,44 950,52 1010,66 1100,78 1200,84 1200,100" fill="#0e2a21"/></svg><svg class="hband2" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><polygon points="0,100 0,70 120,62 240,30 300,10 340,14 400,34 470,64 520,50 600,26 650,20 700,30 780,58 830,64 880,50 920,44 960,56 1040,76 1120,70 1200,80 1200,100" fill="#faf5e6"/></svg>
@@ -242,7 +258,7 @@
     <p><a href="/franconia-nh-gov/">← Town homepage</a> · <a href="/franconia-nh-gov/archive/">Document archive</a></p>
     <p><a href="https://www.franconianotch.org/">Visiting? The Franconia Notch Chamber of Commerce has lodging, dining, and things to do.</a></p>
     
-    <p class="small">Design preview, not the official town site. The official site is <a href="https://www.franconianh.gov/">franconianh.gov</a> (franconianh.org redirects there). Dates in the alert bar are sample content from the design prototype. The furnace and ridge marks are original drawings, not traced from landmarks. Phone and street address are carried over from the previous site; bracketed values such as [hours] are still unknown.</p>
+    <p class="small">Design preview, not the official town site. The official site is <a href="https://www.franconianh.gov/">franconianh.gov</a> (franconianh.org redirects there). Alert dates are sample content from the design prototype. The furnace and ridge marks are original drawings, not traced from landmarks. Phone and street address are carried over from the previous site; bracketed values such as [hours] are still unknown.</p>
   </div>
 </footer>
 
