@@ -38,7 +38,7 @@ Sample or still unknown:
 - The alert bar and the “Today & this week” events are sample copy from the design prototype, not confirmed town notices. Published notices remain on `/notices/` and `/events/`.
 - Anything in square brackets (`[phone]`, `[email]`, `[hours]`, `[schedule]`, `[meeting date]`) is unknown. Do not replace a bracket with a guessed value.
 - Friday hours disagree between the old homepage (Selectmen’s office until 1:30) and the Selectmen page (until 1:00), so the homepage does not pick one.
-- PDF and Word files are **not** in git. Each record’s “file in document storage” link is `ARCHIVE_BASE_URL` plus a path. Until the town copies files into object storage, that link is only a placeholder (`https://archive.example.invalid/franconia` unless you set the variable). “Current copy on franconianh.gov” opens the file that was public when the inventory was made.
+- PDF and Word files are **not** in git. Each record’s “Open the PDF”, “Open the DOCX”, or “Open the DOC” button is `ARCHIVE_BASE_URL` plus a path. Until the town copies files into object storage, that link is only a placeholder (`https://archive.example.invalid/franconia` unless you set the variable). “Current copy on franconianh.gov” opens the file that was public when the inventory was made.
 
 The header mark (iron furnace in front of a ridge) and the homepage silhouettes are original drawings. They are not traced from photographs, surveys, or landmarks. Source SVGs are in `src/assets/marks/`. Option 2, furnace plus ridge, is the header mark.
 

@@ -2,40 +2,85 @@
 layout: shell.njk
 ---
 {% set board = bodies | findBody(body) %}
+{% set committee = board.name if board else body %}
+{% set fileKind = "" %}
+{% if format == "pdf" %}{% set fileKind = "PDF" %}
+{% elif format == "docx" %}{% set fileKind = "DOCX" %}
+{% elif format == "doc" %}{% set fileKind = "DOC" %}
+{% endif %}
 <main id="main" class="in page" data-pagefind-body>
-  <p class="more"><a href="{{ ('/archive/' + body + '/') | url }}">{% if board %}{{ board.shortName }}{% else %}{{ body }}{% endif %} archive</a></p>
+  <nav class="crumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="{{ '/archive/' | url }}">Document archive</a></li>
+      <li><a href="{{ ('/archive/' + body + '/') | url }}">{{ committee }}</a></li>
+      <li aria-current="page">{{ title }}</li>
+    </ol>
+  </nav>
   <h1 class="page-title">{{ title }}</h1>
+  <p class="record-lead">
+    <span class="record-committee">{{ committee }}</span>
+    <span class="record-when">{{ doc_date | prettyDate(date_precision) }}</span>
+  </p>
   {% if needs_review %}
   <div class="review" role="note">
     <strong>Needs review</strong>
-    <p>A person should check this record before treating it as final. It was inferred from a public filename or link{% if flags and flags.length %}: {{ flags | join(", ") }}{% endif %}. Date precision: {{ date_precision }}.</p>
+    <p>A person still needs to check this record. The date, the committee, or the kind of document may not be exact.</p>
   </div>
   {% endif %}
-  <dl class="meta-dl">
-    <dt>Body</dt><dd>{% if board %}{{ board.name }}{% else %}{{ body }}{% endif %}</dd>
-    <dt>Type</dt><dd>{{ type }}</dd>
-    <dt>Date</dt><dd>{{ doc_date | prettyDate(date_precision) }}{% if date_precision and date_precision != "exact" %} <span class="flag">{{ date_precision }}</span>{% endif %}</dd>
-    <dt>Status</dt><dd>{{ status }}</dd>
-    <dt>Format</dt><dd>{{ format }}</dd>
-    <dt>Checksum</dt><dd><code>{{ checksum }}</code></dd>
-    {% if text_layer == false %}
-    <dt>Text</dt><dd>Scanned or image-only. Needs OCR before full-text search.</dd>
-    {% elif text_layer == true %}
-    <dt>Text</dt><dd>PDF has a text layer.</dd>
-    {% endif %}
-  </dl>
-  <div class="file-actions">
-    <a href="{{ file | archiveFileUrl }}">File in document storage</a>
-    {% if legacy_url and not missing %}
-    <a class="secondary" href="{{ legacy_url }}">Current copy on franconianh.gov</a>
-    {% endif %}
-  </div>
   {% if missing %}
-  <p class="note">The previous site returned 404 for this file when the inventory was made. The storage link above will work only after the town uploads a copy.</p>
-  {% else %}
-  <p class="note">The storage link uses <code>ARCHIVE_BASE_URL</code> and does not serve a file from this website. Until files are copied to object storage, use the current public copy.</p>
+  <div class="review" role="note">
+    <strong>File not uploaded yet</strong>
+    <p>This file was missing from the previous town website. The button below will open it after the town uploads a copy.</p>
+  </div>
+  {% endif %}
+  <div class="file-actions">
+    <a class="open-file" href="{{ file | archiveFileUrl }}">Open the {{ fileKind or "file" }}</a>
+    <p class="file-type"><span>File type</span> {{ fileKind or "Not recorded" }}</p>
+  </div>
+  {% if legacy_url and not missing %}
+  <p class="record-fallback">If the button does not open the file, use the <a href="{{ legacy_url }}">current copy on franconianh.gov</a>.</p>
   {% endif %}
   {% if content | trim %}
   <div class="prose">{{ content | safe }}</div>
   {% endif %}
+  <details class="record-about">
+    <summary><h2>About this record</h2></summary>
+    <p class="note about-note">The open button points at document storage. This website does not keep the file.</p>
+    <dl class="meta-dl">
+      <dt>Needs review</dt>
+      <dd>{% if needs_review %}Yes{% else %}No{% endif %}</dd>
+      <dt>Checksum</dt>
+      <dd>{% if checksum %}<code>{{ checksum }}</code>{% else %}Not recorded{% endif %}</dd>
+      <dt>Flags</dt>
+      <dd>{% if flags and flags.length %}{{ flags | join(", ") }}{% else %}None{% endif %}</dd>
+      <dt>Legacy filename</dt>
+      <dd>{% if legacy_filename %}<code>{{ legacy_filename }}</code>{% else %}Not recorded{% endif %}</dd>
+      <dt>Legacy URL</dt>
+      <dd>{% if legacy_url %}<a href="{{ legacy_url }}">{{ legacy_url }}</a>{% else %}Not recorded{% endif %}</dd>
+      <dt>Text layer</dt>
+      <dd>
+        {%- if text_layer == false -%}
+        Scanned or image-only. The words are not selectable, so search cannot read them yet.
+        {%- elif text_layer == true -%}
+        This PDF includes text that search can read.
+        {%- else -%}
+        Not recorded
+        {%- endif -%}
+      </dd>
+      <dt>Kind of document</dt>
+      <dd>{{ type or "Not recorded" }}</dd>
+      <dt>Status</dt>
+      <dd>{{ status or "Not recorded" }}</dd>
+      <dt>Date precision</dt>
+      <dd>
+        {%- if date_precision == "exact" -%}Exact date
+        {%- elif date_precision == "month" -%}Month and year only
+        {%- elif date_precision == "year" -%}Year only
+        {%- elif date_precision == "unknown" -%}Unknown
+        {%- elif date_precision -%}{{ date_precision }}
+        {%- else -%}Not recorded
+        {%- endif -%}
+      </dd>
+    </dl>
+  </details>
 </main>
