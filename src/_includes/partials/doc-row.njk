@@ -1,4 +1,11 @@
 <li class="{% if doc.data.needs_review %}is-review{% endif %}" data-body="{{ doc.data.body }}" data-type="{{ doc.data.type }}" data-review="{% if doc.data.needs_review %}yes{% else %}no{% endif %}" data-title="{{ doc.data.title }}">
-  <a class="doc-title" href="{{ doc.url | url }}">{{ doc.data.title }}</a>
+  <div class="doc-line">
+    {% if doc.data.file and not doc.data.missing %}
+    <a class="doc-title" href="{{ doc.data.file | archiveFileUrl }}" target="_blank" rel="noopener" aria-label="{{ doc.data.title }} (opens in a new tab)">{{ doc.data.title }}</a>
+    <a class="doc-details" href="{{ doc.url | url }}" aria-label="Details for {{ doc.data.title }}">Details</a>
+    {% else %}
+    <a class="doc-title" href="{{ doc.url | url }}" aria-label="Details for {{ doc.data.title }}">{{ doc.data.title }}</a>
+    {% endif %}
+  </div>
   <span class="doc-meta">{{ doc.data.doc_date | prettyDate(doc.data.date_precision) }} · {{ doc.data.type }}{% if showBody %} · {{ bodies | bodyName(doc.data.body) }}{% endif %} · {{ doc.data.format }}{% if doc.data.needs_review %} · <span class="flag">Needs review</span>{% endif %}</span>
 </li>

@@ -39,10 +39,13 @@ bodyClass: home
           {% set board = bodies | findBody(slug) %}
           {% set doc = collections.document | latestMinutes(slug) %}
           <li>
-            {% if doc %}
-            <a href="{{ doc.url | url }}"><b>{{ board.shortName }}</b><span>Latest minutes · {{ doc.data.doc_date | prettyDate(doc.data.date_precision) }} · {{ doc.data.format | upper }}</span></a>
+            {% if doc and doc.data.file and not doc.data.missing %}
+            <a class="min-main" href="{{ doc.data.file | archiveFileUrl }}" target="_blank" rel="noopener" aria-label="{{ board.shortName }} latest minutes, {{ doc.data.doc_date | prettyDate(doc.data.date_precision) }} (opens in a new tab)"><b>{{ board.shortName }}</b><span>Latest minutes · {{ doc.data.doc_date | prettyDate(doc.data.date_precision) }} · {{ doc.data.format | upper }}</span></a>
+            <a class="min-details" href="{{ doc.url | url }}" aria-label="Details for {{ doc.data.title }}">Details</a>
+            {% elif doc %}
+            <a class="min-main" href="{{ doc.url | url }}" aria-label="Details for {{ doc.data.title }}"><b>{{ board.shortName }}</b><span>Latest minutes · {{ doc.data.doc_date | prettyDate(doc.data.date_precision) }} · {{ doc.data.format | upper }}</span></a>
             {% else %}
-            <a href="{{ ('/archive/' + slug + '/') | url }}"><b>{{ board.shortName }}</b><span>Latest minutes · [meeting date] · PDF</span></a>
+            <a class="min-main" href="{{ ('/archive/' + slug + '/') | url }}"><b>{{ board.shortName }}</b><span>Latest minutes · [meeting date] · PDF</span></a>
             {% endif %}
           </li>
         {% endfor %}

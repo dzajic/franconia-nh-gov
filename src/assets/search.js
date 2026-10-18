@@ -4,13 +4,53 @@ const params = new URLSearchParams(window.location.search);
 const initial = params.get("q") || "";
 if (input && initial) input.value = initial;
 
+let archivePromise;
+
 function strip(html) {
   const node = document.createElement("div");
   node.innerHTML = html || "";
   return node.textContent || "";
 }
 
-function card(result) {
+function pathKey(url) {
+  if (!url) return "";
+  let path = String(url);
+  try {
+    path = new URL(url, window.location.href).pathname;
+  } catch {
+    path = path.split("?")[0].split("#")[0];
+  }
+  if (!path.startsWith("/")) path = `/${path}`;
+  if (path.length > 1 && !path.endsWith("/")) path += "/";
+  return path;
+}
+
+function fileReady(doc, archiveBaseUrl) {
+  if (!doc || doc.missing) return false;
+  const file = String(doc.file || "").replace(/^\//, "").trim();
+  const fileUrl = String(doc.fileUrl || "").trim();
+  if (!file || !fileUrl) return false;
+  const bare = String(archiveBaseUrl || "").replace(/\/$/, "");
+  return !bare || fileUrl.replace(/\/$/, "") !== bare;
+}
+
+function loadArchive() {
+  if (!archivePromise) {
+    const src = document.body.dataset.archiveIndex;
+    archivePromise = fetch(src)
+      .then((response) => {
+        if (!response.ok) throw new Error("archive index unavailable");
+        return response.json();
+      })
+      .catch((error) => {
+        archivePromise = null;
+        throw error;
+      });
+  }
+  return archivePromise;
+}
+
+function pageCard(result) {
   const item = document.createElement("article");
   item.className = "result";
   const link = document.createElement("a");
@@ -19,6 +59,41 @@ function card(result) {
   const excerpt = document.createElement("p");
   excerpt.textContent = strip(result.excerpt);
   item.append(link, excerpt);
+  return item;
+}
+
+function documentCard(doc, archiveBaseUrl, excerptHtml) {
+  const item = document.createElement("article");
+  item.className = "result";
+  const line = document.createElement("div");
+  line.className = "doc-line";
+  const title = doc.title || "Document";
+  if (fileReady(doc, archiveBaseUrl)) {
+    const fileLink = document.createElement("a");
+    fileLink.className = "doc-title";
+    fileLink.href = doc.fileUrl;
+    fileLink.target = "_blank";
+    fileLink.rel = "noopener";
+    fileLink.textContent = title;
+    fileLink.setAttribute("aria-label", `${title} (opens in a new tab)`);
+    const details = document.createElement("a");
+    details.className = "doc-details";
+    details.href = doc.url;
+    details.textContent = "Details";
+    details.setAttribute("aria-label", `Details for ${title}`);
+    line.append(fileLink, details);
+  } else {
+    const details = document.createElement("a");
+    details.className = "doc-title";
+    details.href = doc.url;
+    details.textContent = title;
+    details.setAttribute("aria-label", `Details for ${title}`);
+    line.append(details);
+  }
+  const excerpt = document.createElement("p");
+  const fallback = `${doc.type || "Document"} · ${doc.bodyName || ""} · ${doc.date || "date unknown"}${doc.needsReview ? " · needs review" : ""}`;
+  excerpt.textContent = excerptHtml ? strip(excerptHtml) : fallback;
+  item.append(line, excerpt);
   return item;
 }
 
@@ -45,19 +120,11 @@ async function pagefindResults(query) {
   return rows;
 }
 
-async function archiveResults(query) {
-  const response = await fetch(document.body.dataset.archiveIndex);
-  if (!response.ok) return [];
-  const payload = await response.json();
+function archiveMatches(payload, query) {
   const needle = query.toLowerCase();
   return (payload.documents || [])
     .filter((doc) => `${doc.title} ${doc.bodyName} ${doc.type} ${doc.date || ""} ${doc.legacyFilename || ""}`.toLowerCase().includes(needle))
-    .slice(0, 12)
-    .map((doc) => ({
-      title: doc.title,
-      url: doc.url,
-      excerpt: `${doc.type} · ${doc.bodyName} · ${doc.date || "date unknown"}${doc.needsReview ? " · needs review" : ""}`,
-    }));
+    .slice(0, 12);
 }
 
 async function run(query) {
@@ -76,17 +143,22 @@ async function run(query) {
 
   let pages = [];
   let docs = [];
+  let archive = { documents: [], archiveBaseUrl: "" };
   let pagefindNote = "";
   try {
-    [pages, docs] = await Promise.all([pagefindResults(trimmed), archiveResults(trimmed)]);
-  } catch (error) {
-    pagefindNote = "The full-page index is built by npm run build. Showing document records only.";
-    try {
-      docs = await archiveResults(trimmed);
-    } catch {
-      docs = [];
-    }
+    archive = await loadArchive();
+    docs = archiveMatches(archive, trimmed);
+  } catch {
+    docs = [];
   }
+  try {
+    pages = await pagefindResults(trimmed);
+  } catch {
+    pagefindNote = "The full-page index is built by npm run build. Showing document records only.";
+    pages = [];
+  }
+
+  const byUrl = new Map((archive.documents || []).map((doc) => [pathKey(doc.url), doc]));
 
   out.replaceChildren();
   if (pagefindNote) {
@@ -103,11 +175,14 @@ async function run(query) {
   }
   if (pages.length) {
     out.append(heading("Pages"));
-    pages.forEach((result) => out.append(card(result)));
+    pages.forEach((result) => {
+      const doc = byUrl.get(pathKey(result.url));
+      out.append(doc ? documentCard(doc, archive.archiveBaseUrl, result.excerpt) : pageCard(result));
+    });
   }
   if (docs.length) {
     out.append(heading("Documents"));
-    docs.forEach((result) => out.append(card(result)));
+    docs.forEach((doc) => out.append(documentCard(doc, archive.archiveBaseUrl)));
   }
 }
 
