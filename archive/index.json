@@ -1,6 +1,6 @@
 {
   "archiveBaseUrl": "https://pub-436583bfa32248cb9f7762118b829267.r2.dev",
-  "count": 218,
+  "count": 219,
   "note": "File bytes are not hosted here. fileUrl is archiveBaseUrl plus file. needsReview marks inferred or undated records.",
   "documents": [
     {
@@ -158,6 +158,28 @@
       "missing": false,
       "url": "/franconia-nh-gov/archive/selectboard/2026/2026-09-14-selectboard-minutes/",
       "absoluteUrl": "https://dzajic.github.io/franconia-nh-gov/archive/selectboard/2026/2026-09-14-selectboard-minutes/"
+    },
+    {
+      "title": "Energy Commission Minutes, August 2026",
+      "body": "energy-commission",
+      "bodyName": "Energy Commission",
+      "type": "minutes",
+      "date": "2026-08-25",
+      "datePrecision": "exact",
+      "year": "2026",
+      "status": "unverified",
+      "needsReview": false,
+      "flags": [],
+      "format": "pdf",
+      "checksum": "md5:6b4eb65a43df275142019729753fd02e",
+      "file": "archive/energy-commission/2026/2026-08-25-energy-commission-minutes.pdf",
+      "fileUrl": "https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/energy-commission/2026/2026-08-25-energy-commission-minutes.pdf",
+      "legacyUrl": null,
+      "legacyFilename": "8_25_2026_Minutes.pdf",
+      "textLayer": true,
+      "missing": false,
+      "url": "/franconia-nh-gov/archive/energy-commission/2026/2026-08-25-energy-commission-minutes/",
+      "absoluteUrl": "https://dzajic.github.io/franconia-nh-gov/archive/energy-commission/2026/2026-08-25-energy-commission-minutes/"
     },
     {
       "title": "Planning Board Minutes, 2026-08-25",
