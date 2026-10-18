@@ -13,6 +13,30 @@ function isoDate(value) {
   return match ? match[0] : text.slice(0, 10);
 }
 
+function splitRecordNote(html) {
+  const provenance = [];
+  const visible = String(html || "")
+    .replace(/<p>\s*Imported from the public document inventory\.[\s\S]*?<\/p>/gi, (match) => {
+      provenance.push(match.trim());
+      return "";
+    })
+    .trim();
+  return { visible, provenance: provenance.join("\n") };
+}
+
+function recordHeading(title, committee) {
+  let text = String(title || "").trim();
+  const name = String(committee || "").trim();
+  if (name && text.toLowerCase().startsWith(name.toLowerCase())) {
+    text = text.slice(name.length).trim();
+  }
+  text = text.replace(/^,\s*/, "");
+  text = text.replace(/,\s*\d{4}(?:-\d{2}(?:-\d{2})?)?$/, "");
+  text = text.replace(/\s*\(undated\)\s*/i, " ");
+  text = text.replace(/\s{2,}/g, " ").replace(/\s+:\s*/, ": ").trim();
+  return text || String(title || "").trim();
+}
+
 function prettyDate(value, precision) {
   const iso = isoDate(value);
   if (!iso || precision === "unknown") return "Date unknown";
@@ -32,6 +56,18 @@ module.exports = function (eleventyConfig) {
     String(html || "").replace(/href="(\/[^"]*)"/g, (_match, href) => `href="${withPrefix(href)}"`)
   );
   eleventyConfig.addFilter("prettyDate", prettyDate);
+  eleventyConfig.addFilter("recordHeading", recordHeading);
+  eleventyConfig.addFilter("titleHead", (value) => {
+    const text = String(value || "").trim();
+    const index = text.lastIndexOf(" ");
+    return index === -1 ? "" : text.slice(0, index);
+  });
+  eleventyConfig.addFilter("titleTail", (value) => {
+    const text = String(value || "").trim();
+    const index = text.lastIndexOf(" ");
+    return index === -1 ? text : text.slice(index + 1);
+  });
+  eleventyConfig.addFilter("splitRecordNote", splitRecordNote);
   eleventyConfig.addFilter("monthShort", (value) => {
     const iso = isoDate(value);
     return MONTHS[Number(iso.slice(5, 7)) - 1] || "";

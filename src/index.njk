@@ -39,10 +39,19 @@ bodyClass: home
           {% set board = bodies | findBody(slug) %}
           {% set doc = collections.document | latestMinutes(slug) %}
           <li>
-            {% if doc %}
-            <a href="{{ doc.url | url }}"><b>{{ board.shortName }}</b><span>Latest minutes · {{ doc.data.doc_date | prettyDate(doc.data.date_precision) }} · {{ doc.data.format | upper }}</span></a>
+            {% if doc and doc.data.file and not doc.data.missing %}
+            {% set minuteUrl = doc.data.file | archiveFileUrl %}
+            {% set minuteHead = board.shortName | titleHead %}
+            {% set minuteTail = board.shortName | titleTail %}
+            {% set minuteLabel = board.shortName + " latest minutes, " + (doc.data.doc_date | prettyDate(doc.data.date_precision)) + " (opens in a new tab)" %}
+            <div class="min-copy">
+              {% if minuteHead %}<a class="min-name" href="{{ minuteUrl }}" target="_blank" rel="noopener" aria-label="{{ minuteLabel }}"><b>{{ minuteHead }} </b></a>{% endif %}<span class="doc-tail"><a class="min-name" href="{{ minuteUrl }}" target="_blank" rel="noopener"{% if minuteHead %} tabindex="-1" aria-hidden="true"{% else %} aria-label="{{ minuteLabel }}"{% endif %}><b>{{ minuteTail }}</b></a><a class="doc-info" href="{{ doc.url | url }}" aria-label="Details for {{ doc.data.title }}" title="Details">{% include "partials/info-icon.njk" %}</a></span>
+              <span class="min-meta">Latest minutes · {{ doc.data.doc_date | prettyDate(doc.data.date_precision) }} · {{ doc.data.format | upper }}</span>
+            </div>
+            {% elif doc %}
+            <a class="min-main" href="{{ doc.url | url }}" aria-label="Details for {{ doc.data.title }}"><b>{{ board.shortName }}</b><span>Latest minutes · {{ doc.data.doc_date | prettyDate(doc.data.date_precision) }} · {{ doc.data.format | upper }}</span></a>
             {% else %}
-            <a href="{{ ('/archive/' + slug + '/') | url }}"><b>{{ board.shortName }}</b><span>Latest minutes · [meeting date] · PDF</span></a>
+            <a class="min-main" href="{{ ('/archive/' + slug + '/') | url }}"><b>{{ board.shortName }}</b><span>Latest minutes · [meeting date] · PDF</span></a>
             {% endif %}
           </li>
         {% endfor %}
