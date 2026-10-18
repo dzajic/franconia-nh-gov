@@ -78,51 +78,77 @@
   try {
     picked = (new URLSearchParams(location.search).get("season") || "").toLowerCase();
   } catch (e) {}
-  var season = allowed[picked] ? picked : (months[new Date().getMonth() + 1] || "fall");
+  var stored = "";
+  try { stored = localStorage.getItem("franconia-season") || ""; } catch (e) {}
+  var season = months[new Date().getMonth() + 1] || "fall";
+  if (picked === "default") season = "default";
+  else if (allowed[picked]) season = picked;
+  else if (stored === "off") season = "default";
   document.documentElement.setAttribute("data-season", season);
+  window.franconiaSeason = { months: months, allowed: allowed, storageKey: "franconia-season" };
 })();
 </script>
 <style>
 @layer seasonal {
 
 :root[data-season="winter"] {
-  --spr: #1a4556;
-  --deep: #102c38;
-  --bark: #4a4034;
-  --paper: #f3f6f7;
-  --blaze: #d7e6f1;
-  --rust: #8e3a36;
-  --focus: #8e3a36;
+  --spr: #14304d;
+  --deep: #0a1a2e;
+  --bark: #1c4260;
+  --cream: #f4f7fb;
+  --paper: #e4eef6;
+  --card: #f4f8fb;
+  --blaze: #d5e6f5;
+  --rust: #1a4f86;
+  --ink: #0e1c2f;
+  --focus: #1a4f86;
+  --muted: #3a4d63;
+  --line: #b7c9d8;
 }
 
 :root[data-season="spring"] {
-  --spr: #1c5c3e;
-  --deep: #0f3c28;
-  --bark: #5c4a2e;
-  --paper: #f6f6ee;
-  --blaze: #f3dc96;
-  --rust: #8a4030;
-  --focus: #8a4030;
+  --spr: #1b6a3c;
+  --deep: #0e3c24;
+  --bark: #3a5834;
+  --cream: #f7f2f8;
+  --paper: #e7f3df;
+  --card: #fbf4fa;
+  --blaze: #f6cce4;
+  --rust: #7a3568;
+  --ink: #17281c;
+  --focus: #7a3568;
+  --muted: #3c5344;
+  --line: #d4c0dc;
 }
 
 :root[data-season="summer"] {
-  --spr: #14624a;
-  --deep: #0c3d2e;
-  --bark: #5a3a24;
-  --paper: #faf6e6;
-  --blaze: #f4cc62;
-  --rust: #9a3b1a;
-  --focus: #9a3b1a;
+  --spr: #0f6890;
+  --deep: #0a4560;
+  --bark: #1c5c32;
+  --cream: #fff6e4;
+  --paper: #fff1cc;
+  --card: #fff9ec;
+  --blaze: #f9dc78;
+  --rust: #8a4214;
+  --ink: #1a2416;
+  --focus: #8a4214;
+  --muted: #3e4a32;
+  --line: #e4cfa0;
 }
 
 :root[data-season="fall"] {
-  --spr: #3a4328;
-  --deep: #1c2616;
-  --bark: #6b3d1e;
-  --paper: #faf3e8;
-  --blaze: #f0b04a;
-  --rust: #8e3012;
-  --focus: #8e3012;
+  --spr: #6a2c12;
+  --deep: #3c180e;
+  --bark: #7a3812;
+  --cream: #fff1e0;
+  --paper: #f6e0c4;
+  --card: #fff4e6;
+  --blaze: #f6c15c;
+  --rust: #8c1e14;
+  --ink: #2a140c;
+  --focus: #8c1e14;
+  --muted: #5c3a28;
+  --line: #e0bc96;
 }
 
 }
@@ -132,21 +158,21 @@
   <body class="home" data-pagefind="/franconia-nh-gov/pr-preview/pr-9/pagefind/pagefind.js" data-archive-index="/franconia-nh-gov/pr-preview/pr-9/archive/index.json" data-site-root="/franconia-nh-gov/pr-preview/pr-9/">
     <a class="skip" href="#main">Skip to main content</a>
     
-    <aside class="alert" role="region" aria-label="Alerts">
-      <div class="in">
-        <b>Heads up</b>
-        
-          
-          <a href="/franconia-nh-gov/pr-preview/pr-9/events/">General Election Nov 3, 2026: polls open · hours &amp; location [hours / location]</a>
-        
-          <span class="dot" aria-hidden="true">·</span>
-          <a href="/franconia-nh-gov/pr-preview/pr-9/events/">Oct 22 checklist session</a>
-        
-          <span class="dot" aria-hidden="true">·</span>
-          <a href="/franconia-nh-gov/pr-preview/pr-9/events/">Oct 26 library hearing</a>
-        
-      </div>
-    </aside>
+    <aside class="preview-note" role="region" aria-label="Website preview" data-pagefind-ignore>
+  <p>Preview of the future Franconia town website. A demo, not the official site. <a href="https://www.franconianh.gov/">franconianh.gov</a></p>
+  <button type="button" class="preview-note-dismiss" aria-label="Dismiss preview notice"><span aria-hidden="true">×</span></button>
+</aside>
+<script>
+(function () {
+  var bar = document.currentScript && document.currentScript.previousElementSibling;
+  var button = bar && bar.querySelector(".preview-note-dismiss");
+  if (!button) return;
+  button.addEventListener("click", function () {
+    bar.hidden = true;
+  });
+})();
+</script>
+
     
     
 <header class="top" data-pagefind-ignore>
@@ -543,7 +569,7 @@
     <p>Machine-readable: this page embeds JSON-LD; the town publishes <a href="/franconia-nh-gov/pr-preview/pr-9/llms.txt"><code>/llms.txt</code></a> and <a href="/franconia-nh-gov/pr-preview/pr-9/town.json"><code>/town.json</code></a>. Document records are listed at <a href="/franconia-nh-gov/pr-preview/pr-9/archive/index.json"><code>/archive/index.json</code></a>. Bracketed placeholders are not real values. Alert dates are sample content.</p>
   </aside>
 </main>
-<script type="application/json" id="season-fx-data">{"winter":{"months":[12,1,2],"label":"Winter","line":"Snow on the ridge","colors":{"spr":"#1a4556","deep":"#102c38","bark":"#4a4034","paper":"#f3f6f7","blaze":"#d7e6f1","rust":"#8e3a36","focus":"#8e3a36"},"fx":{"kind":"snow","duration":5200,"count":34,"colors":["#ffffff","#e7f1f8","#d7e6f1"]}},"spring":{"months":[3,4,5],"label":"Spring","line":"The Notch greens up","colors":{"spr":"#1c5c3e","deep":"#0f3c28","bark":"#5c4a2e","paper":"#f6f6ee","blaze":"#f3dc96","rust":"#8a4030","focus":"#8a4030"},"fx":{"kind":"petal","duration":5200,"count":22,"colors":["#f6d5e0","#f3e4ee","#f3dc96"]}},"summer":{"months":[6,7,8],"label":"Summer","line":"Long light over town","colors":{"spr":"#14624a","deep":"#0c3d2e","bark":"#5a3a24","paper":"#faf6e6","blaze":"#f4cc62","rust":"#9a3b1a","focus":"#9a3b1a"},"fx":{"kind":"firefly","duration":5200,"count":18,"colors":["#fff4c2","#f0c14b","#e7f6c8"]}},"fall":{"months":[9,10,11],"label":"Fall","line":"Foliage in the Notch","colors":{"spr":"#3a4328","deep":"#1c2616","bark":"#6b3d1e","paper":"#faf3e8","blaze":"#f0b04a","rust":"#8e3012","focus":"#8e3012"},"fx":{"kind":"leaf","duration":5200,"count":20,"colors":["#c4522a","#e0a526","#8e3012","#d4a04a"]}}}</script>
+<script type="application/json" id="season-fx-data">{"winter":{"months":[12,1,2],"label":"Winter","line":"Snow on the ridge","colors":{"spr":"#14304d","deep":"#0a1a2e","bark":"#1c4260","cream":"#f4f7fb","paper":"#e4eef6","card":"#f4f8fb","blaze":"#d5e6f5","rust":"#1a4f86","ink":"#0e1c2f","focus":"#1a4f86","muted":"#3a4d63","line":"#b7c9d8"},"fx":{"kind":"snow","hero":10000,"count":52,"ambient":10,"colors":["#ffffff","#e7f2fb","#d5e6f5","#f7fbff"]}},"spring":{"months":[3,4,5],"label":"Spring","line":"The Notch greens up","colors":{"spr":"#1b6a3c","deep":"#0e3c24","bark":"#3a5834","cream":"#f7f2f8","paper":"#e7f3df","card":"#fbf4fa","blaze":"#f6cce4","rust":"#7a3568","ink":"#17281c","focus":"#7a3568","muted":"#3c5344","line":"#d4c0dc"},"fx":{"kind":"spring","hero":10000,"count":20,"ambient":5,"colors":["#f6cce4","#f3d6f0","#ffffff","#f8e4a8","#c7e6b0"]}},"summer":{"months":[6,7,8],"label":"Summer","line":"Long light over town","colors":{"spr":"#0f6890","deep":"#0a4560","bark":"#1c5c32","cream":"#fff6e4","paper":"#fff1cc","card":"#fff9ec","blaze":"#f9dc78","rust":"#8a4214","ink":"#1a2416","focus":"#8a4214","muted":"#3e4a32","line":"#e4cfa0"},"fx":{"kind":"summer","hero":10000,"count":18,"ambient":6,"colors":["#fff4c2","#f9dc78","#fffaf0","#e7f6c8"]}},"fall":{"months":[9,10,11],"label":"Fall","line":"Foliage in the Notch","colors":{"spr":"#6a2c12","deep":"#3c180e","bark":"#7a3812","cream":"#fff1e0","paper":"#f6e0c4","card":"#fff4e6","blaze":"#f6c15c","rust":"#8c1e14","ink":"#2a140c","focus":"#8c1e14","muted":"#5c3a28","line":"#e0bc96"},"fx":{"kind":"leaf","hero":10000,"count":22,"ambient":6,"colors":["#c4451a","#e07a22","#8e2e14","#d4a017","#a33b22","#f0c36a"]}}}</script>
 
     <footer class="foot" data-pagefind-ignore>
   
@@ -562,7 +588,66 @@
     <p><a href="/franconia-nh-gov/pr-preview/pr-9/about/">About Franconia</a> · <a href="https://www.franconianotch.org/">Visiting?</a> · <a href="https://github.com/dzajic/franconia-nh-gov/issues">Suggest a change</a> · <a href="/franconia-nh-gov/pr-preview/pr-9/archive/">Document archive</a></p>
     <p><a href="https://www.franconianotch.org/">Visiting? The Franconia Notch Chamber of Commerce has lodging, dining, and things to do.</a></p>
     
-    <p class="small">Design preview, not the official town site. The official site is <a href="https://www.franconianh.gov/">franconianh.gov</a> (franconianh.org redirects there). Dates in the alert bar are sample content from the design prototype. The furnace and ridge marks are original drawings, not traced from landmarks. Phone and street address are carried over from the previous site; bracketed values such as [hours] are still unknown.</p>
+    <div class="season-controls">
+  <button type="button" class="season-toggle" aria-pressed="true">Seasonal theme: <span class="season-toggle-value">On</span></button>
+  
+  <button type="button" class="season-replay" hidden>Replay animation</button>
+  
+</div>
+<script>
+(function () {
+  var api = window.franconiaSeason || { months: {}, allowed: {}, storageKey: "franconia-season" };
+  var toggle = document.querySelector(".season-toggle");
+  var value = toggle && toggle.querySelector(".season-toggle-value");
+  var replay = document.querySelector(".season-replay");
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function paint() {
+    var on = document.documentElement.getAttribute("data-season") !== "default";
+    if (toggle) toggle.setAttribute("aria-pressed", on ? "true" : "false");
+    if (value) value.textContent = on ? "On" : "Off";
+    if (replay) replay.hidden = reduce || !on;
+  }
+
+  function monthSeason() {
+    return api.months[new Date().getMonth() + 1] || "fall";
+  }
+
+  if (toggle) {
+    toggle.addEventListener("click", function () {
+      var on = document.documentElement.getAttribute("data-season") !== "default";
+      var next = on ? "default" : monthSeason();
+      var url;
+      try { url = new URL(location.href); } catch (e) { url = null; }
+      if (!on && url) {
+        var q = (url.searchParams.get("season") || "").toLowerCase();
+        if (api.allowed[q]) next = q;
+      }
+      document.documentElement.setAttribute("data-season", next);
+      try { localStorage.setItem(api.storageKey, next === "default" ? "off" : "on"); } catch (e) {}
+      if (url) {
+        if (next === "default" || !api.allowed[(url.searchParams.get("season") || "").toLowerCase()]) {
+          url.searchParams.delete("season");
+        }
+        history.replaceState(null, "", url.pathname + url.search + url.hash);
+      }
+      paint();
+      document.dispatchEvent(new CustomEvent("franconia-season"));
+    });
+  }
+
+  if (replay) {
+    replay.addEventListener("click", function () {
+      try { sessionStorage.removeItem("franconia-season-fx"); } catch (e) {}
+      document.dispatchEvent(new CustomEvent("franconia-replay"));
+    });
+  }
+
+  paint();
+})();
+</script>
+
+    <p class="small">Design preview, not the official town site. The official site is <a href="https://www.franconianh.gov/">franconianh.gov</a> (franconianh.org redirects there). Alert dates are sample content from the design prototype. The furnace and ridge marks are original drawings, not traced from landmarks. Phone and street address are carried over from the previous site; bracketed values such as [hours] are still unknown.</p>
   </div>
 </footer>
 
