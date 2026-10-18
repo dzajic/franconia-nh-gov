@@ -10,27 +10,15 @@ function seasonForMonth(month) {
   return null;
 }
 
-/** Saved "on" is Auto, saved "off" is Default. Anything else unknown is Auto. */
-function savedChoice(stored) {
-  const key = String(stored || "").toLowerCase();
-  if (key === "off") return "default";
-  if (key === "on" || key === "") return "auto";
-  if (key === "auto" || key === "default" || Object.prototype.hasOwnProperty.call(seasons, key)) return key;
-  return "auto";
-}
-
-/** A recognized query is what gets saved. Otherwise the saved choice stands. */
-function choiceFor(query, stored) {
-  const key = String(query || "").toLowerCase();
-  if (key === "auto" || key === "default" || Object.prototype.hasOwnProperty.call(seasons, key)) return key;
-  return savedChoice(stored);
-}
-
+/** Mirrors the head script: query wins for this page, then a saved off switch, then the month. */
 function resolveSeason(query, month, stored) {
-  const choice = choiceFor(query, stored);
-  if (choice === "default") return "default";
-  if (choice === "auto") return seasonForMonth(month);
-  return choice;
+  const key = String(query || "").toLowerCase();
+  let saved = String(stored || "").toLowerCase();
+  if (saved && saved !== "on" && saved !== "off") saved = saved === "default" ? "off" : "on";
+  if (key === "default") return "default";
+  if (Object.prototype.hasOwnProperty.call(seasons, key)) return key;
+  if (saved === "off") return "default";
+  return seasonForMonth(month);
 }
 
 const WHITE = "#ffffff";
@@ -73,22 +61,19 @@ test("meteorological months map to one season each", () => {
   assert.equal(seasonForMonth(0), null);
 });
 
-test("a chosen season persists, and auto or default replaces it", () => {
-  assert.equal(choiceFor("winter", "default"), "winter");
-  assert.equal(choiceFor("SUMMER", "off"), "summer");
-  assert.equal(choiceFor("default", "winter"), "default");
-  assert.equal(choiceFor("auto", "winter"), "auto");
-  assert.equal(choiceFor("nope", "spring"), "spring");
-  assert.equal(choiceFor("", "fall"), "fall");
-  assert.equal(choiceFor("", "off"), "default");
-  assert.equal(choiceFor("", "on"), "auto");
-  assert.equal(choiceFor("", ""), "auto");
-  assert.equal(resolveSeason("winter", 10, "default"), "winter");
-  assert.equal(resolveSeason("", 10, "winter"), "winter");
-  assert.equal(resolveSeason("auto", 3, "winter"), "spring");
-  assert.equal(resolveSeason("default", 7, "summer"), "default");
-  assert.equal(resolveSeason("", 1, ""), "winter");
+test("the calendar picks the season, and a query does not get saved", () => {
+  assert.equal(resolveSeason("winter", 10, "off"), "winter");
+  assert.equal(resolveSeason("SUMMER", 1, "off"), "summer");
+  assert.equal(resolveSeason("default", 7, "on"), "default");
+  assert.equal(resolveSeason("nope", 10, "off"), "default");
   assert.equal(resolveSeason("", 3, "off"), "default");
+  assert.equal(resolveSeason("", 3, "on"), "spring");
+  assert.equal(resolveSeason("", 1, ""), "winter");
+  assert.equal(resolveSeason("", 10, "winter"), "fall");
+  assert.equal(resolveSeason("", 6, "spring"), "summer");
+  assert.equal(resolveSeason("", 10, "default"), "default");
+  assert.equal(resolveSeason("", 4, "auto"), "spring");
+  assert.equal(resolveSeason("auto", 10, "off"), "default");
 });
 
 test("each seasonal palette keeps WCAG AA text contrast", () => {

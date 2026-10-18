@@ -1,55 +1,49 @@
 <div class="season-controls">
-  <label class="season-picker">Seasonal theme
-    <select class="season-choice">
-      <option value="auto">Auto</option>
-      {% for id, season in seasons %}
-      <option value="{{ id }}">{{ season.label }}</option>
-      {% endfor %}
-      <option value="default">Default</option>
-    </select>
-  </label>
+  <button type="button" class="season-toggle" aria-pressed="true">Seasonal theme: <span class="season-toggle-value">On</span></button>
   {% if bodyClass == "home" %}
   <button type="button" class="season-replay" hidden>Replay animation</button>
   {% endif %}
 </div>
 <script>
 (function () {
-  var api = window.franconiaSeason || { months: {}, allowed: {}, storageKey: "franconia-season", choice: "auto" };
-  var select = document.querySelector(".season-choice");
+  var api = window.franconiaSeason || { months: {}, allowed: {}, storageKey: "franconia-season" };
+  var toggle = document.querySelector(".season-toggle");
+  var value = toggle && toggle.querySelector(".season-toggle-value");
   var replay = document.querySelector(".season-replay");
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function paint() {
+    var on = document.documentElement.getAttribute("data-season") !== "default";
+    if (toggle) toggle.setAttribute("aria-pressed", on ? "true" : "false");
+    if (value) value.textContent = on ? "On" : "Off";
+    if (replay) replay.hidden = reduce || !on;
+  }
 
   function monthSeason() {
     return api.months[new Date().getMonth() + 1] || "fall";
   }
 
-  function known(value) {
-    return value === "auto" || value === "default" || api.allowed[value];
-  }
-
-  function paint() {
-    var choice = document.documentElement.getAttribute("data-season-choice") || "auto";
-    if (select && known(choice)) select.value = choice;
-    if (replay) replay.hidden = reduce || document.documentElement.getAttribute("data-season") === "default";
-  }
-
-  function apply(choice) {
-    if (!known(choice)) return;
-    var season = choice === "auto" ? monthSeason() : choice;
-    document.documentElement.setAttribute("data-season", season);
-    document.documentElement.setAttribute("data-season-choice", choice);
-    try { localStorage.setItem(api.storageKey, choice); } catch (e) {}
-    try {
-      var url = new URL(location.href);
-      url.searchParams.delete("season");
-      history.replaceState(null, "", url.pathname + url.search + url.hash);
-    } catch (e) {}
-    paint();
-    document.dispatchEvent(new CustomEvent("franconia-season"));
-  }
-
-  if (select) {
-    select.addEventListener("change", function () { apply(select.value); });
+  if (toggle) {
+    toggle.addEventListener("click", function () {
+      var on = document.documentElement.getAttribute("data-season") !== "default";
+      var next = on ? "default" : monthSeason();
+      var url;
+      try { url = new URL(location.href); } catch (e) { url = null; }
+      if (!on && url) {
+        var q = (url.searchParams.get("season") || "").toLowerCase();
+        if (api.allowed[q]) next = q;
+      }
+      document.documentElement.setAttribute("data-season", next);
+      try { localStorage.setItem(api.storageKey, next === "default" ? "off" : "on"); } catch (e) {}
+      if (url) {
+        if (next === "default" || !api.allowed[(url.searchParams.get("season") || "").toLowerCase()]) {
+          url.searchParams.delete("season");
+        }
+        history.replaceState(null, "", url.pathname + url.search + url.hash);
+      }
+      paint();
+      document.dispatchEvent(new CustomEvent("franconia-season"));
+    });
   }
 
   if (replay) {
