@@ -1,0 +1,186 @@
+---
+layout: shell.njk
+---
+{# Shared interior page. Editors keep prose in the markdown body.
+   Contact, hours, location, people, and link groups live in front matter. #}
+{% macro href(url) -%}
+{%- if url | startsWith('/') -%}{{ url | url }}{%- else -%}{{ url }}{%- endif -%}
+{%- endmacro %}
+<main id="main" class="in page civic" data-pagefind-body>
+  <header class="civic-head">
+    <h1 class="page-title">{{ heading or title }}</h1>
+    {% if summary %}
+    <p class="lede">{{ summary }}</p>
+    {% endif %}
+  </header>
+
+  {% if notices and notices.length %}
+  <div class="notices">
+    {% for note in notices %}
+    <aside class="notice">
+      {% if note.title %}<h2>{{ note.title }}</h2>{% endif %}
+      <p>{{ note.text or note }}</p>
+    </aside>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if contact or hours or location or people %}
+  <section class="glance" aria-labelledby="glance-h">
+    <h2 id="glance-h" class="sign"><span class="blaze" aria-hidden="true"></span>
+      {%- if glanceHeading -%}{{ glanceHeading }}
+      {%- elif contact and hours and location -%}Contact, hours, and location
+      {%- elif contact and hours -%}Contact and hours
+      {%- elif contact and location -%}Contact and location
+      {%- elif hours and location -%}Hours and location
+      {%- elif contact -%}Contact
+      {%- elif hours -%}Hours
+      {%- elif location -%}Location
+      {%- else -%}People
+      {%- endif -%}
+    </h2>
+    <div class="glance-grid{% if people and people.length > 2 %} many{% endif %}">
+      {% if contact %}
+      <article>
+        <h3>Contact</h3>
+        <dl>
+          {% for item in contact %}
+          <div>
+            <dt>{{ item.label }}</dt>
+            <dd>
+              {% if item.href %}
+              <a href="{{ href(item.href) }}">{{ item.value }}</a>
+              {% else %}
+              {{ item.value }}
+              {% endif %}
+            </dd>
+          </div>
+          {% endfor %}
+        </dl>
+      </article>
+      {% endif %}
+      {% if hours %}
+      <article>
+        <h3>{{ hoursLabel or "Hours" }}</h3>
+        <ul>
+          {% for line in hours %}<li>{{ line }}</li>{% endfor %}
+        </ul>
+      </article>
+      {% endif %}
+      {% if location %}
+      <article>
+        <h3>{{ locationLabel or "Location" }}</h3>
+        <ul>
+          {% for line in location %}<li>{{ line }}</li>{% endfor %}
+        </ul>
+      </article>
+      {% endif %}
+      {% if people %}
+      {% for group in people %}
+      <article>
+        <h3>{{ group.heading or "People" }}</h3>
+        <ul class="people">
+          {% for member in group.members %}
+          <li>
+            <strong>{{ member.name }}</strong>
+            {% if member.note %}<span class="muted">{{ member.note }}</span>{% endif %}
+            {% if member.lines %}
+            {% for line in member.lines %}<span class="line">{{ line }}</span>{% endfor %}
+            {% endif %}
+            {% if member.emailHref %}
+            <a href="{{ href(member.emailHref) }}">{{ member.emailLabel or "[email protected]" }}</a>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </article>
+      {% endfor %}
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if groups %}
+  {% for group in groups %}
+  <section class="link-section" aria-labelledby="g{{ loop.index }}">
+    <h2 id="g{{ loop.index }}" class="sign"><span class="blaze" aria-hidden="true"></span>{{ group.heading }}</h2>
+    {% if group.intro %}<p class="note">{{ group.intro }}</p>{% endif %}
+    <ul class="link-grid{% if group.columns == 2 %} two{% endif %}">
+      {% for link in group.links %}
+      <li>
+        {% if link.href %}
+        <a href="{{ href(link.href) }}">
+          <span class="ll">{{ link.label }}</span>
+          {% if link.note %}<span class="ln">{{ link.note }}</span>{% endif %}
+        </a>
+        {% else %}
+        <p class="link-plain">{{ link.label }}</p>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+  {% endif %}
+
+  {% if lists %}
+  {% for list in lists %}
+  <section class="link-section" aria-labelledby="lst{{ loop.index }}">
+    <h2 id="lst{{ loop.index }}" class="sign"><span class="blaze" aria-hidden="true"></span>{{ list.heading }}</h2>
+    <ul class="plain-list">
+      {% for item in list.items %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+  {% endif %}
+
+  {% if tables %}
+  {% for table in tables %}
+  <section class="fee-section"{% if table.id %} id="{{ table.id }}"{% endif %} aria-labelledby="fee{{ loop.index }}">
+    <h2 id="fee{{ loop.index }}" class="sign"><span class="blaze" aria-hidden="true"></span>{{ table.caption }}</h2>
+    <div class="table-wrap">
+      <table>
+        {% if table.headers %}
+        <thead>
+          <tr>{% for cell in table.headers %}<th scope="col">{{ cell }}</th>{% endfor %}</tr>
+        </thead>
+        {% endif %}
+        <tbody>
+          {% for row in table.rows %}
+          <tr>{% for cell in row %}{% if loop.first and table.rowHead %}<th scope="row">{{ cell }}</th>{% else %}<td>{{ cell }}</td>{% endif %}{% endfor %}</tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% if table.note %}<p class="note">{{ table.note }}</p>{% endif %}
+  </section>
+  {% endfor %}
+  {% endif %}
+
+  {% if figures %}
+  <div class="figures{% if figures.length > 1 %} multi{% endif %}">
+    {% for fig in figures %}
+    <figure>
+      {% if fig.href %}
+      <a href="{{ href(fig.href) }}">
+        <img src="{{ fig.src }}" alt="{{ fig.alt or '' }}">
+      </a>
+      {% else %}
+      <img src="{{ fig.src }}" alt="{{ fig.alt or '' }}">
+      {% endif %}
+      {% if fig.caption %}<figcaption>{{ fig.caption }}</figcaption>{% endif %}
+    </figure>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if content and content | trim %}
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+  {% endif %}
+
+  {% if archiveBody %}
+  <p class="more"><a href="{{ ('/archive/' + archiveBody + '/') | url }}">Documents for this page</a></p>
+  {% endif %}
+</main>

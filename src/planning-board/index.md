@@ -1,77 +1,85 @@
 ---
-layout: base.njk
-title: Planning Board - TOWN OF FRANCONIA
+layout: civic.njk
+title: "Planning Board — Town of Franconia"
+heading: Planning Board
+summary: "Subdivision, site plan, and other applications, with checklists and regulations."
 permalink: /planning-board/
 imported_from: "http://www.franconianh.org/planning-board.html"
 migrated: false
 archiveBody: planning-board
+hours:
+  - "Second and last Tuesday of each month, 6:00 p.m."
+hoursLabel: Meetings
+people:
+  - heading: Members
+    members:
+      - name: Mark Hesler
+        note: "Chair, 2027"
+      - name: Thad Presby
+        note: "Vice Chair, 2028"
+      - name: Pat Garvin
+        note: "2028"
+      - name: Monica Laflamme
+        note: "2027"
+      - name: Eric Meth
+        note: "Selectboard, 2028"
+      - name: Stephen Schwartz
+        note: "2026"
+      - name: John Agostinelli
+        note: "2026"
+      - name: John DiMarzio
+        note: "Alternate, 2026"
+groups:
+  - heading: Meetings and plans
+    links:
+      - label: Planning Board minutes
+        href: /planning-board-minutes/
+      - label: Planning Board agenda
+        href: http://www.franconianh.org/uploads/1/1/6/8/11680191/12.09.2025.docx
+      - label: 2024 Franconia Master Plan
+        href: http://www.franconianh.org/uploads/1/1/6/8/11680191/franconia_mp_final_2__1_.pdf
+      - label: master_plan.pdf
+        href: http://www.franconianh.org/uploads/1/1/6/8/11680191/master_plan.pdf
+  - heading: Checklists
+    links:
+      - label: Lot line adjustment
+        href: http://www.franconianh.org/uploads/1/1/6/8/11680191/checklist_lla.pdf
+      - label: Minor subdivision
+        href: http://www.franconianh.org/uploads/1/1/6/8/11680191/checklist_minor_sub.pdf
+      - label: Major subdivision, 3–10 lots
+        href: http://www.franconianh.org/uploads/1/1/6/8/11680191/checklist_major_sub_3.pdf
+      - label: Major subdivision, over 10 lots
+        href: http://www.franconianh.org/uploads/1/1/6/8/11680191/checklist_major_sub_10.pdf
+      - label: Site plan review
+        href: http://www.franconianh.org/uploads/1/1/6/8/11680191/checklist_spr.pdf
+      - label: Wireless tower
+        href: http://www.franconianh.org/uploads/1/1/6/8/11680191/checklist_wireless_tower_.pdf
+  - heading: Regulations
+    links:
+      - label: Zoning regulations
+        href: http://www.franconianh.org/uploads/1/1/6/8/11680191/zoning_ordinance_2025.pdf
+      - label: Excavation regulations
+        href: http://www.franconianh.org/uploads/1/1/6/8/11680191/excavation_regulations.pdf
+      - label: Subdivision regulations
+        href: http://www.franconianh.org/uploads/1/1/6/8/11680191/subdivision_regulations_rev_8-2014.doc
+      - label: Site plan review regulations
+        href: http://www.franconianh.org/uploads/1/1/6/8/11680191/spr_regulations_03.2019.pdf
+  - heading: Applications
+    links:
+      - label: Lot line adjustment
+        href: http://www.franconianh.org/uploads/1/1/6/8/11680191/application_for_lla.doc
+      - label: Subdivision
+        href: http://www.franconianh.org/uploads/1/1/6/8/11680191/application_for_sd.doc
+      - label: Site plan review
+        href: http://www.franconianh.org/uploads/1/1/6/8/11680191/application_for_spr.doc
+      - label: Wireless tower
+        href: http://www.franconianh.org/uploads/1/1/6/8/11680191/application_for_wireless_tower_spr.doc
+      - label: Excavation
+        href: http://www.franconianh.org/uploads/1/1/6/8/11680191/application_for_permit_to_excavate.doc
+      - label: Voluntary lot merger
+        href: http://www.franconianh.org/uploads/1/1/6/8/11680191/voluntary_merger_app_title_lxiv.doc
+  - heading: Fees
+    links:
+      - label: Planning Board fees
+        href: http://www.franconianh.org/uploads/1/1/6/8/11680191/planning_board_fees.doc
 ---
-
-## Planning Board meets the 2nd & last Tuesday of each Month 6:00pm ​Board members MARK HESLER - CHAIR, 2027 Thad Presby - VICE Chair, 2028 PAT GARVIN, 2028 MONICA LAFLAMME, 2027 Eric Meth - Select board, 2028 STEPHEN SCHWARTZ, 2026 JOHN AGOSTINELLI, 2026 ​JOHN DIMARZIO, ALTERNATE, 2026
-
-**[Planning Board Minutes&nbsp;​](/planning-board-minutes/)**  
-  
-**[Planning Board Agenda](http://www.franconianh.org/uploads/1/1/6/8/11680191/12.09.2025.docx)**  
-  
-  
-**[​2024 FRANCONIA MASTER PLAN](http://www.franconianh.org/uploads/1/1/6/8/11680191/franconia_mp_final_2__1_.pdf)  
-[​](http://www.franconianh.org/uploads/1/1/6/8/11680191/master_plan.pdf)**
-
-| 
-## Checklists&nbsp;
-
-[Checklist for an application for a lot line adjustment](http://www.franconianh.org/uploads/1/1/6/8/11680191/checklist_lla.pdf)  
-  
-[Checklist for a minor subdivision](http://www.franconianh.org/uploads/1/1/6/8/11680191/checklist_minor_sub.pdf)  
-  
-[Checklist for a major subdivision](http://www.franconianh.org/uploads/1/1/6/8/11680191/checklist_major_sub_3.pdf)&nbsp;3-10 lots  
-  
-[Checklist for a major subdivision](http://www.franconianh.org/uploads/1/1/6/8/11680191/checklist_major_sub_10.pdf)&nbsp;over 10 lots  
-  
-[Checklist for site plan review](http://www.franconianh.org/uploads/1/1/6/8/11680191/checklist_spr.pdf)  
-  
-[Checklist for wireless tower](http://www.franconianh.org/uploads/1/1/6/8/11680191/checklist_wireless_tower_.pdf)  
-  
-  
-  
-Regulations  
-  
-[Zoning Regulations](http://www.franconianh.org/uploads/1/1/6/8/11680191/zoning_ordinance_2025.pdf)  
-  
-[Excavation Regulations](http://www.franconianh.org/uploads/1/1/6/8/11680191/excavation_regulations.pdf)  
-  
-[Subdivision Regulations](http://www.franconianh.org/uploads/1/1/6/8/11680191/subdivision_regulations_rev_8-2014.doc)  
-  
-[Site Plan Review Regulations](http://www.franconianh.org/uploads/1/1/6/8/11680191/spr_regulations_03.2019.pdf)  
-  
-  
-  
-  
-  
-  
-  
-
- | 
-## Applications
-
-[Application for a lot line adjustment](http://www.franconianh.org/uploads/1/1/6/8/11680191/application_for_lla.doc)  
-  
-[Application for subdivision](http://www.franconianh.org/uploads/1/1/6/8/11680191/application_for_sd.doc)  
-  
-[Application for site plan review](http://www.franconianh.org/uploads/1/1/6/8/11680191/application_for_spr.doc)  
-  
-[Application &nbsp;for Wireless Tower](http://www.franconianh.org/uploads/1/1/6/8/11680191/application_for_wireless_tower_spr.doc)  
-  
-[Application for excavation](http://www.franconianh.org/uploads/1/1/6/8/11680191/application_for_permit_to_excavate.doc)  
-  
-[Application for a Voluntary Lot Merger](http://www.franconianh.org/uploads/1/1/6/8/11680191/voluntary_merger_app_title_lxiv.doc)  
-  
-  
-  
-Planning Board Fees  
-  
-[Fees](http://www.franconianh.org/uploads/1/1/6/8/11680191/planning_board_fees.doc)  
-  
-  
-
- |
