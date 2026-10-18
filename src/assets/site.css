@@ -981,23 +981,28 @@ html[data-season="fall"] .season-motif .m-fall { display: block; }
   100% { opacity: 0.2; }
 }
 .season-controls { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
-.season-toggle,
+.season-picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 44px;
+  color: var(--cream);
+  font: 800 0.82rem/1.2 var(--body);
+}
+.season-choice,
 .season-replay {
   min-height: 44px;
   min-width: 44px;
-  padding: 0.45rem 0.9rem;
+  padding: 0.4rem 0.75rem;
   border-radius: 8px;
   border: 2px solid var(--cream);
-  background: transparent;
-  color: var(--cream);
-  font: 800 0.82rem/1.2 var(--body);
-  cursor: pointer;
-}
-.season-toggle[aria-pressed="false"] {
   background: var(--cream);
   color: var(--deep);
+  font: 800 1rem/1.2 var(--body);
+  cursor: pointer;
 }
-.foot .season-toggle:focus-visible,
+.season-replay { background: transparent; color: var(--cream); font-size: 0.82rem; }
+.foot .season-choice:focus-visible,
 .foot .season-replay:focus-visible { outline-color: var(--cream); }
 @media (prefers-reduced-motion: reduce) {
   .season-fx,

@@ -5,14 +5,16 @@
  * Meteorological seasons: Dec–Feb winter, Mar–May spring, Jun–Aug summer,
  * Sep–Nov fall. The visitor's local month picks the theme.
  *
- * ?season=winter|spring|summer|fall overrides that for the current page.
- * ?season=default forces the original palette. A footer control remembers
- * "on" or "off" in localStorage under franconia-season. A query string
- * wins over that saved choice so a preview link still shows the requested theme.
+ * A footer picker saves Auto, Winter, Spring, Summer, Fall, or Default in
+ * localStorage under franconia-season. That choice is applied on every page,
+ * before first paint, until the visitor picks another one.
+ * Auto follows the date. Default is the original palette.
+ * ?season=auto|winter|spring|summer|fall|default does the same thing as the
+ * picker and is remembered too. An older saved "on" means Auto, and "off"
+ * means Default.
  *
  * prefers-reduced-motion: seasonal colors still apply. Motion does not.
- * The footer control turns colors off too, for anyone who wants the
- * original palette. Reduced motion is not the same as "no theme".
+ * Reduced motion is not the same as Default.
  *
  * Colors are the design tokens. They stay in @layer seasonal so an
  * unlayered dark theme can replace them. test/seasons.test.mjs checks
