@@ -13,6 +13,17 @@ function isoDate(value) {
   return match ? match[0] : text.slice(0, 10);
 }
 
+function splitRecordNote(html) {
+  const provenance = [];
+  const visible = String(html || "")
+    .replace(/<p>\s*Imported from the public document inventory\.[\s\S]*?<\/p>/gi, (match) => {
+      provenance.push(match.trim());
+      return "";
+    })
+    .trim();
+  return { visible, provenance: provenance.join("\n") };
+}
+
 function recordHeading(title, committee) {
   let text = String(title || "").trim();
   const name = String(committee || "").trim();
@@ -46,6 +57,7 @@ module.exports = function (eleventyConfig) {
   );
   eleventyConfig.addFilter("prettyDate", prettyDate);
   eleventyConfig.addFilter("recordHeading", recordHeading);
+  eleventyConfig.addFilter("splitRecordNote", splitRecordNote);
   eleventyConfig.addFilter("monthShort", (value) => {
     const iso = isoDate(value);
     return MONTHS[Number(iso.slice(5, 7)) - 1] || "";

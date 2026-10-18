@@ -757,6 +757,14 @@ body.about .brand { margin-right: auto; }
   color: var(--spr);
 }
 .record-about .about-note { margin: 0 0.95rem 0.35rem 2.15rem; }
+.record-about .about-provenance {
+  margin: 0 0.95rem 0.95rem 2.15rem;
+  max-width: none;
+  padding-bottom: 0;
+  font-size: 0.9rem;
+  color: #3d3d36;
+}
+.record-about .about-provenance p { margin: 0; }
 .record-about .meta-dl { margin: 0; padding: 0.2rem 0.95rem 0.95rem 2.15rem; max-width: none; }
 .record-about .meta-dl a {
   color: var(--rust);
