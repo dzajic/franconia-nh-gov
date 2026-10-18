@@ -69,6 +69,29 @@ img { max-width: 100%; height: auto; }
   flex: none;
 }
 
+.preview-note {
+  background: var(--cream);
+  color: var(--spr);
+  border-bottom: 1px solid rgba(90, 58, 36, 0.4);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+.preview-note p {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0.35rem 1rem;
+  text-align: center;
+  text-wrap: pretty;
+}
+.preview-note a {
+  color: var(--rust);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
+.preview-note a:hover { color: var(--deep); }
+
 .alert { background: var(--rust); color: #fff; font-size: 0.85rem; }
 .alert .in {
   padding: 0.4rem 1rem;
