@@ -9,13 +9,13 @@ groups:
     links:
       - label: Document archive
         href: /archive/
-lists:
-  - heading: Upcoming
-    items:
-      - "Select Board — Feb 3, 2026 — 6:00 p.m. — Town Hall — Agenda (PDF placeholder)"
-  - heading: Recent minutes
-    items:
-      - "Select Board — Jan 20, 2026 — Minutes (PDF placeholder)"
 ---
+
+## Schedule
+
+| List | Board | When | Detail |
+| --- | --- | --- | --- |
+| Upcoming | Select Board | Feb 3, 2026, 6:00 p.m., Town Hall | Agenda (PDF placeholder) |
+| Recent minutes | Select Board | Jan 20, 2026 | Minutes (PDF placeholder) |
 
 During migration, legacy PDFs can remain on the current site until we move them.

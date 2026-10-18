@@ -7,10 +7,6 @@ permalink: /trails-parks/
 imported_from: "http://www.franconianh.org/trails--parks.html"
 migrated: false
 archiveBody: parks
-contact:
-  - label: Email
-    value: "[email protected]"
-    href: /cdn-cgi/l/email-protection/
 groups:
   - heading: Parks and reading
     links:
@@ -42,7 +38,17 @@ figures:
     alt: Trail photograph
   - src: http://www.franconianh.org/uploads/1/1/6/8/11680191/profile-trailmap-2019-09-10-page-001_orig.jpg
     alt: Profile trail map
+blocksInBody: true
 ---
+
+## Contact
+
+| Item | Detail |
+| --- | --- |
+| Email | [[email protected]](/cdn-cgi/l/email-protection/) |
+
+{% include "partials/civic-groups.njk" %}
+{% include "partials/civic-figures.njk" %}
 
 Franconia Area NEMBA is an organization of outdoor enthusiasts interested in the preservation of trails in Franconia, Easton, Sugar Hill, Bethlehem and Littleton. This organization will provide manpower and money to help establish and maintain these trails, as well as help educating landowners and users about issues such as liability, erosion and responsible behavior.
 

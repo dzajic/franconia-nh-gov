@@ -7,25 +7,6 @@ permalink: /fire/
 imported_from: "http://www.franconianh.org/fire.html"
 migrated: false
 archiveBody: fire-department
-glanceHeading: Contact
-contact:
-  - label: Emergency
-    value: Dial 911
-    href: tel:911
-  - label: Fire station
-    value: (603) 823-8821
-    href: tel:+16038238821
-  - label: Chief
-    value: Tyler Gaudette
-  - label: Chief email
-    value: "[email protected]"
-    href: /cdn-cgi/l/email-protection/
-people:
-  - heading: Officers
-    members:
-      - name: Chief Tyler Gaudette
-      - name: Asst. Chief Rick Gaudette
-      - name: Deputy Warden Kim Cowles
 notices:
   - title: Knox box
     text: "If you own a home in Franconia with a monitored fire alarm, you are strongly encouraged to purchase a Knox box key holder. This is even more important if your home is a secondary residence. A Knox box is a secured key box mounted to the home that only the fire department can open in an emergency. Questions go to the chief."
@@ -48,7 +29,27 @@ groups:
         href: http://www.franconianh.org/uploads/1/1/6/8/11680191/ffd_histoty_from_1933_to_2020_by_stanley_sherburn__nov_6_20.docx
       - label: Fire prevention at Lafayette Regional School, 2018
         href: http://www.facebook.com/100006548356658/posts/2299943883567201/
+blocksInBody: true
 ---
+
+## Contact
+
+| Item | Detail |
+| --- | --- |
+| Emergency | [Dial 911](tel:911) |
+| Fire station | [(603) 823-8821](tel:+16038238821) |
+| Chief | Tyler Gaudette |
+| Chief email | [[email protected]](/cdn-cgi/l/email-protection/) |
+
+## Officers
+
+| Name |
+| --- |
+| Chief Tyler Gaudette |
+| Asst. Chief Rick Gaudette |
+| Deputy Warden Kim Cowles |
+
+{% include "partials/civic-groups.njk" %}
 
 ![Winter fire safety photograph](http://www.franconianh.org/uploads/1/1/6/8/11680191/1457319.jpg)
 

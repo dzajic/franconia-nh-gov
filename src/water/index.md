@@ -7,27 +7,6 @@ permalink: /water/
 imported_from: "http://www.franconianh.org/water.html"
 migrated: false
 archiveBody: water-department
-contact:
-  - label: Phone
-    value: (603) 823-7752 x102
-    href: tel:+16038237752
-  - label: Email
-    value: "[email protected]"
-    href: /cdn-cgi/l/email-protection/
-hours:
-  - "Tuesday, 11 a.m. to 4 p.m., or by appointment"
-people:
-  - heading: Commissioners
-    members:
-      - name: Richard Andross
-        note: "2026"
-      - name: Christopher Harris
-        note: "2027"
-      - name: Thomas Allen
-        note: "2028"
-  - heading: Administrator
-    members:
-      - name: Rachel Pluchino
 notices:
   - title: Meetings
     text: "The upcoming monthly meeting is February 12 at 5 p.m. Regular monthly meetings take place in the Town Hall the second Thursday of each month at 5 p.m. The next regular meeting will be held on Thursday, March 12 at 5 p.m."
@@ -92,6 +71,33 @@ figures:
   - src: http://www.franconianh.org/uploads/1/1/6/8/11680191/eyeonwater-customer-infographic-1_orig.png
     alt: EyeOnWater customer infographic, continued
 ---
+
+## Contact
+
+| Item | Detail |
+| --- | --- |
+| Phone | [(603) 823-7752 x102](tel:+16038237752) |
+| Email | [[email protected]](/cdn-cgi/l/email-protection/) |
+
+## Hours
+
+| When | Hours |
+| --- | --- |
+| Tuesday | 11 a.m. to 4 p.m., or by appointment |
+
+## Commissioners
+
+| Name | Term |
+| --- | --- |
+| Richard Andross | 2026 |
+| Christopher Harris | 2027 |
+| Thomas Allen | 2028 |
+
+## Administrator
+
+| Name |
+| --- |
+| Rachel Pluchino |
 
 The mission of the Franconia Water Department is to provide safe drinking water to water system customers in the Town of Franconia by maintaining the Town's sources of potable water and its distribution systems to the high possible standard, at a reasonable cost that covers water department expenditures, and within the context of a positive, fair, efficient, safe, and healthy workplace environment, while concurrently complying with State and Federal regulations and the Town of Franconia local regulations and ordinances.
 

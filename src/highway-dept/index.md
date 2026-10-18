@@ -7,15 +7,13 @@ permalink: /highway-dept/
 imported_from: "http://www.franconianh.org/highway-dept.html"
 migrated: false
 archiveBody: highway-department
-contact:
-  - label: Phone
-    value: 603-616-9308
-    href: tel:+16036169308
-  - label: Email
-    value: "[email protected]"
-    href: /cdn-cgi/l/email-protection/
-people:
-  - heading: Road agent
-    members:
-      - name: Jeremy Hall
 ---
+
+## Contact
+
+| Item | Detail |
+| --- | --- |
+| Road agent | Jeremy Hall |
+| Phone | [603-616-9308](tel:+16036169308) |
+| Email | [[email protected]](/cdn-cgi/l/email-protection/) |
+

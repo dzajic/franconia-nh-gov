@@ -7,9 +7,6 @@ permalink: /safety-committee/
 imported_from: "http://www.franconianh.org/safety-committee.html"
 migrated: false
 archiveBody: safety-committee
-hours:
-  - Quarterly, rotating between town buildings
-hoursLabel: Meetings
 groups:
   - heading: Manuals and reports
     links:
@@ -68,7 +65,16 @@ groups:
         href: http://www.franconianh.org/uploads/1/1/6/8/11680191/2012-09-13-_2012_minutes.pdf
       - label: 6-12-12
         href: http://www.franconianh.org/uploads/1/1/6/8/11680191/2012-06-12-_2012_minutes.pdf
+blocksInBody: true
 ---
+
+## Meetings
+
+| Meetings |
+| --- |
+| Quarterly, rotating between town buildings |
+
+{% include "partials/civic-groups.njk" %}
 
 - All injuries are preventable.
 - Working safely is a condition of employment.

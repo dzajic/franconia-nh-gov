@@ -116,6 +116,7 @@
   padding: 0.45rem 0.55rem;
   border-bottom: 1px solid #e4d7b8;
   vertical-align: top;
+  overflow-wrap: anywhere;
 }
 .civic th {
   background: var(--cream);
@@ -124,11 +125,60 @@
   text-transform: uppercase;
 }
 .civic tbody th { text-transform: none; letter-spacing: 0; font-size: 0.92rem; background: #fff; }
+.civic td a, .civic th a { color: var(--rust); font-weight: 700; }
 .table-wrap {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border: 1.5px solid var(--bark);
   border-radius: 8px;
-  margin-bottom: 0.45rem;
+  margin: 0 0 0.85rem;
+  max-width: 100%;
+}
+.table-wrap:focus {
+  outline: 2px solid var(--blaze);
+  outline-offset: 2px;
+}
+.cell-label { display: none; }
+@media (max-width: 640px) {
+  .civic th, .civic td { padding: 0.4rem 0.45rem; }
+  .table-wrap.can-stack {
+    overflow: visible;
+    border: 0;
+    background: transparent;
+  }
+  .table-wrap.can-stack table,
+  .table-wrap.can-stack tbody,
+  .table-wrap.can-stack tr,
+  .table-wrap.can-stack td,
+  .table-wrap.can-stack tbody th { display: block; width: auto; }
+  .table-wrap.can-stack thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  .table-wrap.can-stack tr {
+    background: #fff;
+    border: 1.5px solid var(--bark);
+    border-radius: 8px;
+    margin-bottom: 0.45rem;
+    padding: 0.35rem 0.7rem 0.55rem;
+  }
+  .table-wrap.can-stack td,
+  .table-wrap.can-stack tbody th {
+    border: 0;
+    padding: 0.32rem 0;
+    background: transparent;
+  }
+  .table-wrap.can-stack .cell-label {
+    display: block;
+    font-weight: 800;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--bark);
+  }
 }
 
 .figures { display: grid; gap: 0.7rem; margin: 0 0 1.15rem; }
@@ -142,8 +192,12 @@
 .figures figcaption { font-size: 0.85rem; color: #3d3d36; margin-top: 0.3rem; }
 .figures a { display: block; }
 
-.civic .prose { max-width: 42rem; }
-.civic .prose h2 {
+.civic .prose { max-width: none; }
+.civic .prose > p,
+.civic .prose > ul,
+.civic .prose > ol,
+.civic .prose > blockquote { max-width: 42rem; }
+.civic .prose h2:not(.sign) {
   display: flex;
   align-items: center;
   gap: 0.55rem;
@@ -156,7 +210,7 @@
   border-radius: 5px;
   box-shadow: inset 0 0 0 2px var(--bark), inset 0 0 0 4px rgba(244, 234, 210, 0.85);
 }
-.civic .prose h2::before {
+.civic .prose h2:not(.sign)::before {
   content: "";
   width: 0.42em;
   height: 0.9em;

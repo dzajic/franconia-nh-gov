@@ -7,12 +7,6 @@ permalink: /heritage-museum/
 imported_from: "http://www.franconianh.org/heritage-museum.html"
 migrated: false
 archiveBody: heritage-museum
-hours:
-  - "Saturdays, 1:00–4:00 p.m., Memorial Day through Columbus Day"
-  - By appointment in that season
-hoursLabel: Hours
-location:
-  - 553 Main Street, Franconia
 groups:
   - heading: Find the museum
     links:
@@ -30,7 +24,19 @@ figures:
     href: http://www.franconianh.org/uploads/1/1/6/8/11680191/press_release-__wwii_placque_1.docx
   - src: http://www.franconianh.org/uploads/1/1/6/8/11680191/picture4_orig.png
     alt: Heritage Museum photograph
+blocksInBody: true
 ---
+
+## Visit
+
+| Item | Detail |
+| --- | --- |
+| Hours | Saturdays, 1:00–4:00 p.m., Memorial Day through Columbus Day |
+| Hours | By appointment in that season |
+| Address | 553 Main Street, Franconia |
+
+{% include "partials/civic-groups.njk" %}
+{% include "partials/civic-figures.njk" %}
 
 The Franconia Heritage Museum is an 1878 farmhouse with attached barns and sheds that reflect life in Franconia since the town's settlement. There is a self-guided tour, and the museum is free of charge. Volunteers are available to answer questions.
 

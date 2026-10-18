@@ -7,12 +7,6 @@ permalink: /transfer-station/
 imported_from: "http://www.franconianh.org/transfer-station.html"
 migrated: false
 archiveBody: transfer-station
-hoursLabel: Hours listed on this page
-hours:
-  - "Monday, 9:00–5:00"
-  - Tuesday and Wednesday, closed
-  - "Thursday and Friday, 9:00–5:00"
-  - "Saturday and Sunday, 9:00–5:00"
 notices:
   - title: Closed Thursdays
     text: "The Transfer Station will be closed on Thursdays beginning October 30, 2025."
@@ -41,46 +35,68 @@ groups:
     links:
       - label: All recyclable items — must be clean
         href: /recyclable-items/
-tables:
-  - id: fees
-    caption: Pay as you throw bags
-    note: "No charge for paper, cardboard, glass, tin, and aluminum."
-    headers: [Bag, Price]
-    rows:
-      - ["Large, per bag", "$5.00"]
-      - ["Large, per roll (10 bags)", "$50.00"]
-      - ["Large, per case (20 rolls)", "$1,000.00"]
-      - ["Small, per bag", "$3.00"]
-      - ["Small, per roll (10 bags)", "$30.00"]
-      - ["Small, per case (20 rolls)", "$600.00"]
-  - caption: Construction debris
-    headers: [Material, Price]
-    rows:
-      - ["Mixed debris", "$45 per cubic yard"]
-      - ["Sheetrock", "$55 per cubic yard"]
-      - ["Shingles", "$25 per square yard"]
-  - caption: Furniture
-    headers: [Item, Price]
-    rows:
-      - ["Mattress", "$23"]
-      - ["Box spring", "$15"]
-      - ["Sofa bed", "$30"]
-      - ["Couch", "$15"]
-      - ["Stuffed chair", "$15"]
-      - ["Carpet (10 x 12)", "$15"]
-      - ["Dresser", "$10"]
-  - caption: Other charges
-    headers: [Item, Price]
-    rows:
-      - ["Brush under 5 inches in diameter, no stumps, homeowners only", "No charge"]
-      - ["CRTs (TV or computer monitors)", "$5 minimum, determined by attendant"]
-      - ["Appliances", "$10"]
-      - ["Tires up to 16 inches", "$5"]
-      - ["Tires 17 to 21 inches", "$8"]
-      - ["Larger tires", "Determined by attendant"]
 figures:
   - src: http://www.franconianh.org/uploads/1/1/6/8/11680191/7165638.jpg
     alt: Transfer station
+blocksInBody: true
 ---
+
+## Hours listed on this page
+
+| Days | Hours |
+| --- | --- |
+| Monday | 9:00–5:00 |
+| Tuesday and Wednesday | Closed |
+| Thursday and Friday | 9:00–5:00 |
+| Saturday and Sunday | 9:00–5:00 |
+
+{% include "partials/civic-lists.njk" %}
+{% include "partials/civic-groups.njk" %}
+
+<h2 id="fees">Pay as you throw bags</h2>
+
+| Bag | Price |
+| --- | --- |
+| Large, per bag | $5.00 |
+| Large, per roll (10 bags) | $50.00 |
+| Large, per case (20 rolls) | $1,000.00 |
+| Small, per bag | $3.00 |
+| Small, per roll (10 bags) | $30.00 |
+| Small, per case (20 rolls) | $600.00 |
+
+No charge for paper, cardboard, glass, tin, and aluminum.
+
+## Construction debris
+
+| Material | Price |
+| --- | --- |
+| Mixed debris | $45 per cubic yard |
+| Sheetrock | $55 per cubic yard |
+| Shingles | $25 per square yard |
+
+## Furniture
+
+| Item | Price |
+| --- | --- |
+| Mattress | $23 |
+| Box spring | $15 |
+| Sofa bed | $30 |
+| Couch | $15 |
+| Stuffed chair | $15 |
+| Carpet (10 x 12) | $15 |
+| Dresser | $10 |
+
+## Other charges
+
+| Item | Price |
+| --- | --- |
+| Brush under 5 inches in diameter, no stumps, homeowners only | No charge |
+| CRTs (TV or computer monitors) | $5 minimum, determined by attendant |
+| Appliances | $10 |
+| Tires up to 16 inches | $5 |
+| Tires 17 to 21 inches | $8 |
+| Larger tires | Determined by attendant |
+
+{% include "partials/civic-figures.njk" %}
 
 A link titled “Is recycling still worthwhile in NH — webinar” was imported as a file on a private computer: `file:///C:/Users/Kim/OneDrive/Desktop/watch.html`.

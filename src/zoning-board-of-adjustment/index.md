@@ -7,19 +7,6 @@ permalink: /zoning-board-of-adjustment/
 imported_from: "http://www.franconianh.org/zoning-board-of-adjustment.html"
 migrated: false
 archiveBody: zoning-board
-people:
-  - heading: Members
-    members:
-      - name: Peter Grote
-        note: "Chair, 2025"
-      - name: Tim Klotz
-        note: "2027"
-      - name: Tim Sykes
-        note: "2027"
-      - name: Brian Williams
-        note: "2026"
-      - name: Mark Hesler
-        note: "Planning Board, 2027"
 groups:
   - heading: Documents
     links:
@@ -30,3 +17,14 @@ groups:
       - label: By-laws of the Franconia Zoning Board of Adjustment
         href: http://www.franconianh.org/uploads/1/1/6/8/11680191/zba_by-laws.pdf
 ---
+
+## Members
+
+| Name | Role |
+| --- | --- |
+| Peter Grote | Chair, 2025 |
+| Tim Klotz | 2027 |
+| Tim Sykes | 2027 |
+| Brian Williams | 2026 |
+| Mark Hesler | Planning Board, 2027 |
+

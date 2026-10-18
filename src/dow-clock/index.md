@@ -6,9 +6,6 @@ summary: "The Dow Academy clock tower is the icon of the village. This account w
 permalink: /dow-clock/
 imported_from: "http://www.franconianh.org/dow-clock.html"
 migrated: false
-location:
-  - "Town of Franconia — Dow Clock, PO Box 900, Franconia, NH 03580"
-locationLabel: Donations by mail
 groups:
   - heading: Donations and records
     links:
@@ -27,7 +24,17 @@ figures:
   - src: http://www.franconianh.org/uploads/1/1/6/8/11680191/7828020.jpg
     alt: The clock tower on Old Home Day
     caption: The icon on Old Home Day.
+blocksInBody: true
 ---
+
+## Donations by mail
+
+| Item | Detail |
+| --- | --- |
+| Address | Town of Franconia — Dow Clock, PO Box 900, Franconia, NH 03580 |
+
+{% include "partials/civic-groups.njk" %}
+{% include "partials/civic-figures.njk" %}
 
 Time and tide wait for no man. Unfortunately not so for the Dow Clock that overlooks the four sides of Franconia's historical Dow Academy. With the clock tower badly in need of repair and the clock mechanism itself not functional, the town's timepiece that chimed the hours with unbroken rhythm for so many years has been sitting silent. Happily, thanks to a dedicated group of caring Franconia folks, that condition is being remedied.
 

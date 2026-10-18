@@ -7,18 +7,6 @@ permalink: /trustees-of-the-trust-funds/
 imported_from: "http://www.franconianh.org/trustees-of-the-trust-funds.html"
 migrated: false
 archiveBody: trustees-of-trust-funds
-hours:
-  - Third Wednesday of the month, in the Town Hall
-hoursLabel: Meetings
-people:
-  - heading: Trustees
-    members:
-      - name: Janice Cole
-        note: "2026"
-      - name: Carol Walker
-        note: "2027"
-      - name: Michael Betley
-        note: "2028"
 groups:
   - heading: Files
     links:
@@ -255,3 +243,18 @@ groups:
       - label: "08-10-2016"
         href: "http://www.franconianh.org/uploads/1/1/6/8/11680191/totfmin081016.docx"
 ---
+
+## Meetings
+
+| When | Where |
+| --- | --- |
+| Third Wednesday of the month | Town Hall |
+
+## Trustees
+
+| Name | Term |
+| --- | --- |
+| Janice Cole | 2026 |
+| Carol Walker | 2027 |
+| Michael Betley | 2028 |
+

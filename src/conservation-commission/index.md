@@ -7,27 +7,6 @@ permalink: /conservation-commission/
 imported_from: "http://www.franconianh.org/conservation-commission.html"
 migrated: false
 archiveBody: conservation-commission
-people:
-  - heading: Committee members
-    members:
-      - name: Chris Nicodemus
-        note: "2027"
-      - name: Ginny Jeffryes
-        note: "Secretary, 2027"
-      - name: Jill Brewer
-        note: "BOS representative, 2026"
-      - name: Stephen Schwartz
-        note: Planning Board representative
-      - name: Art Daily
-        note: "2025"
-      - name: Julie Weisman
-        note: "2025"
-      - name: Michelle Sauque
-        note: "2025"
-      - name: Robin Ross
-        note: Alternate
-      - name: Mary Grote
-        note: Alternate
 groups:
   - heading: "Links"
     columns: 2
@@ -267,7 +246,25 @@ figures:
   - src: http://www.franconianh.org/uploads/1/1/6/8/11680191/1393529821.jpg
     alt: Photograph linking to a video
     href: http://www.youtube.com/watch
+blocksInBody: true
 ---
+
+## Committee members
+
+| Name | Role |
+| --- | --- |
+| Chris Nicodemus | 2027 |
+| Ginny Jeffryes | Secretary, 2027 |
+| Jill Brewer | BOS representative, 2026 |
+| Stephen Schwartz | Planning Board representative |
+| Art Daily | 2025 |
+| Julie Weisman | 2025 |
+| Michelle Sauque | 2025 |
+| Robin Ross | Alternate |
+| Mary Grote | Alternate |
+
+{% include "partials/civic-groups.njk" %}
+{% include "partials/civic-figures.njk" %}
 
 The Franconia Conservation Commission's mission is for the proper utilization and protection of the natural resources in the Town of Franconia. To provide a focal point for environmental concerns. Protect natural resources by acquiring, with approval of the selectmen, title to or a lesser interest in land or water resources, then manage these conservation areas.
 

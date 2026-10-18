@@ -7,28 +7,6 @@ permalink: /planning-board/
 imported_from: "http://www.franconianh.org/planning-board.html"
 migrated: false
 archiveBody: planning-board
-hours:
-  - "Second and last Tuesday of each month, 6:00 p.m."
-hoursLabel: Meetings
-people:
-  - heading: Members
-    members:
-      - name: Mark Hesler
-        note: "Chair, 2027"
-      - name: Thad Presby
-        note: "Vice Chair, 2028"
-      - name: Pat Garvin
-        note: "2028"
-      - name: Monica Laflamme
-        note: "2027"
-      - name: Eric Meth
-        note: "Selectboard, 2028"
-      - name: Stephen Schwartz
-        note: "2026"
-      - name: John Agostinelli
-        note: "2026"
-      - name: John DiMarzio
-        note: "Alternate, 2026"
 groups:
   - heading: Meetings and plans
     links:
@@ -83,3 +61,23 @@ groups:
       - label: Planning Board fees
         href: http://www.franconianh.org/uploads/1/1/6/8/11680191/planning_board_fees.doc
 ---
+
+## Meetings
+
+| When | Time |
+| --- | --- |
+| Second and last Tuesday of each month | 6:00 p.m. |
+
+## Members
+
+| Name | Role |
+| --- | --- |
+| Mark Hesler | Chair, 2027 |
+| Thad Presby | Vice Chair, 2028 |
+| Pat Garvin | 2028 |
+| Monica Laflamme | 2027 |
+| Eric Meth | Selectboard, 2028 |
+| Stephen Schwartz | 2026 |
+| John Agostinelli | 2026 |
+| John DiMarzio | Alternate, 2026 |
+

@@ -6,22 +6,29 @@ summary: "The library makes materials and services available for the information
 permalink: /abbie-greanleaf-library/
 imported_from: "http://www.franconianh.org/abbie-greanleaf-library.html"
 migrated: false
-contact:
-  - label: Phone
-    value: (603) 823-8424
-    href: tel:+16038238424
-  - label: Email
-    value: "[email protected]"
-    href: /cdn-cgi/l/email-protection/
-hours:
-  - "Monday and Wednesday, 1:00–5:30 p.m."
-  - "Tuesday and Thursday, 10:00 a.m.–1:00 p.m."
-  - "Friday, 12:00–3:00 p.m."
-  - "Saturday, 10:00 a.m.–1:00 p.m."
 figures:
   - src: http://www.franconianh.org/uploads/1/1/6/8/11680191/8117873.jpg
     alt: Abbie Greenleaf Library
+blocksInBody: true
 ---
+
+## Contact
+
+| Item | Detail |
+| --- | --- |
+| Phone | [(603) 823-8424](tel:+16038238424) |
+| Email | [[email protected]](/cdn-cgi/l/email-protection/) |
+
+## Hours
+
+| Days | Hours |
+| --- | --- |
+| Monday and Wednesday | 1:00–5:30 p.m. |
+| Tuesday and Thursday | 10:00 a.m.–1:00 p.m. |
+| Friday | 12:00–3:00 p.m. |
+| Saturday | 10:00 a.m.–1:00 p.m. |
+
+{% include "partials/civic-figures.njk" %}
 
 For up-to-date library information, use the [Abbie Greenleaf Library website](http://www.abbielibrary.org/).
 

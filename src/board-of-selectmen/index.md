@@ -7,28 +7,6 @@ permalink: /board-of-selectmen/
 imported_from: "http://www.franconianh.org/board-of-selectmen.html"
 migrated: false
 archiveBody: selectboard
-contact:
-  - label: Phone
-    value: 603-823-7752
-    href: tel:+16038237752
-  - label: Email
-    value: "[email protected]"
-    href: /cdn-cgi/l/email-protection/
-hours:
-  - Closed Mondays
-  - "Tuesday, 8:00–4:30"
-  - "Wednesday, 8:00–4:30"
-  - "Thursday, 8:00–4:30"
-  - "Friday, 8:00–1:00"
-people:
-  - heading: Board of Selectmen
-    members:
-      - name: Eric Meth
-        note: "2028"
-      - name: Jill Brewer
-        note: "2026, Chair"
-      - name: Dan Walker
-        note: "2027"
 groups:
   - heading: Meetings
     links:
@@ -47,3 +25,29 @@ figures:
     alt: Image linking to the Avitar assessing portal
     href: http://data.avitarassociates.com/logondirect.aspx
 ---
+
+## Contact
+
+| Item | Detail |
+| --- | --- |
+| Phone | [603-823-7752](tel:+16038237752) |
+| Email | [[email protected]](/cdn-cgi/l/email-protection/) |
+
+## Hours
+
+| Day | Hours |
+| --- | --- |
+| Mondays | Closed |
+| Tuesday | 8:00–4:30 |
+| Wednesday | 8:00–4:30 |
+| Thursday | 8:00–4:30 |
+| Friday | 8:00–1:00 |
+
+## Board of Selectmen
+
+| Name | Term |
+| --- | --- |
+| Eric Meth | 2028 |
+| Jill Brewer | 2026, Chair |
+| Dan Walker | 2027 |
+

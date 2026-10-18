@@ -7,25 +7,6 @@ permalink: /energy-commission/
 imported_from: "http://www.franconianh.org/energy-commission.html"
 migrated: false
 archiveBody: energy-commission
-hours:
-  - "Third Tuesday of each month, 4:30 p.m., in the Town Hall"
-  - Summer meetings are held under the pavilion at Dow Park
-hoursLabel: Meetings
-people:
-  - heading: Members
-    members:
-      - name: Chris Dube
-        note: "2026, President"
-      - name: David Strange
-        note: "2027"
-      - name: Daniel Zajic
-        note: "2027"
-      - name: Bob Tortorice
-        note: "2025"
-      - name: Eric Meth
-        note: "BOS representative, 2025"
-      - name: Charles Lukasik
-        note: "2026"
 groups:
   - heading: Other
     links:
@@ -112,7 +93,28 @@ groups:
         href: /2014-energy-minutes/
       - label: "2013"
         href: /energy-minutes/
+blocksInBody: true
 ---
+
+## Meetings
+
+| Meetings |
+| --- |
+| Third Tuesday of each month, 4:30 p.m., in the Town Hall |
+| Summer meetings are held under the pavilion at Dow Park |
+
+## Members
+
+| Name | Role |
+| --- | --- |
+| Chris Dube | 2026, President |
+| David Strange | 2027 |
+| Daniel Zajic | 2027 |
+| Bob Tortorice | 2025 |
+| Eric Meth | BOS representative, 2025 |
+| Charles Lukasik | 2026 |
+
+{% include "partials/civic-groups.njk" %}
 
 The Energy Commission has been created for the purpose of study, planning and utilization of energy resources for Franconia's municipal buildings and built resources. The Commission is charged with researching municipal energy use and costs and making this information available to the town on at least an annual basis. It is also responsible for making recommendations to local boards and committees pertaining to municipal energy plans and sustainable practices, such as energy conservation, energy efficiency, energy generation, and zoning practices.
 

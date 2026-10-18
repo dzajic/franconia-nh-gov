@@ -7,33 +7,6 @@ permalink: /capital-improvements/
 imported_from: "http://www.franconianh.org/capital-improvements.html"
 migrated: false
 archiveBody: capital-improvements-committee
-contact:
-  - label: Email
-    value: "[email protected]"
-    href: /cdn-cgi/l/email-protection/
-people:
-  - heading: Committee
-    members:
-      - name: Steve Plant
-        note: Chairman
-      - name: Dan Walker
-        note: BOS representative
-      - name: Jan Cole
-      - name: Danielle Dawson
-        note: Secretary
-      - name: Larry Plate
-      - name: Monica Laflamme
-        note: Planning Board representative
-lists:
-  - heading: 2024 meeting dates
-    items:
-      - "July 1, 3:30 p.m."
-      - "July 15, 3:30 p.m."
-      - "July 19, 3:30 p.m."
-      - "August 12, 3:30 p.m."
-      - "August 26, 3:30 p.m."
-      - "September 9, 3:30 p.m."
-      - "September 23, 3:30 p.m."
 groups:
   - heading: Plans
     links:
@@ -82,3 +55,33 @@ groups:
       - label: "2025"
         href: /2025-cip-minutes/
 ---
+
+## Contact
+
+| Item | Detail |
+| --- | --- |
+| Email | [[email protected]](/cdn-cgi/l/email-protection/) |
+
+## Committee
+
+| Name | Role |
+| --- | --- |
+| Steve Plant | Chairman |
+| Dan Walker | BOS representative |
+| Jan Cole |  |
+| Danielle Dawson | Secretary |
+| Larry Plate |  |
+| Monica Laflamme | Planning Board representative |
+
+## 2024 meeting dates
+
+| Date | Time |
+| --- | --- |
+| July 1 | 3:30 p.m. |
+| July 15 | 3:30 p.m. |
+| July 19 | 3:30 p.m. |
+| August 12 | 3:30 p.m. |
+| August 26 | 3:30 p.m. |
+| September 9 | 3:30 p.m. |
+| September 23 | 3:30 p.m. |
+

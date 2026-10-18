@@ -4,16 +4,6 @@ title: "Town Clerk / Tax — Town of Franconia"
 heading: "Town Clerk / Tax"
 summary: "Pay a tax bill, register a vehicle, license a dog, or request a vital record."
 permalink: /town-clerk-tax/
-contact:
-  - label: Phone
-    value: 603-823-7752
-    href: tel:+16038237752
-hours:
-  - "Tuesday, Wednesday, and Thursday, 8:00–4:00"
-  - "Friday, 8:00–1:00"
-hoursLabel: Town Clerk hours
-location:
-  - "421 Main Street, PO Box 900, Franconia, NH 03580"
 groups:
   - heading: Online services
     intro: "These links were published on the previous town homepage."
@@ -41,6 +31,24 @@ lists:
     items:
       - Vehicle registration (placeholder)
       - Tax bills and payments (placeholder)
+blocksInBody: true
 ---
+
+## Contact
+
+| Item | Detail |
+| --- | --- |
+| Phone | [603-823-7752](tel:+16038237752) |
+| Address | 421 Main Street, PO Box 900, Franconia, NH 03580 |
+
+## Town Clerk hours
+
+| Days | Hours |
+| --- | --- |
+| Tuesday, Wednesday, and Thursday | 8:00–4:00 |
+| Friday | 8:00–1:00 |
+
+{% include "partials/civic-groups.njk" %}
+{% include "partials/civic-lists.njk" %}
 
 Town Clerk hours above are as published on the [Notices](/notices/) page. The [Board of Selectmen](/board-of-selectmen/) page lists different Friday hours for that office.

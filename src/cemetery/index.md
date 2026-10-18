@@ -7,19 +7,6 @@ permalink: /cemetery/
 imported_from: "http://www.franconianh.org/cemetery.html"
 migrated: false
 archiveBody: cemetery-trustees
-contact:
-  - label: Lot purchase or burial
-    value: Jayne O'Connor, 603-348-8421
-    href: tel:+16033488421
-people:
-  - heading: Cemetery trustees
-    members:
-      - name: Jayne O'Connor
-      - name: Mary Brubaker
-      - name: Chris Collman
-notices:
-  - title: Trustees meeting
-    text: "Cemetery Trustees meeting — Tuesday, January 10 at 9 a.m. and Wednesday, January 11, 2023 at 9:00 a.m. in the Town Hall to work on the budget."
 groups:
   - heading: Records and rules
     links:
@@ -29,38 +16,70 @@ groups:
         href: http://www.franconianh.org/uploads/1/1/6/8/11680191/franconia_cemeteries_rules_and_regulations_5-27-2018.pdf
       - label: Minutes
         href: /cemetery-minutes/
-tables:
-  - id: fees
-    caption: Traditional burial lot, with cornerstones
-    headers: ["", "1 person (6' x 10')", "2 person (12' x 10')", "4 person (12' x 20')"]
-    rowHead: true
-    rows:
-      - ["Resident", "$720", "$870", "$1445"]
-      - ["Non-resident", "$995", "$1245", "$2045"]
-    note: "A non-resident must show evidence of ties to the Town, for example a second home or place of birth."
-  - caption: Cremation lot, limit of 4 (6' x 10')
-    headers: ["", "Price"]
-    rowHead: true
-    rows:
-      - ["Resident", "$720"]
-      - ["Non-resident", "$995"]
-  - caption: Opening and closing a grave
-    headers: ["When", "Price"]
-    rows:
-      - ["Weekday, both opening and closing", "$400"]
-      - ["Weekend, opening and/or closing", "$500"]
-    note: "A burial on a Monday usually requires opening the grave on the weekend."
-  - caption: Cremation opening
-    headers: ["When", "Price"]
-    rows:
-      - ["Weekday", "$150"]
-      - ["Weekend", "$200"]
 figures:
   - src: http://www.franconianh.org/uploads/1/1/6/8/11680191/published/img-3945_1.jpg
     alt: Elmwood Cemetery
   - src: http://www.franconianh.org/uploads/1/1/6/8/11680191/published/cem-c_1.jpg
     alt: Elmwood Cemetery photograph published with the fee list
+blocksInBody: true
 ---
+
+## Contact
+
+| Item | Detail |
+| --- | --- |
+| Lot purchase or burial | [Jayne O'Connor, 603-348-8421](tel:+16033488421) |
+
+## Cemetery trustees
+
+| Name |
+| --- |
+| Jayne O'Connor |
+| Mary Brubaker |
+| Chris Collman |
+
+## Trustees meeting
+
+| When | Time | Where | Purpose |
+| --- | --- | --- | --- |
+| Tuesday, January 10 | 9 a.m. | Town Hall | Work on the budget |
+| Wednesday, January 11, 2023 | 9:00 a.m. | Town Hall | Work on the budget |
+
+{% include "partials/civic-groups.njk" %}
+
+<h2 id="fees">Traditional burial lot, with cornerstones</h2>
+
+|  | 1 person (6' x 10') | 2 person (12' x 10') | 4 person (12' x 20') |
+| --- | --- | --- | --- |
+| Resident | $720 | $870 | $1445 |
+| Non-resident | $995 | $1245 | $2045 |
+
+A non-resident must show evidence of ties to the Town, for example a second home or place of birth.
+
+## Cremation lot, limit of 4 (6' x 10')
+
+|  | Price |
+| --- | --- |
+| Resident | $720 |
+| Non-resident | $995 |
+
+## Opening and closing a grave
+
+| When | Price |
+| --- | --- |
+| Weekday, both opening and closing | $400 |
+| Weekend, opening and/or closing | $500 |
+
+A burial on a Monday usually requires opening the grave on the weekend.
+
+## Cremation opening
+
+| When | Price |
+| --- | --- |
+| Weekday | $150 |
+| Weekend | $200 |
+
+{% include "partials/civic-figures.njk" %}
 
 Make checks payable to the Town of Franconia.
 

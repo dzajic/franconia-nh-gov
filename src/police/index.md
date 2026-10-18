@@ -7,35 +7,6 @@ permalink: /police/
 imported_from: "http://www.franconianh.org/police.html"
 migrated: false
 archiveBody: police-department
-contact:
-  - label: Emergency
-    value: Dial 911
-    href: tel:911
-  - label: Dispatch
-    value: 823-8123
-  - label: Police station
-    value: 823-7025
-  - label: Email
-    value: "[email protected]"
-    href: /cdn-cgi/l/email-protection/
-location:
-  - "P.O. Box 900"
-  - "Franconia, NH 03580"
-locationLabel: Mailing address
-people:
-  - heading: Full time
-    members:
-      - name: Chief Martin A Cashin
-      - name: Sergeant Ryan Jarvis
-      - name: Justin Barnum
-  - heading: Part time
-    members:
-      - name: Officer Kerry Pomeroy
-      - name: Officer Zachary Bushway
-      - name: Officer Jeff Dube
-  - heading: Office administrator
-    members:
-      - name: Lorie Aldrich
 groups:
   - heading: Forms
     links:
@@ -44,7 +15,33 @@ groups:
 figures:
   - src: http://www.franconianh.org/uploads/1/1/6/8/11680191/789754.jpg
     alt: Franconia Police Department photograph
+blocksInBody: true
 ---
+
+## Contact
+
+| Item | Detail |
+| --- | --- |
+| Emergency | [Dial 911](tel:911) |
+| Dispatch | 823-8123 |
+| Police station | 823-7025 |
+| Email | [[email protected]](/cdn-cgi/l/email-protection/) |
+| Mailing address | P.O. Box 900, Franconia, NH 03580 |
+
+## Staff
+
+| Name | Assignment |
+| --- | --- |
+| Chief Martin A Cashin | Full time |
+| Sergeant Ryan Jarvis | Full time |
+| Justin Barnum | Full time |
+| Officer Kerry Pomeroy | Part time |
+| Officer Zachary Bushway | Part time |
+| Officer Jeff Dube | Part time |
+| Lorie Aldrich | Office administrator |
+
+{% include "partials/civic-groups.njk" %}
+{% include "partials/civic-figures.njk" %}
 
 The Franconia Police Department is proud to serve the community of Franconia by building trusting and cohesive community relationships through transparency, accountability, participation and engagement in our Town. Through our best discretion we will uphold the laws of the State of New Hampshire with honesty and integrity so that our citizens live in a safe, prosperous, culturally rich community and in doing so we will protect and improve the quality of all of our lives.
 

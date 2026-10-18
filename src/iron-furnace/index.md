@@ -6,10 +6,6 @@ summary: "The only blast furnace still standing in New Hampshire, with an interp
 permalink: /iron-furnace/
 imported_from: "http://www.franconianh.org/iron-furnace.html"
 migrated: false
-locationLabel: Directions
-location:
-  - "From I-93, take exit 38 to Main Street (Route 18). Turn right."
-  - "The Interpretive Center and furnace are about half a mile on the left, at the Route 18 and Route 117 junction by the Sugar Hill bridge."
 notices:
   - title: Private property
     text: "Viewable anytime from the picnic area. The stone stack itself is on private property across the Gale River. Trespassing is prohibited because of the danger of falling stones."
@@ -23,7 +19,16 @@ figures:
     alt: Iron furnace photograph
   - src: http://www.franconianh.org/uploads/1/1/6/8/11680191/2577806.jpg
     alt: Iron furnace photograph
+blocksInBody: true
 ---
+
+## Directions
+
+1. From I-93, take exit 38 to Main Street (Route 18). Turn right.
+2. The Interpretive Center and furnace are about half a mile on the left, at the Route 18 and Route 117 junction by the Sugar Hill bridge.
+
+{% include "partials/civic-groups.njk" %}
+{% include "partials/civic-figures.njk" %}
 
 The octagonal stone stack on the far bank of the Gale River is all that remains of a 200-year-old iron smelter shown on an 1805 map of Franconia.
 

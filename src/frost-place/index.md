@@ -6,9 +6,6 @@ summary: "Robert and Elinor Frost owned this house from 1915 to 1920. Some of th
 permalink: /frost-place/
 imported_from: "http://www.franconianh.org/frost-place.html"
 migrated: false
-hours:
-  - Re-opens Memorial Day weekend
-hoursLabel: Season
 groups:
   - heading: Website
     links:
@@ -18,3 +15,10 @@ figures:
   - src: http://www.franconianh.org/uploads/1/1/6/8/11680191/8270805.jpg
     alt: The Frost Place
 ---
+
+## Season
+
+| Item | Detail |
+| --- | --- |
+| Season | Re-opens Memorial Day weekend |
+
