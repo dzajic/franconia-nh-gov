@@ -1,0 +1,29 @@
+<script>
+(function () {
+  var months = {
+    {% for id, season in seasons %}{% for month in season.months %}{{ month }}: "{{ id }}",{% endfor %}{% endfor %}
+  };
+  var allowed = { {% for id, season in seasons %}{{ id }}: 1,{% endfor %} };
+  var picked = "";
+  try {
+    picked = (new URLSearchParams(location.search).get("season") || "").toLowerCase();
+  } catch (e) {}
+  var season = allowed[picked] ? picked : (months[new Date().getMonth() + 1] || "fall");
+  document.documentElement.setAttribute("data-season", season);
+})();
+</script>
+<style>
+@layer seasonal {
+{% for id, season in seasons %}
+:root[data-season="{{ id }}"] {
+  --spr: {{ season.colors.spr }};
+  --deep: {{ season.colors.deep }};
+  --bark: {{ season.colors.bark }};
+  --paper: {{ season.colors.paper }};
+  --blaze: {{ season.colors.blaze }};
+  --rust: {{ season.colors.rust }};
+  --focus: {{ season.colors.focus }};
+}
+{% endfor %}
+}
+</style>

@@ -1,10 +1,15 @@
-/* Franconia town site. Palette and trail-sign styling from the approved homepage. */
+/* Franconia town site. Palette and trail-sign styling from the approved homepage.
+   Token defaults live in @layer base. Seasonal accents (from src/_data/seasons.js)
+   live in @layer seasonal, which wins over base. Unlayered rules — including a
+   dark theme — still win over both layers, and color-scheme stays light here. */
+@layer base, seasonal;
 * { box-sizing: border-box; }
 html {
   -webkit-text-size-adjust: 100%;
-  scroll-padding-top: 7.5rem;
+  scroll-padding-top: 9rem;
   color-scheme: light;
 }
+@layer base {
 :root {
   --spr: #173f33;
   --deep: #0e2a21;
@@ -17,6 +22,7 @@ html {
   --focus: #9a3b1a;
   --sign: "Arial Black", "Helvetica Neue Heavy", Impact, "Liberation Sans", Arial, sans-serif;
   --body: "Avenir Next", "Segoe UI", system-ui, Roboto, "Liberation Sans", sans-serif;
+}
 }
 body {
   margin: 0;
@@ -412,14 +418,14 @@ main > section,
 body.about .hdr { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; padding-bottom: 0.5rem; }
 body.about .hband2 { display: none; }
 body.about .top nav { order: 3; width: 100%; margin: 0; padding: 0; justify-content: flex-start; }
-body.about .brand { margin-right: auto; }
+body.about .brand-block { margin-right: auto; }
 @media (min-width: 900px) {
   body.about .top nav { order: 0; width: auto; margin-left: auto; }
 }
 .ahero { background: var(--spr); color: var(--cream); padding-top: 1.6rem; overflow: hidden; }
 .ah { display: flex; gap: 1.5rem; align-items: center; justify-content: space-between; padding-bottom: 1.5rem; }
 .at { flex: 1; }
-.hom { width: clamp(110px, 28vw, 260px); height: auto; flex: none; }
+.hom { width: clamp(110px, 28vw, 260px); height: auto; flex: none; color: var(--spr); }
 .kick {
   font: 800 0.72rem var(--body);
   letter-spacing: 0.28em;
@@ -846,4 +852,56 @@ a.doc-info:focus-visible {
 @media (max-width: 520px) {
   .story { flex-direction: column; align-items: flex-start; }
   .meta-dl { grid-template-columns: 1fr; }
+}
+
+/* Seasonal accents follow the tokens. Landscape fills track spruce, deep, and paper. */
+.hband polygon { fill: var(--deep); }
+.hband2 polygon { fill: var(--paper); }
+.bigridge polygon { fill: var(--deep); }
+.foot .rf polygon { fill: var(--spr); }
+.foot .trees > svg path,
+.foot .trees > svg rect { fill: var(--deep); }
+.trees { position: relative; }
+.brand-block { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
+.season-line {
+  display: none;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0.22rem 0 0;
+  max-width: 16rem;
+  color: var(--blaze);
+  font: 800 0.68rem/1.2 var(--body);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+html[data-season] .season-line { display: flex; }
+.season-line [data-season-copy] { display: none; }
+html[data-season="winter"] .season-line [data-season-copy="winter"],
+html[data-season="spring"] .season-line [data-season-copy="spring"],
+html[data-season="summer"] .season-line [data-season-copy="summer"],
+html[data-season="fall"] .season-line [data-season-copy="fall"] { display: inline; }
+.season-motif svg { display: none; width: 1.05rem; height: 1.05rem; flex: none; }
+html[data-season="winter"] .season-motif .m-winter,
+html[data-season="spring"] .season-motif .m-spring,
+html[data-season="summer"] .season-motif .m-summer,
+html[data-season="fall"] .season-motif .m-fall { display: block; }
+.trees .season-motif {
+  position: absolute;
+  right: 0.85rem;
+  bottom: 0.35rem;
+  width: 1.35rem;
+  height: 1.35rem;
+  color: var(--blaze);
+  pointer-events: none;
+}
+.trees .season-motif svg { width: 1.35rem; height: 1.35rem; }
+.season-fx {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 30;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .season-fx { display: none !important; }
 }

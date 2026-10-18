@@ -4,6 +4,7 @@ permalink: /
 title: "Franconia, NH — Town services"
 description: "Town of Franconia, New Hampshire. Pay a bill, find a form, or read the latest minutes."
 bodyClass: home
+pageScript: /assets/season.js
 ---
 {% from "partials/icons.njk" import icon %}
 <main id="main" class="in" data-pagefind-body>
@@ -102,3 +103,4 @@ bodyClass: home
     <p>Machine-readable: this page embeds JSON-LD; the town publishes <a href="{{ '/llms.txt' | url }}"><code>/llms.txt</code></a> and <a href="{{ '/town.json' | url }}"><code>/town.json</code></a>. Document records are listed at <a href="{{ '/archive/index.json' | url }}"><code>/archive/index.json</code></a>. Bracketed placeholders are not real values. Alert dates are sample content.</p>
   </aside>
 </main>
+<script type="application/json" id="season-fx-data">{{ seasons | json | safe }}</script>

@@ -1,0 +1,6 @@
+<p class="season-line" data-pagefind-ignore>
+  {% include "partials/season-motif.njk" %}
+  {% for id, season in seasons %}
+  <span data-season-copy="{{ id }}">{{ season.line }}</span>
+  {% endfor %}
+</p>
