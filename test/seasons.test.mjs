@@ -86,7 +86,9 @@ test("each seasonal palette keeps WCAG AA text contrast", () => {
     ["rust on cream", (c) => [c.rust, c.cream]],
     ["spruce on paper", (c) => [c.spr, c.paper]],
     ["spruce on cream", (c) => [c.spr, c.cream]],
+    ["spruce on card", (c) => [c.spr, c.card]],
     ["bark on paper", (c) => [c.bark, c.paper]],
+    ["bark on card", (c) => [c.bark, c.card]],
     ["muted on paper", (c) => [c.muted, c.paper]],
     ["muted on card", (c) => [c.muted, c.card]],
   ];
