@@ -74,7 +74,18 @@
     
     <aside class="preview-note" role="region" aria-label="Website preview" data-pagefind-ignore>
   <p>Preview of the future Franconia town website. A demo, not the official site. <a href="https://www.franconianh.gov/">franconianh.gov</a></p>
+  <button type="button" class="preview-note-dismiss" aria-label="Dismiss preview notice"><span aria-hidden="true">×</span></button>
 </aside>
+<script>
+(function () {
+  var bar = document.currentScript && document.currentScript.previousElementSibling;
+  var button = bar && bar.querySelector(".preview-note-dismiss");
+  if (!button) return;
+  button.addEventListener("click", function () {
+    bar.hidden = true;
+  });
+})();
+</script>
 
     
     
