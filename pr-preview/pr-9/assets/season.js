@@ -57,7 +57,7 @@
       g.restore();
     }
     if (variant < 2) arms(0, 0, "#f7fbff", 0.28, 8);
-    arms(3, 4, "#16324f", 0.5, 3.4);
+    arms(3, 4, "#0b2140", 0.5, 3.4);
     arms(0, 0, variant === 4 ? "#e7f2fb" : "#ffffff", 1, variant === 2 ? 2.7 : 1.8);
     return c;
   }
@@ -216,8 +216,9 @@
 
     var flakes = [];
     var leaves = [];
-    var glow = null;
+    var glows = [];
     var colors = fx.colors && fx.colors.length ? fx.colors : ["#ffffff"];
+    activeColors = colors;
     var i;
     if (kind === "snow") {
       for (i = 0; i < 5; i++) flakes.push(paintFlake(i));
@@ -227,7 +228,7 @@
         leaves.push(paintLeaf(shapes[i % 3], colors[i]));
       }
     } else if (kind === "summer") {
-      glow = paintGlow(colors[1] || "#ffe566");
+      for (i = 0; i < colors.length; i++) glows.push(paintGlow(colors[i]));
     }
 
     function sizeCanvases() {
@@ -297,7 +298,9 @@
         phase: Math.random() * Math.PI * 2,
         sprite: kind === "snow"
           ? (depth < 0.34 ? index % 2 : 2 + (index % 3))
-          : index % Math.max(1, leaves.length),
+          : kind === "summer"
+            ? index % colors.length
+            : index % Math.max(1, leaves.length),
         color: colors[index % colors.length],
         wing: Math.random() * Math.PI * 2,
         kindBit: kind === "spring" ? (index % 6 === 0 ? "butterfly" : "petal") : (kind === "summer" && index % 3 === 0 ? "seed" : ""),
@@ -443,15 +446,16 @@
           ctx.moveTo(0, 0);
           ctx.lineTo(0, 14);
           ctx.stroke();
-          ctx.fillStyle = "#c47a16";
+          ctx.fillStyle = activeColors[1] ? shade(activeColors[1], -70) : "#c47a16";
           ctx.beginPath();
           ctx.arc(0, 15, 1.7, 0, Math.PI * 2);
           ctx.fill();
-        } else if (glow) {
+        } else if (glows.length) {
           var pulse = 0.4 + 0.6 * (0.5 + 0.5 * Math.sin(now / 280 + part.phase));
           ctx.globalAlpha = pulse * fade;
           var gs = 18 + part.depth * 26;
-          ctx.drawImage(glow, -gs / 2, -gs / 2, gs, gs);
+          var fire = glows[part.sprite % glows.length];
+          ctx.drawImage(fire, -gs / 2, -gs / 2, gs, gs);
         }
       } else if (part.kindBit === "butterfly") {
         ctx.globalAlpha = 0.9 * fade;
@@ -499,7 +503,7 @@
         if (gt <= 0) continue;
         var h = blade.h * gt * gt * settle;
         var lean = blade.lean + sway * 4;
-        gctx.strokeStyle = gt > 0.5 ? "#2f7a3a" : "#3d8f48";
+        gctx.strokeStyle = gt > 0.5 ? (colors[3] || "#2f9a4e") : shade(colors[3] || "#2f9a4e", 28);
         gctx.lineWidth = 1.6;
         gctx.beginPath();
         gctx.moveTo(blade.x, groundH);
@@ -518,14 +522,16 @@
     wake();
   }
 
+  var activeColors = ["#f7d0ea", "#e6b8ec", "#ffffff", "#2f9a4e", "#922f78"];
+
   function drawButterfly(ctx, part) {
     var flap = 0.35 + Math.abs(Math.sin(part.wing)) * 0.75;
-    ctx.fillStyle = "#f4c6e4";
+    ctx.fillStyle = activeColors[0];
     ctx.beginPath();
     ctx.ellipse(-6, 0, 7, 4.5 * flap, -0.4, 0, Math.PI * 2);
     ctx.ellipse(6, 0, 7, 4.5 * flap, 0.4, 0, Math.PI * 2);
     ctx.fill();
-    ctx.fillStyle = "#7a3568";
+    ctx.fillStyle = activeColors[4];
     ctx.fillRect(-0.7, -5, 1.4, 10);
   }
 
@@ -533,7 +539,7 @@
     ctx.save();
     ctx.translate(x, base);
     ctx.scale(scale, scale);
-    ctx.strokeStyle = "#2f7a3a";
+    ctx.strokeStyle = activeColors[3];
     ctx.lineWidth = 1.6;
     ctx.beginPath();
     ctx.moveTo(0, 0);
@@ -541,20 +547,20 @@
     ctx.stroke();
     ctx.translate(bob, -70);
     if (type === "tulip") {
-      ctx.fillStyle = "#e7a0c4";
+      ctx.fillStyle = activeColors[4];
       ctx.beginPath();
       ctx.moveTo(0, 8);
       ctx.bezierCurveTo(-10, 4, -8, -12, 0, -14);
       ctx.bezierCurveTo(8, -12, 10, 4, 0, 8);
       ctx.fill();
-      ctx.fillStyle = "#f6cce4";
+      ctx.fillStyle = activeColors[0];
       ctx.beginPath();
       ctx.moveTo(0, 6);
       ctx.bezierCurveTo(-4, 2, -3, -6, 0, -8);
       ctx.bezierCurveTo(3, -6, 4, 2, 0, 6);
       ctx.fill();
     } else if (type === "dandelion") {
-      ctx.fillStyle = "#f6d34a";
+      ctx.fillStyle = activeColors[1];
       var k;
       for (k = 0; k < 10; k++) {
         var a = (k / 10) * Math.PI * 2;
@@ -562,12 +568,12 @@
         ctx.arc(Math.cos(a) * 7, Math.sin(a) * 7, 2.1, 0, Math.PI * 2);
         ctx.fill();
       }
-      ctx.fillStyle = "#ffe9a0";
+      ctx.fillStyle = activeColors[0];
       ctx.beginPath();
       ctx.arc(0, 0, 3, 0, Math.PI * 2);
       ctx.fill();
     } else {
-      ctx.fillStyle = "#fff";
+      ctx.fillStyle = activeColors[2];
       var p;
       for (p = 0; p < 8; p++) {
         ctx.rotate(Math.PI / 4);
@@ -575,7 +581,7 @@
         ctx.ellipse(0, -8, 3.1, 6.2, 0, 0, Math.PI * 2);
         ctx.fill();
       }
-      ctx.fillStyle = "#f0c84a";
+      ctx.fillStyle = activeColors[4];
       ctx.beginPath();
       ctx.arc(0, 0, 3.3, 0, Math.PI * 2);
       ctx.fill();
