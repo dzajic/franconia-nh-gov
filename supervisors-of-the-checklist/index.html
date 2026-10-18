@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Supervisors of the Checklist - TOWN OF FRANCONIA</title>
+    <title>Supervisors of the Checklist — Town of Franconia</title>
     <meta name="description" content="Town of Franconia, New Hampshire. Pay a bill, find a form, or read the latest minutes.">
     <link rel="canonical" href="https://dzajic.github.io/franconia-nh-gov/supervisors-of-the-checklist/">
     <link rel="alternate" type="text/plain" href="/franconia-nh-gov/llms.txt" title="llms.txt">
     <link rel="alternate" type="application/json" href="/franconia-nh-gov/town.json">
     <link rel="stylesheet" href="/franconia-nh-gov/assets/site.css">
+    <link rel="stylesheet" href="/franconia-nh-gov/assets/pages.css">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -140,21 +141,122 @@
   </div>
 </header>
 
-    <main id="main" class="in page" data-pagefind-body>
-  <h1 class="page-title">Supervisors of the Checklist - TOWN OF FRANCONIA</h1>
+    
+<main id="main" class="in page civic" data-pagefind-body>
+  <header class="civic-head">
+    <h1 class="page-title">Supervisors of the Checklist</h1>
+    
+    <p class="lede">Who serves on the checklist, and how to ask for minutes.</p>
+    
+  </header>
+
+  
+
+  
+  <div class="prose">
+    <h2>Contact</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minutes</td>
+<td><a href="/franconia-nh-gov/cdn-cgi/l/email-protection/">[email protected]</a></td>
+</tr>
+</tbody>
+</table>
+<h2>Supervisors</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Term</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monica Laflamme</td>
+<td>2026</td>
+</tr>
+<tr>
+<td>Susan Moore</td>
+<td>2028 (resigned)</td>
+</tr>
+<tr>
+<td>Lydia Cumbee</td>
+<td>2026 (complete remainder of S. Moore term)</td>
+</tr>
+<tr>
+<td>Stephen Schwartz</td>
+<td>2030</td>
+</tr>
+</tbody>
+</table>
+<p>Minutes of the meetings of the Supervisors of the Checklist may be reviewed and copies requested by email.</p>
+
+  </div>
+  
+
+  
+  
+
+  
+
+  
+
+  
+
   
   <p class="more"><a href="/franconia-nh-gov/archive/supervisors-of-checklist/">Documents for this page</a></p>
   
-  <div class="prose">
-    <p><strong>SUPERVISORS OF THE CHECKLIST</strong><br>
- Monica Laflamme    2026</p>
-<p>Susan Moore            2028 (resigned)</p>
-<p>Lydia Cumbee          2026 (complete remainder of S. Moore term)</p>
-<p>Stephen Schwartz    2030</p>
-<p>​Minutes of the meetings of the Supervisors of the Checklist may be reviewed and copies requested by sending an email to: <a href="/franconia-nh-gov/cdn-cgi/l/email-protection/">[email protected]</a>.</p>
-
-  </div>
 </main>
+<script>
+(function () {
+  var root = document.querySelector(".civic");
+  if (!root) return;
+  var narrow = window.matchMedia("(max-width: 640px)");
+  root.querySelectorAll("table").forEach(function (table) {
+    if (table.closest(".table-wrap")) return;
+    var headers = Array.prototype.map.call(table.querySelectorAll("thead th"), function (th) {
+      return th.textContent.replace(/\s+/g, " ").trim();
+    });
+    var wrap = document.createElement("div");
+    wrap.className = "table-wrap";
+    table.parentNode.insertBefore(wrap, table);
+    wrap.appendChild(table);
+    var thead = table.querySelector("thead");
+    function layout() {
+      var stack = narrow.matches && headers.length >= 3;
+      wrap.classList.toggle("can-stack", stack);
+      if (thead) thead.toggleAttribute("aria-hidden", stack);
+      wrap.tabIndex = !stack && wrap.scrollWidth > wrap.clientWidth + 1 ? 0 : -1;
+      if (wrap.tabIndex === -1) wrap.removeAttribute("tabindex");
+      table.querySelectorAll("tr").forEach(function (tr) {
+        if (tr.parentElement && tr.parentElement.tagName === "THEAD") return;
+        Array.prototype.forEach.call(tr.children, function (cell, i) {
+          var existing = cell.querySelector(".cell-label");
+          if (!stack || !headers[i]) {
+            if (existing) existing.remove();
+            return;
+          }
+          if (!existing) {
+            existing = document.createElement("span");
+            existing.className = "cell-label";
+            cell.prepend(existing);
+          }
+          existing.textContent = headers[i];
+        });
+      });
+    }
+    layout();
+    narrow.addEventListener("change", layout);
+  });
+})();
+</script>
 
     <footer class="foot" data-pagefind-ignore>
   

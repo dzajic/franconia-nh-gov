@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Abbie Greanleaf Library - TOWN OF FRANCONIA</title>
+    <title>Abbie Greenleaf Library — Town of Franconia</title>
     <meta name="description" content="Town of Franconia, New Hampshire. Pay a bill, find a form, or read the latest minutes.">
     <link rel="canonical" href="https://dzajic.github.io/franconia-nh-gov/abbie-greanleaf-library/">
     <link rel="alternate" type="text/plain" href="/franconia-nh-gov/llms.txt" title="llms.txt">
     <link rel="alternate" type="application/json" href="/franconia-nh-gov/town.json">
     <link rel="stylesheet" href="/franconia-nh-gov/assets/site.css">
+    <link rel="stylesheet" href="/franconia-nh-gov/assets/pages.css">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -140,36 +141,125 @@
   </div>
 </header>
 
-    <main id="main" class="in page" data-pagefind-body>
-  <h1 class="page-title">Abbie Greanleaf Library - TOWN OF FRANCONIA</h1>
+    
+<main id="main" class="in page civic" data-pagefind-body>
+  <header class="civic-head">
+    <h1 class="page-title">Abbie Greenleaf Library</h1>
+    
+    <p class="lede">The library makes materials and services available for the informational, intellectual, and recreational needs of Franconia.</p>
+    
+  </header>
+
+  
+
   
   <div class="prose">
-    <h2>Abbie Greenleaf Library</h2>
-<h2></h2>
-<p><img src="https://images.weserv.nl/?url=www.franconianh.org%2Fuploads%2F1%2F1%2F6%2F8%2F11680191%2F8117873.jpg" alt="Picture"></p>
-<p><em><strong>It is the mission of the Abbie Greenleaf Library to make<br>
-available materials and services to satisfy the informational, intellectual and<br>
-recreational needs of the community of Franconia.</strong></em><br>
-<strong>For up-to-date library information click here to go to <a href="http://www.abbielibrary.org/">Abbie </a><a href="http://www.abbielibrary.org/">Greenleaf Library website</a>.</strong></p>
-<p>Charles H Greenleaf presented the library to the town in 1912 and named it in honor of his wife Abbie.<br>
-Colonel Greenleaf owned the Profile House, a grand hotel in Franconia Notch. The Greenleaf Trail and hut on Mount Lafayette are named after him.</p>
-<p> The library is of Jacobethan/Collegiate Gothic design with Richardsonian Romanesque features. Details include an oak door with bulls-eye glass, mosaic floors, mahogany woodwork, and stained glass.</p>
-<p> The building was entered on the National Register of Historic Places in July, 2003.</p>
-<p> <strong>Abbie Greenleaf Library<br>
-(603) 823-8424  </strong><br>
-<strong><a href="/franconia-nh-gov/cdn-cgi/l/email-protection/">[email protected]</a>                                     </strong></p>
-<p>                  </p>
-<p>​<br>
-<strong>Abbie Greenleaf Library hours                                           </strong><br>
-Monday + Wednesday 1 - 5:30 p.m.<br>
-Tuesday + Thursday 10 a.m. - 1 p.m.<br>
-Friday 12 - 3 p.m.<br>
-Saturday 10 a.m. - 1 p.m<br>
-  </p>
-<hr>
+    <h2>Contact</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phone</td>
+<td><a href="tel:+16038238424">(603) 823-8424</a></td>
+</tr>
+<tr>
+<td>Email</td>
+<td><a href="/franconia-nh-gov/cdn-cgi/l/email-protection/">[email protected]</a></td>
+</tr>
+</tbody>
+</table>
+<h2>Hours</h2>
+<table>
+<thead>
+<tr>
+<th>Days</th>
+<th>Hours</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monday and Wednesday</td>
+<td>1:00–5:30 p.m.</td>
+</tr>
+<tr>
+<td>Tuesday and Thursday</td>
+<td>10:00 a.m.–1:00 p.m.</td>
+</tr>
+<tr>
+<td>Friday</td>
+<td>12:00–3:00 p.m.</td>
+</tr>
+<tr>
+<td>Saturday</td>
+<td>10:00 a.m.–1:00 p.m.</td>
+</tr>
+</tbody>
+</table>
+<div class="figures">
+<figure>
+<img src="https://images.weserv.nl/?url=www.franconianh.org%2Fuploads%2F1%2F1%2F6%2F8%2F11680191%2F8117873.jpg" alt="Abbie Greenleaf Library">
+</figure>
+</div>
+<p>For up-to-date library information, use the <a href="http://www.abbielibrary.org/">Abbie Greenleaf Library website</a>.</p>
+<p>Charles H Greenleaf presented the library to the town in 1912 and named it in honor of his wife Abbie. Colonel Greenleaf owned the Profile House, a grand hotel in Franconia Notch. The Greenleaf Trail and hut on Mount Lafayette are named after him.</p>
+<p>The library is of Jacobethan/Collegiate Gothic design with Richardsonian Romanesque features. Details include an oak door with bulls-eye glass, mosaic floors, mahogany woodwork, and stained glass.</p>
+<p>The building was entered on the National Register of Historic Places in July 2003.</p>
 
   </div>
+  
+
+  
+
+  
 </main>
+<script>
+(function () {
+  var root = document.querySelector(".civic");
+  if (!root) return;
+  var narrow = window.matchMedia("(max-width: 640px)");
+  root.querySelectorAll("table").forEach(function (table) {
+    if (table.closest(".table-wrap")) return;
+    var headers = Array.prototype.map.call(table.querySelectorAll("thead th"), function (th) {
+      return th.textContent.replace(/\s+/g, " ").trim();
+    });
+    var wrap = document.createElement("div");
+    wrap.className = "table-wrap";
+    table.parentNode.insertBefore(wrap, table);
+    wrap.appendChild(table);
+    var thead = table.querySelector("thead");
+    function layout() {
+      var stack = narrow.matches && headers.length >= 3;
+      wrap.classList.toggle("can-stack", stack);
+      if (thead) thead.toggleAttribute("aria-hidden", stack);
+      wrap.tabIndex = !stack && wrap.scrollWidth > wrap.clientWidth + 1 ? 0 : -1;
+      if (wrap.tabIndex === -1) wrap.removeAttribute("tabindex");
+      table.querySelectorAll("tr").forEach(function (tr) {
+        if (tr.parentElement && tr.parentElement.tagName === "THEAD") return;
+        Array.prototype.forEach.call(tr.children, function (cell, i) {
+          var existing = cell.querySelector(".cell-label");
+          if (!stack || !headers[i]) {
+            if (existing) existing.remove();
+            return;
+          }
+          if (!existing) {
+            existing = document.createElement("span");
+            existing.className = "cell-label";
+            cell.prepend(existing);
+          }
+          existing.textContent = headers[i];
+        });
+      });
+    }
+    layout();
+    narrow.addEventListener("change", layout);
+  });
+})();
+</script>
 
     <footer class="foot" data-pagefind-ignore>
   

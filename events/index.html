@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Events - TOWN OF FRANCONIA</title>
+    <title>Events — Town of Franconia</title>
     <meta name="description" content="Town of Franconia, New Hampshire. Pay a bill, find a form, or read the latest minutes.">
     <link rel="canonical" href="https://dzajic.github.io/franconia-nh-gov/events/">
     <link rel="alternate" type="text/plain" href="/franconia-nh-gov/llms.txt" title="llms.txt">
     <link rel="alternate" type="application/json" href="/franconia-nh-gov/town.json">
     <link rel="stylesheet" href="/franconia-nh-gov/assets/site.css">
+    <link rel="stylesheet" href="/franconia-nh-gov/assets/pages.css">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -140,21 +141,104 @@
   </div>
 </header>
 
-    <main id="main" class="in page" data-pagefind-body>
-  <h1 class="page-title">Events - TOWN OF FRANCONIA</h1>
+    
+<main id="main" class="in page civic" data-pagefind-body>
+  <header class="civic-head">
+    <h1 class="page-title">Events</h1>
+    
+    <p class="lede">NH Recycles presents Recycling 101 at Lafayette School.</p>
+    
+  </header>
+
+  
+
   
   <div class="prose">
-    <h2>Events</h2>
-<p>|</p>
-<p><img src="https://images.weserv.nl/?url=www.franconianh.org%2Fuploads%2F1%2F1%2F6%2F8%2F11680191%2Fnccp-logo-1200dpi_orig.jpeg" alt="Picture"></p>
-<p>|
-<strong>NH RECYCLES - RECYCLING 101 </strong><br>
-<strong>On Thursday, August 7th from 6-7pm, join NH Recycles for a Recycling 101 presentation at the Lafayette School</strong>**   <strong><strong>in Franconia, NH.</strong>  Have you ever wondered what happens to that aluminum can once you throw it in the recycling bin? What makes recycling different in New Hampshire compared to our neighboring states? Join NH Recycles to get answers to your burning recycling questions at our upcoming Recycling 101 presentation and Q&amp;A session. Bring your friends and neighbors to learn what steps we can all take to make a difference. Thanks to support from an EPA grant, this event is FREE for all; registration is requested. <em>Thank you to the Tri-Town Transfer Station Committee - specifically the towns of Easton, Sugarhill, and Franconia - as well as the Ammonoosuc Conservation Trust for inviting NH Recycles to share this presentation!</em> <br>
-<strong>Learn more and register: </strong></strong> <a href="http://www.cognitoforms.com/NHRecycles1/Recycling101">https://www.cognitoforms.com/NHRecycles1/Recycling101</a>**</p>
-<p>|</p>
+    <h2>When and where</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>When</td>
+<td>Thursday, August 7, 6:00–7:00 p.m.</td>
+</tr>
+<tr>
+<td>Where</td>
+<td>Lafayette School, Franconia, NH</td>
+</tr>
+</tbody>
+</table>
+<section class="link-section" aria-labelledby="g1">
+<h2 id="g1" class="sign"><span class="blaze" aria-hidden="true"></span>Register</h2>
+<ul class="link-grid">
+<li>
+<a href="http://www.cognitoforms.com/NHRecycles1/Recycling101"><span class="ll">Recycling 101 registration</span></a>
+</li>
+</ul>
+</section>
+<div class="figures">
+<figure>
+<img src="https://images.weserv.nl/?url=www.franconianh.org%2Fuploads%2F1%2F1%2F6%2F8%2F11680191%2Fnccp-logo-1200dpi_orig.jpeg" alt="NH Recycles logo">
+</figure>
+</div>
+<p>Have you ever wondered what happens to that aluminum can once you throw it in the recycling bin? What makes recycling different in New Hampshire compared to our neighboring states? Join NH Recycles to get answers at the Recycling 101 presentation and Q&amp;A. Bring friends and neighbors to learn what steps we can all take to make a difference. Thanks to support from an EPA grant, this event is free; registration is requested.</p>
+<p>Thank you to the Tri-Town Transfer Station Committee — the towns of Easton, Sugarhill, and Franconia — and the Ammonoosuc Conservation Trust for inviting NH Recycles.</p>
 
   </div>
+  
+
+  
+
+  
 </main>
+<script>
+(function () {
+  var root = document.querySelector(".civic");
+  if (!root) return;
+  var narrow = window.matchMedia("(max-width: 640px)");
+  root.querySelectorAll("table").forEach(function (table) {
+    if (table.closest(".table-wrap")) return;
+    var headers = Array.prototype.map.call(table.querySelectorAll("thead th"), function (th) {
+      return th.textContent.replace(/\s+/g, " ").trim();
+    });
+    var wrap = document.createElement("div");
+    wrap.className = "table-wrap";
+    table.parentNode.insertBefore(wrap, table);
+    wrap.appendChild(table);
+    var thead = table.querySelector("thead");
+    function layout() {
+      var stack = narrow.matches && headers.length >= 3;
+      wrap.classList.toggle("can-stack", stack);
+      if (thead) thead.toggleAttribute("aria-hidden", stack);
+      wrap.tabIndex = !stack && wrap.scrollWidth > wrap.clientWidth + 1 ? 0 : -1;
+      if (wrap.tabIndex === -1) wrap.removeAttribute("tabindex");
+      table.querySelectorAll("tr").forEach(function (tr) {
+        if (tr.parentElement && tr.parentElement.tagName === "THEAD") return;
+        Array.prototype.forEach.call(tr.children, function (cell, i) {
+          var existing = cell.querySelector(".cell-label");
+          if (!stack || !headers[i]) {
+            if (existing) existing.remove();
+            return;
+          }
+          if (!existing) {
+            existing = document.createElement("span");
+            existing.className = "cell-label";
+            cell.prepend(existing);
+          }
+          existing.textContent = headers[i];
+        });
+      });
+    }
+    layout();
+    narrow.addEventListener("change", layout);
+  });
+})();
+</script>
 
     <footer class="foot" data-pagefind-ignore>
   

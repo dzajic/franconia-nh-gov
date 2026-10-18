@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Town Facts - TOWN OF FRANCONIA</title>
+    <title>Town Facts — Town of Franconia</title>
     <meta name="description" content="Town of Franconia, New Hampshire. Pay a bill, find a form, or read the latest minutes.">
     <link rel="canonical" href="https://dzajic.github.io/franconia-nh-gov/town-facts/">
     <link rel="alternate" type="text/plain" href="/franconia-nh-gov/llms.txt" title="llms.txt">
     <link rel="alternate" type="application/json" href="/franconia-nh-gov/town.json">
     <link rel="stylesheet" href="/franconia-nh-gov/assets/site.css">
+    <link rel="stylesheet" href="/franconia-nh-gov/assets/pages.css">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -140,23 +141,90 @@
   </div>
 </header>
 
-    <main id="main" class="in page" data-pagefind-body>
-  <h1 class="page-title">Town Facts - TOWN OF FRANCONIA</h1>
-  
-  <div class="prose">
-    <h2>Town Facts</h2>
-<p><a href="http://en.wikipedia.org/wiki/Franconia,_New_Hampshire">Wikipedia Style</a></p>
-<p><a href="http://www.nhes.nh.gov/elmi/products/cp/profiles-htm/franconia.htm">Franconia Community Profile</a> produced by the NH Employment Security Office.</p>
-<p><a href="http://www.franconianh.org/uploads/1/1/6/8/11680191/franconia__004_.pdf">Community Profile</a></p>
-<p><a href="http://www.franconianh.org/uploads/1/1/6/8/11680191/franconia_mp_-_oct._2008.pdf" title="Download file: Franconia Master Plan"><img src="https://images.weserv.nl/?url=www.weebly.com%2Fweebly%2Fimages%2Ffile_icons%2Fpdf.png" alt=""></a></p>
-<p>| <strong>Franconia Master Plan</strong> |
-| File Size: | 1154 kb |
-| File Type: | pdf |</p>
-<p><a href="http://www.franconianh.org/uploads/1/1/6/8/11680191/franconia_mp_-_oct._2008.pdf" title="Download file: Franconia Master Plan">Download File</a></p>
-<hr>
+    
+<main id="main" class="in page civic" data-pagefind-body>
+  <header class="civic-head">
+    <h1 class="page-title">Town Facts</h1>
+    
+    <p class="lede">Profiles and plans published for Franconia.</p>
+    
+  </header>
 
-  </div>
+  
+
+  
+
+  
+  
+<section class="link-section" aria-labelledby="g1">
+<h2 id="g1" class="sign"><span class="blaze" aria-hidden="true"></span>Profiles and plans</h2>
+<ul class="link-grid">
+<li>
+<a href="http://en.wikipedia.org/wiki/Franconia,_New_Hampshire"><span class="ll">Wikipedia</span></a>
+</li>
+<li>
+<a href="http://www.nhes.nh.gov/elmi/products/cp/profiles-htm/franconia.htm"><span class="ll">Franconia community profile, NH Employment Security</span></a>
+</li>
+<li>
+<a href="http://www.franconianh.org/uploads/1/1/6/8/11680191/franconia__004_.pdf"><span class="ll">Community profile (PDF)</span></a>
+</li>
+<li>
+<a href="http://www.franconianh.org/uploads/1/1/6/8/11680191/franconia_mp_-_oct._2008.pdf"><span class="ll">Franconia Master Plan</span><span class="ln">PDF, 1154 kb</span></a>
+</li>
+</ul>
+</section>
+
+  
+
+  
+
+  
+
+  
 </main>
+<script>
+(function () {
+  var root = document.querySelector(".civic");
+  if (!root) return;
+  var narrow = window.matchMedia("(max-width: 640px)");
+  root.querySelectorAll("table").forEach(function (table) {
+    if (table.closest(".table-wrap")) return;
+    var headers = Array.prototype.map.call(table.querySelectorAll("thead th"), function (th) {
+      return th.textContent.replace(/\s+/g, " ").trim();
+    });
+    var wrap = document.createElement("div");
+    wrap.className = "table-wrap";
+    table.parentNode.insertBefore(wrap, table);
+    wrap.appendChild(table);
+    var thead = table.querySelector("thead");
+    function layout() {
+      var stack = narrow.matches && headers.length >= 3;
+      wrap.classList.toggle("can-stack", stack);
+      if (thead) thead.toggleAttribute("aria-hidden", stack);
+      wrap.tabIndex = !stack && wrap.scrollWidth > wrap.clientWidth + 1 ? 0 : -1;
+      if (wrap.tabIndex === -1) wrap.removeAttribute("tabindex");
+      table.querySelectorAll("tr").forEach(function (tr) {
+        if (tr.parentElement && tr.parentElement.tagName === "THEAD") return;
+        Array.prototype.forEach.call(tr.children, function (cell, i) {
+          var existing = cell.querySelector(".cell-label");
+          if (!stack || !headers[i]) {
+            if (existing) existing.remove();
+            return;
+          }
+          if (!existing) {
+            existing = document.createElement("span");
+            existing.className = "cell-label";
+            cell.prepend(existing);
+          }
+          existing.textContent = headers[i];
+        });
+      });
+    }
+    layout();
+    narrow.addEventListener("change", layout);
+  });
+})();
+</script>
 
     <footer class="foot" data-pagefind-ignore>
   

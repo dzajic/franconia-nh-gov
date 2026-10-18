@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ordinances and Regulations — Town of Franconia, NH (Demo)</title>
+    <title>Ordinances and Regulations — Town of Franconia</title>
     <meta name="description" content="Town of Franconia, New Hampshire. Pay a bill, find a form, or read the latest minutes.">
     <link rel="canonical" href="https://dzajic.github.io/franconia-nh-gov/ordinances-regulations/">
     <link rel="alternate" type="text/plain" href="/franconia-nh-gov/llms.txt" title="llms.txt">
     <link rel="alternate" type="application/json" href="/franconia-nh-gov/town.json">
     <link rel="stylesheet" href="/franconia-nh-gov/assets/site.css">
+    <link rel="stylesheet" href="/franconia-nh-gov/assets/pages.css">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -140,19 +141,81 @@
   </div>
 </header>
 
-    <main id="main" class="in page" data-pagefind-body>
-  <h1 class="page-title">Ordinances and Regulations — Town of Franconia, NH (Demo)</h1>
+    
+<main id="main" class="in page civic" data-pagefind-body>
+  <header class="civic-head">
+    <h1 class="page-title">Ordinances and Regulations</h1>
+    
+    <p class="lede">Entries on this page are still placeholders.</p>
+    
+  </header>
+
   
-  <div class="prose">
-    <h2>Ordinances and regulations</h2>
-<ul>
+
+  
+
+  
+  
+
+  
+<section class="link-section" aria-labelledby="lst1">
+<h2 id="lst1" class="sign"><span class="blaze" aria-hidden="true"></span>Placeholders</h2>
+<ul class="plain-list">
 <li>Zoning ordinance (placeholder)</li>
 <li>Road ordinances (placeholder)</li>
 <li>Other regulations (placeholder)</li>
 </ul>
+</section>
 
-  </div>
+  
+
+  
+
+  
 </main>
+<script>
+(function () {
+  var root = document.querySelector(".civic");
+  if (!root) return;
+  var narrow = window.matchMedia("(max-width: 640px)");
+  root.querySelectorAll("table").forEach(function (table) {
+    if (table.closest(".table-wrap")) return;
+    var headers = Array.prototype.map.call(table.querySelectorAll("thead th"), function (th) {
+      return th.textContent.replace(/\s+/g, " ").trim();
+    });
+    var wrap = document.createElement("div");
+    wrap.className = "table-wrap";
+    table.parentNode.insertBefore(wrap, table);
+    wrap.appendChild(table);
+    var thead = table.querySelector("thead");
+    function layout() {
+      var stack = narrow.matches && headers.length >= 3;
+      wrap.classList.toggle("can-stack", stack);
+      if (thead) thead.toggleAttribute("aria-hidden", stack);
+      wrap.tabIndex = !stack && wrap.scrollWidth > wrap.clientWidth + 1 ? 0 : -1;
+      if (wrap.tabIndex === -1) wrap.removeAttribute("tabindex");
+      table.querySelectorAll("tr").forEach(function (tr) {
+        if (tr.parentElement && tr.parentElement.tagName === "THEAD") return;
+        Array.prototype.forEach.call(tr.children, function (cell, i) {
+          var existing = cell.querySelector(".cell-label");
+          if (!stack || !headers[i]) {
+            if (existing) existing.remove();
+            return;
+          }
+          if (!existing) {
+            existing = document.createElement("span");
+            existing.className = "cell-label";
+            cell.prepend(existing);
+          }
+          existing.textContent = headers[i];
+        });
+      });
+    }
+    layout();
+    narrow.addEventListener("change", layout);
+  });
+})();
+</script>
 
     <footer class="foot" data-pagefind-ignore>
   
