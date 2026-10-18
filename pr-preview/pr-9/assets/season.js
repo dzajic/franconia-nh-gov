@@ -227,7 +227,7 @@
         leaves.push(paintLeaf(shapes[i % 3], colors[i]));
       }
     } else if (kind === "summer") {
-      glow = paintGlow(colors[1] || "#f9dc78");
+      glow = paintGlow(colors[1] || "#ffe566");
     }
 
     function sizeCanvases() {
@@ -443,7 +443,7 @@
           ctx.moveTo(0, 0);
           ctx.lineTo(0, 14);
           ctx.stroke();
-          ctx.fillStyle = "#6a4a18";
+          ctx.fillStyle = "#c47a16";
           ctx.beginPath();
           ctx.arc(0, 15, 1.7, 0, Math.PI * 2);
           ctx.fill();
