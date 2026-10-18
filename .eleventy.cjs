@@ -13,6 +13,19 @@ function isoDate(value) {
   return match ? match[0] : text.slice(0, 10);
 }
 
+function recordHeading(title, committee) {
+  let text = String(title || "").trim();
+  const name = String(committee || "").trim();
+  if (name && text.toLowerCase().startsWith(name.toLowerCase())) {
+    text = text.slice(name.length).trim();
+  }
+  text = text.replace(/^,\s*/, "");
+  text = text.replace(/,\s*\d{4}(?:-\d{2}(?:-\d{2})?)?$/, "");
+  text = text.replace(/\s*\(undated\)\s*/i, " ");
+  text = text.replace(/\s{2,}/g, " ").replace(/\s+:\s*/, ": ").trim();
+  return text || String(title || "").trim();
+}
+
 function prettyDate(value, precision) {
   const iso = isoDate(value);
   if (!iso || precision === "unknown") return "Date unknown";
@@ -32,6 +45,7 @@ module.exports = function (eleventyConfig) {
     String(html || "").replace(/href="(\/[^"]*)"/g, (_match, href) => `href="${withPrefix(href)}"`)
   );
   eleventyConfig.addFilter("prettyDate", prettyDate);
+  eleventyConfig.addFilter("recordHeading", recordHeading);
   eleventyConfig.addFilter("monthShort", (value) => {
     const iso = isoDate(value);
     return MONTHS[Number(iso.slice(5, 7)) - 1] || "";

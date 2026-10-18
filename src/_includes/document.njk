@@ -13,14 +13,10 @@ layout: shell.njk
     <ol>
       <li><a href="{{ '/archive/' | url }}">Document archive</a></li>
       <li><a href="{{ ('/archive/' + body + '/') | url }}">{{ committee }}</a></li>
-      <li aria-current="page">{{ title }}</li>
     </ol>
   </nav>
-  <h1 class="page-title">{{ title }}</h1>
-  <p class="record-lead">
-    <span class="record-committee">{{ committee }}</span>
-    <span class="record-when">{{ doc_date | prettyDate(date_precision) }}</span>
-  </p>
+  <h1 class="page-title">{{ title | recordHeading(committee) }}</h1>
+  <p class="record-when">{{ doc_date | prettyDate(date_precision) }}</p>
   {% if needs_review %}
   <div class="review" role="note">
     <strong>Needs review</strong>
@@ -34,8 +30,8 @@ layout: shell.njk
   </div>
   {% endif %}
   <div class="file-actions">
-    <a class="open-file" href="{{ file | archiveFileUrl }}">Open the {{ fileKind or "file" }}</a>
-    <p class="file-type"><span>File type</span> {{ fileKind or "Not recorded" }}</p>
+    <a class="open-file" href="{{ file | archiveFileUrl }}">View</a>
+    {% if fileKind %}<p class="file-type">{{ fileKind }}</p>{% endif %}
   </div>
   {% if legacy_url and not missing %}
   <p class="record-fallback">If the button does not open the file, use the <a href="{{ legacy_url }}">current copy on franconianh.gov</a>.</p>
@@ -45,7 +41,7 @@ layout: shell.njk
   {% endif %}
   <details class="record-about">
     <summary><h2>About this record</h2></summary>
-    <p class="note about-note">The open button points at document storage. This website does not keep the file.</p>
+    <p class="note about-note">The View button points at document storage. This website does not keep the file.</p>
     <dl class="meta-dl">
       <dt>Needs review</dt>
       <dd>{% if needs_review %}Yes{% else %}No{% endif %}</dd>
@@ -67,8 +63,6 @@ layout: shell.njk
         Not recorded
         {%- endif -%}
       </dd>
-      <dt>Kind of document</dt>
-      <dd>{{ type or "Not recorded" }}</dd>
       <dt>Status</dt>
       <dd>{{ status or "Not recorded" }}</dd>
       <dt>Date precision</dt>
