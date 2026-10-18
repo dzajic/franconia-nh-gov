@@ -1,0 +1,70 @@
+# Town of Franconia, New Hampshire
+> Demo redesign. Not the official site. Official site: https://www.franconianh.gov/ (franconianh.org redirects there).
+> Values in [brackets] are unknown. Alert and homepage event dates are sample content from the design prototype.
+> The furnace-and-ridge mark and the silhouettes are original drawings, not traced from landmarks or surveys.
+
+## Town Hall & Services
+- [Home](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/)
+- [Town Facts](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/town-facts/)
+- [Town Directory](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/town-directory/)
+- [Voter Information](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/voter-information/)
+- [Notices](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/notices/)
+- [Town Clerk / Tax](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/town-clerk-tax/)
+- [Events](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/events/)
+
+## Boards & Committees
+- [Selectmen](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/board-of-selectmen/)
+- [Planning Board](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/planning-board/)
+- [Capital Improvements](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/capital-improvements/)
+- [Supervisors of the Checklist](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/supervisors-of-the-checklist/)
+- [Safety Committee](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/safety-committee/)
+- [Trustees of the Trust Funds](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/trustees-of-the-trust-funds/)
+- [Zoning Board (ZBA)](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/zoning-board-of-adjustment/)
+- [Conservation Commission](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/conservation-commission/)
+- [Energy Commission](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/energy-commission/)
+
+## Safety & Public Works
+- [Police](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/police/)
+- [Fire](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/fire/)
+- [Highway](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/highway-dept/)
+- [Water](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/water/)
+- [Cemetery](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/cemetery/)
+- [Transfer Station](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/transfer-station/)
+
+## Forms & Applications
+- [Building Permit](https://www.franconianh.gov/uploads/1/1/6/8/11680191/2016_building_permit_application.pdf)
+- [Driveway Permit](https://www.franconianh.gov/uploads/1/1/6/8/11680191/driveway_permit_application.pdf)
+- [Solar Permit](https://www.franconianh.gov/uploads/1/1/6/8/11680191/solar_pv_permit_application.pdf)
+- [Demolition Permit](https://www.franconianh.gov/uploads/1/1/6/8/11680191/franconia_demolition_permit.pdf)
+- [Generator Permit](https://www.franconianh.gov/uploads/1/1/6/8/11680191/generator_application.pdf)
+- [Short-Term Rental](https://www.franconianh.gov/uploads/1/1/6/8/11680191/str_app_and_checklist.pdf)
+- [Facilities Use](https://www.franconianh.gov/uploads/1/1/6/8/11680191/facilities_use_form.pdf)
+- [Volunteer](https://www.franconianh.gov/uploads/1/1/6/8/11680191/request_to_volunteer.pdf)
+
+## Library, Museums & Outdoors
+- [Abbie Greenleaf Library](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/abbie-greanleaf-library/)
+- [Heritage Museum](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/heritage-museum/)
+- [Iron Furnace](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/iron-furnace/)
+- [Dow Clock](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/dow-clock/)
+- [Frost Place](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/frost-place/)
+- [Trails & Parks](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/trails-parks/)
+
+## Records & Rules
+- [Archives](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/archive/)
+- [Budgets](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/budgets/)
+- [Ordinances & Regulations](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/ordinances-regulations/)
+- [Meeting Minutes](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/meetings/)
+
+## Upcoming (sample)
+- 2026-10-22: Supervisors of the Checklist session (sample)
+- 2026-10-26: Library public hearing (sample)
+- 2026-11-03: General Election (sample)
+
+## External resources
+- [Franconia Notch Chamber of Commerce](https://www.franconianotch.org/): Visiting? The Franconia Notch Chamber of Commerce has lodging, dining, and things to do.
+
+## Data
+- [town.json](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/town.json): sections, events, contacts, bodies
+- [archive/index.json](https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-4/archive/index.json): one record per imported document
+- Document files resolve under https://pub-436583bfa32248cb9f7762118b829267.r2.dev (ARCHIVE_BASE_URL). PDFs are not in the git repository.
+- Phone on file from the previous site: 603-823-7752. Email: [email]. Hours: [hours].
