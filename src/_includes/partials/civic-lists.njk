@@ -1,0 +1,12 @@
+{%- if lists %}
+{%- for list in lists %}
+<section class="link-section" aria-labelledby="lst{{ loop.index }}">
+<h2 id="lst{{ loop.index }}" class="sign"><span class="blaze" aria-hidden="true"></span>{{ list.heading }}</h2>
+<ul class="plain-list">
+{%- for item in list.items %}
+<li>{{ item }}</li>
+{%- endfor %}
+</ul>
+</section>
+{%- endfor %}
+{%- endif %}

@@ -1,0 +1,24 @@
+{% macro href(url) -%}
+{%- if url | startsWith('/') -%}{{ url | url }}{%- else -%}{{ url }}{%- endif -%}
+{%- endmacro %}
+{%- if groups %}
+{%- for group in groups %}
+<section class="link-section" aria-labelledby="g{{ loop.index }}">
+<h2 id="g{{ loop.index }}" class="sign"><span class="blaze" aria-hidden="true"></span>{{ group.heading }}</h2>
+{%- if group.intro %}
+<p class="note">{{ group.intro }}</p>
+{%- endif %}
+<ul class="link-grid{% if group.columns == 2 %} two{% endif %}">
+{%- for link in group.links %}
+<li>
+{%- if link.href %}
+<a href="{{ href(link.href) }}"><span class="ll">{{ link.label }}</span>{%- if link.note %}<span class="ln">{{ link.note }}</span>{%- endif %}</a>
+{%- else %}
+<p class="link-plain">{{ link.label }}</p>
+{%- endif %}
+</li>
+{%- endfor %}
+</ul>
+</section>
+{%- endfor %}
+{%- endif %}

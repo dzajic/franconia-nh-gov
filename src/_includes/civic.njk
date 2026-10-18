@@ -1,0 +1,84 @@
+---
+layout: shell.njk
+---
+{# Shared interior page. Editors keep prose and tables in the markdown body.
+   Notices and link lists can stay in front matter. Set blocksInBody when the
+   markdown includes the link, list, or figure partials itself. #}
+<main id="main" class="in page civic" data-pagefind-body>
+  <header class="civic-head">
+    <h1 class="page-title">{{ heading or title }}</h1>
+    {% if summary %}
+    <p class="lede">{{ summary }}</p>
+    {% endif %}
+  </header>
+
+  {% if notices and notices.length %}
+  <div class="notices">
+    {% for note in notices %}
+    <aside class="notice">
+      {% if note.title %}<h2>{{ note.title }}</h2>{% endif %}
+      <p>{{ note.text or note }}</p>
+    </aside>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if content and content | trim %}
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+  {% endif %}
+
+  {% if not blocksInBody %}
+  {% include "partials/civic-groups.njk" %}
+  {% include "partials/civic-lists.njk" %}
+  {% include "partials/civic-figures.njk" %}
+  {% endif %}
+
+  {% if archiveBody %}
+  <p class="more"><a href="{{ ('/archive/' + archiveBody + '/') | url }}">Documents for this page</a></p>
+  {% endif %}
+</main>
+<script>
+(function () {
+  var root = document.querySelector(".civic");
+  if (!root) return;
+  var narrow = window.matchMedia("(max-width: 640px)");
+  root.querySelectorAll("table").forEach(function (table) {
+    if (table.closest(".table-wrap")) return;
+    var headers = Array.prototype.map.call(table.querySelectorAll("thead th"), function (th) {
+      return th.textContent.replace(/\s+/g, " ").trim();
+    });
+    var wrap = document.createElement("div");
+    wrap.className = "table-wrap";
+    table.parentNode.insertBefore(wrap, table);
+    wrap.appendChild(table);
+    var thead = table.querySelector("thead");
+    function layout() {
+      var stack = narrow.matches && headers.length >= 3;
+      wrap.classList.toggle("can-stack", stack);
+      if (thead) thead.toggleAttribute("aria-hidden", stack);
+      wrap.tabIndex = !stack && wrap.scrollWidth > wrap.clientWidth + 1 ? 0 : -1;
+      if (wrap.tabIndex === -1) wrap.removeAttribute("tabindex");
+      table.querySelectorAll("tr").forEach(function (tr) {
+        if (tr.parentElement && tr.parentElement.tagName === "THEAD") return;
+        Array.prototype.forEach.call(tr.children, function (cell, i) {
+          var existing = cell.querySelector(".cell-label");
+          if (!stack || !headers[i]) {
+            if (existing) existing.remove();
+            return;
+          }
+          if (!existing) {
+            existing = document.createElement("span");
+            existing.className = "cell-label";
+            cell.prepend(existing);
+          }
+          existing.textContent = headers[i];
+        });
+      });
+    }
+    layout();
+    narrow.addEventListener("change", layout);
+  });
+})();
+</script>

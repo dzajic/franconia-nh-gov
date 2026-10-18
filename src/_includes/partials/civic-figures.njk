@@ -1,0 +1,17 @@
+{% macro href(url) -%}
+{%- if url | startsWith('/') -%}{{ url | url }}{%- else -%}{{ url }}{%- endif -%}
+{%- endmacro %}
+{%- if figures %}
+<div class="figures{% if figures.length > 1 %} multi{% endif %}">
+{%- for fig in figures %}
+<figure>
+{%- if fig.href %}
+<a href="{{ href(fig.href) }}"><img src="{{ fig.src }}" alt="{{ fig.alt or '' }}"></a>
+{%- else %}
+<img src="{{ fig.src }}" alt="{{ fig.alt or '' }}">
+{%- endif %}
+{%- if fig.caption %}<figcaption>{{ fig.caption }}</figcaption>{%- endif %}
+</figure>
+{%- endfor %}
+</div>
+{%- endif %}
