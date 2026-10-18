@@ -148,11 +148,15 @@ Machine-readable copies of the same records are at `/archive/index.json`. `/town
 
 ## Deploy
 
-Pushes to `main` run `.github/workflows/deploy.yml`: install, build with the GitHub Pages base path, check internal links, and deploy the `_site` folder. Pull requests build and check links, and do not deploy. The same workflow is scheduled for Monday 12:00 UTC so the archive window stays current; that cron takes effect once this file is on `main`, and a scheduled run deploys.
+Pushes to `main`, manual runs, and the Monday 12:00 UTC schedule run `.github/workflows/deploy.yml`: install, build with the GitHub Pages base path, check internal links, and publish `_site` to the root of the `gh-pages` branch. That publish leaves the `pr-preview/` directory in place. The Monday cron takes effect once this file is on `main`. GitHub runs scheduled workflows from the default branch only.
+
+Pull requests run `.github/workflows/preview.yml`. A pull request from this repository is built with `ELEVENTY_PATH_PREFIX` set to the Pages base path plus `/pr-preview/pr-<number>`, link-checked, and published to `gh-pages/pr-preview/pr-<number>/`. The workflow comments on the pull request with the preview URL and removes that folder when the pull request closes. A pull request from a fork is built and link-checked, and is not published. A separate workflow comments on the fork pull request to say why. Neither workflow reads secrets.
+
+Root-relative links in page Markdown are prefixed at build time, along with navigation, assets, the Pagefind script, and `/archive/index.json`. Search result links use that same prefix.
 
 The Pages base path (for this project, `/franconia-nh-gov`) is taken from `actions/configure-pages` and passed as `ELEVENTY_PATH_PREFIX`. Local preview does not set that variable, so links stay at the server root. `SITE_URL` is the Pages origin (`https://dzajic.github.io`), used for canonical URLs, the sitemap, and the JSON feeds.
 
-In the repository settings, Pages should use **GitHub Actions** as the source (this workflow), not a branch folder.
+GitHub Pages serves the `gh-pages` branch from `/ (root)`. Set that once under **Settings → Pages → Build and deployment → Source: Deploy from a branch**, branch `gh-pages`, folder `/ (root)`, after the first successful `main` deploy has created the branch. **Settings → Actions → General → Workflow permissions** should be **Read and write permissions**, so the workflows can push to `gh-pages` and comment on pull requests.
 
 ## Design
 

@@ -1,5 +1,5 @@
 const { partitionArchive } = require("./lib/archive-window.cjs");
-const { archiveFileUrl, withPrefix } = require("./lib/urls.cjs");
+const { archiveFileUrl, prefixAttributeUrls, withPrefix } = require("./lib/urls.cjs");
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -100,6 +100,11 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addWatchTarget("src/assets");
+
+  eleventyConfig.addTransform("prefix-root-urls", function (content, outputPath) {
+    if (!outputPath || !outputPath.endsWith(".html")) return content;
+    return prefixAttributeUrls(content);
+  });
 
   eleventyConfig.addTransform("proxy-http-images", function (content, outputPath) {
     if (!outputPath || !outputPath.endsWith(".html")) return content;

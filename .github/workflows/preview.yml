@@ -1,0 +1,94 @@
+name: PR preview
+
+# Builds a pull request and publishes it to gh-pages/pr-preview/pr-<number>/.
+# rossjrw/pr-preview-action comments with the preview URL and deletes the
+# folder when the pull request closes.
+# Fork pull requests are built and link-checked, then skipped. They never
+# receive a write token or any secret. The note on the pull request is posted
+# by preview-fork-note.yml, which does not check out fork code.
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    # Fork closes have nothing to remove. Same-repo closes still remove the preview.
+    if: github.event.pull_request.head.repo.full_name == github.repository || github.event.action != 'closed'
+    permissions:
+      contents: write
+      pull-requests: write
+      pages: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Skip publish for a fork
+        if: github.event.pull_request.head.repo.full_name != github.repository
+        run: |
+          {
+            echo "### Preview skipped"
+            echo
+            echo "This pull request comes from a fork, so it is not published."
+            echo "Publishing needs a token that can push to \`gh-pages\`. This workflow does not use secrets, and a fork run cannot be given that token."
+            echo "The site is still built and internal links are checked."
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "::notice title=PR preview skipped::Fork pull requests are not published. The pull request comment explains why."
+
+      - name: Setup Node
+        if: github.event.action != 'closed'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Setup Pages
+        id: pages
+        if: github.event.action != 'closed'
+        uses: actions/configure-pages@v5
+
+      - name: Preview path prefix
+        id: prefix
+        if: github.event.action != 'closed'
+        run: |
+          base="${{ steps.pages.outputs.base_path }}"
+          base="${base%/}"
+          echo "value=${base}/pr-preview/pr-${{ github.event.pull_request.number }}" >> "$GITHUB_OUTPUT"
+
+      - name: Install deps
+        if: github.event.action != 'closed'
+        run: npm ci
+
+      - name: Build
+        if: github.event.action != 'closed'
+        env:
+          # Must match umbrella-dir below: /<pages base>/pr-preview/pr-<number>
+          ELEVENTY_PATH_PREFIX: ${{ steps.prefix.outputs.value }}
+          SITE_URL: ${{ steps.pages.outputs.origin }}
+          ARCHIVE_BASE_URL: ${{ vars.ARCHIVE_BASE_URL }}
+        run: npm run build
+
+      - name: Check internal links
+        if: github.event.action != 'closed'
+        env:
+          ELEVENTY_PATH_PREFIX: ${{ steps.prefix.outputs.value }}
+        run: npm run check:links
+
+      - name: Deploy or remove preview
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./_site
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: auto
+          comment: true
+          qr-code: false

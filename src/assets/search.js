@@ -156,9 +156,21 @@ function heading(text) {
   return node;
 }
 
+function siteRoot() {
+  const root = document.body && document.body.dataset.siteRoot;
+  if (!root || root === "/") return "/";
+  return root.endsWith("/") ? root : `${root}/`;
+}
+
 async function pagefindResults(query) {
   const src = document.body.dataset.pagefind;
   const pagefind = await import(src);
+  // Pagefind result paths are relative to the built site root. baseUrl is the
+  // preview or project prefix (data-site-root), so result links stay under it.
+  // The bundle path is detected from the prefixed pagefind.js import.
+  if (typeof pagefind.options === "function") {
+    await pagefind.options({ baseUrl: siteRoot() });
+  }
   const response = await pagefind.search(query);
   const rows = [];
   for (const result of response.results.slice(0, 12)) {
