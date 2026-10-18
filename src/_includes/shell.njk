@@ -15,7 +15,9 @@
   </head>
   <body class="{{ bodyClass or 'page' }}" data-pagefind="{{ '/pagefind/pagefind.js' | url }}" data-archive-index="{{ '/archive/index.json' | url }}" data-site-root="{{ '/' | url }}">
     <a class="skip" href="#main">Skip to main content</a>
-    {% if showAlerts != false and alerts.length %}
+    {% if site.previewNotice and site.previewNotice.enabled and site.previewNotice.text %}
+    {% include "partials/preview-note.njk" %}
+    {% elif showAlerts != false and alerts.length %}
     <aside class="alert" role="region" aria-label="Alerts">
       <div class="in">
         <b>Heads up</b>

@@ -8,10 +8,12 @@ import { archiveBase, origin } from "../../lib/urls.cjs";
  * - email and office hours stay as placeholders. The old pages disagree about
  *   Friday closing time (1:00 vs 1:30), so hours are not asserted here.
  */
+const officialUrl = "https://www.franconianh.gov/";
+
 export default {
   name: "Town of Franconia, New Hampshire",
   shortName: "Franconia",
-  officialUrl: "https://www.franconianh.gov/",
+  officialUrl,
   origin: origin(),
   archiveBaseUrl: archiveBase(),
   repo: "https://github.com/dzajic/franconia-nh-gov",
@@ -35,5 +37,17 @@ export default {
     name: "Franconia Notch Chamber of Commerce",
     url: "https://www.franconianotch.org/",
     text: "Visiting? The Franconia Notch Chamber of Commerce has lodging, dining, and things to do.",
+  },
+  /**
+   * Slim notice on every page while this build is a demo.
+   * Edit text, linkLabel, and url here. Set enabled to false to remove the
+   * bar and show the alert bar again. url must stay an absolute http(s) URL
+   * so pull-request preview prefixes do not rewrite it.
+   */
+  previewNotice: {
+    enabled: true,
+    text: "Preview of the future Franconia town website. A demo, not the official site.",
+    linkLabel: "franconianh.gov",
+    url: officialUrl,
   },
 };

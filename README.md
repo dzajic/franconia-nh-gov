@@ -35,7 +35,7 @@ Real, carried over from the previous public site or from pages already in this r
 
 Sample or still unknown:
 
-- The alert bar and the “Today & this week” events are sample copy from the design prototype, not confirmed town notices. Published notices remain on `/notices/` and `/events/`.
+- The alert bar and the “Today & this week” events are sample copy from the design prototype, not confirmed town notices. Published notices remain on `/notices/` and `/events/`. While `site.previewNotice.enabled` is true, a short preview bar replaces the alert bar on every page. Its close button hides the bar for that view only; the next page load shows it again. Wording and the official-site link are `text`, `linkLabel`, and `url` on that object in `src/_data/site.js`. Set `enabled` to false to remove the bar and show the alerts again.
 - Anything in square brackets (`[phone]`, `[email]`, `[hours]`, `[schedule]`, `[meeting date]`) is unknown. Do not replace a bracket with a guessed value.
 - Friday hours disagree between the old homepage (Selectmen’s office until 1:30) and the Selectmen page (until 1:00), so the homepage does not pick one.
 - PDF and Word files are **not** in git. Each record’s View button is `ARCHIVE_BASE_URL` plus a path. The file type sits beside it as a short hint, such as PDF. In archive lists, search, and Latest minutes, the document title opens that same file in a new tab, and a circled info icon beside the title opens the record. If the file is missing or has no path, the title is the only link and it opens the record. Until the town copies files into object storage, a file link is only a placeholder (`https://archive.example.invalid/franconia` unless you set the variable). “Current copy on franconianh.gov” opens the file that was public when the inventory was made.
@@ -160,6 +160,6 @@ GitHub Pages serves the `gh-pages` branch from `/ (root)`. Set that once under *
 
 ## Design
 
-The look follows the approved homepage: spruce `#173f33`, bark `#5a3a24`, cream `#f4ead2`, trail-sign section headers, a sticky header, an alerts bar, five tasks, this-week events, latest minutes, forms, departments, a grouped directory, and a ridge footer. About is written for people living here or thinking of moving here. Visitors are pointed to the Franconia Notch Chamber of Commerce at https://www.franconianotch.org/. Interior pages keep their old wording inside that frame.
+The look follows the approved homepage: spruce `#173f33`, bark `#5a3a24`, cream `#f4ead2`, trail-sign section headers, a sticky header, a preview notice in place of the alerts bar until that notice is turned off, five tasks, this-week events, latest minutes, forms, departments, a grouped directory, and a ridge footer. About is written for people living here or thinking of moving here. Visitors are pointed to the Franconia Notch Chamber of Commerce at https://www.franconianotch.org/. Interior pages keep their old wording inside that frame.
 
 Editors change Markdown and the JSON/YAML data. They do not edit the layout files for ordinary updates.
