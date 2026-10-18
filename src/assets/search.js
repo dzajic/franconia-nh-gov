@@ -50,6 +50,44 @@ function loadArchive() {
   return archivePromise;
 }
 
+function infoIcon() {
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("class", "info-icon");
+  svg.setAttribute("viewBox", "0 0 20 20");
+  svg.setAttribute("aria-hidden", "true");
+  svg.setAttribute("focusable", "false");
+  const ring = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+  ring.setAttribute("cx", "10");
+  ring.setAttribute("cy", "10");
+  ring.setAttribute("r", "8.25");
+  ring.setAttribute("fill", "none");
+  ring.setAttribute("stroke", "currentColor");
+  ring.setAttribute("stroke-width", "1.6");
+  const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+  dot.setAttribute("cx", "10");
+  dot.setAttribute("cy", "6.35");
+  dot.setAttribute("r", "1.05");
+  dot.setAttribute("fill", "currentColor");
+  const stem = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  stem.setAttribute("d", "M10 9.1v5.3");
+  stem.setAttribute("fill", "none");
+  stem.setAttribute("stroke", "currentColor");
+  stem.setAttribute("stroke-width", "1.7");
+  stem.setAttribute("stroke-linecap", "round");
+  svg.append(ring, dot, stem);
+  return svg;
+}
+
+function detailsLink(url, title) {
+  const link = document.createElement("a");
+  link.className = "doc-info";
+  link.href = url;
+  link.title = "Details";
+  link.setAttribute("aria-label", `Details for ${title}`);
+  link.append(infoIcon());
+  return link;
+}
+
 function pageCard(result) {
   const item = document.createElement("article");
   item.className = "result";
@@ -74,14 +112,28 @@ function documentCard(doc, archiveBaseUrl, excerptHtml) {
     fileLink.href = doc.fileUrl;
     fileLink.target = "_blank";
     fileLink.rel = "noopener";
-    fileLink.textContent = title;
-    fileLink.setAttribute("aria-label", `${title} (opens in a new tab)`);
-    const details = document.createElement("a");
-    details.className = "doc-details";
-    details.href = doc.url;
-    details.textContent = "Details";
-    details.setAttribute("aria-label", `Details for ${title}`);
-    line.append(fileLink, details);
+    const splitAt = title.lastIndexOf(" ");
+    const head = splitAt === -1 ? "" : title.slice(0, splitAt);
+    const tail = splitAt === -1 ? title : title.slice(splitAt + 1);
+    const tailWrap = document.createElement("span");
+    tailWrap.className = "doc-tail";
+    const tailLink = document.createElement("a");
+    tailLink.className = "doc-title";
+    tailLink.href = doc.fileUrl;
+    tailLink.target = "_blank";
+    tailLink.rel = "noopener";
+    tailLink.textContent = tail;
+    if (head) {
+      fileLink.textContent = `${head} `;
+      fileLink.setAttribute("aria-label", `${title} (opens in a new tab)`);
+      tailLink.tabIndex = -1;
+      tailLink.setAttribute("aria-hidden", "true");
+      line.append(fileLink);
+    } else {
+      tailLink.setAttribute("aria-label", `${title} (opens in a new tab)`);
+    }
+    tailWrap.append(tailLink, detailsLink(doc.url, title));
+    line.append(tailWrap);
   } else {
     const details = document.createElement("a");
     details.className = "doc-title";

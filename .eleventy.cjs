@@ -57,6 +57,16 @@ module.exports = function (eleventyConfig) {
   );
   eleventyConfig.addFilter("prettyDate", prettyDate);
   eleventyConfig.addFilter("recordHeading", recordHeading);
+  eleventyConfig.addFilter("titleHead", (value) => {
+    const text = String(value || "").trim();
+    const index = text.lastIndexOf(" ");
+    return index === -1 ? "" : text.slice(0, index);
+  });
+  eleventyConfig.addFilter("titleTail", (value) => {
+    const text = String(value || "").trim();
+    const index = text.lastIndexOf(" ");
+    return index === -1 ? text : text.slice(index + 1);
+  });
   eleventyConfig.addFilter("splitRecordNote", splitRecordNote);
   eleventyConfig.addFilter("monthShort", (value) => {
     const iso = isoDate(value);

@@ -1,8 +1,10 @@
 <li class="{% if doc.data.needs_review %}is-review{% endif %}" data-body="{{ doc.data.body }}" data-type="{{ doc.data.type }}" data-review="{% if doc.data.needs_review %}yes{% else %}no{% endif %}" data-title="{{ doc.data.title }}">
   <div class="doc-line">
     {% if doc.data.file and not doc.data.missing %}
-    <a class="doc-title" href="{{ doc.data.file | archiveFileUrl }}" target="_blank" rel="noopener" aria-label="{{ doc.data.title }} (opens in a new tab)">{{ doc.data.title }}</a>
-    <a class="doc-details" href="{{ doc.url | url }}" aria-label="Details for {{ doc.data.title }}">Details</a>
+    {% set fileUrl = doc.data.file | archiveFileUrl %}
+    {% set head = doc.data.title | titleHead %}
+    {% set tail = doc.data.title | titleTail %}
+    {% if head %}<a class="doc-title" href="{{ fileUrl }}" target="_blank" rel="noopener" aria-label="{{ doc.data.title }} (opens in a new tab)">{{ head }} </a>{% endif %}<span class="doc-tail"><a class="doc-title" href="{{ fileUrl }}" target="_blank" rel="noopener"{% if head %} tabindex="-1" aria-hidden="true"{% else %} aria-label="{{ doc.data.title }} (opens in a new tab)"{% endif %}>{{ tail }}</a><a class="doc-info" href="{{ doc.url | url }}" aria-label="Details for {{ doc.data.title }}" title="Details">{% include "partials/info-icon.njk" %}</a></span>
     {% else %}
     <a class="doc-title" href="{{ doc.url | url }}" aria-label="Details for {{ doc.data.title }}">{{ doc.data.title }}</a>
     {% endif %}
