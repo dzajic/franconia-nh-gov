@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ '/assets/site.css' | url }}">
     <link rel="stylesheet" href="{{ '/assets/pages.css' | url }}">
     {% include "partials/jsonld.njk" %}
+    {% include "partials/season-head.njk" %}
   </head>
   <body class="{{ bodyClass or 'page' }}" data-pagefind="{{ '/pagefind/pagefind.js' | url }}" data-archive-index="{{ '/archive/index.json' | url }}" data-site-root="{{ '/' | url }}">
     <a class="skip" href="#main">Skip to main content</a>

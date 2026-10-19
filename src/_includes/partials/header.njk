@@ -2,10 +2,13 @@
 <header class="top" data-pagefind-ignore>
   {% include "partials/header-bands.njk" %}
   <div class="in hdr">
-    <a class="brand" href="{{ '/' | url }}" aria-label="Town of Franconia, New Hampshire home">
-      {{ furnace("mark", "4 2 56 64", "#5a3a24") }}
-      <span><b>Franconia</b><i>New Hampshire</i></span>
-    </a>
+    <div class="brand-block">
+      <a class="brand" href="{{ '/' | url }}" aria-label="Town of Franconia, New Hampshire home">
+        {{ furnace("mark", "4 2 56 64", "#5a3a24") }}
+        <span><b>Franconia</b><i>New Hampshire</i></span>
+      </a>
+      {% include "partials/season-line.njk" %}
+    </div>
     {% if showSearch != false %}
     <form class="search" role="search" action="{{ '/search/' | url }}" method="get">
       <label for="q" class="sr">Search the town website</label>

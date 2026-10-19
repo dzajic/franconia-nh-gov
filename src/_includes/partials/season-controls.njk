@@ -1,0 +1,58 @@
+<div class="season-controls">
+  <button type="button" class="season-toggle" aria-pressed="true">Seasonal theme: <span class="season-toggle-value">On</span></button>
+  {% if bodyClass == "home" %}
+  <button type="button" class="season-replay" hidden>Replay animation</button>
+  {% endif %}
+</div>
+<script>
+(function () {
+  var api = window.franconiaSeason || { months: {}, allowed: {}, storageKey: "franconia-season" };
+  var toggle = document.querySelector(".season-toggle");
+  var value = toggle && toggle.querySelector(".season-toggle-value");
+  var replay = document.querySelector(".season-replay");
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function paint() {
+    var on = document.documentElement.getAttribute("data-season") !== "default";
+    if (toggle) toggle.setAttribute("aria-pressed", on ? "true" : "false");
+    if (value) value.textContent = on ? "On" : "Off";
+    if (replay) replay.hidden = reduce || !on;
+  }
+
+  function monthSeason() {
+    return api.months[new Date().getMonth() + 1] || "fall";
+  }
+
+  if (toggle) {
+    toggle.addEventListener("click", function () {
+      var on = document.documentElement.getAttribute("data-season") !== "default";
+      var next = on ? "default" : monthSeason();
+      var url;
+      try { url = new URL(location.href); } catch (e) { url = null; }
+      if (!on && url) {
+        var q = (url.searchParams.get("season") || "").toLowerCase();
+        if (api.allowed[q]) next = q;
+      }
+      document.documentElement.setAttribute("data-season", next);
+      try { localStorage.setItem(api.storageKey, next === "default" ? "off" : "on"); } catch (e) {}
+      if (url) {
+        if (next === "default" || !api.allowed[(url.searchParams.get("season") || "").toLowerCase()]) {
+          url.searchParams.delete("season");
+        }
+        history.replaceState(null, "", url.pathname + url.search + url.hash);
+      }
+      paint();
+      document.dispatchEvent(new CustomEvent("franconia-season"));
+    });
+  }
+
+  if (replay) {
+    replay.addEventListener("click", function () {
+      try { sessionStorage.removeItem("franconia-season-fx"); } catch (e) {}
+      document.dispatchEvent(new CustomEvent("franconia-replay"));
+    });
+  }
+
+  paint();
+})();
+</script>
