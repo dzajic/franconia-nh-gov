@@ -1,0 +1,27 @@
+---
+layout: shell.njk
+permalink: /recap/archive/
+title: Town recap archive
+description: Every saved Franconia town recap, newest first. Each edition is the snapshot from the day it was written.
+---
+<main id="main" class="in recap-page" data-pagefind-body>
+  <p class="paper-kicker">Town of Franconia, New Hampshire</p>
+  <h1 class="page-title">Recap archive</h1>
+  <p class="lede">Every edition is kept. The newest is first. Open one to read what the posted documents said at the time.</p>
+  {% if recapEditions.length %}
+  <ul class="paper-editions">
+    {% for edition in recapEditions %}
+    <li>
+      <a class="paper-edition-card" href="{{ ('/recap/' + edition.date + '/') | url }}">
+        <strong>Edition {{ edition.edition }}</strong>
+        <span class="paper-edition-date">{{ edition.displayDate }}</span>
+        <span class="paper-edition-text">{{ edition.teaser or edition.sections[0].lead }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="note">No edition has been saved yet.</p>
+  {% endif %}
+  <p class="more"><a href="{{ '/recap/' | url }}">Latest edition</a></p>
+</main>

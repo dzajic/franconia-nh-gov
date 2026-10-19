@@ -1,0 +1,76 @@
+name: Town recap
+
+# One shared edition per calendar day in America/New_York, and only when a
+# document record has changed since the last saved edition. A push of new
+# minutes can publish that day's edition. The morning schedule catches a
+# change that arrived after the day's edition, on the next day.
+# The job opens a pull request so a person can check the sources.
+# A missing OPENAI_API_KEY skips generation and does not fail the run.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/archive/**"
+      - "data/documents.csv"
+      - ".github/scripts/generate-recap.mjs"
+      - ".github/scripts/recap-lib.mjs"
+      - ".github/workflows/recap.yml"
+  schedule:
+    # 11:15 UTC is morning in Franconia (7:15 a.m. EDT, 6:15 a.m. EST).
+    - cron: "15 11 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: town-recap
+  cancel-in-progress: false
+
+jobs:
+  recap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Generate today's edition
+        id: generate
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_RECAP_MODEL: ${{ vars.OPENAI_RECAP_MODEL }}
+        run: node .github/scripts/generate-recap.mjs
+
+      - name: Open a review pull request
+        if: steps.generate.outputs.created == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DATE: ${{ steps.generate.outputs.date }}
+        run: |
+          branch="recap/${DATE}"
+          if git ls-remote --heads origin "$branch" | grep -q .; then
+            echo "Branch $branch already exists. Leaving that review in place."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add src/_data/recaps
+          git commit -m "Add town recap edition ${DATE}"
+          git push -u origin HEAD
+          gh pr create --base main --title "Town recap ${DATE}" --body "New town recap for ${DATE}.
+
+          - Written only from documents posted in this repository.
+          - Each item links to its source. Please check the claims before merging.
+          - One edition per day (America/New_York). This pull request is that day's snapshot."

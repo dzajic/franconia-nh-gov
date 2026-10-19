@@ -1,0 +1,10 @@
+{% set edition = recapEditions[0] %}
+{% if edition %}
+<aside class="recap-teaser" aria-label="Town recap">
+  <a href="{{ '/recap/' | url }}">
+    <span class="recap-teaser-kicker">Town recap <span aria-hidden="true">·</span> Edition {{ edition.edition }}</span>
+    <strong>{{ edition.displayDate }}</strong>
+    <span class="recap-teaser-text">{{ edition.teaser or edition.sections[0].lead }}</span>
+  </a>
+</aside>
+{% endif %}

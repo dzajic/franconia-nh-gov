@@ -146,6 +146,21 @@ The window moves only when the site is rebuilt. The build clock is the UTC date 
 
 Machine-readable copies of the same records are at `/archive/index.json`. `/town.json` and `/llms.txt` describe the site for people and for software agents. `/sitemap.xml` lists HTML pages. Pages include schema.org `GovernmentOrganization` and `Event` data. Event descriptions say when the event is sample content.
 
+## Town recap
+
+`/recap/` is the latest edition. `/recap/archive/` lists every saved edition, newest first. `/recap/YYYY-MM-DD/` is that day's snapshot. The homepage does not include it yet. `/mockups/recap/` shows the card that could sit there.
+
+An edition has three parts: the last 7 days, the last 30 days, and the year to date, counting back from the edition date. Each item links to a document already in the archive. The line "AI-written summary, check the original" stays on the page. The three editions in `src/_data/recaps/` are examples, written from the posted files, not from an API call.
+
+`.github/workflows/recap.yml` runs on a push to `main` that changes documents, and every day at 11:15 UTC. It writes at most one edition per calendar day in America/New_York, and only when a document record changed since the last edition. It opens a pull request for review. If `OPENAI_API_KEY` is missing, the job skips and succeeds. The model is the repository variable `OPENAI_RECAP_MODEL`, or `gpt-4.1-mini`.
+
+The script caps the text it sends. At published gpt-4.1-mini rates ($0.40 per million input tokens, $1.60 per million output tokens) that cap is about 2 cents. A typical day, with a few new minutes, is under 2 cents. `gpt-4.1-nano` and `gpt-4o-mini` cost less if you set the variable.
+
+```bash
+npm run recap:check
+OPENAI_API_KEY=... npm run recap
+```
+
 ## Deploy
 
 Pushes to `main`, manual runs, and the Monday 12:00 UTC schedule run `.github/workflows/deploy.yml`: install, build with the GitHub Pages base path, check internal links, and publish `_site` to the root of the `gh-pages` branch. That publish leaves the `pr-preview/` directory in place. The Monday cron takes effect once this file is on `main`. GitHub runs scheduled workflows from the default branch only.

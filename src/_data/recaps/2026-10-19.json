@@ -1,0 +1,238 @@
+{
+  "edition": 3,
+  "date": "2026-10-19",
+  "displayDate": "Monday, October 19, 2026",
+  "generatedAt": "2026-10-19T18:00:00-04:00",
+  "generatedDisplay": "October 19, 2026, 6:00 p.m. Eastern",
+  "timezone": "America/New_York",
+  "model": null,
+  "example": true,
+  "label": "AI-written summary, check the original",
+  "sourceFingerprint": "1662b1d36995837a85bfd8f6bf944c367822d2e1931339b42d92d0c3c9d9d287",
+  "documentsConsidered": 54,
+  "teaser": "Selectmen meet today, October 19, at 4:00 p.m. The agenda includes the October 5 minutes, a highway medical card, and the library front door.",
+  "sections": [
+    {
+      "id": "week",
+      "nav": "Week",
+      "title": "The last week",
+      "from": "2026-10-13",
+      "to": "2026-10-19",
+      "lead": "The only document posted in the last week is the Selectmen's agenda for today, Monday, October 19, at 4:00 p.m. at Town Hall. Minutes of that meeting are not posted.",
+      "decided": [],
+      "comingUp": [
+        {
+          "text": "Selectmen meet Monday, October 19, 2026, at 4:00 p.m. at Franconia Town Hall.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-10-19-selectboard-agenda/",
+              "label": "Selectmen agenda, Oct 19, 2026"
+            }
+          ]
+        },
+        {
+          "text": "The agenda asks the board to sign or approve the October 5 minutes, the transaction list for October 16 through October 22, a highway medical card, a North Country Transportation Advisory Committee appointment, and the library front door. Those are agenda items, not recorded votes.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-10-19-selectboard-agenda/",
+              "label": "Selectmen agenda, Oct 19, 2026"
+            }
+          ]
+        },
+        {
+          "text": "The agenda schedules a non-public session at the end of the meeting for reputation. It does not say what will be discussed.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-10-19-selectboard-agenda/",
+              "label": "Selectmen agenda, Oct 19, 2026"
+            }
+          ]
+        }
+      ],
+      "deadlines": []
+    },
+    {
+      "id": "month",
+      "nav": "Month",
+      "title": "The last month",
+      "from": "2026-09-20",
+      "to": "2026-10-19",
+      "lead": "In the last month the Selectmen backed a look at two Level 2 chargers at Town Hall and heard that the community skating rink is now aimed at 1476 Profile Road. Later meetings are on posted agendas. Their minutes are not in the archive.",
+      "decided": [
+        {
+          "text": "On September 28 the board approved the September 14 minutes and the September 25–October 1 transaction list, and signed the Profile Club intent to cut (map 10 lot 3), the Sperrazza driveway permit on Oaks Road (map 4 lot 14), and the MS-1. The minutes are marked draft.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-09-28-selectboard-minutes/",
+              "label": "Selectmen minutes, Sep 28, 2026"
+            }
+          ]
+        },
+        {
+          "text": "The board supported moving ahead with Level 2 chargers at the Town Hall and Welcome Center lot and authorized Daniel Zajic to contact electrician Justin Poulton. The minutes estimate $5,000 to $10,000 and say he suggested two spaces. The board also voted to resume weekly meetings, with the next one on October 5.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-09-28-selectboard-minutes/",
+              "label": "Selectmen minutes, Sep 28, 2026"
+            }
+          ]
+        }
+      ],
+      "comingUp": [
+        {
+          "text": "Jennifer Opalinski said the rink is proposed for 1476 Profile Road, about 3.06 acres near Lovett's, still under a $475,000 grant, with an amendment being pursued. She said the site needs a variance and Planning Board and Zoning Board review.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-09-28-selectboard-minutes/",
+              "label": "Selectmen minutes, Sep 28, 2026"
+            }
+          ]
+        },
+        {
+          "text": "The Planning Board agenda for September 29, at 6:00 p.m., lists the rink project with Jennifer Opalinski, an SAU 35 request for a Franconia representative, an erosion-control workshop, and a Fitz lot-merger briefing. It also lists approval of August 15, 2026 minutes, which is the date printed on the agenda. Minutes of the September 29 meeting are not in the archive, so this edition does not say what the board did.",
+          "sources": [
+            {
+              "href": "/archive/planning-board/2026/2026-09-29-planning-board-agenda/",
+              "label": "Planning Board agenda, Sep 29, 2026"
+            }
+          ]
+        },
+        {
+          "text": "The October 5 Selectmen's agenda lists the September 28 minutes, the October 2–8 transaction list, an intent to cut for Wallace Hill LLC (map 5 lot 10-1), and the general election warrant. The October 19 agenda asks the board to approve October 5 minutes. Those minutes are not posted, so the October 5 items are not reported here as votes.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-10-05-selectboard-agenda/",
+              "label": "Selectmen agenda, Oct 5, 2026"
+            },
+            {
+              "href": "/archive/selectboard/2026/2026-10-19-selectboard-agenda/",
+              "label": "Selectmen agenda, Oct 19, 2026"
+            }
+          ]
+        },
+        {
+          "text": "Selectmen meet today, October 19, at 4:00 p.m. The agenda includes the October 5 minutes, a highway medical card, a North Country Transportation Advisory Committee appointment, and the library front door.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-10-19-selectboard-agenda/",
+              "label": "Selectmen agenda, Oct 19, 2026"
+            }
+          ]
+        }
+      ],
+      "deadlines": []
+    },
+    {
+      "id": "year",
+      "nav": "Year to date",
+      "title": "Year to date",
+      "from": "2026-01-01",
+      "to": "2026-10-19",
+      "lead": "Town Meeting on March 10 passed a $2,302,440 budget and kept ambulance service with Littleton through December 31, 2026. Later minutes record a solar hearing at the Franconia Inn with no approval vote, a new skating-rink site, and a first step on Town Hall car chargers.",
+      "decided": [
+        {
+          "text": "Article 3, $2,302,440 for town charges, passed unanimously. The warrant prints a tax impact of $3.85 per thousand. Article 2, the zoning map, passed 107 to 1. The warrant says it clarifies boundaries and does not change them. The archive record is marked for review because its date is year only. March 10, 2026 is the date in the text.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-selectboard-minutes-march-10-2026-town-meeting-minutes/",
+              "label": "Town Meeting minutes, 2026"
+            }
+          ]
+        },
+        {
+          "text": "Article 10 appropriated $607,200 for ambulance service with Littleton through December 31, 2026, and passed unanimously. Article 4 put $344,703 into capital reserves. Article 12 approved $43,000 for a Fire/EMS UTV and trailer. All three passed unanimously.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-selectboard-minutes-march-10-2026-town-meeting-minutes/",
+              "label": "Town Meeting minutes, 2026"
+            }
+          ]
+        },
+        {
+          "text": "On July 27 the Selectmen approved Heritage Museum foundation repairs for $17,881.95 and a Central Asphalt estimate of $100,548. On September 14 they voted to survey a Mittersill right-of-way and accepted $11,976 in seal-coating quotes and a $6,409.70 highway-garage furnace quote.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-07-27-selectboard-minutes/",
+              "label": "Selectmen minutes, Jul 27, 2026"
+            },
+            {
+              "href": "/archive/selectboard/2026/2026-09-14-selectboard-minutes/",
+              "label": "Selectmen minutes, Sep 14, 2026"
+            }
+          ]
+        },
+        {
+          "text": "On August 25 the Planning Board accepted the Franconia Inn solar application as complete and closed a public hearing with no public comments. The minutes do not record a vote to approve the array.",
+          "sources": [
+            {
+              "href": "/archive/planning-board/2026/2026-08-25-planning-board-minutes/",
+              "label": "Planning Board minutes, Aug 25, 2026"
+            }
+          ]
+        },
+        {
+          "text": "On September 28 the Selectmen authorized contact with an electrician about Level 2 chargers at Town Hall, estimated at $5,000 to $10,000, and heard that the skating rink is proposed for 1476 Profile Road under the existing $475,000 grant.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-09-28-selectboard-minutes/",
+              "label": "Selectmen minutes, Sep 28, 2026"
+            }
+          ]
+        }
+      ],
+      "comingUp": [
+        {
+          "text": "Selectmen meet today, October 19, at 4:00 p.m. The posted agenda is the latest document in this edition.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-10-19-selectboard-agenda/",
+              "label": "Selectmen agenda, Oct 19, 2026"
+            }
+          ]
+        },
+        {
+          "text": "The September 29 Planning Board agenda scheduled the rink, an SAU 35 request, an erosion-control workshop, and a Fitz lot merger. Minutes for that meeting are not posted.",
+          "sources": [
+            {
+              "href": "/archive/planning-board/2026/2026-09-29-planning-board-agenda/",
+              "label": "Planning Board agenda, Sep 29, 2026"
+            }
+          ]
+        },
+        {
+          "text": "Energy Commission minutes dated August 25 are posted. No text from that file is in this edition, so the meeting is not summarized.",
+          "sources": [
+            {
+              "href": "/archive/energy-commission/2026/2026-08-25-energy-commission-minutes/",
+              "label": "Energy Commission minutes, Aug 25, 2026"
+            }
+          ]
+        }
+      ],
+      "deadlines": [
+        {
+          "text": "Franconia's ambulance contract with Littleton expires at the end of December 2026. Town Meeting funded that service through December 31, 2026. Chief Miller said on September 14 that he would work with the town administrator on the gap before town meeting.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-09-14-selectboard-minutes/",
+              "label": "Selectmen minutes, Sep 14, 2026"
+            },
+            {
+              "href": "/archive/selectboard/2026/2026-selectboard-minutes-march-10-2026-town-meeting-minutes/",
+              "label": "Town Meeting minutes, 2026"
+            }
+          ]
+        },
+        {
+          "text": "Energy Commission minutes say the IRA program ends December 31, 2026, and that a New Hampshire plug-in solar law takes effect January 1, 2027.",
+          "sources": [
+            {
+              "href": "/archive/energy-commission/2026/2026-07-21-energy-commission-minutes/",
+              "label": "Energy Commission minutes, Jul 21, 2026"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

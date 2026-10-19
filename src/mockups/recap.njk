@@ -1,0 +1,16 @@
+---
+layout: shell.njk
+permalink: /mockups/recap/
+title: Town recap teaser mockup
+description: A mockup of the town recap teaser. It is not on the homepage.
+---
+<main id="main" class="in recap-page" data-pagefind-body>
+  <p class="paper-kicker">Mockup</p>
+  <h1 class="page-title">Homepage teaser</h1>
+  <p class="lede">This is the card that could sit on the homepage beside Today &amp; this week. It is not wired into the homepage. The card opens the latest edition.</p>
+  <div class="mock-column">
+    <h2 class="sign"><span class="blaze" aria-hidden="true"></span>Town recap</h2>
+    {% include "partials/recap-teaser.njk" %}
+  </div>
+  <p class="more"><a href="{{ '/recap/' | url }}">Read the latest edition</a></p>
+</main>

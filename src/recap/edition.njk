@@ -1,0 +1,13 @@
+---
+layout: shell.njk
+pagination:
+  data: recapEditions
+  size: 1
+  alias: edition
+permalink: "/recap/{{ edition.date }}/"
+eleventyComputed:
+  title: "Franconia Town Recap, {{ edition.displayDate }}"
+  description: "Saved town recap for {{ edition.displayDate }}. Edition {{ edition.edition }}."
+---
+{% set isLatest = edition.date == recapEditions[0].date %}
+{% include "partials/recap-edition.njk" %}

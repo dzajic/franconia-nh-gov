@@ -1,0 +1,331 @@
+{
+  "edition": 1,
+  "date": "2026-08-24",
+  "displayDate": "Monday, August 24, 2026",
+  "generatedAt": "2026-08-24T18:00:00-04:00",
+  "generatedDisplay": "August 24, 2026, 6:00 p.m. Eastern",
+  "timezone": "America/New_York",
+  "model": null,
+  "example": true,
+  "label": "AI-written summary, check the original",
+  "sourceFingerprint": "1662b1d36995837a85bfd8f6bf944c367822d2e1931339b42d92d0c3c9d9d287",
+  "documentsConsidered": 45,
+  "teaser": "Selectmen met August 24. They approved a pavilion request, accepted a Zoning Board resignation, and heard the Wells Road culvert may cost more.",
+  "sections": [
+    {
+      "id": "week",
+      "nav": "Week",
+      "title": "The last week",
+      "from": "2026-08-18",
+      "to": "2026-08-24",
+      "lead": "Selectmen met Monday, August 24, at 4:00 p.m. at Town Hall. The posted minutes are marked draft. They approved routine business, noted a Zoning Board resignation, and heard that the Wells Road culvert may cost more than planned.",
+      "decided": [
+        {
+          "text": "The board approved the August 10 minutes as written, approved the transaction list for August 21 through August 27, 2026, and approved a request for alcohol use at a pavilion gathering on August 28.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-08-24-selectboard-minutes/",
+              "label": "Selectmen minutes, Aug 24, 2026"
+            },
+            {
+              "href": "/archive/selectboard/2026/2026-08-24-selectboard-agenda/",
+              "label": "Selectmen agenda, Aug 24, 2026"
+            }
+          ]
+        },
+        {
+          "text": "Town Administrator Staples said Peter Grote resigned from the Zoning Board of Adjustment. The minutes say the board thanked him for his years of service.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-08-24-selectboard-minutes/",
+              "label": "Selectmen minutes, Aug 24, 2026"
+            }
+          ]
+        },
+        {
+          "text": "Staples said Primex reported that flooding at the Safety Services building has been funded except for one outstanding invoice, and that the town has received $36,000 to date.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-08-24-selectboard-minutes/",
+              "label": "Selectmen minutes, Aug 24, 2026"
+            }
+          ]
+        }
+      ],
+      "comingUp": [
+        {
+          "text": "David Whittemore discussed a right-of-way near his property at Mittersill and made an appointment for the next meeting to discuss it further.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-08-24-selectboard-minutes/",
+              "label": "Selectmen minutes, Aug 24, 2026"
+            }
+          ]
+        },
+        {
+          "text": "Staples said she will meet again with the Department of Homeland Security and HEB about the Wells Road culvert. She said the project may cost more than expected even with additional state funds.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-08-24-selectboard-minutes/",
+              "label": "Selectmen minutes, Aug 24, 2026"
+            }
+          ]
+        },
+        {
+          "text": "Easton Selectman Brian Suthoff proposed that Franconia and Easton work together on future road projects. He said he also plans to raise the idea with Sugar Hill. The minutes do not record a vote on it.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-08-24-selectboard-minutes/",
+              "label": "Selectmen minutes, Aug 24, 2026"
+            }
+          ]
+        }
+      ],
+      "deadlines": [
+        {
+          "text": "Staples said Wells Road culvert funding could fall through if the project is not approved on the required timeline. The minutes do not give that date. They say HEB called a missed timeline extremely unlikely.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-08-24-selectboard-minutes/",
+              "label": "Selectmen minutes, Aug 24, 2026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "month",
+      "nav": "Month",
+      "title": "The last month",
+      "from": "2026-07-26",
+      "to": "2026-08-24",
+      "lead": "Since late July the Selectmen have approved museum repairs, a paving estimate, and a temporary parking strip at Dow Park. The Planning Board set August 25 for a public hearing on a solar array at the Franconia Inn.",
+      "decided": [
+        {
+          "text": "On July 27 the board voted unanimously to hire Brickliners Custom Masonry & Chimney Services for Heritage Museum foundation repairs at $17,881.95. The motion uses $15,000 from the Franconia Heritage Museum Fund and $2,881.95 from the Town Buildings & Grounds Maintenance Fund. The minutes are marked draft.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-07-27-selectboard-minutes/",
+              "label": "Selectmen minutes, Jul 27, 2026"
+            }
+          ]
+        },
+        {
+          "text": "The same meeting approved a Central Asphalt estimate of $100,548, unanimously, from Highway Block Grant funds and the Highway Improvements budget line. It also approved Stephen Finch as a Planning Board alternate.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-07-27-selectboard-minutes/",
+              "label": "Selectmen minutes, Jul 27, 2026"
+            }
+          ]
+        },
+        {
+          "text": "Three property-tax abatements on Map 13 Lot 34 were approved unanimously: $45 for T17, $207.80 for T13, and $69 for T13. The board also signed a letter supporting a Foundation for Healthy Communities EMS grant. The minutes describe that grant as adding a police-department social worker and a community health paramedic.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-07-27-selectboard-minutes/",
+              "label": "Selectmen minutes, Jul 27, 2026"
+            }
+          ]
+        },
+        {
+          "text": "On August 10 the board approved the July 27 minutes as amended and the August 7–13 transaction list. It signed an intent to cut for map 3 lot 11 and map 4 lots 25 and 26, and a land-use change tax for James Edwards, map 7 lot 2-2, for $20,000. The minutes are marked draft.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-08-10-selectboard-minutes/",
+              "label": "Selectmen minutes, Aug 10, 2026"
+            }
+          ]
+        },
+        {
+          "text": "For North Country Chamber Players concerts at Dow Park, the board said a strip one car wide can be added along the shed for the time being, and that the area cannot be used if the field is wet.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-08-10-selectboard-minutes/",
+              "label": "Selectmen minutes, Aug 10, 2026"
+            }
+          ]
+        },
+        {
+          "text": "On August 11 the Planning Board approved its July 14 minutes. It heard an informal plan for six free-standing solar arrays, 150 kW, on land north of the Franconia Inn, for the inn's use, with the power sold back to the grid. The board did not vote on the project that night.",
+          "sources": [
+            {
+              "href": "/archive/planning-board/2026/2026-08-11-planning-board-minutes-08-11-2026/",
+              "label": "Planning Board minutes, Aug 11, 2026"
+            }
+          ]
+        }
+      ],
+      "comingUp": [
+        {
+          "text": "The Planning Board scheduled a public hearing on the Franconia Inn solar project for its next meeting, Tuesday, August 25, 2026.",
+          "sources": [
+            {
+              "href": "/archive/planning-board/2026/2026-08-11-planning-board-minutes-08-11-2026/",
+              "label": "Planning Board minutes, Aug 11, 2026"
+            }
+          ]
+        },
+        {
+          "text": "Littleton Fire & Rescue Chief Chad Miller is expected at the September 14 Selectmen's meeting to discuss how the EMS contract may change as Easton and Sugar Hill renegotiate.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-08-10-selectboard-minutes/",
+              "label": "Selectmen minutes, Aug 10, 2026"
+            }
+          ]
+        },
+        {
+          "text": "The Conservation Commission plans a public workshop on invasive plants on September 19 at 10:00 a.m., including a walk to sites in downtown Franconia.",
+          "sources": [
+            {
+              "href": "/archive/planning-board/2026/2026-08-11-planning-board-minutes-08-11-2026/",
+              "label": "Planning Board minutes, Aug 11, 2026"
+            }
+          ]
+        },
+        {
+          "text": "Library Director Ann Steuernagel asked Selectmen to attend the library's LCHIP grant meeting on September 1.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-07-27-selectboard-minutes/",
+              "label": "Selectmen minutes, Jul 27, 2026"
+            }
+          ]
+        }
+      ],
+      "deadlines": [
+        {
+          "text": "The Wells Road culvert update on August 24 does not name a deadline. Staples said funding could fall through if approval misses the required timeline, and that HEB called that extremely unlikely.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-08-24-selectboard-minutes/",
+              "label": "Selectmen minutes, Aug 24, 2026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "year",
+      "nav": "Year to date",
+      "title": "Year to date",
+      "from": "2026-01-01",
+      "to": "2026-08-24",
+      "lead": "Town Meeting on March 10 passed the 2026 budget and a clarified zoning map. The file is dated by year only and is marked for review. The day and the votes below are taken from the text of that file.",
+      "decided": [
+        {
+          "text": "Article 3, the town line-item budget of $2,302,440, passed unanimously by voice vote. The warrant prints a tax impact of $3.85 per thousand. Jill told the meeting the figure was $109,782 above the 2025 budget, citing a fourth full-time highway employee, a bulk buy of PAYT bags, a fire-department vehicle repair, the long-term debt schedule, and a 3% COLA.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-selectboard-minutes-march-10-2026-town-meeting-minutes/",
+              "label": "Town Meeting minutes, 2026"
+            }
+          ]
+        },
+        {
+          "text": "Article 2, the official zoning map for the 2024 zoning ordinance, passed 107 to 1. The warrant says the map does not change zoning boundaries. It clarifies them.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-selectboard-minutes-march-10-2026-town-meeting-minutes/",
+              "label": "Town Meeting minutes, 2026"
+            }
+          ]
+        },
+        {
+          "text": "Article 10 raised $607,200 for ambulance service through December 31, 2026, continuing the contract with Littleton. It passed unanimously. The warrant prints a tax impact of $1.39 per thousand.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-selectboard-minutes-march-10-2026-town-meeting-minutes/",
+              "label": "Town Meeting minutes, 2026"
+            }
+          ]
+        },
+        {
+          "text": "Article 4 added $344,703 to capital reserve funds, and Article 12 approved $43,000 from the Fire Department Safety Equipment fund for a UTV and trailer for Fire/EMS rescue. Both passed unanimously.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-selectboard-minutes-march-10-2026-town-meeting-minutes/",
+              "label": "Town Meeting minutes, 2026"
+            }
+          ]
+        },
+        {
+          "text": "Ballot results printed in the minutes include Eugene Leeds for selectman with 107 votes and James Walker for moderator with 110 votes.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-selectboard-minutes-march-10-2026-town-meeting-minutes/",
+              "label": "Town Meeting minutes, 2026"
+            }
+          ]
+        },
+        {
+          "text": "On July 27 the Selectmen approved Heritage Museum foundation repairs at $17,881.95 and a Central Asphalt estimate of $100,548. On August 11 the Planning Board heard the Franconia Inn solar plan and set a hearing for August 25. It did not approve the array that night.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-07-27-selectboard-minutes/",
+              "label": "Selectmen minutes, Jul 27, 2026"
+            },
+            {
+              "href": "/archive/planning-board/2026/2026-08-11-planning-board-minutes-08-11-2026/",
+              "label": "Planning Board minutes, Aug 11, 2026"
+            }
+          ]
+        }
+      ],
+      "comingUp": [
+        {
+          "text": "The moderator said next year's ballot voting will be at Town Hall from 1:00 to 6:00 p.m., and Town Meeting will begin at 7:00 p.m. at Lafayette School.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-selectboard-minutes-march-10-2026-town-meeting-minutes/",
+              "label": "Town Meeting minutes, 2026"
+            }
+          ]
+        },
+        {
+          "text": "The Energy Commission moved its next meeting to August 25, 2026, at 4:30 p.m. at the Dow Pavilion.",
+          "sources": [
+            {
+              "href": "/archive/energy-commission/2026/2026-07-21-energy-commission-minutes/",
+              "label": "Energy Commission minutes, Jul 21, 2026"
+            }
+          ]
+        },
+        {
+          "text": "The Planning Board's public hearing on the Franconia Inn solar project is August 25.",
+          "sources": [
+            {
+              "href": "/archive/planning-board/2026/2026-08-11-planning-board-minutes-08-11-2026/",
+              "label": "Planning Board minutes, Aug 11, 2026"
+            }
+          ]
+        }
+      ],
+      "deadlines": [
+        {
+          "text": "The ambulance appropriation in Article 10 runs through December 31, 2026.",
+          "sources": [
+            {
+              "href": "/archive/selectboard/2026/2026-selectboard-minutes-march-10-2026-town-meeting-minutes/",
+              "label": "Town Meeting minutes, 2026"
+            }
+          ]
+        },
+        {
+          "text": "Energy Commission minutes say the IRA program ends December 31, 2026, and that a New Hampshire plug-in solar law goes into effect January 1, 2027.",
+          "sources": [
+            {
+              "href": "/archive/energy-commission/2026/2026-06-23-energy-commission-minutes/",
+              "label": "Energy Commission minutes, Jun 23, 2026"
+            },
+            {
+              "href": "/archive/energy-commission/2026/2026-07-21-energy-commission-minutes/",
+              "label": "Energy Commission minutes, Jul 21, 2026"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

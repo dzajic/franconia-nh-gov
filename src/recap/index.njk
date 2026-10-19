@@ -1,0 +1,16 @@
+---
+layout: shell.njk
+permalink: /recap/
+title: Franconia Town Recap
+description: The latest Franconia town recap. Plain-language notes on what was decided, what is coming up, and deadlines, drawn only from documents the town posted.
+---
+{% set edition = recapEditions[0] %}
+{% if edition %}
+{% set isLatest = true %}
+{% include "partials/recap-edition.njk" %}
+{% else %}
+<main id="main" class="in page" data-pagefind-body>
+  <h1 class="page-title">Town recap</h1>
+  <p class="lede">No edition has been saved yet.</p>
+</main>
+{% endif %}

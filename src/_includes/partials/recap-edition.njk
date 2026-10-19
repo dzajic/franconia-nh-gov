@@ -1,0 +1,79 @@
+{% macro paperItems(items, empty) %}
+  {% if items and items.length %}
+  <ul class="paper-items">
+    {% for item in items %}
+    <li>
+      {% if item.sources.length == 1 %}
+      <a class="paper-item" href="{{ item.sources[0].href | url }}">
+        <span class="paper-item-text">{{ item.text }}</span>
+        <span class="paper-source">{{ item.sources[0].label }}</span>
+      </a>
+      {% else %}
+      <div class="paper-item">
+        <p class="paper-item-text">{{ item.text }}</p>
+        <ul class="paper-sources">
+          {% for source in item.sources %}
+          <li><a href="{{ source.href | url }}">{{ source.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="note">{{ empty }}</p>
+  {% endif %}
+{% endmacro %}
+<main id="main" class="in recap-page" data-pagefind-body>
+  <header class="paper-mast">
+    <p class="paper-kicker">Town of Franconia, New Hampshire</p>
+    <h1 class="page-title">Town recap</h1>
+    <p class="paper-edition">Edition {{ edition.edition }} <span aria-hidden="true">·</span> {{ edition.displayDate }}</p>
+    <p class="lede">{{ edition.teaser or edition.sections[0].lead }}</p>
+    <p class="paper-note">
+      {%- if edition.example %}Example edition. {% endif -%}
+      {{ edition.label }}.
+      {% if edition.example %}Prepared{% else %}Generated{% endif %}
+      {{ edition.generatedDisplay }}.
+    </p>
+  </header>
+  {% if not isLatest %}
+  <p class="note">This is the saved edition from {{ edition.displayDate }}. <a href="{{ '/recap/' | url }}">The latest edition</a> is the one to read.</p>
+  {% endif %}
+  <nav class="paper-jump" aria-label="Edition sections">
+    {% for section in edition.sections %}
+    <a href="#{{ section.id }}">{{ section.nav }}</a>
+    {% endfor %}
+  </nav>
+  {% for section in edition.sections %}
+  <section class="paper-section" id="{{ section.id }}" aria-labelledby="{{ section.id }}-h">
+    <h2 id="{{ section.id }}-h">{{ section.title }}</h2>
+    <p class="paper-range">{{ section.from | prettyDate("exact") }} – {{ section.to | prettyDate("exact") }}</p>
+    {% if section.lead %}<p class="lede">{{ section.lead }}</p>{% endif %}
+    <h3>Decided</h3>
+    {{ paperItems(section.decided, "Nothing in the posted documents was a decision in this period.") }}
+    <h3>Coming up</h3>
+    {{ paperItems(section.comingUp, "No meeting, hearing, or agenda item in the posted documents for this period.") }}
+    <h3>Deadlines</h3>
+    {{ paperItems(section.deadlines, "No deadline in the posted documents for this period.") }}
+  </section>
+  {% endfor %}
+  <footer class="paper-colophon">
+    <p class="paper-note">{{ edition.label }}. Each item links to the town document it came from. The original is the record.</p>
+    {% if edition.example %}
+    <p class="paper-note">This example was prepared from the posted documents so the edition can be reviewed. It was not produced by an API call.</p>
+    {% elif edition.model %}
+    <p class="paper-note">Model: {{ edition.model }}.</p>
+    {% endif %}
+  </footer>
+  <p class="more">
+    {% if isLatest %}
+    <a href="{{ ('/recap/' + edition.date + '/') | url }}">Saved copy of this edition</a>
+    {% else %}
+    <a href="{{ '/recap/' | url }}">Latest edition</a>
+    {% endif %}
+  </p>
+  <p class="more"><a href="{{ '/recap/archive/' | url }}">All editions</a></p>
+  <p class="more"><a href="{{ '/mockups/recap/' | url }}">Homepage teaser mockup</a></p>
+</main>
