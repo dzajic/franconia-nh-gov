@@ -7,9 +7,9 @@
       <span><b>Franconia</b><i>New Hampshire</i></span>
     </a>
     <div class="text-size" data-text-size-control role="group" aria-label="Text size">
-      <button type="button" data-size="16" aria-pressed="false" aria-label="Smaller text">A−</button>
-      <button type="button" data-size="18" aria-pressed="true" aria-label="Default text size">A</button>
-      <button type="button" data-size="22" aria-pressed="false" aria-label="Larger text">A+</button>
+      <button type="button" data-step="small" aria-pressed="false" aria-label="Smaller text">A−</button>
+      <button type="button" data-step="medium" aria-pressed="true" aria-label="Default text size">A</button>
+      <button type="button" data-step="large" aria-pressed="false" aria-label="Larger text">A+</button>
     </div>
     {% if showSearch != false %}
     <form class="search" role="search" action="{{ '/search/' | url }}" method="get">

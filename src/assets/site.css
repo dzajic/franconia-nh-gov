@@ -253,18 +253,18 @@ img { max-width: 100%; height: auto; }
   line-height: 1;
   cursor: pointer;
 }
-.text-size button[data-size="16"] { font-size: 1rem; }
-.text-size button[data-size="18"] { font-size: 1.2rem; }
-.text-size button[data-size="22"] { font-size: 1.4rem; }
-.text-size button[data-size="18"],
-html[data-text-size="16"] .text-size button[data-size="16"],
-html[data-text-size="22"] .text-size button[data-size="22"] {
+.text-size button[data-step="small"] { font-size: 1rem; }
+.text-size button[data-step="medium"] { font-size: 1.2rem; }
+.text-size button[data-step="large"] { font-size: 1.4rem; }
+.text-size button[data-step="medium"],
+html[data-text-size="small"] .text-size button[data-step="small"],
+html[data-text-size="large"] .text-size button[data-step="large"] {
   background: var(--blaze);
   color: var(--ink);
   border-color: var(--blaze);
 }
-html[data-text-size="16"] .text-size button[data-size="18"],
-html[data-text-size="22"] .text-size button[data-size="18"] {
+html[data-text-size="small"] .text-size button[data-step="medium"],
+html[data-text-size="large"] .text-size button[data-step="medium"] {
   background: transparent;
   color: var(--cream);
   border-color: var(--cream);
@@ -1015,4 +1015,13 @@ a.doc-info:focus-visible {
 @media (max-width: 520px) {
   .story { flex-direction: column; align-items: flex-start; }
   .meta-dl { grid-template-columns: 1fr; }
+}
+
+/* Narrow screens keep a shorter type ladder. Desktop rules above stay at 18px. */
+@media (max-width: 640px) {
+  html { font-size: 17px; }
+  body { line-height: 1.6; }
+  h1, .page-title, .ahero h1 { font-size: 1.6rem; }
+  h2, .sign, .story h2, .prose h2, .st h2, .visit h2 { font-size: 1.3rem; }
+  h3, .events h3, .prose h3, .dg h3, .result-group, .record-about summary h2, .year-name { font-size: 1.15rem; }
 }
