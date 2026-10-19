@@ -1,0 +1,41 @@
+name: AI review
+
+# Advisory review of a pull request against PRINCIPLES.md.
+# One sticky comment. Set the repository secret OPENAI_API_KEY.
+# Optionally set the repository variable OPENAI_MODEL (default gpt-4o-mini).
+# A missing key skips successfully. Fork pull requests do not receive the
+# secret, so they skip too. Drafts wait until they are marked ready.
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: ai-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Review
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          GITHUB_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: node .github/scripts/ai-review.mjs
