@@ -39,6 +39,8 @@ groups:
         href: http://www.franconianh.org/uploads/1/1/6/8/11680191/facilities_fee_schedule.pdf
       - label: Short-term rental application
         href: http://www.franconianh.org/uploads/1/1/6/8/11680191/str_app_and_checklist.pdf
+      - label: Dog license
+        href: /dog-licensing/
       - label: Planning Board forms
         href: /planning-board/
 ---

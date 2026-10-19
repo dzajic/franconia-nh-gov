@@ -4,6 +4,6 @@
   { "label": "Minutes", "href": "/", "hash": "minutes" },
   { "label": "Forms", "href": "/", "hash": "forms" },
   { "label": "Departments", "href": "/", "hash": "depts" },
-  { "label": "Directory", "href": "/", "hash": "directory" },
+  { "label": "Directory", "href": "/site-index/" },
   { "label": "About", "href": "/about/" }
 ]

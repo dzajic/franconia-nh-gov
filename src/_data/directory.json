@@ -8,6 +8,7 @@
       { "title": "Voter Information", "href": "/voter-information/" },
       { "title": "Notices", "href": "/notices/" },
       { "title": "Town Clerk / Tax", "href": "/town-clerk-tax/" },
+      { "title": "Departments", "href": "/departments/" },
       { "title": "Events", "href": "/events/" }
     ]
   },

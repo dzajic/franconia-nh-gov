@@ -1,0 +1,21 @@
+---
+layout: shell.njk
+permalink: /site-index/
+title: "Everything on the site — Town of Franconia"
+description: "Every public page on the Town of Franconia site, grouped by topic."
+---
+<main id="main" class="in page" data-pagefind-body>
+  <h1 id="directory" class="page-title">Everything on the site</h1>
+  <section class="dirs" aria-label="Site index">
+    {% for group in directory %}
+    <section class="dg" aria-labelledby="dg{{ loop.index0 }}">
+      <h3 id="dg{{ loop.index0 }}"><span class="blaze" aria-hidden="true"></span>{{ group.heading }}</h3>
+      <ul>
+        {% for item in group.pages %}
+        <li><a href="{% if item.href | startsWith('/') %}{{ item.href | url }}{% else %}{{ item.href }}{% endif %}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endfor %}
+  </section>
+</main>

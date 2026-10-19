@@ -1,0 +1,16 @@
+---
+layout: shell.njk
+permalink: /departments/
+title: "Departments — Town of Franconia"
+description: "Town of Franconia departments and offices."
+---
+<main id="main" class="in page" data-pagefind-body>
+  <section aria-labelledby="dept-page-h">
+    <h1 id="dept-page-h" class="page-title">Departments</h1>
+    <ul class="depts">
+      {% for dept in departments %}
+      <li><a href="{{ dept.href | url }}"><b>{{ dept.name }}</b><span>{{ dept.detail }}</span></a></li>
+      {% endfor %}
+    </ul>
+  </section>
+</main>

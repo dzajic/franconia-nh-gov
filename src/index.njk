@@ -63,7 +63,9 @@ pageScript: /assets/season.js
       <h2 id="f-h" class="sign"><span class="blaze" aria-hidden="true"></span>Forms &amp; permits</h2>
       <ul class="forms">
         {% for form in forms %}
-        <li><a href="{{ form.href }}">{{ form.title }}</a></li>
+        {% if form.featured %}
+        <li><a href="{% if form.href | startsWith('/') %}{{ form.href | url }}{% else %}{{ form.href }}{% endif %}">{{ form.title }}</a></li>
+        {% endif %}
         {% endfor %}
       </ul>
       <p class="more"><a href="{{ '/forms-applications/' | url }}">All forms &amp; applications →</a></p>
@@ -73,24 +75,12 @@ pageScript: /assets/season.js
     <h2 id="d-h" class="sign"><span class="blaze" aria-hidden="true"></span>Departments</h2>
     <ul class="depts">
       {% for dept in departments %}
+      {% if dept.featured %}
       <li><a href="{{ dept.href | url }}"><b>{{ dept.name }}</b><span>{{ dept.detail }}</span></a></li>
+      {% endif %}
       {% endfor %}
     </ul>
-  </section>
-  <section id="directory" aria-labelledby="dir-h">
-    <h2 id="dir-h" class="sign"><span class="blaze" aria-hidden="true"></span>Everything on the site</h2>
-    <div class="dirs">
-      {% for group in directory %}
-      <section class="dg" aria-labelledby="dg{{ loop.index0 }}">
-        <h3 id="dg{{ loop.index0 }}"><span class="blaze" aria-hidden="true"></span>{{ group.heading }}</h3>
-        <ul>
-          {% for item in group.pages %}
-          <li><a href="{% if item.href | startsWith('/') %}{{ item.href | url }}{% else %}{{ item.href }}{% endif %}">{{ item.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </section>
-      {% endfor %}
-    </div>
+    <p class="more"><a href="{{ '/departments/' | url }}">See all departments →</a></p>
   </section>
   <section class="story" aria-labelledby="s-h">
     <div>

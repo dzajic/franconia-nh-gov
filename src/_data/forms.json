@@ -1,11 +1,23 @@
 [
   {
     "title": "Building Permit",
-    "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/2016_building_permit_application.pdf"
+    "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/2016_building_permit_application.pdf",
+    "featured": true
+  },
+  {
+    "title": "Transfer Station",
+    "href": "/transfer-station/",
+    "featured": true
+  },
+  {
+    "title": "Dog License",
+    "href": "/dog-licensing/",
+    "featured": true
   },
   {
     "title": "Driveway Permit",
-    "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/driveway_permit_application.pdf"
+    "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/driveway_permit_application.pdf",
+    "featured": true
   },
   {
     "title": "Solar Permit",

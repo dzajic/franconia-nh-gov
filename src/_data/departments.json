@@ -1,11 +1,11 @@
 [
-  { "name": "Town Clerk / Tax", "detail": "[phone] · [hours]", "href": "/town-clerk-tax/" },
+  { "name": "Town Clerk / Tax", "detail": "[phone] · [hours]", "href": "/town-clerk-tax/", "featured": true },
   { "name": "Selectmen", "detail": "[phone] · [hours]", "href": "/board-of-selectmen/" },
-  { "name": "Police", "detail": "[phone] · [hours]", "href": "/police/" },
+  { "name": "Police", "detail": "[phone] · [hours]", "href": "/police/", "featured": true },
   { "name": "Fire", "detail": "[phone] · [hours]", "href": "/fire/" },
-  { "name": "Highway", "detail": "[phone] · [hours]", "href": "/highway-dept/" },
+  { "name": "Highway", "detail": "[phone] · [hours]", "href": "/highway-dept/", "featured": true },
   { "name": "Water", "detail": "[phone] · [hours]", "href": "/water/" },
   { "name": "Cemetery", "detail": "[phone] · [hours]", "href": "/cemetery/" },
-  { "name": "Transfer Station", "detail": "[phone] · [hours]", "href": "/transfer-station/" },
-  { "name": "Abbie Greenleaf Library", "detail": "[phone] · [hours]", "href": "/abbie-greanleaf-library/" }
+  { "name": "Transfer Station", "detail": "[phone] · [hours]", "href": "/transfer-station/", "featured": true },
+  { "name": "Abbie Greenleaf Library", "detail": "[phone] · [hours]", "href": "/abbie-greanleaf-library/", "featured": true }
 ]
