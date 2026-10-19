@@ -1,6 +1,6 @@
 [
   {
-    "heading": "Town Hall & Services",
+    "heading": "Town hall & services",
     "pages": [
       { "title": "Home", "href": "/" },
       { "title": "Town Facts", "href": "/town-facts/" },
@@ -12,7 +12,7 @@
     ]
   },
   {
-    "heading": "Boards & Committees",
+    "heading": "Boards & committees",
     "pages": [
       { "title": "Selectmen", "href": "/board-of-selectmen/" },
       { "title": "Planning Board", "href": "/planning-board/" },
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "heading": "Safety & Public Works",
+    "heading": "Safety & public works",
     "pages": [
       { "title": "Police", "href": "/police/" },
       { "title": "Fire", "href": "/fire/" },
@@ -37,7 +37,7 @@
     ]
   },
   {
-    "heading": "Forms & Applications",
+    "heading": "Forms & applications",
     "pages": [
       { "title": "Building Permit", "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/2016_building_permit_application.pdf" },
       { "title": "Driveway Permit", "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/driveway_permit_application.pdf" },
@@ -50,7 +50,7 @@
     ]
   },
   {
-    "heading": "Library, Museums & Outdoors",
+    "heading": "Library, museums & outdoors",
     "pages": [
       { "title": "Abbie Greenleaf Library", "href": "/abbie-greanleaf-library/" },
       { "title": "Heritage Museum", "href": "/heritage-museum/" },
@@ -61,7 +61,7 @@
     ]
   },
   {
-    "heading": "Records & Rules",
+    "heading": "Records & rules",
     "pages": [
       { "title": "Archives", "href": "/archive/" },
       { "title": "Budgets", "href": "/budgets/" },

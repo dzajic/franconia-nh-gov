@@ -264,8 +264,6 @@ main > section,
   background: var(--bark);
   color: var(--cream);
   font: 900 0.98rem/1 var(--sign);
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
   padding: 0.6rem 0.8rem;
   border-radius: 5px;
   box-shadow: inset 0 0 0 2px var(--bark), inset 0 0 0 4px rgba(244, 234, 210, 0.85);
@@ -395,8 +393,6 @@ main > section,
   background: var(--spr);
   color: var(--cream);
   font: 900 0.82rem/1.1 var(--sign);
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
   padding: 0.5rem 0.7rem;
 }
 .dg ul { columns: 2; column-gap: 0.8rem; padding: 0.4rem 0.7rem 0.55rem; }
@@ -416,8 +412,6 @@ main > section,
 }
 .story h2 {
   font: 900 1rem var(--sign);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
   margin-bottom: 0.3rem;
 }
 .story p { font-size: 0.9rem; }
@@ -499,8 +493,6 @@ body.about .brand-block { margin-right: auto; }
 .ico { color: var(--bark); padding-top: 0.2rem; }
 .st h2 {
   font: 900 1.5rem/1.1 var(--sign);
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
   color: var(--spr);
   margin-bottom: 0.6rem;
 }
@@ -523,8 +515,6 @@ body.about .brand-block { margin-right: auto; }
 }
 .visit h2 {
   font: 900 0.85rem var(--sign);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--blaze);
   margin-bottom: 0.35rem;
 }
@@ -547,8 +537,6 @@ body.about .brand-block { margin-right: auto; }
 .prose h2, .prose h3 {
   font-family: var(--sign);
   font-weight: 900;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
   color: var(--spr);
   line-height: 1.2;
   margin-top: 1.4rem;
@@ -619,8 +607,6 @@ body.about .brand-block { margin-right: auto; }
 .month-group .sign { margin-bottom: 0.55rem; }
 .older-label {
   font: 900 0.78rem var(--sign);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--bark);
   margin: 0.4rem 0 0.55rem;
 }
@@ -865,8 +851,6 @@ a.doc-info:focus-visible {
 .record-about summary h2 {
   margin: 0;
   font: 900 0.95rem/1.2 var(--sign);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--spr);
 }
 .record-about .about-note { margin: 0 0.95rem 0.35rem 2.15rem; }
