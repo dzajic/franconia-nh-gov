@@ -30,15 +30,18 @@
         },
         {
           "title": "Town Directory",
-          "href": "/town-directory/"
+          "href": "/town-directory/",
+          "featured": true
         },
         {
           "title": "Voter Information",
-          "href": "/voter-information/"
+          "href": "/voter-information/",
+          "featured": true
         },
         {
           "title": "Notices",
-          "href": "/notices/"
+          "href": "/notices/",
+          "featured": true
         },
         {
           "title": "Town Clerk / Tax",
@@ -63,7 +66,8 @@
         },
         {
           "title": "Planning Board",
-          "href": "/planning-board/"
+          "href": "/planning-board/",
+          "featured": true
         },
         {
           "title": "Capital Improvements",
@@ -203,7 +207,8 @@
         },
         {
           "title": "Ordinances & Regulations",
-          "href": "/ordinances-regulations/"
+          "href": "/ordinances-regulations/",
+          "featured": true
         },
         {
           "title": "Meeting Minutes",
