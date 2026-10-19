@@ -48,6 +48,7 @@
     {% endif %}
     {% include "partials/header.njk" %}
     {{ content | safe }}
+    {% include "partials/suggest-change.njk" %}
     {% include "partials/footer.njk" %}
     <script src="{{ '/assets/text-size.js' | url }}" defer></script>
     <script src="{{ '/assets/nav-menu.js' | url }}" defer></script>

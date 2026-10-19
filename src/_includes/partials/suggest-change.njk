@@ -1,0 +1,76 @@
+<!-- suggest-change:start -->
+{%- set editUrl = page.inputPath | suggestEditUrl(suggestSource, site.repo) -%}
+{%- if editUrl -%}
+<div class="suggest" id="suggest-change" data-pagefind-ignore>
+  <a class="suggest-edit" href="{{ editUrl }}">Suggest a change</a>
+  <button type="button" class="suggest-info" aria-label="How suggesting a change works" aria-haspopup="dialog" aria-controls="suggest-how">
+    {% include "partials/info-icon.njk" %}
+  </button>
+  <dialog id="suggest-how" class="suggest-dialog" aria-labelledby="suggest-how-title">
+    <div class="suggest-dialog-body">
+      <div class="suggest-dialog-top">
+        <h2 id="suggest-how-title">How suggesting a change works</h2>
+        <form method="dialog">
+          <button type="submit" class="suggest-close">Close</button>
+        </form>
+      </div>
+      <p>Anyone can suggest a fix, such as a wrong phone number or an old meeting time. You do not need special software.</p>
+      <ol>
+        <li>You need a free GitHub account. GitHub is the website where these pages are written. It will help you sign up if you do not have an account yet.</li>
+        {% if page.inputPath | suggestFromData(suggestSource) %}
+        <li>Suggest a change opens the shared list this page is built from. Change this page’s entry, and leave the others as they are.</li>
+        {% else %}
+        <li>The link opens this page’s text.</li>
+        {% endif %}
+        <li>Make your edit.</li>
+        <li>Describe what you changed and why.</li>
+        <li>Click Propose changes.</li>
+        <li>A town reviewer approves it before it appears on the site.</li>
+        <li>Every change has a public history. People can see what changed, and when.</li>
+      </ol>
+      <p>If you would rather just describe the problem, you can open a GitHub issue instead of editing the page.</p>
+      <a class="suggest-issue" href="{{ site.repo | suggestIssueUrl }}">Open a GitHub issue instead</a>
+    </div>
+  </dialog>
+</div>
+<script>
+(function () {
+  var root = document.getElementById("suggest-change");
+  if (!root) return;
+  var dialog = root.querySelector("dialog");
+  var opener = root.querySelector(".suggest-info");
+  if (!dialog || !opener || typeof dialog.showModal !== "function") return;
+  function focusable() {
+    return Array.prototype.filter.call(
+      dialog.querySelectorAll("a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex='-1'])"),
+      function (el) { return el.getClientRects().length > 0; }
+    );
+  }
+  opener.addEventListener("click", function () {
+    if (!dialog.open) dialog.showModal();
+  });
+  dialog.addEventListener("click", function (event) {
+    if (event.target === dialog) dialog.close();
+  });
+  dialog.addEventListener("keydown", function (event) {
+    if (event.key !== "Tab" || !dialog.open) return;
+    var items = focusable();
+    if (!items.length) return;
+    var first = items[0];
+    var last = items[items.length - 1];
+    var active = document.activeElement;
+    if (event.shiftKey && (active === first || !dialog.contains(active))) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && (active === last || !dialog.contains(active))) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+  dialog.addEventListener("close", function () {
+    opener.focus();
+  });
+})();
+</script>
+{%- endif -%}
+<!-- suggest-change:end -->

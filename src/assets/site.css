@@ -1381,3 +1381,189 @@ a[href^="mailto:"] {
 :is(.link-grid, .tasks, .forms, .depts, .mins, .dg, .more, .doclist, .events, .nav-links) a {
   text-decoration: none;
 }
+
+/* Suggest a change. Sits at the end of main; on a wide screen it shares the title row. */
+.suggest {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  margin: 1.5rem 0 0.35rem;
+  min-width: 0;
+  max-width: 100%;
+}
+.suggest-edit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 0.45rem 1.05rem;
+  border: 2px solid var(--deep);
+  border-bottom: 4px solid var(--blaze);
+  border-radius: 999px;
+  background: var(--spr);
+  color: var(--cream);
+  font-family: var(--body);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+}
+.suggest-edit:hover,
+.suggest-edit:active {
+  background: var(--deep);
+  color: var(--cream);
+  text-decoration: none;
+}
+.suggest-info {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--rust);
+  cursor: pointer;
+}
+.suggest-info .info-icon { display: block; width: 44px; height: 44px; }
+.suggest-info:hover { background: var(--cream); color: var(--deep); }
+.suggest-dialog {
+  width: min(34rem, calc(100vw - 1.5rem));
+  max-width: calc(100vw - 1.5rem);
+  max-height: min(40rem, calc(100dvh - 1.5rem));
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  border: 2px solid var(--bark);
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+}
+.suggest-dialog::backdrop { background: rgba(14, 24, 20, 0.62); }
+.suggest-dialog-body {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1rem 1.05rem 1.15rem;
+}
+.suggest-dialog-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.suggest-dialog h2 {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-family: var(--sign);
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: var(--spr);
+}
+.suggest-dialog p,
+.suggest-dialog li {
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.suggest-dialog ol {
+  margin: 0;
+  padding-left: 1.3rem;
+  display: grid;
+  gap: 0.45rem;
+}
+.suggest-close,
+.suggest-issue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.45rem 0.9rem;
+  border: 2px solid var(--bark);
+  border-radius: 999px;
+  font-family: var(--body);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.suggest-close {
+  flex: none;
+  background: var(--card);
+  color: var(--ink);
+}
+.suggest-close:hover { background: var(--cream); }
+.suggest-issue {
+  justify-self: start;
+  max-width: 100%;
+  background: var(--spr);
+  color: var(--cream);
+  border-color: var(--deep);
+}
+.suggest-issue:hover { background: var(--deep); color: var(--cream); text-decoration: none; }
+@media (min-width: 960px) {
+  main.page:has(> .page-title:first-child),
+  main.page:has(> .civic-head:first-child),
+  main.page:has(> :first-child + .page-title) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 1rem;
+    align-items: start;
+  }
+  main.page:has(> .page-title:first-child) > :not(.page-title):not(.suggest),
+  main.page:has(> .civic-head:first-child) > :not(.civic-head):not(.suggest),
+  main.page:has(> :first-child + .page-title) > :not(:first-child):not(.page-title):not(.suggest) {
+    grid-column: 1 / -1;
+  }
+  main.page:has(> .page-title:first-child) > .page-title,
+  main.page:has(> .civic-head:first-child) > .civic-head {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+  }
+  main.page:has(> :first-child + .page-title) > :first-child {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+  main.page:has(> :first-child + .page-title) > .page-title {
+    grid-column: 1;
+    grid-row: 2;
+    min-width: 0;
+  }
+  main.page:has(> .page-title:first-child) > .suggest,
+  main.page:has(> .civic-head:first-child) > .suggest {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  main.page:has(> :first-child + .page-title) > .suggest {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  main.page:has(> .page-title:first-child) > .suggest,
+  main.page:has(> .civic-head:first-child) > .suggest,
+  main.page:has(> :first-child + .page-title) > .suggest {
+    align-self: start;
+    justify-self: end;
+    flex-wrap: nowrap;
+    margin-top: 0.45rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .suggest-dialog,
+  .suggest-dialog::backdrop {
+    transition: none;
+    animation: none;
+  }
+}
