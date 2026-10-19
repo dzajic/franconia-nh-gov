@@ -21,6 +21,16 @@
         } catch (err) {}
       })();
     </script>
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("franconia-photo-open") === "closed") {
+            document.documentElement.setAttribute("data-photo-open", "closed");
+          }
+        } catch (err) {}
+      })();
+    </script>
+    
     <title>Mockup A — Name on the photograph</title>
     <meta name="description" content="Unlisted mockup. The town name sits on a plate over a photograph of Franconia.">
     <link rel="canonical" href="https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-17/mockups/photos/hero/">
@@ -344,7 +354,6 @@
   <p><b>A · Name on the photograph</b> The town name sits on a solid plate over the picture, which adds a second headline and pushes the task list down.</p>
   <p class="mock-note-row">
     <a href="/franconia-nh-gov/pr-preview/pr-17/mockups/photos/">All mockups</a>
-    <button type="button" data-photo-toggle aria-pressed="false">Hide photo</button>
   </p>
 </aside>
 
@@ -357,8 +366,10 @@
   
 <img
   src="/franconia-nh-gov/pr-preview/pr-17/assets/mockups/photos/town-1280.webp"
+  
   srcset="/franconia-nh-gov/pr-preview/pr-17/assets/mockups/photos/town-800.webp 800w, /franconia-nh-gov/pr-preview/pr-17/assets/mockups/photos/town-1280.webp 1280w"
   sizes="(min-width: 1220px) 1148px, 100vw"
+  
   alt="Houses and roads of Franconia in a green valley, seen from the northeast, with forested hills behind the town."
   width="1280"
   height="720"

@@ -21,6 +21,16 @@
         } catch (err) {}
       })();
     </script>
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("franconia-photo-open") === "closed") {
+            document.documentElement.setAttribute("data-photo-open", "closed");
+          }
+        } catch (err) {}
+      })();
+    </script>
+    
     <title>Mockup E — Photo of the month</title>
     <meta name="description" content="Unlisted mockup. How a resident photo contest and winners archive could read.">
     <link rel="canonical" href="https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-17/mockups/photos/contest/">
@@ -340,13 +350,11 @@
 
     
 
-
 <main id="main" class="in page civic mock-page" data-pagefind-ignore>
   <aside class="mock-note" aria-label="Mockup note">
-  <p><b>E · Contest page</b> Residents would email one photograph a month, a board would pick a winner, and this page would keep the archive.</p>
+  <p><b>E · Contest page</b> Residents would email one photograph a month, a board would pick a winner, and past photographs would live in a library.</p>
   <p class="mock-note-row">
     <a href="/franconia-nh-gov/pr-preview/pr-17/mockups/photos/">All mockups</a>
-    <button type="button" data-photo-toggle aria-pressed="false">Hide photo</button>
   </p>
 </aside>
 
@@ -356,12 +364,17 @@
   </header>
 
   <div class="photo-slot">
+    
+    
     <figure class="winner" data-photo-frame>
-      
+      <button type="button" class="photo-open" data-photo-open-id="town" aria-label="View larger photograph, August 2025, Franconia village">
+        
 <img
   src="/franconia-nh-gov/pr-preview/pr-17/assets/mockups/photos/town-1280.webp"
+  
   srcset="/franconia-nh-gov/pr-preview/pr-17/assets/mockups/photos/town-800.webp 800w, /franconia-nh-gov/pr-preview/pr-17/assets/mockups/photos/town-1280.webp 1280w"
   sizes="(min-width: 1220px) 1148px, 100vw"
+  
   alt="Houses and roads of Franconia in a green valley, seen from the northeast, with forested hills behind the town."
   width="1280"
   height="720"
@@ -371,14 +384,28 @@
   data-photo-img
   class="pos-town">
 
+        <span class="photo-expand" aria-hidden="true">Expand</span>
+      </button>
       <figcaption>
         <b class="winner-theme">Sample theme: the town from above</b>
         <p class="photo-credit">
-Franconia from the northeast, 2 August 2025. Photo: <a href="https://commons.wikimedia.org/wiki/File:Franconia_NH_8-2-2025.jpg">Ascended Dreamer</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Cropped and resized.
+Photo: <a href="https://commons.wikimedia.org/wiki/File:Franconia_NH_8-2-2025.jpg">Ascended Dreamer</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Source: <a href="https://commons.wikimedia.org/wiki/File:Franconia_NH_8-2-2025.jpg">Wikimedia Commons</a>. Cropped and resized.
  A published winner would name the resident instead.</p>
       </figcaption>
     </figure>
-    <p class="photo-empty">No photograph published this month. The rules below still stand, and the archive keeps earlier winners.</p>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <p class="photo-empty">No photograph published this month. The rules below still stand, and the photographs page keeps earlier pictures.</p>
   </div>
 
   <div class="prose">
@@ -388,7 +415,7 @@ Franconia from the northeast, 2 August 2025. Photo: <a href="https://commons.wik
       <li>Email it to [email]. Use the subject line “Photo of the month” and the month.</li>
       <li>Give your name as you want it printed, the place in town, and a sentence that the town may publish the photograph here with that credit.</li>
     </ol>
-    <p>The Selectboard, or a committee the Selectboard names, picks one photograph. It is the photograph of the month, then it moves to the archive on this page.</p>
+    <p>The Selectboard, or a committee the Selectboard names, picks one photograph. It is the photograph of the month, then it moves to the <a href="/franconia-nh-gov/pr-preview/pr-17/mockups/photos/archive/">photographs</a> page.</p>
 
     <h2 class="sign"><span class="blaze" aria-hidden="true"></span>Sample rules</h2>
     <ul>
@@ -400,89 +427,6 @@ Franconia from the northeast, 2 August 2025. Photo: <a href="https://commons.wik
       <li>You keep the copyright. Emailing the photograph gives the town permission to show it on this website, with your name, for as long as this archive is published.</li>
     </ul>
   </div>
-
-  <h2 id="archive" class="sign"><span class="blaze" aria-hidden="true"></span>Earlier stand-ins</h2>
-  <ul class="archive-list">
-    
-      
-      <li>
-        <article class="archive-card">
-          
-<img
-  src="/franconia-nh-gov/pr-preview/pr-17/assets/mockups/photos/bald-1280.webp"
-  srcset="/franconia-nh-gov/pr-preview/pr-17/assets/mockups/photos/bald-800.webp 800w, /franconia-nh-gov/pr-preview/pr-17/assets/mockups/photos/bald-1280.webp 1280w"
-  sizes="(min-width: 800px) 360px, 92vw"
-  alt="Fall-colored trees and a lake seen from Bald Mountain in Franconia, with a higher ridge beyond."
-  width="1280"
-  height="720"
-  loading="lazy"
-  decoding="async"
-  
-  data-photo-img
-  class="pos-bald">
-
-          <div>
-            <h3>October 2013</h3>
-            <p><b>First color.</b> 
-View from Bald Mountain, Franconia, 8 October 2013. Photo: <a href="https://commons.wikimedia.org/wiki/File:View_from_Bald_Mountain,_Franconia_(494073)_(11893722896).jpg">Robert Linsdell</a>, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>. Cropped and resized.
-</p>
-          </div>
-        </article>
-      </li>
-    
-      
-      <li>
-        <article class="archive-card">
-          
-<img
-  src="/franconia-nh-gov/pr-preview/pr-17/assets/mockups/photos/river-1000.webp"
-  srcset="/franconia-nh-gov/pr-preview/pr-17/assets/mockups/photos/river-640.webp 640w, /franconia-nh-gov/pr-preview/pr-17/assets/mockups/photos/river-1000.webp 1000w"
-  sizes="(min-width: 800px) 360px, 92vw"
-  alt="The Gale River flowing through woods along the River Walk in Franconia."
-  width="1000"
-  height="666"
-  loading="lazy"
-  decoding="async"
-  
-  data-photo-img
-  class="pos-river">
-
-          <div>
-            <h3>July 2022</h3>
-            <p><b>A path in town.</b> 
-Gale River from the River Walk, Franconia, 13 July 2022. Photo: <a href="https://commons.wikimedia.org/wiki/File:Franconia_River_Walk_Franconia_NH_July_2022.jpg">Artaxerxes</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Cropped and resized.
-</p>
-          </div>
-        </article>
-      </li>
-    
-      
-      <li>
-        <article class="archive-card">
-          
-<img
-  src="/franconia-nh-gov/pr-preview/pr-17/assets/mockups/photos/winter-1280.webp"
-  srcset="/franconia-nh-gov/pr-preview/pr-17/assets/mockups/photos/winter-800.webp 800w, /franconia-nh-gov/pr-preview/pr-17/assets/mockups/photos/winter-1280.webp 1280w"
-  sizes="(min-width: 800px) 360px, 92vw"
-  alt="Cannon Mountain and Echo Lake under snow, seen from Artist&#39;s Bluff."
-  width="1280"
-  height="720"
-  loading="lazy"
-  decoding="async"
-  
-  data-photo-img
-  class="pos-winter">
-
-          <div>
-            <h3>December 2018</h3>
-            <p><b>After snow.</b> 
-Cannon Mountain and Echo Lake from Artist&#39;s Bluff, 28 December 2018. Photo: <a href="https://commons.wikimedia.org/wiki/File:Cannon_Mountain,_Echo_Lake.jpg">DavidWBrooks</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Cropped and resized.
-</p>
-          </div>
-        </article>
-      </li>
-    
-  </ul>
 
   <div id="credits">
     <h2 class="sign"><span class="blaze" aria-hidden="true"></span>Photograph credits</h2>
@@ -502,6 +446,24 @@ Cannon Mountain and Echo Lake from Artist&#39;s Bluff, 28 December 2018. Photo: 
 <p class="mock-aside">Stand-ins only. A real winner would be a resident’s photograph, credited with the name they asked to use.</p>
 
   </div>
+  <dialog class="photo-viewer" id="photo-viewer" aria-labelledby="photo-viewer-label">
+  <div class="photo-viewer-bar">
+    <button type="button" data-photo-close>Close</button>
+    <p id="photo-viewer-label" class="photo-viewer-label"></p>
+    <button type="button" data-photo-prev>Previous</button>
+    <button type="button" data-photo-next>Next</button>
+  </div>
+  <figure class="photo-viewer-figure">
+    <img alt="" data-photo-viewer-img>
+    <figcaption>
+      <p class="photo-viewer-kicker" data-photo-viewer-kicker></p>
+      <p class="photo-viewer-desc" data-photo-viewer-desc></p>
+      <p class="photo-viewer-credit" data-photo-viewer-credit></p>
+    </figcaption>
+  </figure>
+</dialog>
+<script type="application/json" id="photo-library">[{"id":"town","sort":"2025-08-02","date":"2025-08-02","label":"August 2025","place":"Franconia village","collection":"Photo of the month","description":"Houses and roads in the valley, seen from the northeast.","alt":"Houses and roads of Franconia in a green valley, seen from the northeast, with forested hills behind the town.","credit":"Ascended Dreamer","license":"CC BY 4.0","licenseUrl":"https://creativecommons.org/licenses/by/4.0/","source":"Wikimedia Commons","sourceUrl":"https://commons.wikimedia.org/wiki/File:Franconia_NH_8-2-2025.jpg","changes":"Cropped and resized","featured":true,"src":"/assets/mockups/photos/town-1280.webp","w":1280,"h":720,"small":"/assets/mockups/photos/town-800.webp","smallW":800,"full":"/assets/mockups/photos/town-full.webp","fullW":1400,"fullH":788},{"id":"river","sort":"2022-07-13","date":"2022-07-13","label":"July 2022","place":"Gale River","collection":"Photo of the month","description":"The Gale River along the River Walk.","alt":"The Gale River flowing through woods along the River Walk in Franconia.","credit":"Artaxerxes","license":"CC BY-SA 4.0","licenseUrl":"https://creativecommons.org/licenses/by-sa/4.0/","source":"Wikimedia Commons","sourceUrl":"https://commons.wikimedia.org/wiki/File:Franconia_River_Walk_Franconia_NH_July_2022.jpg","changes":"Cropped and resized","src":"/assets/mockups/photos/river-1000.webp","w":1000,"h":666,"small":"/assets/mockups/photos/river-640.webp","smallW":640,"full":"/assets/mockups/photos/river-full.webp","fullW":1280,"fullH":854},{"id":"winter","sort":"2018-12-28","date":"2018-12-28","label":"December 2018","place":"Franconia Notch","collection":"Photo of the month","description":"Cannon Mountain and Echo Lake under snow, from Artist's Bluff.","alt":"Cannon Mountain and Echo Lake under snow, seen from Artist's Bluff.","credit":"DavidWBrooks","license":"CC BY-SA 4.0","licenseUrl":"https://creativecommons.org/licenses/by-sa/4.0/","source":"Wikimedia Commons","sourceUrl":"https://commons.wikimedia.org/wiki/File:Cannon_Mountain,_Echo_Lake.jpg","changes":"Cropped and resized","pair":"notch","pairRole":"now","src":"/assets/mockups/photos/winter-1280.webp","w":1280,"h":720,"small":"/assets/mockups/photos/winter-800.webp","smallW":800,"full":"/assets/mockups/photos/winter-full.webp","fullW":1600,"fullH":900},{"id":"bald","sort":"2013-10-08","date":"2013-10-08","label":"October 2013","place":"Bald Mountain","collection":"Photo of the month","description":"Fall color and a lake, seen from Bald Mountain.","alt":"Fall-colored trees and a lake seen from Bald Mountain in Franconia, with a higher ridge beyond.","credit":"Robert Linsdell","license":"CC BY 2.0","licenseUrl":"https://creativecommons.org/licenses/by/2.0/","source":"Wikimedia Commons","sourceUrl":"https://commons.wikimedia.org/wiki/File:View_from_Bald_Mountain,_Franconia_(494073)_(11893722896).jpg","changes":"Cropped and resized","src":"/assets/mockups/photos/bald-1280.webp","w":1280,"h":720,"small":"/assets/mockups/photos/bald-800.webp","smallW":800,"full":"/assets/mockups/photos/bald-full.webp","fullW":1400,"fullH":788},{"id":"notch","sort":"1935-01-01","era":"c. 1930–1945","label":"c. 1930–1945","place":"Franconia Notch","collection":"Heritage Museum","description":"A linen postcard of Mt. Lafayette and Echo Lake from Artist's Bluff, printed by Tichnor Brothers. From the Boston Public Library Tichnor Brothers collection.","alt":"A color postcard of Echo Lake and the mountains of Franconia Notch, seen from Artist's Bluff, with a small boat on the water.","credit":"Tichnor Brothers","license":"Public domain","licenseUrl":"https://creativecommons.org/publicdomain/mark/1.0/","source":"Wikimedia Commons","sourceUrl":"https://commons.wikimedia.org/wiki/File:Mt._Lafayette_and_Echo_Lake_from_Artist%27s_Bluff,_Franconia_Notch,_White_Mountains,_N.H_(62508).jpg","changes":"Cropped and resized","pair":"notch","pairRole":"then","src":"/assets/mockups/photos/notch-800.webp","w":800,"h":514,"small":"/assets/mockups/photos/notch-800.webp","smallW":800,"full":"/assets/mockups/photos/notch-full.webp","fullW":1100,"fullH":706},{"id":"village","sort":"1908-01-01","era":"1908","label":"1908","place":"Franconia village","collection":"Heritage Museum","description":"The village and Sugar Hill, from a 1908 postcard. A different viewpoint from the later photograph of town.","alt":"A 1908 postcard of Franconia village and Sugar Hill, with houses and fields in a valley and mountains behind.","credit":"Unknown photographer","license":"Public domain","licenseUrl":"https://creativecommons.org/publicdomain/mark/1.0/","source":"Wikimedia Commons","sourceUrl":"https://commons.wikimedia.org/wiki/File:Franconia_Village,_NH_%26_Sugar_Hills.jpg","changes":"Cropped and resized","src":"/assets/mockups/photos/village-640.webp","w":640,"h":350,"small":"/assets/mockups/photos/village-640.webp","smallW":640,"full":"/assets/mockups/photos/village-full.webp","fullW":651,"fullH":356}]</script>
+
 </main>
 
     <footer class="foot" data-pagefind-ignore>

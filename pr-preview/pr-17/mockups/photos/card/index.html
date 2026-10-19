@@ -21,6 +21,16 @@
         } catch (err) {}
       })();
     </script>
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("franconia-photo-open") === "closed") {
+            document.documentElement.setAttribute("data-photo-open", "closed");
+          }
+        } catch (err) {}
+      })();
+    </script>
+    
     <title>Mockup C — Card in the grid</title>
     <meta name="description" content="Unlisted mockup. A Franconia this month card under the task list.">
     <link rel="canonical" href="https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-17/mockups/photos/card/">
@@ -341,10 +351,9 @@
     
 <main id="main" class="in" data-pagefind-ignore>
   <aside class="mock-note" aria-label="Mockup note">
-  <p><b>C · Card in the grid</b> Franconia this month is one card under the tasks, and the whole card opens the winners archive.</p>
+  <p><b>C · Card in the grid</b> Franconia this month is one card under the tasks, and the whole card opens the photograph library.</p>
   <p class="mock-note-row">
     <a href="/franconia-nh-gov/pr-preview/pr-17/mockups/photos/">All mockups</a>
-    <button type="button" data-photo-toggle aria-pressed="false">Hide photo</button>
   </p>
 </aside>
 
@@ -391,12 +400,14 @@
   
 
 <figure class="month-card-figure">
-  <a class="month-card" href="/franconia-nh-gov/pr-preview/pr-17/mockups/photos/contest/">
+  <a class="month-card" href="/franconia-nh-gov/pr-preview/pr-17/mockups/photos/archive/">
     
 <img
   src="/franconia-nh-gov/pr-preview/pr-17/assets/mockups/photos/town-1280.webp"
+  
   srcset="/franconia-nh-gov/pr-preview/pr-17/assets/mockups/photos/town-800.webp 800w, /franconia-nh-gov/pr-preview/pr-17/assets/mockups/photos/town-1280.webp 1280w"
   sizes="(min-width: 700px) 220px, 100vw"
+  
   alt="Houses and roads of Franconia in a green valley, seen from the northeast, with forested hills behind the town."
   width="1280"
   height="720"
