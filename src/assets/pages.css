@@ -2,8 +2,8 @@
 .civic { padding-bottom: 2.4rem; }
 .civic-head { margin: 0.2rem 0 1rem; }
 .civic .lede {
-  font-size: 1.125rem;
-  line-height: 1.6;
+  font-size: 1.0625rem;
+  line-height: 1.55;
   max-width: 65ch;
   margin-bottom: 0;
 }
@@ -16,13 +16,13 @@
   padding: 0.7rem 0.85rem;
 }
 .notice h2 {
-  font: 900 1.25rem/1.3 var(--sign);
+  font: 900 1.2rem/1.3 var(--sign);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--rust);
   margin-bottom: 0.3rem;
 }
-.notice p { font-size: 1rem; line-height: 1.6; }
+.notice p { font-size: 1rem; line-height: 1.55; }
 
 .glance { margin-bottom: 1.15rem; }
 .glance-grid { display: grid; gap: 0.6rem; }
@@ -33,7 +33,7 @@
   padding: 0.75rem 0.85rem;
 }
 .glance-grid h3 {
-  font: 900 1.25rem/1.3 var(--sign);
+  font: 900 1.2rem/1.3 var(--sign);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--spr);
@@ -41,7 +41,7 @@
 }
 .glance dl { display: grid; gap: 0.55rem; }
 .glance dt {
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -58,7 +58,7 @@
   border-bottom: 1px solid var(--line);
 }
 .people li:last-child { border-bottom: 0; padding-bottom: 0; }
-.people .muted, .people .line { display: block; font-size: 1rem; line-height: 1.5; color: var(--muted); }
+.people .muted, .people .line { display: block; font-size: 0.9375rem; line-height: 1.5; color: var(--muted); }
 
 .link-section { margin-bottom: 1.15rem; }
 .link-grid { display: grid; gap: 0.4rem; }
@@ -79,7 +79,7 @@
 .link-grid a:hover { background: var(--cream); }
 .link-grid .ln {
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: var(--muted);
   text-align: right;
 }
@@ -109,7 +109,7 @@
   width: 100%;
   border-collapse: collapse;
   background: var(--card);
-  font-size: 1rem;
+  font-size: 0.9375rem;
 }
 .civic th, .civic td {
   text-align: left;
@@ -119,11 +119,11 @@
 }
 .civic th {
   background: var(--cream);
-  font-size: 1rem;
+  font-size: 0.875rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
-.civic tbody th { text-transform: none; letter-spacing: 0; font-size: 1rem; background: var(--card); }
+.civic tbody th { text-transform: none; letter-spacing: 0; font-size: 0.9375rem; background: var(--card); }
 .civic td a, .civic th a { color: var(--rust); font-weight: 700; }
 .table-wrap {
   overflow-x: auto;
@@ -173,7 +173,7 @@
   .table-wrap.can-stack .cell-label {
     display: block;
     font-weight: 800;
-    font-size: 1rem;
+    font-size: 0.875rem;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--bark);
@@ -188,7 +188,7 @@
   border: 1.5px solid var(--bark);
   background: var(--card);
 }
-.figures figcaption { font-size: 1rem; line-height: 1.6; color: var(--muted); margin-top: 0.3rem; }
+.figures figcaption { font-size: 0.9375rem; line-height: 1.55; color: var(--muted); margin-top: 0.3rem; }
 .figures a { display: block; }
 
 .civic .prose { max-width: none; }
@@ -242,6 +242,6 @@
   .glance-grid.many { grid-template-columns: 1fr 1fr 1fr; }
 }
 @media (max-width: 640px) {
-  .notice h2, .civic .prose h2:not(.sign) { font-size: 1.25rem; }
-  .glance-grid h3, .civic .prose h3 { font-size: 1.1rem; }
+  .civic .prose h2:not(.sign) { font-size: 1.3rem; }
+  .notice h2, .glance-grid h3, .civic .prose h3 { font-size: 1.1rem; }
 }
