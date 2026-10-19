@@ -34,14 +34,20 @@
     }
   }
 
+  function notify() {
+    root.dispatchEvent(new CustomEvent("franconia-text-size"));
+  }
+
   function apply(step, persist) {
     root.style.fontSize = pxFor(step) + "px";
     root.setAttribute("data-text-size", step);
     mark(step);
-    if (!persist) return;
-    try {
-      localStorage.setItem(KEY, step);
-    } catch (err) {}
+    if (persist) {
+      try {
+        localStorage.setItem(KEY, step);
+      } catch (err) {}
+    }
+    notify();
   }
 
   group.addEventListener("click", function (event) {
@@ -59,6 +65,7 @@
       root.style.fontSize = "";
       root.removeAttribute("data-text-size");
       mark("medium");
+      notify();
     }
   }
 

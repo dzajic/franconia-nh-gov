@@ -10,7 +10,7 @@
 
 .notices { display: grid; gap: 0.5rem; margin-bottom: 1rem; }
 .notice {
-  background: #fff;
+  background: var(--card);
   border: 2px solid var(--rust);
   border-radius: 8px;
   padding: 0.7rem 0.85rem;
@@ -27,7 +27,7 @@
 .glance { margin-bottom: 1.15rem; }
 .glance-grid { display: grid; gap: 0.6rem; }
 .glance-grid article {
-  background: #fff;
+  background: var(--card);
   border: 1.5px solid var(--bark);
   border-radius: 8px;
   padding: 0.75rem 0.85rem;
@@ -55,10 +55,10 @@
   display: grid;
   gap: 0.05rem;
   padding: 0.35rem 0;
-  border-bottom: 1px solid #efe4c8;
+  border-bottom: 1px solid var(--line);
 }
 .people li:last-child { border-bottom: 0; padding-bottom: 0; }
-.people .muted, .people .line { display: block; font-size: 1rem; line-height: 1.5; color: #3d3d36; }
+.people .muted, .people .line { display: block; font-size: 1rem; line-height: 1.5; color: var(--muted); }
 
 .link-section { margin-bottom: 1.15rem; }
 .link-grid { display: grid; gap: 0.4rem; }
@@ -68,7 +68,7 @@
   gap: 0.75rem;
   align-items: center;
   min-height: 44px;
-  background: #fff;
+  background: var(--card);
   border: 1.5px solid var(--bark);
   border-left: 6px solid var(--spr);
   border-radius: 6px;
@@ -81,7 +81,7 @@
 .link-grid .ln {
   font-weight: 700;
   font-size: 1rem;
-  color: #3d3d36;
+  color: var(--muted);
   text-align: right;
 }
 .link-plain {
@@ -99,7 +99,7 @@
   padding-left: 1.2rem;
   display: grid;
   gap: 0.25rem;
-  background: #fff;
+  background: var(--card);
   border: 1.5px solid var(--bark);
   border-radius: 8px;
   padding: 0.7rem 0.85rem 0.7rem 1.6rem;
@@ -109,7 +109,7 @@
 .civic table {
   width: 100%;
   border-collapse: collapse;
-  background: #fff;
+  background: var(--card);
   font-size: 1rem;
 }
 .civic th, .civic td {
@@ -125,7 +125,7 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
-.civic tbody th { text-transform: none; letter-spacing: 0; font-size: 1rem; background: #fff; }
+.civic tbody th { text-transform: none; letter-spacing: 0; font-size: 1rem; background: var(--card); }
 .civic td a, .civic th a { color: var(--rust); font-weight: 700; }
 .table-wrap {
   overflow-x: auto;
@@ -160,7 +160,7 @@
     clip: rect(0 0 0 0);
   }
   .table-wrap.can-stack tr {
-    background: #fff;
+    background: var(--card);
     border: 1.5px solid var(--bark);
     border-radius: 8px;
     margin-bottom: 0.45rem;
@@ -188,9 +188,9 @@
   height: auto;
   border-radius: 8px;
   border: 1.5px solid var(--bark);
-  background: #fff;
+  background: var(--card);
 }
-.figures figcaption { font-size: 1rem; line-height: 1.6; color: #3d3d36; margin-top: 0.3rem; }
+.figures figcaption { font-size: 1rem; line-height: 1.6; color: var(--muted); margin-top: 0.3rem; }
 .figures a { display: block; }
 
 .civic .prose { max-width: none; }
@@ -218,7 +218,7 @@
   height: 0.9em;
   margin-right: 0.45rem;
   vertical-align: -0.05em;
-  background: #fff;
+  background: var(--card);
   border: 1px solid rgba(0, 0, 0, 0.35);
   border-radius: 1px;
 }

@@ -86,6 +86,96 @@
 }
 </script>
 
+    <script>
+(function () {
+  var months = {
+    12: "winter",1: "winter",2: "winter",3: "spring",4: "spring",5: "spring",6: "summer",7: "summer",8: "summer",9: "fall",10: "fall",11: "fall",
+  };
+  var allowed = { winter: 1,spring: 1,summer: 1,fall: 1, };
+  var key = "franconia-season";
+  var picked = "";
+  try {
+    picked = (new URLSearchParams(location.search).get("season") || "").toLowerCase();
+  } catch (e) {}
+  var stored = "";
+  try { stored = (localStorage.getItem(key) || "").toLowerCase(); } catch (e) {}
+  if (stored && stored !== "on" && stored !== "off") {
+    stored = stored === "default" ? "off" : "on";
+    try { localStorage.setItem(key, stored); } catch (e) {}
+  }
+  var season = months[new Date().getMonth() + 1] || "fall";
+  if (picked === "default") season = "default";
+  else if (allowed[picked]) season = picked;
+  else if (stored === "off") season = "default";
+  document.documentElement.setAttribute("data-season", season);
+  window.franconiaSeason = { months: months, allowed: allowed, storageKey: key };
+})();
+</script>
+<style>
+@layer seasonal {
+
+:root[data-season="winter"] {
+  --spr: #0b2140;
+  --deep: #061428;
+  --bark: #16345a;
+  --cream: #f5f8fb;
+  --paper: #f3f5f7;
+  --card: #ffffff;
+  --blaze: #d5e2ee;
+  --rust: #1a4e86;
+  --ink: #0c1826;
+  --focus: #1a4e86;
+  --muted: #3c4d60;
+  --line: #c9d3dc;
+}
+
+:root[data-season="spring"] {
+  --spr: #0c6430;
+  --deep: #084826;
+  --bark: #5c1868;
+  --cream: #fff7fb;
+  --paper: #d4f2bc;
+  --card: #f8e6f6;
+  --blaze: #f7d0ea;
+  --rust: #922f78;
+  --ink: #122414;
+  --focus: #922f78;
+  --muted: #315640;
+  --line: #e6b8ec;
+}
+
+:root[data-season="summer"] {
+  --spr: #0058c0;
+  --deep: #0048a8;
+  --bark: #003e8a;
+  --cream: #fffdf6;
+  --paper: #d6f3ff;
+  --card: #fff6c4;
+  --blaze: #ffe566;
+  --rust: #be3456;
+  --ink: #10281c;
+  --focus: #be3456;
+  --muted: #1a4a58;
+  --line: #8acdee;
+}
+
+:root[data-season="fall"] {
+  --spr: #7c2d12;
+  --deep: #5c1c0c;
+  --bark: #7f1d1d;
+  --cream: #fff6ee;
+  --paper: #ffd0a4;
+  --card: #fff1e4;
+  --blaze: #ffb067;
+  --rust: #9f1a1a;
+  --ink: #2a1208;
+  --focus: #9f1a1a;
+  --muted: #6a3a22;
+  --line: #f0b48a;
+}
+
+</style>
+
   </head>
   <body class="page" data-pagefind="/franconia-nh-gov/pr-preview/pr-10/pagefind/pagefind.js" data-archive-index="/franconia-nh-gov/pr-preview/pr-10/archive/index.json" data-site-root="/franconia-nh-gov/pr-preview/pr-10/">
     <a class="skip" href="#main">Skip to main content</a>
@@ -107,15 +197,72 @@
 
     
     
+
 <header class="top" data-pagefind-ignore>
   <svg class="hband" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><polygon points="0,100 0,78 90,70 180,56 270,36 330,20 372,26 430,40 500,58 560,50 620,34 660,30 700,38 760,52 820,58 870,50 910,44 950,52 1010,66 1100,78 1200,84 1200,100" fill="#0e2a21"/></svg><svg class="hband2" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><polygon points="0,100 0,70 120,62 240,30 300,10 340,14 400,34 470,64 520,50 600,26 650,20 700,30 780,58 830,64 880,50 920,44 960,56 1040,76 1120,70 1200,80 1200,100" fill="#faf5e6"/></svg>
   <div class="in hdr">
-    <a class="brand" href="/franconia-nh-gov/pr-preview/pr-10/" aria-label="Town of Franconia, New Hampshire home">
-      
+    <div class="brand-block">
+      <a class="brand" href="/franconia-nh-gov/pr-preview/pr-10/" aria-label="Town of Franconia, New Hampshire home">
+        
 <svg class="mark" viewBox="4 2 56 64" role="img" aria-label="Franconia Iron Furnace and ridge" focusable="false"><path d="M0 58L13 20L22 34L33 10L47 36L54 26L64 58Z" fill="#a98650"/><path d="M12 64L21.5 13H19.5V8.5H44.5V13H42.5L52 64Z" fill="#5a3a24" stroke="#5a3a24" stroke-width="5" stroke-linejoin="round" transform="translate(6.4 8) scale(.8)"/><g transform="translate(6.4 8) scale(.8)"><path fill="#f4ead2" fill-rule="evenodd" d="M12 64L21.5 13H19.5V8.5H44.5V13H42.5L52 64ZM25.5 64V43a6.5 6.5 0 0 1 13 0V64Z"/></g></svg>
 
-      <span><b>Franconia</b><i>New Hampshire</i></span>
-    </a>
+        <span><b>Franconia</b><i>New Hampshire</i></span>
+      </a>
+      <p class="season-line" data-pagefind-ignore>
+  <span class="season-motif" aria-hidden="true">
+  <svg class="m-winter" viewBox="0 0 24 24" focusable="false">
+    <g fill="none" stroke="var(--blaze)" stroke-width="1.5" stroke-linecap="round">
+      <path d="M12 2.8v18.4M4.1 7.2l15.8 9.6M19.9 7.2L4.1 16.8"/>
+      <path d="M12 6.6 10.2 5.2M12 6.6l1.8-1.4M12 17.4 10.2 18.8M12 17.4l1.8 1.4M6.4 9.6 4.8 9.2M6.4 9.6 6.8 7.8M17.6 14.4l1.6.4M17.6 14.4l-.4 1.8M17.6 9.6l1.6-.4M17.6 9.6l-.4-1.8M6.4 14.4 4.8 14.8M6.4 14.4 6.8 16.2"/>
+    </g>
+    <circle cx="12" cy="12" r="1.45" fill="var(--cream)"/>
+  </svg>
+  <svg class="m-spring" viewBox="0 0 24 24" focusable="false">
+    <ellipse cx="12" cy="12" rx="2.1" ry="5.2" fill="var(--blaze)"/>
+    <ellipse cx="12" cy="12" rx="2.1" ry="5.2" fill="var(--blaze)" transform="rotate(60 12 12)"/>
+    <ellipse cx="12" cy="12" rx="2.1" ry="5.2" fill="var(--line)" transform="rotate(120 12 12)"/>
+    <circle cx="12" cy="12" r="1.55" fill="var(--spr)"/>
+  </svg>
+  <svg class="m-summer" viewBox="0 0 24 24" focusable="false">
+    <circle cx="12" cy="12" r="3.1" fill="var(--blaze)"/>
+    <g fill="none" stroke="var(--rust)" stroke-width="1.7" stroke-linecap="round">
+      <path d="M12 2.6v2.5M12 18.9v2.5M2.6 12h2.5M18.9 12h2.5M5.4 5.4l1.8 1.8M16.8 16.8l1.8 1.8M18.6 5.4l-1.8 1.8M7.2 16.8l-1.8 1.8"/>
+    </g>
+  </svg>
+  <svg class="m-fall" viewBox="0 0 24 24" focusable="false">
+    <path fill="var(--blaze)" d="M12 21.2c-3.4-3.5-6.4-6.6-6.4-10.4 2.4 1.5 5.2 1.6 7.2-1.2.7 2.8 2.6 4.2 5.6 4.4-1.7 3.6-4.2 6-6.4 7.2z"/>
+    <path fill="none" stroke="var(--rust)" stroke-width="1.15" stroke-linecap="round" d="M12 20.2c.2-4.2 1.2-7.2 3.6-9.6"/>
+  </svg>
+</span>
+
+  
+  <span data-season-copy="winter">Snow on the ridge</span>
+  
+  <span data-season-copy="spring">The Notch greens up</span>
+  
+  <span data-season-copy="summer">Long light over town</span>
+  
+  <span data-season-copy="fall">Foliage in the Notch</span>
+  
+</p>
+
+    </div>
+    
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav-list" hidden>
+  <svg class="menu-icon" viewBox="0 0 22 16" width="22" height="16" aria-hidden="true" focusable="false">
+    <g class="menu-bars" fill="currentColor">
+      <rect width="22" height="2.5" rx="1"></rect>
+      <rect y="6.75" width="22" height="2.5" rx="1"></rect>
+      <rect y="13.5" width="22" height="2.5" rx="1"></rect>
+    </g>
+    <g class="menu-x" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+      <path d="M2.5 2.5 L19.5 13.5"></path>
+      <path d="M19.5 2.5 L2.5 13.5"></path>
+    </g>
+  </svg>
+  <span>Menu</span>
+</button>
+
     <div class="text-size" data-text-size-control role="group" aria-label="Text size">
       <button type="button" data-step="small" aria-pressed="false" aria-label="Smaller text">A−</button>
       <button type="button" data-step="medium" aria-pressed="true" aria-label="Default text size">A</button>
@@ -128,41 +275,64 @@
       <button type="submit">Search</button>
     </form>
     
-    <nav aria-label="Primary">
+    <nav class="primary-nav" aria-label="Primary">
+      <div class="nav-links" id="primary-nav-list">
       
         
           
-          <a href="/franconia-nh-gov/pr-preview/pr-10/#tasks">Top tasks</a>
+          <a class="nav-link" href="/franconia-nh-gov/pr-preview/pr-10/#tasks">Top tasks</a>
           
         
           
-          <a href="/franconia-nh-gov/pr-preview/pr-10/#coming">Calendar</a>
+          <a class="nav-link" href="/franconia-nh-gov/pr-preview/pr-10/#coming">Calendar</a>
           
         
           
-          <a href="/franconia-nh-gov/pr-preview/pr-10/#minutes">Minutes</a>
+          <a class="nav-link" href="/franconia-nh-gov/pr-preview/pr-10/#minutes">Minutes</a>
           
         
           
-          <a href="/franconia-nh-gov/pr-preview/pr-10/#forms">Forms</a>
+          <a class="nav-link" href="/franconia-nh-gov/pr-preview/pr-10/#forms">Forms</a>
           
         
           
-          <a href="/franconia-nh-gov/pr-preview/pr-10/#depts">Departments</a>
+          <a class="nav-link" href="/franconia-nh-gov/pr-preview/pr-10/#depts">Departments</a>
           
         
           
-          <a href="/franconia-nh-gov/pr-preview/pr-10/#directory">Directory</a>
+          <a class="nav-link" href="/franconia-nh-gov/pr-preview/pr-10/#directory">Directory</a>
           
         
           
-          <a href="/franconia-nh-gov/pr-preview/pr-10/about/">About</a>
+          <a class="nav-link" href="/franconia-nh-gov/pr-preview/pr-10/about/">About</a>
           
         
       
+      </div>
     </nav>
   </div>
 </header>
+<div class="slim-bar" data-slim-bar hidden data-pagefind-ignore>
+  <div class="in slim-in">
+    <a class="slim-name" href="/franconia-nh-gov/pr-preview/pr-10/">Franconia</a>
+    
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav-list">
+  <svg class="menu-icon" viewBox="0 0 22 16" width="22" height="16" aria-hidden="true" focusable="false">
+    <g class="menu-bars" fill="currentColor">
+      <rect width="22" height="2.5" rx="1"></rect>
+      <rect y="6.75" width="22" height="2.5" rx="1"></rect>
+      <rect y="13.5" width="22" height="2.5" rx="1"></rect>
+    </g>
+    <g class="menu-x" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+      <path d="M2.5 2.5 L19.5 13.5"></path>
+      <path d="M19.5 2.5 L2.5 13.5"></path>
+    </g>
+  </svg>
+  <span>Menu</span>
+</button>
+
+  </div>
+</div>
 
     <main id="main" class="in page" data-pagefind-body>
   <h1 class="page-title">Dog Licensing - TOWN OF FRANCONIA</h1>
@@ -209,11 +379,69 @@ RSA 466:13</strong></p>
     <p><a href="/franconia-nh-gov/pr-preview/pr-10/about/">About Franconia</a> · <a href="https://www.franconianotch.org/">Visiting?</a> · <a href="https://github.com/dzajic/franconia-nh-gov/issues">Suggest a change</a> · <a href="/franconia-nh-gov/pr-preview/pr-10/archive/">Document archive</a></p>
     <p><a href="https://www.franconianotch.org/">Visiting? The Franconia Notch Chamber of Commerce has lodging, dining, and things to do.</a></p>
     
+    <div class="season-controls">
+  <button type="button" class="season-toggle" aria-pressed="true">Seasonal theme: <span class="season-toggle-value">On</span></button>
+  
+</div>
+<script>
+(function () {
+  var api = window.franconiaSeason || { months: {}, allowed: {}, storageKey: "franconia-season" };
+  var toggle = document.querySelector(".season-toggle");
+  var value = toggle && toggle.querySelector(".season-toggle-value");
+  var replay = document.querySelector(".season-replay");
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function paint() {
+    var on = document.documentElement.getAttribute("data-season") !== "default";
+    if (toggle) toggle.setAttribute("aria-pressed", on ? "true" : "false");
+    if (value) value.textContent = on ? "On" : "Off";
+    if (replay) replay.hidden = reduce || !on;
+  }
+
+  function monthSeason() {
+    return api.months[new Date().getMonth() + 1] || "fall";
+  }
+
+  if (toggle) {
+    toggle.addEventListener("click", function () {
+      var on = document.documentElement.getAttribute("data-season") !== "default";
+      var next = on ? "default" : monthSeason();
+      var url;
+      try { url = new URL(location.href); } catch (e) { url = null; }
+      if (!on && url) {
+        var q = (url.searchParams.get("season") || "").toLowerCase();
+        if (api.allowed[q]) next = q;
+      }
+      document.documentElement.setAttribute("data-season", next);
+      try { localStorage.setItem(api.storageKey, next === "default" ? "off" : "on"); } catch (e) {}
+      if (url) {
+        if (next === "default" || !api.allowed[(url.searchParams.get("season") || "").toLowerCase()]) {
+          url.searchParams.delete("season");
+        }
+        history.replaceState(null, "", url.pathname + url.search + url.hash);
+      }
+      paint();
+      document.dispatchEvent(new CustomEvent("franconia-season"));
+    });
+  }
+
+  if (replay) {
+    replay.addEventListener("click", function () {
+      try { sessionStorage.removeItem("franconia-season-fx"); } catch (e) {}
+      document.dispatchEvent(new CustomEvent("franconia-replay"));
+    });
+  }
+
+  paint();
+})();
+</script>
+
     <p class="small">Design preview, not the official town site. The official site is <a href="https://www.franconianh.gov/">franconianh.gov</a> (franconianh.org redirects there). Alert dates are sample content from the design prototype. The furnace and ridge marks are original drawings, not traced from landmarks. Phone and street address are carried over from the previous site; bracketed values such as [hours] are still unknown.</p>
   </div>
 </footer>
 
     <script src="/franconia-nh-gov/pr-preview/pr-10/assets/text-size.js" defer></script>
+    <script src="/franconia-nh-gov/pr-preview/pr-10/assets/nav-menu.js" defer></script>
     
   </body>
 </html>
