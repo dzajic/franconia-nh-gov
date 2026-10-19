@@ -1,0 +1,441 @@
+/* Unlisted photo mockups. Text sits on solid tokens that already pass WCAG AA
+   in every seasonal palette: cream on deep, blaze on deep, ink on card, rust on card. */
+
+.mock-note {
+  position: sticky;
+  top: 0;
+  z-index: 35;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.8rem;
+  margin: 0 0 0.85rem;
+  padding: 0.35rem 0.7rem;
+  background: var(--card);
+  border: 1.5px solid var(--bark);
+  border-left: 6px solid var(--blaze);
+  border-radius: 6px;
+}
+.mock-note p {
+  flex: 1 1 18rem;
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+.mock-note b {
+  font-family: var(--sign);
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--spr);
+}
+.mock-note-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.35rem;
+  align-items: center;
+}
+.mock-note a,
+.mock-note button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.2rem 0.65rem;
+  border-radius: 6px;
+  font-family: var(--body);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.mock-note a { color: var(--rust); }
+.mock-note button {
+  border: 1.5px solid var(--bark);
+  background: var(--paper);
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+}
+.mock-note button:hover { background: var(--cream); }
+
+.mock-index {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.7rem 0 1.3rem;
+}
+.mock-index a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+  min-height: 44px;
+  padding: 0.7rem 0.85rem;
+  background: var(--card);
+  border: 1.5px solid var(--bark);
+  border-left: 6px solid var(--spr);
+  border-radius: 8px;
+  text-decoration: none;
+}
+.mock-index a:hover { background: var(--cream); }
+.mock-index a:active { background: #e7d7b4; }
+.mock-index b {
+  font-family: var(--sign);
+  font-weight: 900;
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: var(--spr);
+}
+.mock-index span {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 65ch;
+}
+
+.mock-aside {
+  max-width: 65ch;
+  margin: 0 0 1.2rem;
+}
+.mock-page .sign { margin-top: 0.4rem; }
+
+.photo-credit {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.photo-credit a {
+  color: var(--rust);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+.photo-more {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin: 0 0 0.1rem;
+  font-weight: 800;
+  color: var(--rust);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.pos-town { object-position: center 64%; }
+.pos-bald { object-position: center 58%; }
+.pos-winter { object-position: center 42%; }
+.pos-river { object-position: center center; }
+.pos-trail { object-position: center 46%; }
+
+/* A. Town name on a solid plate. The gradient above the plate has no text. */
+.photo-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: clamp(210px, 32vw, 300px);
+  margin: 0 0 1.1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--deep);
+}
+.photo-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.photo-hero figcaption {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0.4rem 0.85rem 0.7rem;
+  background: var(--deep);
+  color: var(--cream);
+}
+.photo-hero figcaption::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: 3rem;
+  background: linear-gradient(to bottom, transparent, var(--deep));
+  pointer-events: none;
+}
+.photo-kicker {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+.photo-kicker a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--blaze);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.photo-hero-name {
+  margin: 0;
+  font-family: var(--sign);
+  font-weight: 900;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+.photo-hero .photo-credit,
+.photo-hero .photo-credit a { color: var(--cream); }
+.photo-hero :focus-visible {
+  outline: 3px solid var(--blaze);
+  outline-offset: 3px;
+}
+
+/* F. Short picture, caption underneath, no second town name. */
+.photo-mast { margin: 0 0 1.1rem; }
+.photo-mast img {
+  display: block;
+  width: 100%;
+  height: clamp(112px, 18vw, 168px);
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  background: var(--spr);
+}
+.photo-mast figcaption {
+  margin: 0;
+  padding: 0.35rem 0.75rem 0.55rem;
+  background: var(--card);
+  border: 1.5px solid var(--bark);
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+}
+
+/* B. Slim band between tasks and the columns. */
+.photo-band { margin: 0.15rem 0 1.2rem; }
+.photo-band-link {
+  display: block;
+  border: 1.5px solid var(--bark);
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background: var(--card);
+}
+.photo-band-link:hover { border-color: var(--spr); }
+.photo-band-frame {
+  display: block;
+  height: clamp(92px, 14vw, 132px);
+  background: var(--spr);
+}
+.photo-band img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.photo-band-cap {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+.photo-band-link:hover .photo-band-cap { background: var(--cream); }
+.photo-band figcaption {
+  margin: 0;
+  padding: 0.35rem 0.75rem 0.55rem;
+  background: var(--card);
+  border: 1.5px solid var(--bark);
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+}
+
+/* C. Whole-card link under the tasks. */
+.month-card-figure { margin: 0.15rem 0 1.15rem; }
+.month-card {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  min-height: 44px;
+  background: var(--card);
+  color: inherit;
+  text-decoration: none;
+  border: 1.5px solid var(--bark);
+  border-bottom: 4px solid var(--blaze);
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+}
+.month-card:hover { background: var(--cream); }
+.month-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 6.5rem;
+  object-fit: cover;
+  background: var(--spr);
+}
+.month-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.15rem;
+  min-width: 0;
+  padding: 0.65rem 0.8rem;
+}
+.month-copy b {
+  font-family: var(--sign);
+  font-weight: 900;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+.month-copy span {
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.month-without { display: none; }
+.month-card-figure figcaption {
+  margin: 0;
+  padding: 0.4rem 0.75rem 0.55rem;
+  background: var(--card);
+  border: 1.5px solid var(--bark);
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+}
+
+/* D. Department photograph, title on the paper below. */
+.dept-photo { margin: 0 0 0.85rem; }
+.dept-photo img {
+  display: block;
+  width: 100%;
+  height: clamp(140px, 28vw, 240px);
+  object-fit: cover;
+  border-radius: 8px;
+  background: var(--spr);
+}
+.dept-photo figcaption { margin: 0.45rem 0 0; }
+
+/* E. Contest page. */
+.winner { margin: 0 0 1rem; }
+.winner img {
+  display: block;
+  width: 100%;
+  height: clamp(190px, 40vw, 440px);
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  background: var(--spr);
+}
+.winner figcaption {
+  margin: 0;
+  padding: 0.55rem 0.75rem 0.7rem;
+  background: var(--card);
+  border: 1.5px solid var(--bark);
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+}
+.winner-theme {
+  display: block;
+  margin: 0 0 0.2rem;
+  font-family: var(--sign);
+  font-weight: 900;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: var(--spr);
+}
+.photo-empty {
+  display: none;
+  max-width: 65ch;
+  margin: 0 0 1rem;
+}
+.archive-list {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0.7rem 0 0.3rem;
+}
+.archive-card {
+  background: var(--card);
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 100%;
+}
+.archive-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  background: var(--spr);
+}
+.archive-card div { padding: 0.6rem 0.75rem 0.8rem; }
+.archive-card h3 {
+  margin: 0 0 0.25rem;
+  font-family: var(--sign);
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: var(--spr);
+}
+.archive-card p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+.photo-credits {
+  max-width: 65ch;
+  margin: 0.7rem 0 1.6rem;
+}
+.photo-credits li {
+  margin: 0 0 0.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+.photo-credits a {
+  color: var(--rust);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+html[data-photo="off"] [data-photo-frame],
+[data-photo-frame="missing"] { display: none; }
+html[data-photo="off"] .photo-slot .photo-empty,
+.photo-slot:has([data-photo-frame="missing"]) .photo-empty { display: block; }
+html[data-photo="off"] .month-card img,
+.month-card img[hidden] { display: none; }
+html[data-photo="off"] .month-card,
+.month-card:has(img[hidden]) {
+  grid-template-columns: 1fr;
+  border-radius: 8px;
+}
+html[data-photo="off"] .month-with,
+.month-card:has(img[hidden]) .month-with { display: none; }
+html[data-photo="off"] .month-without,
+.month-card:has(img[hidden]) .month-without { display: block; }
+html[data-photo="off"] .month-credit,
+.month-card-figure:has(img[hidden]) .month-credit { display: none; }
+html[data-photo="off"] .archive-card img,
+.archive-card img[hidden] { display: none; }
+html[data-photo="off"] .winner,
+.photo-slot:has([data-photo-frame="missing"]) .winner { display: none; }
+
+@media (max-width: 640px) {
+  .month-card { grid-template-columns: 1fr; }
+  .month-card img { height: 9.5rem; min-height: 0; }
+}
+@media (min-width: 800px) {
+  .archive-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

@@ -1,0 +1,11 @@
+{% from "partials/mock-photo.njk" import photoImg, credit %}
+{% set photo = mockPhotos.photos[mockPhotos.currentId] %}
+<figure class="photo-band" data-photo-frame>
+  <a class="photo-band-link" href="{{ '/mockups/photos/contest/' | url }}">
+    <span class="photo-band-frame">
+      {{ photoImg(photo, "lazy", "(min-width: 1220px) 1148px, 100vw", "") }}
+    </span>
+    <span class="photo-band-cap"><b>Photo of the month.</b> {{ photo.place }}, {{ photo.taken }}.</span>
+  </a>
+  <figcaption class="photo-credit">{{ credit(photo) | safe }}</figcaption>
+</figure>

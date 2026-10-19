@@ -1,0 +1,18 @@
+{% macro photoImg(photo, loading, sizes, priority) %}
+<img
+  src="{{ photo.src | url }}"
+  srcset="{{ photo.small | url }} {{ photo.smallW }}w, {{ photo.src | url }} {{ photo.w }}w"
+  sizes="{{ sizes }}"
+  alt="{{ photo.alt }}"
+  width="{{ photo.w }}"
+  height="{{ photo.h }}"
+  loading="{{ loading }}"
+  decoding="async"
+  {% if priority %}fetchpriority="{{ priority }}"{% endif %}
+  data-photo-img
+  class="pos-{{ photo.id }}">
+{% endmacro %}
+
+{% macro credit(photo) %}
+{{ photo.place }}, {{ photo.taken }}. Photo: <a href="{{ photo.sourceUrl }}">{{ photo.photographer }}</a>, <a href="{{ photo.licenseUrl }}">{{ photo.license }}</a>. {{ photo.changes }}.
+{% endmacro %}

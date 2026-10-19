@@ -1,0 +1,25 @@
+---
+title: "Mockup D — Department header"
+description: "Unlisted mockup. A photograph above the Trails and Parks title."
+permalink: /mockups/photos/department/
+bodyClass: page mockup
+mockSlug: department
+---
+{% from "partials/mock-photo.njk" import photoImg, credit %}
+{% set concept = mockPhotos.concepts[mockSlug] %}
+{% set photo = mockPhotos.photos.trail %}
+<main id="main" class="in page civic mock-page" data-pagefind-ignore>
+  {% include "partials/mock-note.njk" %}
+  <figure class="dept-photo" data-photo-frame>
+    {{ photoImg(photo, "eager", "(min-width: 1220px) 1148px, 100vw", "high") }}
+    <figcaption class="photo-credit">{{ credit(photo) | safe }}</figcaption>
+  </figure>
+  <header class="civic-head">
+    <h1 class="page-title">{{ "Trails and Parks" | balancedTitle | safe }}</h1>
+    <p class="lede">Parks in town, and the Franconia Area NEMBA chapter that helps keep local trails.</p>
+  </header>
+  <div class="prose">
+    <p>Franconia Area NEMBA is an organization of outdoor enthusiasts interested in the preservation of trails in Franconia, Easton, Sugar Hill, Bethlehem and Littleton. This organization will provide manpower and money to help establish and maintain these trails, as well as help educating landowners and users about issues such as liability, erosion and responsible behavior.</p>
+    <p class="more"><a href="{{ '/trails-parks/' | url }}">The live Trails and Parks page</a></p>
+  </div>
+</main>

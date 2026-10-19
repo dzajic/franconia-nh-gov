@@ -28,10 +28,15 @@
     <link rel="alternate" type="application/json" href="{{ '/town.json' | url }}">
     <link rel="stylesheet" href="{{ '/assets/site.css' | url }}">
     <link rel="stylesheet" href="{{ '/assets/pages.css' | url }}">
+    {%- if extraCss %}
+    <link rel="stylesheet" href="{{ extraCss | url }}">
+    {% endif %}{% if noindex %}
+    <meta name="robots" content="noindex, nofollow">
+    {% endif %}
     {% include "partials/jsonld.njk" %}
     {% include "partials/season-head.njk" %}
   </head>
-  <body class="{{ bodyClass or 'page' }}" data-pagefind="{{ '/pagefind/pagefind.js' | url }}" data-archive-index="{{ '/archive/index.json' | url }}" data-site-root="{{ '/' | url }}">
+  <body class="{{ bodyClass or 'page' }}"{% if noindex %} data-pagefind-ignore{% endif %} data-pagefind="{{ '/pagefind/pagefind.js' | url }}" data-archive-index="{{ '/archive/index.json' | url }}" data-site-root="{{ '/' | url }}">
     <a class="skip" href="#main">Skip to main content</a>
     {% if site.previewNotice and site.previewNotice.enabled and site.previewNotice.text %}
     {% include "partials/preview-note.njk" %}
@@ -51,6 +56,7 @@
     {% include "partials/footer.njk" %}
     <script src="{{ '/assets/text-size.js' | url }}" defer></script>
     <script src="{{ '/assets/nav-menu.js' | url }}" defer></script>
-    {% if pageScript %}<script src="{{ pageScript | url }}" defer></script>{% endif %}
+    {% if pageScript %}<script src="{{ pageScript | url }}" defer></script>{% endif %}{% if extraScript %}
+    <script src="{{ extraScript | url }}" defer></script>{% endif %}
   </body>
 </html>

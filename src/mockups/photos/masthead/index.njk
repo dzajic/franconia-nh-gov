@@ -1,0 +1,14 @@
+---
+title: "Mockup F — Caption under the picture"
+description: "Unlisted mockup. A short photograph and caption under the header, before the task list."
+permalink: /mockups/photos/masthead/
+bodyClass: home mockup
+pageScript: /assets/season.js
+mockSlug: masthead
+---
+{% set concept = mockPhotos.concepts[mockSlug] %}
+<main id="main" class="in" data-pagefind-ignore>
+  {% include "partials/mock-note.njk" %}
+  {% include "partials/mock-home.njk" %}
+</main>
+<script type="application/json" id="season-fx-data">{{ seasons | json | safe }}</script>

@@ -1,0 +1,7 @@
+<h2 class="sign"><span class="blaze" aria-hidden="true"></span>Photograph credits</h2>
+<ul class="photo-credits">
+  {% for id, photo in mockPhotos.photos %}
+  <li>{{ photo.place }}, {{ photo.taken }}. Photo: <a href="{{ photo.sourceUrl }}">{{ photo.photographer }}</a>, <a href="{{ photo.licenseUrl }}">{{ photo.license }}</a>. {{ photo.changes }}. These copies stay under the same license as the original.</li>
+  {% endfor %}
+</ul>
+<p class="mock-aside">Stand-ins only. A real winner would be a resident’s photograph, credited with the name they asked to use.</p>
