@@ -36,7 +36,7 @@
     return node;
   }
 
-  var brand = hdr.querySelector(".brand");
+  var brand = hdr.querySelector(".brand-block") || hdr.querySelector(".brand");
   var search = hdr.querySelector(".search");
   var textSize = hdr.querySelector(".text-size");
   if (brand) row.appendChild(muteClone(brand.cloneNode(true)));
@@ -93,10 +93,10 @@
 
   function navDropped() {
     if (!sharesRow()) return false;
-    var brandClone = row.querySelector(".brand");
+    var brandClone = row.querySelector(".brand-block") || row.querySelector(".brand");
     var probeNavEl = row.querySelector(".primary-nav");
     if (!brandClone || !probeNavEl) return false;
-    return probeNavEl.offsetTop - brandClone.offsetTop > 1;
+    return probeNavEl.offsetTop > brandClone.offsetTop + brandClone.offsetHeight - 1;
   }
 
   function shouldCollapse() {

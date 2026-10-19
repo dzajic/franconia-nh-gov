@@ -1,0 +1,44 @@
+<script>
+(function () {
+  var months = {
+    {% for id, season in seasons %}{% for month in season.months %}{{ month }}: "{{ id }}",{% endfor %}{% endfor %}
+  };
+  var allowed = { {% for id, season in seasons %}{{ id }}: 1,{% endfor %} };
+  var key = "franconia-season";
+  var picked = "";
+  try {
+    picked = (new URLSearchParams(location.search).get("season") || "").toLowerCase();
+  } catch (e) {}
+  var stored = "";
+  try { stored = (localStorage.getItem(key) || "").toLowerCase(); } catch (e) {}
+  if (stored && stored !== "on" && stored !== "off") {
+    stored = stored === "default" ? "off" : "on";
+    try { localStorage.setItem(key, stored); } catch (e) {}
+  }
+  var season = months[new Date().getMonth() + 1] || "fall";
+  if (picked === "default") season = "default";
+  else if (allowed[picked]) season = picked;
+  else if (stored === "off") season = "default";
+  document.documentElement.setAttribute("data-season", season);
+  window.franconiaSeason = { months: months, allowed: allowed, storageKey: key };
+})();
+</script>
+<style>
+@layer seasonal {
+{% for id, season in seasons %}
+:root[data-season="{{ id }}"] {
+  --spr: {{ season.colors.spr }};
+  --deep: {{ season.colors.deep }};
+  --bark: {{ season.colors.bark }};
+  --cream: {{ season.colors.cream }};
+  --paper: {{ season.colors.paper }};
+  --card: {{ season.colors.card }};
+  --blaze: {{ season.colors.blaze }};
+  --rust: {{ season.colors.rust }};
+  --ink: {{ season.colors.ink }};
+  --focus: {{ season.colors.focus }};
+  --muted: {{ season.colors.muted }};
+  --line: {{ season.colors.line }};
+}
+{% endfor %}
+</style>
