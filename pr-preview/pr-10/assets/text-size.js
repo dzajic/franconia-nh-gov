@@ -1,7 +1,7 @@
 (function () {
   var KEY = "franconia-text-size";
   // Desktop px, then narrow (max-width 640px) px. A− / A / A+.
-  var PX = { small: [16, 16], medium: [18, 16.5], large: [22, 18] };
+  var PX = { small: [15, 15], medium: [16, 16], large: [18, 17] };
   var root = document.documentElement;
   var group = document.querySelector("[data-text-size-control]");
   if (!group) return;
@@ -16,9 +16,9 @@
   }
 
   function stepFrom(saved) {
-    if (saved === "small" || saved === "16") return "small";
-    if (saved === "large" || saved === "22") return "large";
-    if (saved === "medium" || saved === "18" || saved === "17" || saved === "19") return "medium";
+    if (saved === "small" || saved === "15" || saved === "16") return "small";
+    if (saved === "large" || saved === "22" || saved === "19") return "large";
+    if (saved === "medium" || saved === "18" || saved === "17" || saved === "16.5") return "medium";
     return "";
   }
 
