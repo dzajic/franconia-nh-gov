@@ -24,6 +24,23 @@ function splitRecordNote(html) {
   return { visible, provenance: provenance.join("\n") };
 }
 
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function balancedTitle(value) {
+  const text = String(value || "").trim().replace(/\s+/g, " ");
+  const words = text.split(" ").filter(Boolean);
+  if (words.length < 3) return escapeHtml(text);
+  const head = escapeHtml(words.slice(0, -2).join(" "));
+  const tail = escapeHtml(words.slice(-2).join(" "));
+  return `${head} <span class="keep-together">${tail}</span>`;
+}
+
 function recordHeading(title, committee) {
   let text = String(title || "").trim();
   const name = String(committee || "").trim();
@@ -57,6 +74,7 @@ module.exports = function (eleventyConfig) {
   );
   eleventyConfig.addFilter("prettyDate", prettyDate);
   eleventyConfig.addFilter("recordHeading", recordHeading);
+  eleventyConfig.addFilter("balancedTitle", balancedTitle);
   eleventyConfig.addFilter("titleHead", (value) => {
     const text = String(value || "").trim();
     const index = text.lastIndexOf(" ");

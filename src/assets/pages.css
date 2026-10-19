@@ -73,10 +73,9 @@
   border-left: 6px solid var(--spr);
   border-radius: 6px;
   padding: 0.45rem 0.7rem;
-  text-decoration: underline;
-  text-underline-offset: 0.18em;
   font-weight: 700;
 }
+.link-grid .ll { text-wrap: balance; }
 .link-grid a:hover { background: var(--cream); }
 .link-grid .ln {
   font-weight: 700;
@@ -117,7 +116,6 @@
   padding: 0.45rem 0.55rem;
   border-bottom: 1px solid #e4d7b8;
   vertical-align: top;
-  overflow-wrap: anywhere;
 }
 .civic th {
   background: var(--cream);
@@ -201,7 +199,6 @@
 .civic .prose h2:not(.sign) {
   display: block;
   min-width: 0;
-  overflow-wrap: anywhere;
   background: var(--bark);
   color: var(--cream);
   font: 900 1.5rem/1.25 var(--sign);
