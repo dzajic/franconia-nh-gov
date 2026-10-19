@@ -5,8 +5,9 @@
 @layer base, seasonal;
 * { box-sizing: border-box; }
 html {
-  /* 16px base, the original body size. A− / A / A+ overrides this. */
-  font-size: 16px;
+  /* Desktop default is the previous A− step. A− / A / A+ overrides this.
+     Narrow screens keep 16px in the max-width 640px query. */
+  font-size: 15px;
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: 4.5rem;
   color-scheme: light;
@@ -1090,6 +1091,7 @@ a.doc-row:active { background: #e7d7b4; }
 
 /* Narrow screens use a shorter heading ladder. The root stays 16px. */
 @media (max-width: 640px) {
+  html { font-size: 16px; }
   body { line-height: 1.55; }
   h1, .page-title, .ahero h1 { font-size: 1.6rem; }
   h2, .sign, .story h2, .prose h2, .st h2, .visit h2 { font-size: 1.3rem; }

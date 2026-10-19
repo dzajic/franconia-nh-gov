@@ -7,7 +7,8 @@ import { fileURLToPath } from "node:url";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const assetsDir = join(root, "src", "assets");
 
-// 1rem is 16px, the default root. Declared sizes may not resolve below 14px.
+// Rem is resolved at the 16px narrow root, which this pass does not change.
+// Declared sizes may not resolve below 14px.
 const REM_PX = 16;
 const FLOOR_PX = 14;
 const NARROW_VIEWPORT = 320;
@@ -168,11 +169,14 @@ test("no font-size in the CSS resolves below 14px", () => {
   assert.deepEqual(problems, []);
 });
 
-test("the default root font size is 16px", () => {
+test("the desktop default root is 15px and narrow screens stay at 16px", () => {
   const css = readFileSync(join(assetsDir, "site.css"), "utf8");
   const htmlRule = stripComments(css).match(/html\s*\{([^}]*)\}/);
   assert.ok(htmlRule, "html rule");
-  assert.match(htmlRule[1], /font-size:\s*16px/);
+  assert.match(htmlRule[1], /font-size:\s*15px/);
+  const narrow = css.match(/@media \(max-width:\s*640px\)\s*\{([\s\S]*?)\n\}/);
+  assert.ok(narrow, "narrow media query");
+  assert.match(narrow[1], /html\s*\{[^}]*font-size:\s*16px/);
 });
 
 test("narrow screens use shorter heading steps and the text-size map", () => {
@@ -183,7 +187,10 @@ test("narrow screens use shorter heading steps and the text-size map", () => {
   assert.match(narrow[1], /h2[^}]*font-size:\s*1\.3rem/);
   assert.match(narrow[1], /h3[^}]*font-size:\s*1\.1rem/);
   const script = readFileSync(join(assetsDir, "text-size.js"), "utf8");
-  assert.match(script, /small:\s*\[15,\s*15\]/);
-  assert.match(script, /medium:\s*\[16,\s*16\]/);
-  assert.match(script, /large:\s*\[18,\s*17\]/);
+  const shell = readFileSync(join(root, "src", "_includes", "shell.njk"), "utf8");
+  for (const source of [script, shell]) {
+    assert.match(source, /small:\s*\[14,\s*15\]/);
+    assert.match(source, /medium:\s*\[15,\s*16\]/);
+    assert.match(source, /large:\s*\[17,\s*17\]/);
+  }
 });
