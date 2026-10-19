@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
       (function () {
+        try {
+          if (localStorage.getItem("franconia-page-controls") === "closed") {
+            document.documentElement.classList.add("page-controls-collapsed");
+          }
+        } catch (err) {}
         var px = { small: [14, 15], medium: [15, 16], large: [17, 17] };
         function stepFrom(saved) {
           if (saved === "small" || saved === "15" || saved === "16") return "small";

@@ -26,11 +26,6 @@
       {% include "partials/season-line.njk" %}
     </div>
     {{ menuButton(true) }}
-    <div class="text-size" data-text-size-control role="group" aria-label="Text size">
-      <button type="button" data-step="small" aria-pressed="false" aria-label="Smaller text">A−</button>
-      <button type="button" data-step="medium" aria-pressed="true" aria-label="Default text size">A</button>
-      <button type="button" data-step="large" aria-pressed="false" aria-label="Larger text">A+</button>
-    </div>
     {% if showSearch != false %}
     <form class="search" role="search" action="{{ '/search/' | url }}" method="get">
       <label for="q" class="sr">Search the town website</label>

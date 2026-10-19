@@ -1,5 +1,5 @@
 const { partitionArchive } = require("./lib/archive-window.cjs");
-const { suggestEditUrl, suggestFromData, suggestIssueUrl, placeSuggestControl } = require("./lib/suggest-source.cjs");
+const { suggestEditUrl, suggestFromData, suggestIssueUrl } = require("./lib/suggest-source.cjs");
 const { archiveFileUrl, prefixAttributeUrls, withPrefix } = require("./lib/urls.cjs");
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -138,11 +138,6 @@ module.exports = function (eleventyConfig) {
       /(src|srcset)="http:\/\/([^"]+)"/g,
       (_match, attr, url) => `${attr}="https://images.weserv.nl/?url=${encodeURIComponent(url)}"`
     );
-  });
-
-  eleventyConfig.addTransform("suggest-into-main", function (content, outputPath) {
-    if (!outputPath || !outputPath.endsWith(".html")) return content;
-    return placeSuggestControl(content);
   });
 
   return {

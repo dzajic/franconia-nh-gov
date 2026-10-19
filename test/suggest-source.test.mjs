@@ -8,7 +8,6 @@ const {
   suggestFromData,
   suggestEditUrl,
   suggestIssueUrl,
-  placeSuggestControl,
 } = require("../lib/suggest-source.cjs");
 
 const REPO = "https://github.com/dzajic/franconia-nh-gov";
@@ -59,18 +58,4 @@ test("spaces in a path are encoded and the issue link is the new-issue form", ()
   );
   assert.equal(suggestIssueUrl(REPO), `${REPO}/issues/new`);
   assert.equal(suggestIssueUrl("not a url"), `${REPO}/issues/new`);
-});
-
-test("the suggest block is moved to the end of main", () => {
-  const html = [
-    "<main><h1>Police</h1><p>Body</p></main>",
-    "<script>after</script>",
-    "<!-- suggest-change:start --><div class=\"suggest\">Edit</div><!-- suggest-change:end -->",
-    "<footer>Foot</footer>",
-  ].join("");
-  const placed = placeSuggestControl(html);
-  assert.ok(placed.indexOf("suggest") < placed.indexOf("</main>"));
-  assert.ok(placed.indexOf("</main>") < placed.indexOf("<footer>"));
-  assert.equal(placed.indexOf("suggest-change:start"), placed.lastIndexOf("suggest-change:start"));
-  assert.equal(placeSuggestControl("<main><p>No control</p></main>"), "<main><p>No control</p></main>");
 });
