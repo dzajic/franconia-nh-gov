@@ -1,4 +1,20 @@
 {% from "partials/mark.njk" import furnace %}
+{% macro menuButton(hidden) %}
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav-list"{% if hidden %} hidden{% endif %}>
+  <svg class="menu-icon" viewBox="0 0 22 16" width="22" height="16" aria-hidden="true" focusable="false">
+    <g class="menu-bars" fill="currentColor">
+      <rect width="22" height="2.5" rx="1"></rect>
+      <rect y="6.75" width="22" height="2.5" rx="1"></rect>
+      <rect y="13.5" width="22" height="2.5" rx="1"></rect>
+    </g>
+    <g class="menu-x" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+      <path d="M2.5 2.5 L19.5 13.5"></path>
+      <path d="M19.5 2.5 L2.5 13.5"></path>
+    </g>
+  </svg>
+  <span>Menu</span>
+</button>
+{% endmacro %}
 <header class="top" data-pagefind-ignore>
   {% include "partials/header-bands.njk" %}
   <div class="in hdr">
@@ -9,6 +25,12 @@
       </a>
       {% include "partials/season-line.njk" %}
     </div>
+    {{ menuButton(true) }}
+    <div class="text-size" data-text-size-control role="group" aria-label="Text size">
+      <button type="button" data-step="small" aria-pressed="false" aria-label="Smaller text">A−</button>
+      <button type="button" data-step="medium" aria-pressed="true" aria-label="Default text size">A</button>
+      <button type="button" data-step="large" aria-pressed="false" aria-label="Larger text">A+</button>
+    </div>
     {% if showSearch != false %}
     <form class="search" role="search" action="{{ '/search/' | url }}" method="get">
       <label for="q" class="sr">Search the town website</label>
@@ -16,28 +38,36 @@
       <button type="submit">Search</button>
     </form>
     {% endif %}
-    <nav aria-label="Primary">
+    <nav class="primary-nav" aria-label="Primary">
+      <div class="nav-links" id="primary-nav-list">
       {% if nav == "about" %}
         {% for item in aboutNav %}
           {% if item.hash and item.href %}
-          <a href="{{ item.href | url }}#{{ item.hash }}">{{ item.label }}</a>
+          <a class="nav-link" href="{{ item.href | url }}#{{ item.hash }}">{{ item.label }}</a>
           {% elif item.hash %}
-          <a href="#{{ item.hash }}">{{ item.label }}</a>
+          <a class="nav-link" href="#{{ item.hash }}">{{ item.label }}</a>
           {% else %}
-          <a href="{{ item.href | url }}"{% if page.url == item.href %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          <a class="nav-link" href="{{ item.href | url }}"{% if page.url == item.href %} aria-current="page"{% endif %}>{{ item.label }}</a>
           {% endif %}
         {% endfor %}
       {% else %}
         {% for item in primaryNav %}
           {% if item.hash and item.href %}
-          <a href="{{ item.href | url }}#{{ item.hash }}">{{ item.label }}</a>
+          <a class="nav-link" href="{{ item.href | url }}#{{ item.hash }}">{{ item.label }}</a>
           {% elif item.hash %}
-          <a href="#{{ item.hash }}">{{ item.label }}</a>
+          <a class="nav-link" href="#{{ item.hash }}">{{ item.label }}</a>
           {% else %}
-          <a href="{{ item.href | url }}"{% if page.url == item.href %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          <a class="nav-link" href="{{ item.href | url }}"{% if page.url == item.href %} aria-current="page"{% endif %}>{{ item.label }}</a>
           {% endif %}
         {% endfor %}
       {% endif %}
+      </div>
     </nav>
   </div>
 </header>
+<div class="slim-bar" data-slim-bar hidden data-pagefind-ignore>
+  <div class="in slim-in">
+    <a class="slim-name" href="{{ '/' | url }}">Franconia</a>
+    {{ menuButton(false) }}
+  </div>
+</div>

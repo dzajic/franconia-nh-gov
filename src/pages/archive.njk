@@ -6,7 +6,7 @@ description: Agendas, minutes, and other public documents for the Town of Franco
 pageScript: /assets/archive-filter.js
 ---
 <main id="main" class="in page" data-pagefind-body>
-  <h1 class="page-title">Document archive</h1>
+  <h1 class="page-title">{{ "Document archive" | balancedTitle | safe }}</h1>
   <p class="lede">Agendas, minutes, and other public files. This copy includes a sample import (Selectboard 2025–2026, the Planning Board, and the Energy Commission). Other boards are listed and ready for the full import. Files are not stored in the website repository; each record points at <code>ARCHIVE_BASE_URL</code>.</p>
   <form class="filters" role="search" data-doc-filter action="{{ '/archive/' | url }}">
     <label>Search titles
