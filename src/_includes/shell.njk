@@ -3,6 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("franconia-text-size");
+          if (saved === "16" || saved === "18" || saved === "22") {
+            document.documentElement.style.fontSize = saved + "px";
+            document.documentElement.setAttribute("data-text-size", saved);
+          }
+        } catch (err) {}
+      })();
+    </script>
     <title>{{ title or "Franconia, NH" }}</title>
     <meta name="description" content="{{ description or home.description }}">
     <link rel="canonical" href="{{ site.origin }}{{ page.url | url }}">
@@ -30,6 +41,7 @@
     {% include "partials/header.njk" %}
     {{ content | safe }}
     {% include "partials/footer.njk" %}
+    <script src="{{ '/assets/text-size.js' | url }}" defer></script>
     {% if pageScript %}<script src="{{ pageScript | url }}" defer></script>{% endif %}
   </body>
 </html>

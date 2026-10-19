@@ -2,9 +2,9 @@
 .civic { padding-bottom: 2.4rem; }
 .civic-head { margin: 0.2rem 0 1rem; }
 .civic .lede {
-  font-size: 1.05rem;
-  line-height: 1.5;
-  max-width: 40rem;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  max-width: 65ch;
   margin-bottom: 0;
 }
 
@@ -16,13 +16,13 @@
   padding: 0.7rem 0.85rem;
 }
 .notice h2 {
-  font: 900 0.78rem/1.2 var(--sign);
-  letter-spacing: 0.08em;
+  font: 900 1.25rem/1.3 var(--sign);
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--rust);
   margin-bottom: 0.3rem;
 }
-.notice p { font-size: 0.95rem; }
+.notice p { font-size: 1rem; line-height: 1.6; }
 
 .glance { margin-bottom: 1.15rem; }
 .glance-grid { display: grid; gap: 0.6rem; }
@@ -33,7 +33,7 @@
   padding: 0.75rem 0.85rem;
 }
 .glance-grid h3 {
-  font: 900 0.78rem/1.2 var(--sign);
+  font: 900 1.25rem/1.3 var(--sign);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--spr);
@@ -41,7 +41,7 @@
 }
 .glance dl { display: grid; gap: 0.55rem; }
 .glance dt {
-  font-size: 0.72rem;
+  font-size: 1rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -58,7 +58,7 @@
   border-bottom: 1px solid #efe4c8;
 }
 .people li:last-child { border-bottom: 0; padding-bottom: 0; }
-.people .muted, .people .line { display: block; font-size: 0.9rem; color: #3d3d36; }
+.people .muted, .people .line { display: block; font-size: 1rem; line-height: 1.5; color: #3d3d36; }
 
 .link-section { margin-bottom: 1.15rem; }
 .link-grid { display: grid; gap: 0.4rem; }
@@ -73,13 +73,14 @@
   border-left: 6px solid var(--spr);
   border-radius: 6px;
   padding: 0.45rem 0.7rem;
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
   font-weight: 700;
 }
 .link-grid a:hover { background: var(--cream); }
 .link-grid .ln {
-  font-weight: 600;
-  font-size: 0.78rem;
+  font-weight: 700;
+  font-size: 1rem;
   color: #3d3d36;
   text-align: right;
 }
@@ -109,7 +110,7 @@
   width: 100%;
   border-collapse: collapse;
   background: #fff;
-  font-size: 0.92rem;
+  font-size: 1rem;
 }
 .civic th, .civic td {
   text-align: left;
@@ -120,11 +121,11 @@
 }
 .civic th {
   background: var(--cream);
-  font-size: 0.75rem;
+  font-size: 1rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
-.civic tbody th { text-transform: none; letter-spacing: 0; font-size: 0.92rem; background: #fff; }
+.civic tbody th { text-transform: none; letter-spacing: 0; font-size: 1rem; background: #fff; }
 .civic td a, .civic th a { color: var(--rust); font-weight: 700; }
 .table-wrap {
   overflow-x: auto;
@@ -174,7 +175,7 @@
   .table-wrap.can-stack .cell-label {
     display: block;
     font-weight: 800;
-    font-size: 0.72rem;
+    font-size: 1rem;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--bark);
@@ -189,21 +190,21 @@
   border: 1.5px solid var(--bark);
   background: #fff;
 }
-.figures figcaption { font-size: 0.85rem; color: #3d3d36; margin-top: 0.3rem; }
+.figures figcaption { font-size: 1rem; line-height: 1.6; color: #3d3d36; margin-top: 0.3rem; }
 .figures a { display: block; }
 
 .civic .prose { max-width: none; }
 .civic .prose > p,
 .civic .prose > ul,
 .civic .prose > ol,
-.civic .prose > blockquote { max-width: 42rem; }
+.civic .prose > blockquote { max-width: 65ch; }
 .civic .prose h2:not(.sign) {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
+  display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
   background: var(--bark);
   color: var(--cream);
-  font: 900 0.95rem/1.2 var(--sign);
+  font: 900 1.5rem/1.25 var(--sign);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 0.55rem 0.75rem;
@@ -212,12 +213,14 @@
 }
 .civic .prose h2:not(.sign)::before {
   content: "";
+  display: inline-block;
   width: 0.42em;
   height: 0.9em;
+  margin-right: 0.45rem;
+  vertical-align: -0.05em;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.35);
   border-radius: 1px;
-  flex: none;
 }
 .civic .prose h3 {
   font-family: var(--sign);

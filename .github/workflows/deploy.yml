@@ -37,6 +37,9 @@ jobs:
       - name: Install deps
         run: npm ci
 
+      - name: Test
+        run: npm test
+
       - name: Build
         env:
           # configure-pages base_path is /<repo> on project sites and empty on user sites.

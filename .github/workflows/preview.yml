@@ -67,6 +67,10 @@ jobs:
         if: github.event.action != 'closed'
         run: npm ci
 
+      - name: Test
+        if: github.event.action != 'closed'
+        run: npm test
+
       - name: Build
         if: github.event.action != 'closed'
         env:
