@@ -1,4 +1,5 @@
 const { partitionArchive } = require("./lib/archive-window.cjs");
+const { coveredKeys, siteIndexGroups } = require("./lib/site-index.cjs");
 const { archiveFileUrl, prefixAttributeUrls, withPrefix } = require("./lib/urls.cjs");
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -115,6 +116,9 @@ module.exports = function (eleventyConfig) {
     const found = (bodies || []).find((body) => body.slug === slug);
     return found ? found.shortName : slug || "";
   });
+  eleventyConfig.addFilter("siteIndex", (directory, departments, forms, tasks, events) =>
+    siteIndexGroups(directory, coveredKeys({ departments, forms, tasks, events }))
+  );
 
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addWatchTarget("src/assets");

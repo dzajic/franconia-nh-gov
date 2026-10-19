@@ -47,7 +47,7 @@ The header mark (iron furnace in front of a ridge) and the homepage silhouettes 
 You do not need Node, a terminal, or the CSS.
 
 1. On GitHub, open this repository and switch to the branch you were asked to use (or `main` after this design is merged).
-2. Go to the page’s file. A normal page is `src/<name>/index.md`. About is `src/about/index.md`. The homepage sections (tasks, events, departments, forms) are the JSON files in `src/_data/`, not a long HTML file. Departments and forms with `"featured": true` are the short lists on the homepage. The full lists are `/departments/` and `/forms-applications/`. The grouped directory is `/site-index/`.
+2. Go to the page’s file. A normal page is `src/<name>/index.md`. About is `src/about/index.md`. The homepage sections (tasks, events, departments, forms) are the JSON files in `src/_data/`, not a long HTML file. Departments and forms with `"featured": true` are the short lists on the homepage. The full lists are `/departments/` and `/forms-applications/`. The site index is `/site-index/`. It leaves out departments, forms, the calendar, and minutes, which are already on the homepage.
 3. Click the pencil (**Edit this file**). Change the words. Leave the lines between the first pair of `---` alone unless you are changing the title.
 4. Use **Preview** if GitHub offers it. Commit with a short note such as “Update transfer station hours”.
 
@@ -160,6 +160,6 @@ GitHub Pages serves the `gh-pages` branch from `/ (root)`. Set that once under *
 
 ## Design
 
-The look follows the approved homepage: spruce `#173f33`, bark `#5a3a24`, cream `#f4ead2`, trail-sign section headers, a sticky header, a preview notice in place of the alerts bar until that notice is turned off, five tasks, this-week events, latest minutes, featured forms, featured departments, and a ridge footer. The full directory is `/site-index/`, linked from the footer. About is written for people living here or thinking of moving here. Visitors are pointed to the Franconia Notch Chamber of Commerce at https://www.franconianotch.org/. Interior pages keep their old wording inside that frame.
+The look follows the approved homepage: spruce `#173f33`, bark `#5a3a24`, cream `#f4ead2`, trail-sign section headers, a sticky header, a preview notice in place of the alerts bar until that notice is turned off, five tasks, this-week events, latest minutes, featured forms, featured departments, and a ridge footer. The site index is `/site-index/`, linked from the footer, and it does not repeat the homepage lists. About is written for people living here or thinking of moving here. Visitors are pointed to the Franconia Notch Chamber of Commerce at https://www.franconianotch.org/. Interior pages keep their old wording inside that frame.
 
 Editors change Markdown and the JSON/YAML data. They do not edit the layout files for ordinary updates.
