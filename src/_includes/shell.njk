@@ -49,6 +49,7 @@
     {{ content | safe }}
     {% include "partials/footer.njk" %}
     <script src="{{ '/assets/text-size.js' | url }}" defer></script>
+    <script src="{{ '/assets/nav-menu.js' | url }}" defer></script>
     {% if pageScript %}<script src="{{ pageScript | url }}" defer></script>{% endif %}
   </body>
 </html>

@@ -4,7 +4,7 @@ html {
   /* 18px base. The header control overrides this from 16px to 22px. */
   font-size: 18px;
   -webkit-text-size-adjust: 100%;
-  scroll-padding-top: 9rem;
+  scroll-padding-top: 4.5rem;
   color-scheme: light;
 }
 :root {
@@ -161,9 +161,8 @@ img { max-width: 100%; height: auto; }
 .alert .dot { opacity: 0.85; }
 
 .top {
-  position: sticky;
-  top: 0;
-  z-index: 50;
+  position: relative;
+  z-index: 40;
   background: var(--spr);
   color: var(--cream);
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
@@ -304,14 +303,23 @@ html[data-text-size="large"] .text-size button[data-step="medium"] {
   order: 4;
   display: flex;
   flex: 1 1 100%;
-  flex-wrap: wrap;
-  gap: 0.15rem 0.85rem;
   min-width: 0;
   max-width: 100%;
   margin: 0;
   padding: 0;
 }
-.top nav a {
+.nav-links {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.15rem 0.85rem;
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.nav-link {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
@@ -323,9 +331,10 @@ html[data-text-size="large"] .text-size button[data-step="medium"] {
   text-underline-offset: 0.2em;
   padding: 0.2rem 0;
   border-bottom: 3px solid transparent;
+  white-space: nowrap;
 }
-.top nav a:hover,
-.top nav a[aria-current="page"] { border-color: var(--blaze); }
+.nav-link:hover,
+.nav-link[aria-current="page"] { border-color: var(--blaze); }
 .top :focus-visible { outline-color: var(--blaze); }
 
 main { padding-top: 1rem; }
@@ -552,7 +561,8 @@ main > section,
   .brand { flex: 0 1 auto; }
   .search { order: 2; flex: 1 1 14rem; max-width: 24rem; }
   .text-size { order: 3; margin-left: 0; }
-  .top nav { order: 4; flex: 1 1 16rem; justify-content: flex-end; }
+  .top nav { order: 4; flex: 1 1 16rem; }
+  .nav-links { justify-content: flex-end; }
   .cols { grid-template-columns: 1.1fr 1fr 0.9fr; }
   .depts { grid-template-columns: repeat(5, 1fr); }
 }
@@ -561,9 +571,11 @@ main > section,
 body.about .hband2 { display: none; }
 body.about .hdr { padding-bottom: 0.65rem; }
 body.about .top nav { justify-content: flex-start; }
+body.about .nav-links { justify-content: flex-start; }
 @media (min-width: 900px) {
   body.about .text-size { order: 2; margin-left: 0; }
-  body.about .top nav { order: 3; flex: 1 1 auto; width: auto; justify-content: flex-end; }
+  body.about .top nav { order: 3; flex: 1 1 auto; width: auto; }
+  body.about .nav-links { justify-content: flex-end; }
 }
 .ahero { background: var(--spr); color: var(--cream); padding-top: 1.6rem; overflow: hidden; }
 .ah { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; justify-content: space-between; padding-bottom: 1.5rem; }
@@ -1024,4 +1036,154 @@ a.doc-info:focus-visible {
   h1, .page-title, .ahero h1 { font-size: 1.6rem; }
   h2, .sign, .story h2, .prose h2, .st h2, .visit h2 { font-size: 1.3rem; }
   h3, .events h3, .prose h3, .dg h3, .result-group, .record-about summary h2, .year-name { font-size: 1.15rem; }
+}
+
+/* Collapsible primary nav. Without the nav-collapsed class (no JS), links stay visible. */
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  flex: 0 0 auto;
+  min-width: 44px;
+  min-height: 44px;
+  margin: 0;
+  padding: 0.2rem 0.7rem;
+  border: 2px solid var(--cream);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--cream);
+  font: 800 1rem/1 var(--body);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.menu-toggle:hover { border-color: var(--blaze); }
+.menu-icon { display: block; flex: none; }
+.menu-toggle .menu-x { display: none; }
+.menu-toggle[aria-expanded="true"] .menu-bars { display: none; }
+.menu-toggle[aria-expanded="true"] .menu-x { display: block; }
+
+.nav-probe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+}
+.probe-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+}
+
+html.nav-collapsed:not(.nav-open) .hdr > .primary-nav {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+html.nav-collapsed .hdr > .menu-toggle {
+  order: 2;
+  margin-left: auto;
+}
+html.nav-collapsed .hdr > .text-size {
+  order: 3;
+  margin-left: 0;
+}
+html.nav-open .hdr > .primary-nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 50;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  white-space: normal;
+  background: var(--deep);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.28);
+}
+html.nav-open .hdr > .primary-nav .nav-links {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  width: auto;
+  padding: 0.35rem 1rem 0.6rem;
+}
+html.nav-open .nav-link {
+  font-size: 1.25rem;
+  min-height: 48px;
+  padding: 0.4rem 0.15rem;
+  white-space: normal;
+  border-bottom-color: rgba(244, 234, 210, 0.28);
+}
+html.slim-shown.nav-open .hdr > .primary-nav {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+}
+
+@media (min-width: 1100px) {
+  html.nav-collapsed .hdr > .menu-toggle { order: 4; margin-left: 0; }
+  html.nav-collapsed .hdr > .text-size { order: 3; margin-left: 0; }
+}
+@media (min-width: 900px) {
+  html.nav-collapsed body.about .hdr > .text-size { order: 2; margin-left: 0; }
+  html.nav-collapsed body.about .hdr > .menu-toggle { order: 3; margin-left: 0; }
+}
+
+.slim-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 80;
+  height: 56px;
+  max-height: 56px;
+  background: var(--spr);
+  color: var(--cream);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.18);
+  transform: translateY(-100%);
+  visibility: hidden;
+}
+html.slim-shown .slim-bar {
+  transform: none;
+  visibility: visible;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .slim-bar { transition: transform 160ms ease-out; }
+}
+.slim-in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  height: 56px;
+  max-height: 56px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.slim-name {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  min-height: 44px;
+  font: 900 1.15rem/1 var(--sign);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+  white-space: nowrap;
 }
