@@ -1050,11 +1050,11 @@ a.doc-info:focus-visible {
 
 /* Narrow screens keep a shorter type ladder. Desktop rules above stay at 18px. */
 @media (max-width: 640px) {
-  html { font-size: 17px; }
+  html { font-size: 16.5px; }
   body { line-height: 1.6; }
-  h1, .page-title, .ahero h1 { font-size: 1.6rem; }
-  h2, .sign, .story h2, .prose h2, .st h2, .visit h2 { font-size: 1.3rem; }
-  h3, .events h3, .prose h3, .dg h3, .result-group, .record-about summary h2, .year-name { font-size: 1.15rem; }
+  h1, .page-title, .ahero h1 { font-size: 1.5rem; }
+  h2, .sign, .story h2, .prose h2, .st h2, .visit h2 { font-size: 1.25rem; }
+  h3, .events h3, .prose h3, .dg h3, .result-group, .record-about summary h2, .year-name { font-size: 1.1rem; }
 }
 
 /* Collapsible primary nav. Without the nav-collapsed class (no JS), links stay visible. */

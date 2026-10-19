@@ -1,7 +1,7 @@
 (function () {
   var KEY = "franconia-text-size";
   // Desktop px, then narrow (max-width 640px) px. A− / A / A+.
-  var PX = { small: [16, 16], medium: [18, 17], large: [22, 19] };
+  var PX = { small: [16, 16], medium: [18, 16.5], large: [22, 18] };
   var root = document.documentElement;
   var group = document.querySelector("[data-text-size-control]");
   if (!group) return;
