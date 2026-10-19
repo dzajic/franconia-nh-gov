@@ -373,18 +373,36 @@ main > section,
 
 .depts { display: grid; gap: 0.4rem; grid-template-columns: repeat(2, 1fr); }
 .depts a {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  column-gap: 0.6rem;
+  align-items: center;
   background: var(--card);
   border: 1.5px solid var(--line);
   border-radius: 6px;
-  padding: 0.5rem 0.65rem;
+  padding: 0.55rem 0.65rem;
   text-decoration: none;
   height: 100%;
 }
-.depts a:hover { border-color: var(--bark); background: var(--cream); }
-.depts b { font-size: 0.9rem; }
-.depts span { font-size: 0.78rem; color: var(--muted); }
+.depts a:hover,
+.depts a:focus,
+.depts a:focus-visible,
+.depts a:active {
+  border-color: var(--bark);
+  background: var(--cream);
+  text-decoration: none;
+}
+.depts svg {
+  display: block;
+  grid-row: span 2;
+  width: 2rem;
+  height: 2rem;
+  color: var(--blaze);
+  background: var(--spr);
+  border-radius: 4px;
+}
+.depts b { font-size: 0.9rem; text-decoration: none; }
+.depts span { font-size: 0.78rem; color: var(--muted); text-decoration: none; }
 
 .dirs { display: grid; gap: 0.6rem; grid-template-columns: 1fr; }
 .dg { background: var(--card); border: 1.5px solid var(--spr); border-radius: 8px; overflow: hidden; }
