@@ -1,0 +1,243 @@
+/* Interior pages that use civic.njk. Scoped so the homepage and archive stay as they are. */
+.civic { padding-bottom: 2.4rem; }
+.civic-head { margin: 0.2rem 0 1rem; }
+.civic .lede {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  max-width: 40rem;
+  margin-bottom: 0;
+}
+
+.notices { display: grid; gap: 0.5rem; margin-bottom: 1rem; }
+.notice {
+  background: var(--card);
+  border: 2px solid var(--rust);
+  border-radius: 8px;
+  padding: 0.7rem 0.85rem;
+}
+.notice h2 {
+  font: 900 0.78rem/1.2 var(--sign);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 0.3rem;
+}
+.notice p { font-size: 0.95rem; }
+
+.glance { margin-bottom: 1.15rem; }
+.glance-grid { display: grid; gap: 0.6rem; }
+.glance-grid article {
+  background: var(--card);
+  border: 1.5px solid var(--bark);
+  border-radius: 8px;
+  padding: 0.75rem 0.85rem;
+}
+.glance-grid h3 {
+  font: 900 0.78rem/1.2 var(--sign);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--spr);
+  margin-bottom: 0.45rem;
+}
+.glance dl { display: grid; gap: 0.55rem; }
+.glance dt {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bark);
+}
+.glance dd { margin: 0; }
+.glance a { color: var(--rust); font-weight: 700; }
+.glance ul, .people { list-style: none; padding: 0; margin: 0; }
+.glance li + li, .people li + li { margin-top: 0.15rem; }
+.people li {
+  display: grid;
+  gap: 0.05rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.people li:last-child { border-bottom: 0; padding-bottom: 0; }
+.people .muted, .people .line { display: block; font-size: 0.9rem; color: var(--muted); }
+
+.link-section { margin-bottom: 1.15rem; }
+.link-grid { display: grid; gap: 0.4rem; }
+.link-grid a {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: center;
+  min-height: 44px;
+  background: var(--card);
+  border: 1.5px solid var(--bark);
+  border-left: 6px solid var(--spr);
+  border-radius: 6px;
+  padding: 0.45rem 0.7rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+.link-grid a:hover { background: var(--cream); }
+.link-grid .ln {
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-align: right;
+}
+.link-plain {
+  margin: 0;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  background: var(--cream);
+  border-radius: 6px;
+  padding: 0.45rem 0.7rem;
+}
+
+.plain-list {
+  list-style: disc;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.25rem;
+  background: var(--card);
+  border: 1.5px solid var(--bark);
+  border-radius: 8px;
+  padding: 0.7rem 0.85rem 0.7rem 1.6rem;
+}
+
+.fee-section { margin-bottom: 1.15rem; }
+.civic table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  font-size: 0.92rem;
+}
+.civic th, .civic td {
+  text-align: left;
+  padding: 0.45rem 0.55rem;
+  border-bottom: 1px solid #e4d7b8;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.civic th {
+  background: var(--cream);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.civic tbody th { text-transform: none; letter-spacing: 0; font-size: 0.92rem; background: var(--card); }
+.civic td a, .civic th a { color: var(--rust); font-weight: 700; }
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1.5px solid var(--bark);
+  border-radius: 8px;
+  margin: 0 0 0.85rem;
+  max-width: 100%;
+}
+.table-wrap:focus {
+  outline: 2px solid var(--blaze);
+  outline-offset: 2px;
+}
+.cell-label { display: none; }
+@media (max-width: 640px) {
+  .civic th, .civic td { padding: 0.4rem 0.45rem; }
+  .table-wrap.can-stack {
+    overflow: visible;
+    border: 0;
+    background: transparent;
+  }
+  .table-wrap.can-stack table,
+  .table-wrap.can-stack tbody,
+  .table-wrap.can-stack tr,
+  .table-wrap.can-stack td,
+  .table-wrap.can-stack tbody th { display: block; width: auto; }
+  .table-wrap.can-stack thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  .table-wrap.can-stack tr {
+    background: var(--card);
+    border: 1.5px solid var(--bark);
+    border-radius: 8px;
+    margin-bottom: 0.45rem;
+    padding: 0.35rem 0.7rem 0.55rem;
+  }
+  .table-wrap.can-stack td,
+  .table-wrap.can-stack tbody th {
+    border: 0;
+    padding: 0.32rem 0;
+    background: transparent;
+  }
+  .table-wrap.can-stack .cell-label {
+    display: block;
+    font-weight: 800;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--bark);
+  }
+}
+
+.figures { display: grid; gap: 0.7rem; margin: 0 0 1.15rem; }
+.figures img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1.5px solid var(--bark);
+  background: var(--card);
+}
+.figures figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.3rem; }
+.figures a { display: block; }
+
+.civic .prose { max-width: none; }
+.civic .prose > p,
+.civic .prose > ul,
+.civic .prose > ol,
+.civic .prose > blockquote { max-width: 42rem; }
+.civic .prose h2:not(.sign) {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--bark);
+  color: var(--cream);
+  font: 900 0.95rem/1.2 var(--sign);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.55rem 0.75rem;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 2px var(--bark), inset 0 0 0 4px rgba(244, 234, 210, 0.85);
+}
+.civic .prose h2:not(.sign)::before {
+  content: "";
+  width: 0.42em;
+  height: 0.9em;
+  background: var(--card);
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  border-radius: 1px;
+  flex: none;
+}
+.civic .prose h3 {
+  font-family: var(--sign);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--spr);
+}
+.civic .prose img {
+  border-radius: 8px;
+  border: 1.5px solid var(--bark);
+}
+.civic .note { margin-top: 0.35rem; }
+
+@media (min-width: 700px) {
+  .glance-grid { grid-template-columns: 1fr 1fr; }
+  .glance-grid.many { grid-template-columns: 1fr 1fr; }
+  .link-grid.two { grid-template-columns: 1fr 1fr; }
+  .figures.multi { grid-template-columns: 1fr 1fr; }
+  .plain-list.two, .civic .prose ul.cols { columns: 2; }
+}
+@media (min-width: 960px) {
+  .glance-grid.many { grid-template-columns: 1fr 1fr 1fr; }
+}
