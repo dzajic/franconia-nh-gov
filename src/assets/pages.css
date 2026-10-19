@@ -63,25 +63,32 @@
 .people .muted, .people .line { display: block; font-size: 0.9375rem; line-height: 1.5; color: var(--muted); }
 
 .link-section { margin-bottom: 1.15rem; }
-.link-grid { display: grid; gap: 0.4rem; }
+.link-grid {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.link-grid li + li { box-shadow: inset 0 1px 0 var(--line); }
 .link-grid a {
   display: flex;
   justify-content: flex-start;
   gap: 0.75rem;
   align-items: center;
-  min-height: 44px;
-  background: var(--card);
-  border: 1.5px solid var(--bark);
-  border-left: 6px solid var(--spr);
-  border-radius: 6px;
-  padding: 0.45rem 0.7rem;
+  min-height: 48px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0.85rem 1rem;
   font-weight: 700;
   text-decoration: none;
 }
-.link-grid .ll { text-wrap: balance; }
+.link-grid .ll { text-wrap: balance; flex: 1; min-width: 0; }
 .link-grid .ln { margin-left: auto; }
-.link-grid a:hover { background: var(--cream); }
-.link-grid a:active { background: #e7d7b4; border-color: var(--spr); }
+.link-grid a:hover { background: color-mix(in srgb, var(--ink) 6%, var(--card)); }
+.link-grid a:active { background: color-mix(in srgb, var(--ink) 12%, var(--card)); }
 .link-grid .ln {
   font-weight: 700;
   font-size: 0.875rem;
@@ -90,12 +97,12 @@
 }
 .link-plain {
   margin: 0;
-  min-height: 44px;
+  min-height: 48px;
   display: flex;
   align-items: center;
-  background: var(--cream);
-  border-radius: 6px;
-  padding: 0.45rem 0.7rem;
+  background: transparent;
+  border-radius: 0;
+  padding: 0.85rem 1rem;
 }
 
 .plain-list {
@@ -243,7 +250,20 @@
 @media (min-width: 700px) {
   .glance-grid { grid-template-columns: 1fr 1fr; }
   .glance-grid.many { grid-template-columns: 1fr 1fr; }
-  .link-grid.two { grid-template-columns: 1fr 1fr; }
+  .link-grid.two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    background: transparent;
+    border: 0;
+    overflow: visible;
+  }
+  .link-grid.two a {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .link-grid.two li + li { box-shadow: none; }
   .figures.multi { grid-template-columns: 1fr 1fr; }
   .plain-list.two, .civic .prose ul.cols { columns: 2; }
 }
