@@ -1,0 +1,85 @@
+---
+title: "Photographs — mockup"
+description: "Unlisted mockup. A sample library of Franconia photographs for Photo of the month and the Heritage Museum."
+permalink: /mockups/photos/archive/
+bodyClass: page mockup
+mockSlug: archive
+---
+{% from "partials/mock-photo.njk" import photoImg, libraryCredit %}
+<main id="main" class="in page civic mock-page" data-pagefind-ignore>
+  <aside class="mock-note" aria-label="Mockup note">
+    <p><b>F · Photograph library</b> Past photographs and a Heritage Museum sample, newest first, with one then-and-now pair.</p>
+    <p class="mock-note-row">
+      <a href="{{ '/mockups/photos/' | url }}">All mockups</a>
+    </p>
+  </aside>
+  <header class="civic-head">
+    <h1 class="page-title">{{ "Photographs" | balancedTitle | safe }}</h1>
+    <p class="lede">A sample library for Photo of the month and the Franconia Heritage Museum. Newest first. These are licensed stand-ins, not a town collection.</p>
+  </header>
+
+  <section class="then-now" aria-labelledby="then-now-heading">
+    <h2 id="then-now-heading" class="sign"><span class="blaze" aria-hidden="true"></span>Then &amp; now</h2>
+    <p class="mock-aside">Artist's Bluff, looking across Echo Lake in Franconia Notch. The postcard and the later photograph are the same overlook, not the same framing.</p>
+    <div class="then-now-pair">
+      {% for item in photos %}
+      {% if item.pair == "notch" and item.pairRole == "then" %}
+      <button type="button" class="then-now-card" data-photo-open-id="{{ item.id }}" data-photo-scope="pair" data-photo-pair="notch">
+        {{ photoImg(item, "eager", "(min-width: 700px) 46vw, 100vw", "high") }}
+        <span class="then-now-label"><b>Then</b> {{ item.label }}</span>
+      </button>
+      {% endif %}
+      {% endfor %}
+      {% for item in photos %}
+      {% if item.pair == "notch" and item.pairRole == "now" %}
+      <button type="button" class="then-now-card" data-photo-open-id="{{ item.id }}" data-photo-scope="pair" data-photo-pair="notch">
+        {{ photoImg(item, "lazy", "(min-width: 700px) 46vw, 100vw", "") }}
+        <span class="then-now-label"><b>Now</b> {{ item.label }}</span>
+      </button>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <h2 id="library-heading" class="sign"><span class="blaze" aria-hidden="true"></span>All photographs</h2>
+  <div class="photo-filters">
+    <div class="photo-filter-row" role="group" aria-labelledby="filter-collection">
+      <span id="filter-collection" class="photo-filter-name">Collection</span>
+      <button type="button" data-photo-filter="collection" data-photo-value="all" aria-pressed="true">All</button>
+      <button type="button" data-photo-filter="collection" data-photo-value="Photo of the month" aria-pressed="false">Photo of the month</button>
+      <button type="button" data-photo-filter="collection" data-photo-value="Heritage Museum" aria-pressed="false">Heritage Museum</button>
+    </div>
+    <div class="photo-filter-row" role="group" aria-labelledby="filter-place">
+      <span id="filter-place" class="photo-filter-name">Place</span>
+      <button type="button" data-photo-filter="place" data-photo-value="all" aria-pressed="true">All places</button>
+      <button type="button" data-photo-filter="place" data-photo-value="Franconia village" aria-pressed="false">Franconia village</button>
+      <button type="button" data-photo-filter="place" data-photo-value="Franconia Notch" aria-pressed="false">Franconia Notch</button>
+      <button type="button" data-photo-filter="place" data-photo-value="Gale River" aria-pressed="false">Gale River</button>
+      <button type="button" data-photo-filter="place" data-photo-value="Bald Mountain" aria-pressed="false">Bald Mountain</button>
+    </div>
+  </div>
+  <p class="photo-filter-status" data-photo-status role="status"></p>
+  <ul class="photo-grid">
+    {% for item in photos %}
+    <li data-photo-card data-photo-id="{{ item.id }}" data-collection="{{ item.collection }}" data-place="{{ item.place }}">
+      <button type="button" class="photo-card" data-photo-open-id="{{ item.id }}" data-photo-scope="filtered" aria-label="View larger photograph, {{ item.label }}, {{ item.place }}, {{ item.credit }}">
+        {{ photoImg(item, "lazy", "(min-width: 1000px) 360px, (min-width: 700px) 46vw, 100vw", "") }}
+        <span class="photo-card-copy">
+          <b>{{ item.label }}</b>
+          <span>{{ item.place }}</span>
+          <span>{{ item.credit }}</span>
+        </span>
+      </button>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <h2 class="sign"><span class="blaze" aria-hidden="true"></span>Photograph credits</h2>
+  <ul class="photo-credits">
+    {% for item in photos %}
+    <li>{{ item.place }}, {{ item.label }}. {{ libraryCredit(item) | safe }}{% if "BY-SA" in item.license %} These copies stay under the same license as the original.{% endif %}</li>
+    {% endfor %}
+  </ul>
+  <p class="mock-aside">Stand-ins only. A real photograph of the month would be a resident’s picture, credited with the name they asked to use.</p>
+  {% include "partials/mock-viewer.njk" %}
+</main>

@@ -5,9 +5,8 @@ permalink: /mockups/photos/contest/
 bodyClass: page mockup
 mockSlug: contest
 ---
-{% from "partials/mock-photo.njk" import photoImg, credit %}
+{% from "partials/mock-photo.njk" import photoImg, libraryCredit %}
 {% set concept = mockPhotos.concepts[mockSlug] %}
-{% set photo = mockPhotos.photos[mockPhotos.currentId] %}
 <main id="main" class="in page civic mock-page" data-pagefind-ignore>
   {% include "partials/mock-note.njk" %}
   <header class="civic-head">
@@ -16,14 +15,21 @@ mockSlug: contest
   </header>
 
   <div class="photo-slot">
+    {% for photo in photos %}
+    {% if photo.featured %}
     <figure class="winner" data-photo-frame>
-      {{ photoImg(photo, "eager", "(min-width: 1220px) 1148px, 100vw", "high") }}
+      <button type="button" class="photo-open" data-photo-open-id="{{ photo.id }}" aria-label="View larger photograph, {{ photo.label }}, {{ photo.place }}">
+        {{ photoImg(photo, "eager", "(min-width: 1220px) 1148px, 100vw", "high") }}
+        <span class="photo-expand" aria-hidden="true">Expand</span>
+      </button>
       <figcaption>
         <b class="winner-theme">Sample theme: the town from above</b>
-        <p class="photo-credit">{{ credit(photo) | safe }} A published winner would name the resident instead.</p>
+        <p class="photo-credit">{{ libraryCredit(photo) | safe }} A published winner would name the resident instead.</p>
       </figcaption>
     </figure>
-    <p class="photo-empty">No photograph published this month. The rules below still stand, and the archive keeps earlier winners.</p>
+    {% endif %}
+    {% endfor %}
+    <p class="photo-empty">No photograph published this month. The rules below still stand, and the photographs page keeps earlier pictures.</p>
   </div>
 
   <div class="prose">
@@ -33,7 +39,7 @@ mockSlug: contest
       <li>Email it to [email]. Use the subject line “Photo of the month” and the month.</li>
       <li>Give your name as you want it printed, the place in town, and a sentence that the town may publish the photograph here with that credit.</li>
     </ol>
-    <p>The Selectboard, or a committee the Selectboard names, picks one photograph. It is the photograph of the month, then it moves to the archive on this page.</p>
+    <p>The Selectboard, or a committee the Selectboard names, picks one photograph. It is the photograph of the month, then it moves to the <a href="{{ '/mockups/photos/archive/' | url }}">photographs</a> page.</p>
 
     <h2 class="sign"><span class="blaze" aria-hidden="true"></span>Sample rules</h2>
     <ul>
@@ -46,23 +52,8 @@ mockSlug: contest
     </ul>
   </div>
 
-  <h2 id="archive" class="sign"><span class="blaze" aria-hidden="true"></span>Earlier stand-ins</h2>
-  <ul class="archive-list">
-    {% for item in mockPhotos.archive %}
-      {% set shot = mockPhotos.photos[item.id] %}
-      <li>
-        <article class="archive-card">
-          {{ photoImg(shot, "lazy", "(min-width: 800px) 360px, 92vw", "") }}
-          <div>
-            <h3>{{ item.month }}</h3>
-            <p><b>{{ item.theme }}.</b> {{ credit(shot) | safe }}</p>
-          </div>
-        </article>
-      </li>
-    {% endfor %}
-  </ul>
-
   <div id="credits">
     {% include "partials/mock-credits.njk" %}
   </div>
+  {% include "partials/mock-viewer.njk" %}
 </main>

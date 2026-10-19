@@ -1,9 +1,32 @@
-{% from "partials/mock-photo.njk" import photoImg, credit %}
-{% set photo = mockPhotos.photos[mockPhotos.currentId] %}
+{% from "partials/mock-photo.njk" import photoImg, libraryCredit %}
+{% for photo in photos %}
+{% if photo.featured %}
 <figure class="photo-mast" data-photo-frame>
-  {{ photoImg(photo, "eager", "(min-width: 1220px) 1148px, 100vw", "high") }}
+  <div class="photo-mast-frame" id="photo-mast-frame">
+    <button type="button" class="photo-open" data-photo-open-id="{{ photo.id }}" aria-label="View larger photograph, {{ photo.label }}, {{ photo.place }}">
+      {{ photoImg(photo, "eager", "(min-width: 1220px) 1148px, 100vw", "high") }}
+      <span class="photo-expand" aria-hidden="true">Expand</span>
+    </button>
+  </div>
   <figcaption>
-    <a class="photo-more" href="{{ '/mockups/photos/contest/' | url }}">Photo of the month</a>
-    <p class="photo-credit">{{ credit(photo) | safe }}</p>
+    <div class="photo-mast-bar">
+      <button type="button" class="photo-fold" data-photo-fold aria-expanded="true" aria-controls="photo-mast-frame">
+        <span class="photo-fold-open">Hide photograph</span>
+        <span class="photo-fold-closed">Show photograph</span>
+      </button>
+      <p class="photo-mast-line">{{ photo.label }} · {{ photo.place }}</p>
+      <a class="photo-chip" href="{{ '/mockups/photos/archive/' | url }}">Past photos</a>
+    </div>
+    <p class="photo-credit">{{ libraryCredit(photo) | safe }}</p>
   </figcaption>
 </figure>
+<script>
+  (function () {
+    var open = document.documentElement.getAttribute("data-photo-open") !== "closed";
+    var button = document.querySelector("[data-photo-fold]");
+    if (button) button.setAttribute("aria-expanded", open ? "true" : "false");
+  })();
+</script>
+{% include "partials/mock-viewer.njk" %}
+{% endif %}
+{% endfor %}

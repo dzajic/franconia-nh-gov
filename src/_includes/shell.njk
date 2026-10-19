@@ -21,6 +21,17 @@
         } catch (err) {}
       })();
     </script>
+    {%- if photoCollapse %}
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("franconia-photo-open") === "closed") {
+            document.documentElement.setAttribute("data-photo-open", "closed");
+          }
+        } catch (err) {}
+      })();
+    </script>
+    {% endif %}
     <title>{{ title or "Franconia, NH" }}</title>
     <meta name="description" content="{{ description or home.description }}">
     <link rel="canonical" href="{{ site.origin }}{{ page.url | url }}">

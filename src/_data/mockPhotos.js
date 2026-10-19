@@ -114,7 +114,7 @@ export default {
       slug: "card",
       href: "/mockups/photos/card/",
       label: "Card in the grid",
-      why: "Franconia this month is one card under the tasks, and the whole card opens the winners archive.",
+      why: "Franconia this month is one card under the tasks, and the whole card opens the photograph library.",
     },
     department: {
       id: "D",
@@ -128,21 +128,16 @@ export default {
       slug: "contest",
       href: "/mockups/photos/contest/",
       label: "Contest page",
-      why: "Residents would email one photograph a month, a board would pick a winner, and this page would keep the archive.",
+      why: "Residents would email one photograph a month, a board would pick a winner, and past photographs would live in a library.",
     },
     masthead: {
       id: "F",
       slug: "masthead",
       href: "/mockups/photos/masthead/",
       label: "Caption under the picture",
-      why: "A short picture and a caption sit under the header, so the task list stays first and the town name stays in the header.",
+      why: "A short picture and a caption sit under the header, the picture can fold away, and the task list stays first.",
     },
   },
   photos,
   currentId: "town",
-  archive: [
-    { id: "bald", month: "October 2013", theme: "First color" },
-    { id: "river", month: "July 2022", theme: "A path in town" },
-    { id: "winter", month: "December 2018", theme: "After snow" },
-  ],
 };

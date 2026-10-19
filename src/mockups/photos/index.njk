@@ -7,7 +7,7 @@ bodyClass: page mockup
 <main id="main" class="in page mock-page" data-pagefind-ignore>
   <h1 class="page-title">{{ "Photo mockups" | balancedTitle | safe }}</h1>
   <p class="lede">Six ways a resident photograph could sit on the town site. The live homepage is unchanged. The pictures are licensed photographs of Franconia from Wikimedia Commons, standing in for entries.</p>
-  <p class="lede">Words sit on a solid plate, not on the picture, so the contrast holds when the seasonal theme changes. Hide photo on a mockup drops the picture. A carousel, type painted on the photograph, and a picture in the green header were left out. The header already carries the season.</p>
+  <p class="lede">Words sit on a solid plate, not on the picture, so the contrast holds when the seasonal theme changes. A carousel, type painted on the photograph, and a picture in the green header were left out. The header already carries the season. On concept F the photograph folds to a caption line, and that choice is remembered. The <a href="{{ '/mockups/photos/archive/' | url }}">photographs</a> page is a sample library.</p>
   <ul class="mock-index">
     {% for slug in mockPhotos.conceptOrder %}
       {% set concept = mockPhotos.concepts[slug] %}

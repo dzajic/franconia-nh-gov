@@ -1,8 +1,10 @@
 {% macro photoImg(photo, loading, sizes, priority) %}
 <img
   src="{{ photo.src | url }}"
+  {% if photo.small and photo.smallW != photo.w %}
   srcset="{{ photo.small | url }} {{ photo.smallW }}w, {{ photo.src | url }} {{ photo.w }}w"
   sizes="{{ sizes }}"
+  {% endif %}
   alt="{{ photo.alt }}"
   width="{{ photo.w }}"
   height="{{ photo.h }}"
@@ -15,4 +17,8 @@
 
 {% macro credit(photo) %}
 {{ photo.place }}, {{ photo.taken }}. Photo: <a href="{{ photo.sourceUrl }}">{{ photo.photographer }}</a>, <a href="{{ photo.licenseUrl }}">{{ photo.license }}</a>. {{ photo.changes }}.
+{% endmacro %}
+
+{% macro libraryCredit(photo) %}
+{% if photo.collection == "Heritage Museum" %}Image{% else %}Photo{% endif %}: <a href="{{ photo.sourceUrl }}">{{ photo.credit }}</a>, <a href="{{ photo.licenseUrl or photo.sourceUrl }}">{{ photo.license }}</a>.{% if photo.source %} Source: <a href="{{ photo.sourceUrl }}">{{ photo.source }}</a>.{% endif %} {{ photo.changes }}.
 {% endmacro %}

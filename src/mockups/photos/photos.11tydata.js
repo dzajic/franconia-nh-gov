@@ -4,4 +4,5 @@ export default {
   eleventyExcludeFromCollections: true,
   extraCss: "/assets/mockups-photos.css",
   extraScript: "/assets/mockups-photos.js",
+  photoCollapse: true,
 };

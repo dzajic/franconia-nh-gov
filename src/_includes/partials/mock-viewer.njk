@@ -1,0 +1,17 @@
+<dialog class="photo-viewer" id="photo-viewer" aria-labelledby="photo-viewer-label">
+  <div class="photo-viewer-bar">
+    <button type="button" data-photo-close>Close</button>
+    <p id="photo-viewer-label" class="photo-viewer-label"></p>
+    <button type="button" data-photo-prev>Previous</button>
+    <button type="button" data-photo-next>Next</button>
+  </div>
+  <figure class="photo-viewer-figure">
+    <img alt="" data-photo-viewer-img>
+    <figcaption>
+      <p class="photo-viewer-kicker" data-photo-viewer-kicker></p>
+      <p class="photo-viewer-desc" data-photo-viewer-desc></p>
+      <p class="photo-viewer-credit" data-photo-viewer-credit></p>
+    </figcaption>
+  </figure>
+</dialog>
+<script type="application/json" id="photo-library">{{ photos | json | safe }}</script>
