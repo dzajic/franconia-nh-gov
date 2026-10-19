@@ -1,13 +1,7 @@
 <li class="{% if doc.data.needs_review %}is-review{% endif %}" data-body="{{ doc.data.body }}" data-type="{{ doc.data.type }}" data-review="{% if doc.data.needs_review %}yes{% else %}no{% endif %}" data-title="{{ doc.data.title }}">
-  <div class="doc-line">
-    {% if doc.data.file and not doc.data.missing %}
-    {% set fileUrl = doc.data.file | archiveFileUrl %}
-    {% set head = doc.data.title | titleHead %}
-    {% set tail = doc.data.title | titleTail %}
-    {% if head %}<a class="doc-title" href="{{ fileUrl }}" target="_blank" rel="noopener" aria-label="{{ doc.data.title }} (opens in a new tab)">{{ head }} </a>{% endif %}<span class="doc-tail"><a class="doc-title" href="{{ fileUrl }}" target="_blank" rel="noopener"{% if head %} tabindex="-1" aria-hidden="true"{% else %} aria-label="{{ doc.data.title }} (opens in a new tab)"{% endif %}>{{ tail }}</a><a class="doc-info" href="{{ doc.url | url }}" aria-label="Details for {{ doc.data.title }}" title="Details">{% include "partials/info-icon.njk" %}</a></span>
-    {% else %}
-    <a class="doc-title" href="{{ doc.url | url }}" aria-label="Details for {{ doc.data.title }}">{{ doc.data.title }}</a>
-    {% endif %}
-  </div>
-  <span class="doc-meta">{{ doc.data.doc_date | prettyDate(doc.data.date_precision) }} · {{ doc.data.type }}{% if showBody %} · {{ bodies | bodyName(doc.data.body) }}{% endif %} · {{ doc.data.format }}{% if doc.data.needs_review %} · <span class="flag">Needs review</span>{% endif %}</span>
+  <a class="doc-row" href="{% if doc.data.file and not doc.data.missing %}{{ doc.data.file | archiveFileUrl }}{% else %}{{ doc.url | url }}{% endif %}"{% if doc.data.file and not doc.data.missing %} target="_blank" rel="noopener"{% endif %}>
+    <span class="doc-title">{{ doc.data.title }}</span>
+    <span class="doc-meta">{{ doc.data.doc_date | prettyDate(doc.data.date_precision) }} · {{ doc.data.type }}{% if showBody %} · {{ bodies | bodyName(doc.data.body) }}{% endif %} · {{ doc.data.format }}{% if doc.data.needs_review %} · <span class="flag">Needs review</span>{% endif %}</span>
+    {% if doc.data.file and not doc.data.missing %}<span class="sr">Opens in a new tab.</span>{% endif %}
+  </a>
 </li>

@@ -6,7 +6,7 @@ layout: shell.njk
    markdown includes the link, list, or figure partials itself. #}
 <main id="main" class="in page civic" data-pagefind-body>
   <header class="civic-head">
-    <h1 class="page-title">{{ heading or title }}</h1>
+    <h1 class="page-title">{{ (heading or title) | balancedTitle | safe }}</h1>
     {% if summary %}
     <p class="lede">{{ summary }}</p>
     {% endif %}
