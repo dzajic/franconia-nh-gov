@@ -176,16 +176,16 @@ test("the default root font size is 18px", () => {
   assert.match(htmlRule[1], /font-size:\s*18px/);
 });
 
-test("narrow screens use a 17px root and shorter heading steps", () => {
+test("narrow screens use a 16.5px root and shorter heading steps", () => {
   const css = readFileSync(join(assetsDir, "site.css"), "utf8");
   const narrow = css.match(/@media \(max-width:\s*640px\)\s*\{([\s\S]*?)\n\}/);
   assert.ok(narrow, "narrow media query");
-  assert.match(narrow[1], /html\s*\{[^}]*font-size:\s*17px/);
-  assert.match(narrow[1], /h1[^}]*font-size:\s*1\.6rem/);
-  assert.match(narrow[1], /h2[^}]*font-size:\s*1\.3rem/);
-  assert.match(narrow[1], /h3[^}]*font-size:\s*1\.15rem/);
+  assert.match(narrow[1], /html\s*\{[^}]*font-size:\s*16\.5px/);
+  assert.match(narrow[1], /h1[^}]*font-size:\s*1\.5rem/);
+  assert.match(narrow[1], /h2[^}]*font-size:\s*1\.25rem/);
+  assert.match(narrow[1], /h3[^}]*font-size:\s*1\.1rem/);
   const script = readFileSync(join(assetsDir, "text-size.js"), "utf8");
   assert.match(script, /small:\s*\[16,\s*16\]/);
-  assert.match(script, /medium:\s*\[18,\s*17\]/);
-  assert.match(script, /large:\s*\[22,\s*19\]/);
+  assert.match(script, /medium:\s*\[18,\s*16\.5\]/);
+  assert.match(script, /large:\s*\[22,\s*18\]/);
 });
