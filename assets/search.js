@@ -50,102 +50,51 @@ function loadArchive() {
   return archivePromise;
 }
 
-function infoIcon() {
-  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  svg.setAttribute("class", "info-icon");
-  svg.setAttribute("viewBox", "0 0 20 20");
-  svg.setAttribute("aria-hidden", "true");
-  svg.setAttribute("focusable", "false");
-  const ring = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-  ring.setAttribute("cx", "10");
-  ring.setAttribute("cy", "10");
-  ring.setAttribute("r", "8.25");
-  ring.setAttribute("fill", "none");
-  ring.setAttribute("stroke", "currentColor");
-  ring.setAttribute("stroke-width", "1.6");
-  const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-  dot.setAttribute("cx", "10");
-  dot.setAttribute("cy", "6.35");
-  dot.setAttribute("r", "1.05");
-  dot.setAttribute("fill", "currentColor");
-  const stem = document.createElementNS("http://www.w3.org/2000/svg", "path");
-  stem.setAttribute("d", "M10 9.1v5.3");
-  stem.setAttribute("fill", "none");
-  stem.setAttribute("stroke", "currentColor");
-  stem.setAttribute("stroke-width", "1.7");
-  stem.setAttribute("stroke-linecap", "round");
-  svg.append(ring, dot, stem);
-  return svg;
-}
-
-function detailsLink(url, title) {
+function resultLink(href, external) {
   const link = document.createElement("a");
-  link.className = "doc-info";
-  link.href = url;
-  link.title = "Details";
-  link.setAttribute("aria-label", `Details for ${title}`);
-  link.append(infoIcon());
+  link.className = "result-link";
+  link.href = href;
+  if (external) {
+    link.target = "_blank";
+    link.rel = "noopener";
+    const note = document.createElement("span");
+    note.className = "sr";
+    note.textContent = "Opens in a new tab.";
+    link.append(note);
+  }
   return link;
 }
 
 function pageCard(result) {
   const item = document.createElement("article");
   item.className = "result";
-  const link = document.createElement("a");
-  link.href = result.url;
-  link.textContent = result.title || result.url;
-  const excerpt = document.createElement("p");
+  const link = resultLink(result.url, false);
+  const title = document.createElement("span");
+  title.className = "result-title";
+  title.textContent = result.title || result.url;
+  const excerpt = document.createElement("span");
+  excerpt.className = "result-excerpt";
   excerpt.textContent = strip(result.excerpt);
-  item.append(link, excerpt);
+  link.prepend(title, excerpt);
+  item.append(link);
   return item;
 }
 
 function documentCard(doc, archiveBaseUrl, excerptHtml) {
   const item = document.createElement("article");
   item.className = "result";
-  const line = document.createElement("div");
-  line.className = "doc-line";
-  const title = doc.title || "Document";
-  if (fileReady(doc, archiveBaseUrl)) {
-    const fileLink = document.createElement("a");
-    fileLink.className = "doc-title";
-    fileLink.href = doc.fileUrl;
-    fileLink.target = "_blank";
-    fileLink.rel = "noopener";
-    const splitAt = title.lastIndexOf(" ");
-    const head = splitAt === -1 ? "" : title.slice(0, splitAt);
-    const tail = splitAt === -1 ? title : title.slice(splitAt + 1);
-    const tailWrap = document.createElement("span");
-    tailWrap.className = "doc-tail";
-    const tailLink = document.createElement("a");
-    tailLink.className = "doc-title";
-    tailLink.href = doc.fileUrl;
-    tailLink.target = "_blank";
-    tailLink.rel = "noopener";
-    tailLink.textContent = tail;
-    if (head) {
-      fileLink.textContent = `${head} `;
-      fileLink.setAttribute("aria-label", `${title} (opens in a new tab)`);
-      tailLink.tabIndex = -1;
-      tailLink.setAttribute("aria-hidden", "true");
-      line.append(fileLink);
-    } else {
-      tailLink.setAttribute("aria-label", `${title} (opens in a new tab)`);
-    }
-    tailWrap.append(tailLink, detailsLink(doc.url, title));
-    line.append(tailWrap);
-  } else {
-    const details = document.createElement("a");
-    details.className = "doc-title";
-    details.href = doc.url;
-    details.textContent = title;
-    details.setAttribute("aria-label", `Details for ${title}`);
-    line.append(details);
-  }
-  const excerpt = document.createElement("p");
+  const titleText = doc.title || "Document";
+  const external = fileReady(doc, archiveBaseUrl);
+  const link = resultLink(external ? doc.fileUrl : doc.url, external);
+  const title = document.createElement("span");
+  title.className = "doc-title";
+  title.textContent = titleText;
+  const excerpt = document.createElement("span");
+  excerpt.className = "result-excerpt";
   const fallback = `${doc.type || "Document"} · ${doc.bodyName || ""} · ${doc.date || "date unknown"}${doc.needsReview ? " · needs review" : ""}`;
   excerpt.textContent = excerptHtml ? strip(excerptHtml) : fallback;
-  item.append(line, excerpt);
+  link.prepend(title, excerpt);
+  item.append(link);
   return item;
 }
 

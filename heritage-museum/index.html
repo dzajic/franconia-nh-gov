@@ -3,6 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      (function () {
+        var px = { small: [14, 15], medium: [15, 16], large: [17, 17] };
+        function stepFrom(saved) {
+          if (saved === "small" || saved === "15" || saved === "16") return "small";
+          if (saved === "large" || saved === "22" || saved === "19") return "large";
+          if (saved === "medium" || saved === "18" || saved === "17" || saved === "16.5") return "medium";
+          return "";
+        }
+        try {
+          var step = stepFrom(localStorage.getItem("franconia-text-size"));
+          if (!step) return;
+          var narrow = window.matchMedia("(max-width: 640px)").matches;
+          document.documentElement.style.fontSize = px[step][narrow ? 1 : 0] + "px";
+          document.documentElement.setAttribute("data-text-size", step);
+        } catch (err) {}
+      })();
+    </script>
     <title>Heritage Museum — Town of Franconia</title>
     <meta name="description" content="Town of Franconia, New Hampshire. Pay a bill, find a form, or read the latest minutes.">
     <link rel="canonical" href="https://dzajic.github.io/franconia-nh-gov/heritage-museum/">
@@ -179,6 +197,7 @@
 
     
     
+
 <header class="top" data-pagefind-ignore>
   <svg class="hband" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><polygon points="0,100 0,78 90,70 180,56 270,36 330,20 372,26 430,40 500,58 560,50 620,34 660,30 700,38 760,52 820,58 870,50 910,44 950,52 1010,66 1100,78 1200,84 1200,100" fill="#0e2a21"/></svg><svg class="hband2" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><polygon points="0,100 0,70 120,62 240,30 300,10 340,14 400,34 470,64 520,50 600,26 650,20 700,30 780,58 830,64 880,50 920,44 960,56 1040,76 1120,70 1200,80 1200,100" fill="#faf5e6"/></svg>
   <div class="in hdr">
@@ -229,52 +248,96 @@
 
     </div>
     
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav-list" hidden>
+  <svg class="menu-icon" viewBox="0 0 22 16" width="22" height="16" aria-hidden="true" focusable="false">
+    <g class="menu-bars" fill="currentColor">
+      <rect width="22" height="2.5" rx="1"></rect>
+      <rect y="6.75" width="22" height="2.5" rx="1"></rect>
+      <rect y="13.5" width="22" height="2.5" rx="1"></rect>
+    </g>
+    <g class="menu-x" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+      <path d="M2.5 2.5 L19.5 13.5"></path>
+      <path d="M19.5 2.5 L2.5 13.5"></path>
+    </g>
+  </svg>
+  <span>Menu</span>
+</button>
+
+    <div class="text-size" data-text-size-control role="group" aria-label="Text size">
+      <button type="button" data-step="small" aria-pressed="false" aria-label="Smaller text">A−</button>
+      <button type="button" data-step="medium" aria-pressed="true" aria-label="Default text size">A</button>
+      <button type="button" data-step="large" aria-pressed="false" aria-label="Larger text">A+</button>
+    </div>
+    
     <form class="search" role="search" action="/franconia-nh-gov/search/" method="get">
       <label for="q" class="sr">Search the town website</label>
       <input id="q" type="search" name="q" placeholder="Search permits, minutes…" autocomplete="off">
       <button type="submit">Search</button>
     </form>
     
-    <nav aria-label="Primary">
+    <nav class="primary-nav" aria-label="Primary">
+      <div class="nav-links" id="primary-nav-list">
       
         
           
-          <a href="/franconia-nh-gov/#tasks">Top tasks</a>
+          <a class="nav-link" href="/franconia-nh-gov/#tasks">Top tasks</a>
           
         
           
-          <a href="/franconia-nh-gov/#coming">Calendar</a>
+          <a class="nav-link" href="/franconia-nh-gov/#coming">Calendar</a>
           
         
           
-          <a href="/franconia-nh-gov/#minutes">Minutes</a>
+          <a class="nav-link" href="/franconia-nh-gov/#minutes">Minutes</a>
           
         
           
-          <a href="/franconia-nh-gov/#forms">Forms</a>
+          <a class="nav-link" href="/franconia-nh-gov/#forms">Forms</a>
           
         
           
-          <a href="/franconia-nh-gov/#depts">Departments</a>
+          <a class="nav-link" href="/franconia-nh-gov/#depts">Departments</a>
           
         
           
-          <a href="/franconia-nh-gov/#directory">Directory</a>
+          <a class="nav-link" href="/franconia-nh-gov/#directory">Directory</a>
           
         
           
-          <a href="/franconia-nh-gov/about/">About</a>
+          <a class="nav-link" href="/franconia-nh-gov/about/">About</a>
           
         
       
+      </div>
     </nav>
   </div>
 </header>
+<div class="slim-bar" data-slim-bar hidden data-pagefind-ignore>
+  <div class="in slim-in">
+    <a class="slim-name" href="/franconia-nh-gov/">Franconia</a>
+    
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav-list">
+  <svg class="menu-icon" viewBox="0 0 22 16" width="22" height="16" aria-hidden="true" focusable="false">
+    <g class="menu-bars" fill="currentColor">
+      <rect width="22" height="2.5" rx="1"></rect>
+      <rect y="6.75" width="22" height="2.5" rx="1"></rect>
+      <rect y="13.5" width="22" height="2.5" rx="1"></rect>
+    </g>
+    <g class="menu-x" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+      <path d="M2.5 2.5 L19.5 13.5"></path>
+      <path d="M19.5 2.5 L2.5 13.5"></path>
+    </g>
+  </svg>
+  <span>Menu</span>
+</button>
+
+  </div>
+</div>
 
     
 <main id="main" class="in page civic" data-pagefind-body>
   <header class="civic-head">
-    <h1 class="page-title">Franconia Heritage Museum</h1>
+    <h1 class="page-title">Franconia <span class="keep-together">Heritage Museum</span></h1>
     
     <p class="lede">An 1878 farmhouse museum, free to visit, with a current exhibit on C.T. Bodwell.</p>
     
@@ -461,6 +524,8 @@
   </div>
 </footer>
 
+    <script src="/franconia-nh-gov/assets/text-size.js" defer></script>
+    <script src="/franconia-nh-gov/assets/nav-menu.js" defer></script>
     
   </body>
 </html>
