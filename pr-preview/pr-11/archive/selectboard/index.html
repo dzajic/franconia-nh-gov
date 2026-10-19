@@ -3,6 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      (function () {
+        var px = { small: [14, 15], medium: [15, 16], large: [17, 17] };
+        function stepFrom(saved) {
+          if (saved === "small" || saved === "15" || saved === "16") return "small";
+          if (saved === "large" || saved === "22" || saved === "19") return "large";
+          if (saved === "medium" || saved === "18" || saved === "17" || saved === "16.5") return "medium";
+          return "";
+        }
+        try {
+          var step = stepFrom(localStorage.getItem("franconia-text-size"));
+          if (!step) return;
+          var narrow = window.matchMedia("(max-width: 640px)").matches;
+          document.documentElement.style.fontSize = px[step][narrow ? 1 : 0] + "px";
+          document.documentElement.setAttribute("data-text-size", step);
+        } catch (err) {}
+      })();
+    </script>
     <title>Documents · Board of Selectmen</title>
     <meta name="description" content="Public documents for Board of Selectmen. The last 12 months are expanded; older years are collapsed.">
     <link rel="canonical" href="https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/">
@@ -179,6 +197,7 @@
 
     
     
+
 <header class="top" data-pagefind-ignore>
   <svg class="hband" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><polygon points="0,100 0,78 90,70 180,56 270,36 330,20 372,26 430,40 500,58 560,50 620,34 660,30 700,38 760,52 820,58 870,50 910,44 950,52 1010,66 1100,78 1200,84 1200,100" fill="#0e2a21"/></svg><svg class="hband2" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><polygon points="0,100 0,70 120,62 240,30 300,10 340,14 400,34 470,64 520,50 600,26 650,20 700,30 780,58 830,64 880,50 920,44 960,56 1040,76 1120,70 1200,80 1200,100" fill="#faf5e6"/></svg>
   <div class="in hdr">
@@ -229,54 +248,98 @@
 
     </div>
     
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav-list" hidden>
+  <svg class="menu-icon" viewBox="0 0 22 16" width="22" height="16" aria-hidden="true" focusable="false">
+    <g class="menu-bars" fill="currentColor">
+      <rect width="22" height="2.5" rx="1"></rect>
+      <rect y="6.75" width="22" height="2.5" rx="1"></rect>
+      <rect y="13.5" width="22" height="2.5" rx="1"></rect>
+    </g>
+    <g class="menu-x" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+      <path d="M2.5 2.5 L19.5 13.5"></path>
+      <path d="M19.5 2.5 L2.5 13.5"></path>
+    </g>
+  </svg>
+  <span>Menu</span>
+</button>
+
+    <div class="text-size" data-text-size-control role="group" aria-label="Text size">
+      <button type="button" data-step="small" aria-pressed="false" aria-label="Smaller text">A−</button>
+      <button type="button" data-step="medium" aria-pressed="true" aria-label="Default text size">A</button>
+      <button type="button" data-step="large" aria-pressed="false" aria-label="Larger text">A+</button>
+    </div>
+    
     <form class="search" role="search" action="/franconia-nh-gov/pr-preview/pr-11/search/" method="get">
       <label for="q" class="sr">Search the town website</label>
       <input id="q" type="search" name="q" placeholder="Search permits, minutes…" autocomplete="off">
       <button type="submit">Search</button>
     </form>
     
-    <nav aria-label="Primary">
+    <nav class="primary-nav" aria-label="Primary">
+      <div class="nav-links" id="primary-nav-list">
       
         
           
-          <a href="/franconia-nh-gov/pr-preview/pr-11/#tasks">Top tasks</a>
+          <a class="nav-link" href="/franconia-nh-gov/pr-preview/pr-11/#tasks">Top tasks</a>
           
         
           
-          <a href="/franconia-nh-gov/pr-preview/pr-11/#coming">Calendar</a>
+          <a class="nav-link" href="/franconia-nh-gov/pr-preview/pr-11/#coming">Calendar</a>
           
         
           
-          <a href="/franconia-nh-gov/pr-preview/pr-11/#minutes">Minutes</a>
+          <a class="nav-link" href="/franconia-nh-gov/pr-preview/pr-11/#minutes">Minutes</a>
           
         
           
-          <a href="/franconia-nh-gov/pr-preview/pr-11/#forms">Forms</a>
+          <a class="nav-link" href="/franconia-nh-gov/pr-preview/pr-11/#forms">Forms</a>
           
         
           
-          <a href="/franconia-nh-gov/pr-preview/pr-11/#depts">Departments</a>
+          <a class="nav-link" href="/franconia-nh-gov/pr-preview/pr-11/#depts">Departments</a>
           
         
           
-          <a href="/franconia-nh-gov/pr-preview/pr-11/site-index/">Directory</a>
+          <a class="nav-link" href="/franconia-nh-gov/pr-preview/pr-11/site-index/">Directory</a>
           
         
           
-          <a href="/franconia-nh-gov/pr-preview/pr-11/about/">About</a>
+          <a class="nav-link" href="/franconia-nh-gov/pr-preview/pr-11/about/">About</a>
           
         
       
+      </div>
     </nav>
   </div>
 </header>
+<div class="slim-bar" data-slim-bar hidden data-pagefind-ignore>
+  <div class="in slim-in">
+    <a class="slim-name" href="/franconia-nh-gov/pr-preview/pr-11/">Franconia</a>
+    
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav-list">
+  <svg class="menu-icon" viewBox="0 0 22 16" width="22" height="16" aria-hidden="true" focusable="false">
+    <g class="menu-bars" fill="currentColor">
+      <rect width="22" height="2.5" rx="1"></rect>
+      <rect y="6.75" width="22" height="2.5" rx="1"></rect>
+      <rect y="13.5" width="22" height="2.5" rx="1"></rect>
+    </g>
+    <g class="menu-x" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+      <path d="M2.5 2.5 L19.5 13.5"></path>
+      <path d="M19.5 2.5 L2.5 13.5"></path>
+    </g>
+  </svg>
+  <span>Menu</span>
+</button>
+
+  </div>
+</div>
 
     
 
 
 <main id="main" class="in page" data-pagefind-body>
   <p class="more"><a href="/franconia-nh-gov/pr-preview/pr-11/archive/">All documents</a></p>
-  <h1 class="page-title">Board of Selectmen</h1>
+  <h1 class="page-title">Board <span class="keep-together">of Selectmen</span></h1>
   <div class="board-meta">
     <a href="/franconia-nh-gov/pr-preview/pr-11/board-of-selectmen/">Department page</a>
     <span>Phone: 603-823-7752</span>
@@ -314,30 +377,20 @@
   <ul class="doclist">
     
     <li class="is-review" data-body="selectboard" data-type="agenda" data-review="yes" data-title="Board of Selectmen Agenda, 2026-10-19">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-10-19-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-10-19 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-10-19-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-10-19</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-10-19-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-10-19" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Oct 19, 2026 · agenda · pdf · <span class="flag">Needs review</span></span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-10-19-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-10-19</span>
+    <span class="doc-meta">Oct 19, 2026 · agenda · pdf · <span class="flag">Needs review</span></span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2026-10-05">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-10-05-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-10-05 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-10-05-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-10-05</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-10-05-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-10-05" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Oct 5, 2026 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-10-05-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-10-05</span>
+    <span class="doc-meta">Oct 5, 2026 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
@@ -349,58 +402,38 @@
   <ul class="doclist">
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2026-09-28">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-09-28-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-09-28 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-09-28-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-09-28</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-09-28-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-09-28" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Sep 28, 2026 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-09-28-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-09-28</span>
+    <span class="doc-meta">Sep 28, 2026 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2026-09-28">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-09-28-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2026-09-28 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-09-28-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-09-28</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-09-28-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2026-09-28" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Sep 28, 2026 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-09-28-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2026-09-28</span>
+    <span class="doc-meta">Sep 28, 2026 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2026-09-14">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-09-14-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-09-14 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-09-14-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-09-14</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-09-14-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-09-14" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Sep 14, 2026 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-09-14-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-09-14</span>
+    <span class="doc-meta">Sep 14, 2026 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2026-09-14">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-09-14-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2026-09-14 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-09-14-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-09-14</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-09-14-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2026-09-14" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Sep 14, 2026 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-09-14-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2026-09-14</span>
+    <span class="doc-meta">Sep 14, 2026 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
@@ -412,44 +445,29 @@
   <ul class="doclist">
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2026-08-24">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-08-24-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-08-24 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-08-24-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-08-24</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-08-24-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-08-24" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Aug 24, 2026 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-08-24-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-08-24</span>
+    <span class="doc-meta">Aug 24, 2026 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2026-08-24">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-08-24-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2026-08-24 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-08-24-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-08-24</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-08-24-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2026-08-24" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Aug 24, 2026 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-08-24-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2026-08-24</span>
+    <span class="doc-meta">Aug 24, 2026 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2026-08-10">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-08-10-selectboard-minutes.docx" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2026-08-10 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-08-10-selectboard-minutes.docx" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-08-10</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-08-10-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2026-08-10" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Aug 10, 2026 · minutes · docx</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-08-10-selectboard-minutes.docx" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2026-08-10</span>
+    <span class="doc-meta">Aug 10, 2026 · minutes · docx</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
@@ -461,58 +479,38 @@
   <ul class="doclist">
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2026-07-27">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-07-27-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-07-27 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-07-27-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-07-27</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-07-27-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-07-27" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jul 27, 2026 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-07-27-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-07-27</span>
+    <span class="doc-meta">Jul 27, 2026 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2026-07-27">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-07-27-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2026-07-27 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-07-27-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-07-27</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-07-27-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2026-07-27" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jul 27, 2026 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-07-27-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2026-07-27</span>
+    <span class="doc-meta">Jul 27, 2026 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2026-07-13">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-07-13-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-07-13 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-07-13-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-07-13</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-07-13-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-07-13" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jul 13, 2026 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-07-13-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-07-13</span>
+    <span class="doc-meta">Jul 13, 2026 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2026-07-13">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-07-13-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2026-07-13 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-07-13-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-07-13</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-07-13-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2026-07-13" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jul 13, 2026 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-07-13-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2026-07-13</span>
+    <span class="doc-meta">Jul 13, 2026 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
@@ -524,86 +522,56 @@
   <ul class="doclist">
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2026-06-29">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-06-29-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-06-29 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-06-29-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-06-29</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-06-29-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-06-29" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jun 29, 2026 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-06-29-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-06-29</span>
+    <span class="doc-meta">Jun 29, 2026 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2026-06-29">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-06-29-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2026-06-29 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-06-29-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-06-29</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-06-29-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2026-06-29" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jun 29, 2026 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-06-29-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2026-06-29</span>
+    <span class="doc-meta">Jun 29, 2026 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2026-06-15">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-06-15-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-06-15 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-06-15-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-06-15</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-06-15-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-06-15" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jun 15, 2026 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-06-15-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-06-15</span>
+    <span class="doc-meta">Jun 15, 2026 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2026-06-15">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-06-15-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2026-06-15 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-06-15-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-06-15</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-06-15-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2026-06-15" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jun 15, 2026 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-06-15-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2026-06-15</span>
+    <span class="doc-meta">Jun 15, 2026 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2026-06-01">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-06-01-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-06-01 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-06-01-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-06-01</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-06-01-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-06-01" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jun 1, 2026 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-06-01-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-06-01</span>
+    <span class="doc-meta">Jun 1, 2026 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2026-06-01">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-06-01-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2026-06-01 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-06-01-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-06-01</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-06-01-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2026-06-01" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jun 1, 2026 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-06-01-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2026-06-01</span>
+    <span class="doc-meta">Jun 1, 2026 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
@@ -615,30 +583,20 @@
   <ul class="doclist">
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2026-05-11">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-05-11-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-05-11 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-05-11-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-05-11</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-05-11-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-05-11" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">May 11, 2026 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-05-11-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-05-11</span>
+    <span class="doc-meta">May 11, 2026 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2026-05-11">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-05-11-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2026-05-11 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-05-11-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-05-11</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-05-11-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2026-05-11" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">May 11, 2026 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-05-11-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2026-05-11</span>
+    <span class="doc-meta">May 11, 2026 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
@@ -650,58 +608,38 @@
   <ul class="doclist">
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2026-04-27">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-04-27-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-04-27 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-04-27-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-04-27</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-04-27-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-04-27" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Apr 27, 2026 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-04-27-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-04-27</span>
+    <span class="doc-meta">Apr 27, 2026 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2026-04-27">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-04-27-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2026-04-27 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-04-27-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-04-27</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-04-27-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2026-04-27" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Apr 27, 2026 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-04-27-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2026-04-27</span>
+    <span class="doc-meta">Apr 27, 2026 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2026-04-13">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-04-13-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-04-13 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-04-13-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-04-13</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-04-13-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-04-13" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Apr 13, 2026 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-04-13-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-04-13</span>
+    <span class="doc-meta">Apr 13, 2026 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2026-04-13">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-04-13-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2026-04-13 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-04-13-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-04-13</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-04-13-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2026-04-13" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Apr 13, 2026 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-04-13-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2026-04-13</span>
+    <span class="doc-meta">Apr 13, 2026 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
@@ -713,86 +651,56 @@
   <ul class="doclist">
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2026-03-30">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-03-30-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-03-30 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-03-30-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-03-30</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-03-30-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-03-30" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Mar 30, 2026 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-03-30-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-03-30</span>
+    <span class="doc-meta">Mar 30, 2026 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2026-03-30">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-03-30-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2026-03-30 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-03-30-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-03-30</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-03-30-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2026-03-30" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Mar 30, 2026 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-03-30-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2026-03-30</span>
+    <span class="doc-meta">Mar 30, 2026 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2026-03-16">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-03-16-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-03-16 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-03-16-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-03-16</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-03-16-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-03-16" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Mar 16, 2026 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-03-16-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-03-16</span>
+    <span class="doc-meta">Mar 16, 2026 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2026-03-16">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-03-16-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2026-03-16 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-03-16-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-03-16</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-03-16-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2026-03-16" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Mar 16, 2026 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-03-16-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2026-03-16</span>
+    <span class="doc-meta">Mar 16, 2026 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2026-03-09">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-03-09-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-03-09 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-03-09-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-03-09</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-03-09-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-03-09" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Mar 9, 2026 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-03-09-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-03-09</span>
+    <span class="doc-meta">Mar 9, 2026 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2026-03-09">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-03-09-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2026-03-09 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-03-09-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-03-09</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-03-09-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2026-03-09" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Mar 9, 2026 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-03-09-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2026-03-09</span>
+    <span class="doc-meta">Mar 9, 2026 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
@@ -804,58 +712,38 @@
   <ul class="doclist">
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2026-02-20">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-02-20-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-02-20 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-02-20-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-02-20</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-02-20-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-02-20" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Feb 20, 2026 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-02-20-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-02-20</span>
+    <span class="doc-meta">Feb 20, 2026 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2026-02-09">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-02-09-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-02-09 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-02-09-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-02-09</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-02-09-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-02-09" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Feb 9, 2026 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-02-09-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-02-09</span>
+    <span class="doc-meta">Feb 9, 2026 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2026-02-09">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-02-09-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2026-02-09 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-02-09-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-02-09</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-02-09-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2026-02-09" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Feb 9, 2026 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-02-09-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2026-02-09</span>
+    <span class="doc-meta">Feb 9, 2026 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="notice" data-review="no" data-title="Board of Selectmen Notice, 2026-02-02">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-02-02-selectboard-notice.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Notice, 2026-02-02 (opens in a new tab)">Board of Selectmen Notice, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-02-02-selectboard-notice.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-02-02</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-02-02-selectboard-notice/" aria-label="Details for Board of Selectmen Notice, 2026-02-02" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Feb 2, 2026 · notice · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-02-02-selectboard-notice.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Notice, 2026-02-02</span>
+    <span class="doc-meta">Feb 2, 2026 · notice · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
@@ -867,86 +755,56 @@
   <ul class="doclist">
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2026-01-28">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-01-28-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-01-28 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-01-28-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-01-28</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-01-28-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-01-28" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jan 28, 2026 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-01-28-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-01-28</span>
+    <span class="doc-meta">Jan 28, 2026 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2026-01-28">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-01-28-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2026-01-28 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-01-28-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-01-28</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-01-28-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2026-01-28" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jan 28, 2026 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-01-28-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2026-01-28</span>
+    <span class="doc-meta">Jan 28, 2026 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2026-01-12">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-01-12-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-01-12 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-01-12-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-01-12</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-01-12-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-01-12" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jan 12, 2026 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-01-12-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-01-12</span>
+    <span class="doc-meta">Jan 12, 2026 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2026-01-12">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-01-12-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2026-01-12 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-01-12-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-01-12</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-01-12-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2026-01-12" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jan 12, 2026 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-01-12-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2026-01-12</span>
+    <span class="doc-meta">Jan 12, 2026 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2026-01-05">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-01-05-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2026-01-05 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-01-05-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-01-05</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-01-05-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2026-01-05" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jan 5, 2026 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-01-05-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2026-01-05</span>
+    <span class="doc-meta">Jan 5, 2026 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2026-01-05">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-01-05-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2026-01-05 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-01-05-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026-01-05</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-01-05-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2026-01-05" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jan 5, 2026 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-01-05-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2026-01-05</span>
+    <span class="doc-meta">Jan 5, 2026 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
@@ -958,72 +816,47 @@
   <ul class="doclist">
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-12-29">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-12-29-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-12-29 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-12-29-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-12-29</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-12-29-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-12-29" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Dec 29, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-12-29-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-12-29</span>
+    <span class="doc-meta">Dec 29, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-12-15">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-12-15-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-12-15 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-12-15-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-12-15</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-12-15-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-12-15" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Dec 15, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-12-15-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-12-15</span>
+    <span class="doc-meta">Dec 15, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-12-15">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-12-15-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-12-15 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-12-15-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-12-15</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-12-15-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-12-15" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Dec 15, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-12-15-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-12-15</span>
+    <span class="doc-meta">Dec 15, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-12-08">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-12-08-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-12-08 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-12-08-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-12-08</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-12-08-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-12-08" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Dec 8, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-12-08-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-12-08</span>
+    <span class="doc-meta">Dec 8, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-12-08">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-12-08-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-12-08 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-12-08-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-12-08</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-12-08-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-12-08" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Dec 8, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-12-08-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-12-08</span>
+    <span class="doc-meta">Dec 8, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
@@ -1035,86 +868,56 @@
   <ul class="doclist">
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-11-24">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-11-24-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-11-24 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-11-24-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-11-24</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-11-24-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-11-24" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Nov 24, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-11-24-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-11-24</span>
+    <span class="doc-meta">Nov 24, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-11-24">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-11-24-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-11-24 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-11-24-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-11-24</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-11-24-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-11-24" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Nov 24, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-11-24-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-11-24</span>
+    <span class="doc-meta">Nov 24, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-11-10">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-11-10-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-11-10 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-11-10-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-11-10</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-11-10-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-11-10" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Nov 10, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-11-10-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-11-10</span>
+    <span class="doc-meta">Nov 10, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-11-10">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-11-10-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-11-10 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-11-10-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-11-10</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-11-10-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-11-10" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Nov 10, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-11-10-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-11-10</span>
+    <span class="doc-meta">Nov 10, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-11-03">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-11-03-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-11-03 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-11-03-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-11-03</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-11-03-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-11-03" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Nov 3, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-11-03-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-11-03</span>
+    <span class="doc-meta">Nov 3, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-11-03">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-11-03-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-11-03 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-11-03-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-11-03</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-11-03-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-11-03" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Nov 3, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-11-03-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-11-03</span>
+    <span class="doc-meta">Nov 3, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
@@ -1126,58 +929,38 @@
   <ul class="doclist">
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-10-27">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-10-27-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-10-27 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-10-27-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-10-27</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-10-27-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-10-27" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Oct 27, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-10-27-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-10-27</span>
+    <span class="doc-meta">Oct 27, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-10-27">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-10-27-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-10-27 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-10-27-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-10-27</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-10-27-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-10-27" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Oct 27, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-10-27-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-10-27</span>
+    <span class="doc-meta">Oct 27, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-10-20">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-10-20-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-10-20 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-10-20-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-10-20</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-10-20-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-10-20" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Oct 20, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-10-20-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-10-20</span>
+    <span class="doc-meta">Oct 20, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-10-20">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-10-20-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-10-20 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-10-20-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-10-20</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-10-20-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-10-20" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Oct 20, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-10-20-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-10-20</span>
+    <span class="doc-meta">Oct 20, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
@@ -1195,16 +978,11 @@
   <ul class="doclist">
     
     <li class="is-review" data-body="selectboard" data-type="minutes" data-review="yes" data-title="Board of Selectmen Minutes, 2026">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-selectboard-minutes-march-10-2026-town-meeting-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2026 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-selectboard-minutes-march-10-2026-town-meeting-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2026</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2026/2026-selectboard-minutes-march-10-2026-town-meeting-minutes/" aria-label="Details for Board of Selectmen Minutes, 2026" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Date unknown · minutes · pdf · <span class="flag">Needs review</span></span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2026/2026-selectboard-minutes-march-10-2026-town-meeting-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2026</span>
+    <span class="doc-meta">Date unknown · minutes · pdf · <span class="flag">Needs review</span></span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
@@ -1219,604 +997,389 @@
   <ul class="doclist">
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-10-06">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-10-06-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-10-06 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-10-06-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-10-06</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-10-06-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-10-06" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Oct 6, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-10-06-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-10-06</span>
+    <span class="doc-meta">Oct 6, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-10-06">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-10-06-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-10-06 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-10-06-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-10-06</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-10-06-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-10-06" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Oct 6, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-10-06-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-10-06</span>
+    <span class="doc-meta">Oct 6, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-09-22">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-09-22-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-09-22 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-09-22-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-09-22</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-09-22-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-09-22" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Sep 22, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-09-22-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-09-22</span>
+    <span class="doc-meta">Sep 22, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-09-22">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-09-22-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-09-22 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-09-22-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-09-22</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-09-22-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-09-22" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Sep 22, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-09-22-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-09-22</span>
+    <span class="doc-meta">Sep 22, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-09-08">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-09-08-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-09-08 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-09-08-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-09-08</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-09-08-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-09-08" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Sep 8, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-09-08-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-09-08</span>
+    <span class="doc-meta">Sep 8, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-09-08">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-09-08-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-09-08 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-09-08-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-09-08</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-09-08-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-09-08" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Sep 8, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-09-08-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-09-08</span>
+    <span class="doc-meta">Sep 8, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-08-25">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-08-25-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-08-25 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-08-25-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-08-25</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-08-25-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-08-25" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Aug 25, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-08-25-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-08-25</span>
+    <span class="doc-meta">Aug 25, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-08-25">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-08-25-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-08-25 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-08-25-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-08-25</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-08-25-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-08-25" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Aug 25, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-08-25-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-08-25</span>
+    <span class="doc-meta">Aug 25, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-08-11">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-08-11-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-08-11 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-08-11-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-08-11</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-08-11-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-08-11" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Aug 11, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-08-11-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-08-11</span>
+    <span class="doc-meta">Aug 11, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-08-11">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-08-11-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-08-11 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-08-11-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-08-11</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-08-11-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-08-11" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Aug 11, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-08-11-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-08-11</span>
+    <span class="doc-meta">Aug 11, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-07-28">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-07-28-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-07-28 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-07-28-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-07-28</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-07-28-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-07-28" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jul 28, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-07-28-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-07-28</span>
+    <span class="doc-meta">Jul 28, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-07-28">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-07-28-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-07-28 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-07-28-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-07-28</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-07-28-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-07-28" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jul 28, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-07-28-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-07-28</span>
+    <span class="doc-meta">Jul 28, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-06-30">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-06-30-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-06-30 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-06-30-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-06-30</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-06-30-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-06-30" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jun 30, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-06-30-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-06-30</span>
+    <span class="doc-meta">Jun 30, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-06-30">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-06-30-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-06-30 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-06-30-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-06-30</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-06-30-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-06-30" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jun 30, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-06-30-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-06-30</span>
+    <span class="doc-meta">Jun 30, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-06-10">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-06-10-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-06-10 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-06-10-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-06-10</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-06-10-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-06-10" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jun 10, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-06-10-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-06-10</span>
+    <span class="doc-meta">Jun 10, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-06-10">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-06-10-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-06-10 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-06-10-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-06-10</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-06-10-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-06-10" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jun 10, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-06-10-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-06-10</span>
+    <span class="doc-meta">Jun 10, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-06-02">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-06-02-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-06-02 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-06-02-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-06-02</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-06-02-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-06-02" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jun 2, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-06-02-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-06-02</span>
+    <span class="doc-meta">Jun 2, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-06-02">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-06-02-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-06-02 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-06-02-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-06-02</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-06-02-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-06-02" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jun 2, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-06-02-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-06-02</span>
+    <span class="doc-meta">Jun 2, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-05-19">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-05-19-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-05-19 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-05-19-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-05-19</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-05-19-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-05-19" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">May 19, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-05-19-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-05-19</span>
+    <span class="doc-meta">May 19, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-05-19">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-05-19-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-05-19 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-05-19-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-05-19</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-05-19-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-05-19" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">May 19, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-05-19-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-05-19</span>
+    <span class="doc-meta">May 19, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-05-05">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-05-05-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-05-05 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-05-05-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-05-05</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-05-05-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-05-05" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">May 5, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-05-05-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-05-05</span>
+    <span class="doc-meta">May 5, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-05-05">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-05-05-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-05-05 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-05-05-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-05-05</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-05-05-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-05-05" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">May 5, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-05-05-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-05-05</span>
+    <span class="doc-meta">May 5, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-04-21">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-04-21-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-04-21 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-04-21-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-04-21</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-04-21-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-04-21" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Apr 21, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-04-21-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-04-21</span>
+    <span class="doc-meta">Apr 21, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-04-21">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-04-21-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-04-21 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-04-21-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-04-21</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-04-21-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-04-21" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Apr 21, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-04-21-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-04-21</span>
+    <span class="doc-meta">Apr 21, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-04-07">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-04-07-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-04-07 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-04-07-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-04-07</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-04-07-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-04-07" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Apr 7, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-04-07-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-04-07</span>
+    <span class="doc-meta">Apr 7, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-04-07">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-04-07-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-04-07 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-04-07-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-04-07</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-04-07-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-04-07" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Apr 7, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-04-07-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-04-07</span>
+    <span class="doc-meta">Apr 7, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-03-24">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-03-24-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-03-24 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-03-24-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-03-24</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-03-24-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-03-24" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Mar 24, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-03-24-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-03-24</span>
+    <span class="doc-meta">Mar 24, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-03-24">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-03-24-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-03-24 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-03-24-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-03-24</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-03-24-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-03-24" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Mar 24, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-03-24-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-03-24</span>
+    <span class="doc-meta">Mar 24, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-03-03">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-03-03-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-03-03 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-03-03-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-03-03</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-03-03-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-03-03" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Mar 3, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-03-03-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-03-03</span>
+    <span class="doc-meta">Mar 3, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-03-03">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-03-03-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-03-03 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-03-03-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-03-03</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-03-03-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-03-03" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Mar 3, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-03-03-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-03-03</span>
+    <span class="doc-meta">Mar 3, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-02-18">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-18-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-02-18 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-18-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-02-18</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-02-18-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-02-18" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Feb 18, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-18-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-02-18</span>
+    <span class="doc-meta">Feb 18, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-02-18">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-18-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-02-18 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-18-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-02-18</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-02-18-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-02-18" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Feb 18, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-18-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-02-18</span>
+    <span class="doc-meta">Feb 18, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-02-10">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-10-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-02-10 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-10-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-02-10</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-02-10-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-02-10" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Feb 10, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-10-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-02-10</span>
+    <span class="doc-meta">Feb 10, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-02-10">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-10-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-02-10 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-10-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-02-10</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-02-10-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-02-10" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Feb 10, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-10-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-02-10</span>
+    <span class="doc-meta">Feb 10, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-02-03">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-03-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-02-03 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-03-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-02-03</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-02-03-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-02-03" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Feb 3, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-03-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-02-03</span>
+    <span class="doc-meta">Feb 3, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-02-03">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-03-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-02-03 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-03-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-02-03</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-02-03-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-02-03" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Feb 3, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-03-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-02-03</span>
+    <span class="doc-meta">Feb 3, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="notice" data-review="no" data-title="Board of Selectmen Notice, 2025-02-03">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-03-selectboard-notice.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Notice, 2025-02-03 (opens in a new tab)">Board of Selectmen Notice, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-03-selectboard-notice.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-02-03</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-02-03-selectboard-notice/" aria-label="Details for Board of Selectmen Notice, 2025-02-03" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Feb 3, 2025 · notice · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-02-03-selectboard-notice.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Notice, 2025-02-03</span>
+    <span class="doc-meta">Feb 3, 2025 · notice · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-01-27">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-01-27-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-01-27 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-01-27-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-01-27</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-01-27-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-01-27" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jan 27, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-01-27-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-01-27</span>
+    <span class="doc-meta">Jan 27, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-01-27">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-01-27-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-01-27 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-01-27-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-01-27</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-01-27-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-01-27" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jan 27, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-01-27-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-01-27</span>
+    <span class="doc-meta">Jan 27, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-01-13">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-01-13-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-01-13 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-01-13-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-01-13</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-01-13-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-01-13" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jan 13, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-01-13-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-01-13</span>
+    <span class="doc-meta">Jan 13, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-01-13">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-01-13-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-01-13 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-01-13-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-01-13</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-01-13-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-01-13" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jan 13, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-01-13-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-01-13</span>
+    <span class="doc-meta">Jan 13, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="agenda" data-review="no" data-title="Board of Selectmen Agenda, 2025-01-06">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-01-06-selectboard-agenda.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Agenda, 2025-01-06 (opens in a new tab)">Board of Selectmen Agenda, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-01-06-selectboard-agenda.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-01-06</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-01-06-selectboard-agenda/" aria-label="Details for Board of Selectmen Agenda, 2025-01-06" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jan 6, 2025 · agenda · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-01-06-selectboard-agenda.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Agenda, 2025-01-06</span>
+    <span class="doc-meta">Jan 6, 2025 · agenda · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
     <li class="" data-body="selectboard" data-type="minutes" data-review="no" data-title="Board of Selectmen Minutes, 2025-01-06">
-  <div class="doc-line">
-    
-    
-    
-    
-    <a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-01-06-selectboard-minutes.pdf" target="_blank" rel="noopener" aria-label="Board of Selectmen Minutes, 2025-01-06 (opens in a new tab)">Board of Selectmen Minutes, </a><span class="doc-tail"><a class="doc-title" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-01-06-selectboard-minutes.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">2025-01-06</a><a class="doc-info" href="/franconia-nh-gov/pr-preview/pr-11/archive/selectboard/2025/2025-01-06-selectboard-minutes/" aria-label="Details for Board of Selectmen Minutes, 2025-01-06" title="Details"><svg class="info-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"></circle><circle cx="10" cy="6.35" r="1.05" fill="currentColor"></circle><path d="M10 9.1v5.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
-</a></span>
-    
-  </div>
-  <span class="doc-meta">Jan 6, 2025 · minutes · pdf</span>
+  <a class="doc-row" href="https://pub-436583bfa32248cb9f7762118b829267.r2.dev/archive/selectboard/2025/2025-01-06-selectboard-minutes.pdf" target="_blank" rel="noopener">
+    <span class="doc-title">Board of Selectmen Minutes, 2025-01-06</span>
+    <span class="doc-meta">Jan 6, 2025 · minutes · pdf</span>
+    <span class="sr">Opens in a new tab.</span>
+  </a>
 </li>
 
     
@@ -1899,6 +1462,8 @@
   </div>
 </footer>
 
+    <script src="/franconia-nh-gov/pr-preview/pr-11/assets/text-size.js" defer></script>
+    <script src="/franconia-nh-gov/pr-preview/pr-11/assets/nav-menu.js" defer></script>
     <script src="/franconia-nh-gov/pr-preview/pr-11/assets/archive-filter.js" defer></script>
   </body>
 </html>
