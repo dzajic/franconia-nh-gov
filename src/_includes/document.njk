@@ -16,7 +16,7 @@ layout: shell.njk
       <li><a href="{{ ('/archive/' + body + '/') | url }}">{{ committee }}</a></li>
     </ol>
   </nav>
-  <h1 class="page-title">{{ title | recordHeading(committee) }}</h1>
+  <h1 class="page-title">{{ title | recordHeading(committee) | balancedTitle | safe }}</h1>
   <p class="record-when">{{ doc_date | prettyDate(date_precision) }}</p>
   {% if needs_review %}
   <div class="review" role="note">

@@ -15,7 +15,7 @@ pageScript: /assets/archive-filter.js
 {% set archiveBoard = board %}
 <main id="main" class="in page" data-pagefind-body>
   <p class="more"><a href="{{ '/archive/' | url }}">All documents</a></p>
-  <h1 class="page-title">{{ board.name }}</h1>
+  <h1 class="page-title">{{ board.name | balancedTitle | safe }}</h1>
   <div class="board-meta">
     {% if board.page %}<a href="{{ board.page | url }}">Department page</a>{% endif %}
     <span>Phone: {{ board.phone or "[phone]" }}</span>
