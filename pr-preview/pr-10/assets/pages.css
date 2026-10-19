@@ -244,3 +244,7 @@
 @media (min-width: 960px) {
   .glance-grid.many { grid-template-columns: 1fr 1fr 1fr; }
 }
+@media (max-width: 640px) {
+  .notice h2, .civic .prose h2:not(.sign) { font-size: 1.3rem; }
+  .glance-grid h3, .civic .prose h3 { font-size: 1.15rem; }
+}

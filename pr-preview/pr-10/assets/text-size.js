@@ -1,9 +1,11 @@
 (function () {
   var KEY = "franconia-text-size";
-  var SIZES = ["16", "18", "22"];
+  // Desktop px, then narrow (max-width 640px) px. A− / A / A+.
+  var PX = { small: [16, 16], medium: [18, 17], large: [22, 19] };
   var root = document.documentElement;
   var group = document.querySelector("[data-text-size-control]");
   if (!group) return;
+  var narrowQuery = window.matchMedia("(max-width: 640px)");
 
   function stored() {
     try {
@@ -13,34 +15,57 @@
     }
   }
 
-  function current() {
-    var inline = String(root.style.fontSize || "").replace("px", "");
-    if (SIZES.indexOf(inline) !== -1) return inline;
-    var saved = stored();
-    if (SIZES.indexOf(saved) !== -1) return saved;
-    return "18";
+  function stepFrom(saved) {
+    if (saved === "small" || saved === "16") return "small";
+    if (saved === "large" || saved === "22") return "large";
+    if (saved === "medium" || saved === "18" || saved === "17" || saved === "19") return "medium";
+    return "";
   }
 
-  function apply(size) {
-    root.style.fontSize = size + "px";
-    root.setAttribute("data-text-size", size);
-    try {
-      localStorage.setItem(KEY, size);
-    } catch (err) {}
+  function pxFor(step) {
+    return PX[step][narrowQuery.matches ? 1 : 0];
+  }
+
+  function mark(step) {
     var buttons = group.querySelectorAll("button");
     for (var i = 0; i < buttons.length; i++) {
-      var on = buttons[i].getAttribute("data-size") === size;
+      var on = buttons[i].getAttribute("data-step") === step;
       buttons[i].setAttribute("aria-pressed", on ? "true" : "false");
     }
+  }
+
+  function apply(step, persist) {
+    root.style.fontSize = pxFor(step) + "px";
+    root.setAttribute("data-text-size", step);
+    mark(step);
+    if (!persist) return;
+    try {
+      localStorage.setItem(KEY, step);
+    } catch (err) {}
   }
 
   group.addEventListener("click", function (event) {
     var button = event.target.closest("button");
     if (!button || !group.contains(button)) return;
-    var size = button.getAttribute("data-size");
-    if (SIZES.indexOf(size) === -1) return;
-    apply(size);
+    var step = button.getAttribute("data-step");
+    if (!PX[step]) return;
+    apply(step, true);
   });
 
-  apply(current());
+  function onViewportChange() {
+    var step = stepFrom(stored());
+    if (step) apply(step, false);
+    else {
+      root.style.fontSize = "";
+      root.removeAttribute("data-text-size");
+      mark("medium");
+    }
+  }
+
+  if (narrowQuery.addEventListener) narrowQuery.addEventListener("change", onViewportChange);
+  else if (narrowQuery.addListener) narrowQuery.addListener(onViewportChange);
+
+  var saved = stepFrom(stored());
+  if (saved) apply(saved, saved !== stored());
+  else mark("medium");
 })();
