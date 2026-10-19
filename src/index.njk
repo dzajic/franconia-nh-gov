@@ -87,6 +87,15 @@ pageScript: /assets/season.js
     </ul>
     <p class="more"><a href="{{ '/departments/' | url }}">See all departments →</a></p>
   </section>
+  <section id="directory" aria-labelledby="dir-h">
+    <h2 id="dir-h" class="sign"><span class="blaze" aria-hidden="true"></span>Everything on the site</h2>
+    <ul class="link-grid">
+      {% for item in directory | featuredIndex(departments, forms, tasks, events) %}
+      <li><a href="{% if item.href | startsWith('/') %}{{ item.href | url }}{% else %}{{ item.href }}{% endif %}">{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+    <p class="more"><a href="{{ '/site-index/' | url }}">See all →</a></p>
+  </section>
   <section class="story" aria-labelledby="s-h">
     <div>
       <h2 id="s-h">A town with a long memory</h2>

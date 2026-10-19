@@ -47,7 +47,7 @@ The header mark (iron furnace in front of a ridge) and the homepage silhouettes 
 You do not need Node, a terminal, or the CSS.
 
 1. On GitHub, open this repository and switch to the branch you were asked to use (or `main` after this design is merged).
-2. Go to the page’s file. A normal page is `src/<name>/index.md`. About is `src/about/index.md`. The homepage sections (tasks, events, departments, forms) are the JSON files in `src/_data/`, not a long HTML file. Departments and forms with `"featured": true` are the short lists on the homepage. The full lists are `/departments/` and `/forms-applications/`. The site index is `/site-index/`. It leaves out departments, forms, the calendar, and minutes, which are already on the homepage.
+2. Go to the page’s file. A normal page is `src/<name>/index.md`. About is `src/about/index.md`. The homepage sections (tasks, events, departments, forms) are the JSON files in `src/_data/`, not a long HTML file. Departments and forms with `"featured": true` are the short lists on the homepage. The full lists are `/departments/` and `/forms-applications/`. The site index is `/site-index/`. It leaves out departments, forms, the calendar, and minutes, which are already on the homepage. Directory entries with `"featured": true` are the short “Everything on the site” list on the homepage.
 3. Click the pencil (**Edit this file**). Change the words. Leave the lines between the first pair of `---` alone unless you are changing the title.
 4. Use **Preview** if GitHub offers it. Commit with a short note such as “Update transfer station hours”.
 

@@ -4,9 +4,9 @@
     "pages": [
       { "title": "Home", "href": "/" },
       { "title": "Town Facts", "href": "/town-facts/" },
-      { "title": "Town Directory", "href": "/town-directory/" },
-      { "title": "Voter Information", "href": "/voter-information/" },
-      { "title": "Notices", "href": "/notices/" },
+      { "title": "Town Directory", "href": "/town-directory/", "featured": true },
+      { "title": "Voter Information", "href": "/voter-information/", "featured": true },
+      { "title": "Notices", "href": "/notices/", "featured": true },
       { "title": "Town Clerk / Tax", "href": "/town-clerk-tax/" },
       { "title": "Departments", "href": "/departments/" },
       { "title": "Events", "href": "/events/" }
@@ -16,7 +16,7 @@
     "heading": "Boards & Committees",
     "pages": [
       { "title": "Selectmen", "href": "/board-of-selectmen/" },
-      { "title": "Planning Board", "href": "/planning-board/" },
+      { "title": "Planning Board", "href": "/planning-board/", "featured": true },
       { "title": "Capital Improvements", "href": "/capital-improvements/" },
       { "title": "Supervisors of the Checklist", "href": "/supervisors-of-the-checklist/" },
       { "title": "Safety Committee", "href": "/safety-committee/" },
@@ -66,7 +66,7 @@
     "pages": [
       { "title": "Archives", "href": "/archive/" },
       { "title": "Budgets", "href": "/budgets/" },
-      { "title": "Ordinances & Regulations", "href": "/ordinances-regulations/" },
+      { "title": "Ordinances & Regulations", "href": "/ordinances-regulations/", "featured": true },
       { "title": "Meeting Minutes", "href": "/meetings/" }
     ]
   }
