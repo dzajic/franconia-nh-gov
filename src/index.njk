@@ -64,6 +64,8 @@ pageScript: /assets/season.js
       </ul>
       <p class="more"><a href="{{ '/archive/' | url }}">All agendas &amp; minutes by board →</a></p>
     </section>
+  </div>
+  <div class="cols">
     <section id="forms" aria-labelledby="f-h">
       <h2 id="f-h" class="sign"><span class="blaze" aria-hidden="true"></span>Forms &amp; permits</h2>
       <ul class="forms">
@@ -75,8 +77,7 @@ pageScript: /assets/season.js
       </ul>
       <p class="more"><a href="{{ '/forms-applications/' | url }}">All forms &amp; applications →</a></p>
     </section>
-  </div>
-  <section id="depts" aria-labelledby="d-h">
+    <section id="depts" aria-labelledby="d-h">
     <h2 id="d-h" class="sign"><span class="blaze" aria-hidden="true"></span>Departments</h2>
     <ul class="depts">
       {% for dept in departments %}
@@ -86,7 +87,8 @@ pageScript: /assets/season.js
       {% endfor %}
     </ul>
     <p class="more"><a href="{{ '/departments/' | url }}">See all departments →</a></p>
-  </section>
+    </section>
+  </div>
   <section id="directory" aria-labelledby="dir-h">
     <h2 id="dir-h" class="sign"><span class="blaze" aria-hidden="true"></span>Everything on the site</h2>
     <ul class="link-grid">
