@@ -559,27 +559,6 @@ main > section,
 .dg a:hover { background: var(--cream); color: var(--rust); }
 .dg a:active { background: #e7d7b4; }
 
-.story {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--bark);
-  color: var(--cream);
-  border-radius: 8px;
-  padding: 0.9rem 1rem;
-}
-.story h2 {
-  font: 900 1.5rem/1.25 var(--sign);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 0.3rem;
-}
-.story p { font-size: 1rem; line-height: 1.55; max-width: 65ch; }
-.story a { font-weight: 800; color: var(--blaze); text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
-.sils { display: flex; gap: 0.6rem; align-items: flex-end; flex: none; }
-.sils svg { height: 64px; width: auto; }
-
 .agent {
   font-size: 0.875rem;
   line-height: 1.55;
@@ -1107,7 +1086,6 @@ a.doc-row:active { background: #e7d7b4; }
   .file-actions { gap: 0.65rem 1rem; }
 }
 @media (max-width: 520px) {
-  .story { flex-direction: column; align-items: flex-start; }
   .meta-dl { grid-template-columns: 1fr; }
 }
 
@@ -1116,7 +1094,7 @@ a.doc-row:active { background: #e7d7b4; }
   html { font-size: 16px; }
   body { line-height: 1.55; }
   h1, .page-title, .ahero h1 { font-size: 1.6rem; }
-  h2, .sign, .story h2, .prose h2, .st h2, .visit h2 { font-size: 1.3rem; }
+  h2, .sign, .prose h2, .st h2, .visit h2 { font-size: 1.3rem; }
   h3, .events h3, .prose h3, .dg h3, .result-group, .record-about summary h2, .year-name { font-size: 1.1rem; }
   .page-title { letter-spacing: 0; }
   .tasks { grid-template-columns: 1fr; }
@@ -1380,7 +1358,6 @@ html[data-season="fall"] .season-motif .m-fall { display: block; }
 ) a,
 :is(
   .preview-note,
-  .story,
   .agent,
   .visit,
   .st,

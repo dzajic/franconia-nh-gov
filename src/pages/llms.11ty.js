@@ -14,7 +14,7 @@ export function render(data) {
     `# ${data.site.name}`,
     "> Demo redesign. Not the official site. Official site: https://www.franconianh.gov/ (franconianh.org redirects there).",
     "> Values in [brackets] are unknown. Alert and homepage event dates are sample content from the design prototype.",
-    "> The furnace-and-ridge mark and the silhouettes are original drawings, not traced from landmarks or surveys.",
+    "> The furnace-and-ridge mark is an original drawing, not traced from landmarks or surveys.",
     "",
   ];
   for (const group of data.directory) {
