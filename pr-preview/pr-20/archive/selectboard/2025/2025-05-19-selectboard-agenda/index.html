@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
       (function () {
+        try {
+          if (localStorage.getItem("franconia-page-controls") === "closed") {
+            document.documentElement.classList.add("page-controls-collapsed");
+          }
+        } catch (err) {}
         var px = { small: [14, 15], medium: [15, 16], large: [17, 17] };
         function stepFrom(saved) {
           if (saved === "small" || saved === "15" || saved === "16") return "small";
@@ -263,11 +268,6 @@
   <span>Menu</span>
 </button>
 
-    <div class="text-size" data-text-size-control role="group" aria-label="Text size">
-      <button type="button" data-step="small" aria-pressed="false" aria-label="Smaller text">A−</button>
-      <button type="button" data-step="medium" aria-pressed="true" aria-label="Default text size">A</button>
-      <button type="button" data-step="large" aria-pressed="false" aria-label="Larger text">A+</button>
-    </div>
     
     <form class="search" role="search" action="/franconia-nh-gov/pr-preview/pr-20/search/" method="get">
       <label for="q" class="sr">Search the town website</label>
@@ -386,6 +386,116 @@
   </details>
 </main>
 
+    <div class="page-controls" id="page-controls" data-pagefind-ignore>
+  <div class="page-controls-bar" id="page-controls-panel">
+    <div class="page-controls-edit">
+      <button type="button" class="suggest-edit" aria-haspopup="dialog" aria-controls="suggest-change-dialog">
+        <svg class="suggest-pencil" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M9.2 2.3 13.7 6.8 6.2 14.3 2.2 15l.7-4.1 6.3-8.6z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path><path d="M8.1 3.4 12.6 7.9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg>
+        Suggest a change
+      </button>
+    </div>
+    <div class="text-size" data-text-size-control role="group" aria-label="Text size">
+      <button type="button" data-step="small" aria-pressed="false" aria-label="Smaller text">A−</button>
+      <button type="button" data-step="medium" aria-pressed="true" aria-label="Default text size">A</button>
+      <button type="button" data-step="large" aria-pressed="false" aria-label="Larger text">A+</button>
+    </div>
+  </div>
+  <button type="button" class="page-controls-toggle" aria-expanded="true" aria-controls="page-controls-panel" aria-label="Hide page controls">
+    <svg class="page-controls-chevron" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3.2 6.1 8 10.9l4.8-4.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+  </button>
+  <dialog id="suggest-change-dialog" class="suggest-dialog" aria-labelledby="suggest-change-title">
+    <div class="suggest-dialog-body">
+      <div class="suggest-dialog-top">
+        <div class="suggest-dialog-heading">
+          <h2 id="suggest-change-title">Suggest a change</h2>
+          <a class="suggest-faq" href="/franconia-nh-gov/pr-preview/pr-20/suggest/">How this works</a>
+        </div>
+        <form method="dialog">
+          <button type="submit" class="suggest-close">Close</button>
+        </form>
+      </div>
+      <ul class="suggest-options">
+        <li><a class="suggest-option" href="https://github.com/dzajic/franconia-nh-gov/edit/main/src/archive/selectboard/2025/2025-05-19-selectboard-agenda.md" autofocus>Edit this page</a></li>
+        <li><a class="suggest-option" href="https://github.com/dzajic/franconia-nh-gov/issues/new?body=Page%3A%20https%3A%2F%2Fdzajic.github.io%2Ffranconia-nh-gov%2Fpr-preview%2Fpr-20%2Farchive%2Fselectboard%2F2025%2F2025-05-19-selectboard-agenda%2F">Report an issue</a></li>
+      </ul>
+      <p class="suggest-account">Both need a free GitHub account.</p>
+      <ul class="suggest-options">
+        <li><a class="suggest-option" href="mailto:energy-commission+suggestions@mail.grokbot.com?subject=Suggestion%3A%20Board%20of%20Selectmen%20Agenda%2C%202025-05-19&amp;body=https%3A%2F%2Fdzajic.github.io%2Ffranconia-nh-gov%2Fpr-preview%2Fpr-20%2Farchive%2Fselectboard%2F2025%2F2025-05-19-selectboard-agenda%2F">Contact us</a></li>
+      </ul>
+    </div>
+  </dialog>
+</div>
+<script>
+(function () {
+  var root = document.getElementById("page-controls");
+  if (!root) return;
+  var panel = document.getElementById("page-controls-panel");
+  var toggle = root.querySelector(".page-controls-toggle");
+  var dialog = root.querySelector("dialog");
+  var opener = root.querySelector(".suggest-edit");
+  var storageKey = "franconia-page-controls";
+
+  function collapsed() {
+    return document.documentElement.classList.contains("page-controls-collapsed");
+  }
+
+  function sync() {
+    var closed = collapsed();
+    if (panel) panel.hidden = closed;
+    if (!toggle) return;
+    toggle.setAttribute("aria-expanded", closed ? "false" : "true");
+    toggle.setAttribute("aria-label", closed ? "Show page controls" : "Hide page controls");
+  }
+
+  function setCollapsed(closed) {
+    document.documentElement.classList.toggle("page-controls-collapsed", closed);
+    try {
+      if (closed) localStorage.setItem(storageKey, "closed");
+      else localStorage.removeItem(storageKey);
+    } catch (err) {}
+    sync();
+  }
+
+  if (toggle) {
+    toggle.addEventListener("click", function () {
+      setCollapsed(!collapsed());
+    });
+  }
+  sync();
+
+  if (!dialog || !opener || typeof dialog.showModal !== "function") return;
+  function focusable() {
+    return Array.prototype.filter.call(
+      dialog.querySelectorAll("a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex='-1'])"),
+      function (el) { return el.getClientRects().length > 0; }
+    );
+  }
+  opener.addEventListener("click", function () {
+    if (!dialog.open) dialog.showModal();
+  });
+  dialog.addEventListener("click", function (event) {
+    if (event.target === dialog) dialog.close();
+  });
+  dialog.addEventListener("keydown", function (event) {
+    if (event.key !== "Tab" || !dialog.open) return;
+    var items = focusable();
+    if (!items.length) return;
+    var first = items[0];
+    var last = items[items.length - 1];
+    var active = document.activeElement;
+    if (event.shiftKey && (active === first || !dialog.contains(active))) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && (active === last || !dialog.contains(active))) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+  dialog.addEventListener("close", function () {
+    opener.focus();
+  });
+})();
+</script>
     <footer class="foot" data-pagefind-ignore>
   
   <div class="ridge"><svg class="rf" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true" focusable="false"><polygon points="0,120 113,106 215,63 306,28 357,15 385,9 413,14 453,28 498,35 538,25 566,21 600,28 645,42 679,46 702,45 725,47 781,63 860,84 928,88 985,70 1002,66 1030,74 1109,120 1200,120 1200,120 0,120" fill="#173f33"/></svg></div>
@@ -394,7 +504,7 @@
   <div class="in fi">
     
     <p><strong>Town of Franconia, New Hampshire</strong><br>Clerk: 603-823-7752 · [email] · 421 Main Street, PO Box 900, Franconia, NH 03580 · Hours: [hours]</p>
-    <p><a href="/franconia-nh-gov/pr-preview/pr-20/about/">About Franconia</a> · <a href="https://www.franconianotch.org/">Visiting?</a> · <a href="https://github.com/dzajic/franconia-nh-gov/issues">Suggest a change</a> · <a href="/franconia-nh-gov/pr-preview/pr-20/archive/">Document archive</a></p>
+    <p><a href="/franconia-nh-gov/pr-preview/pr-20/about/">About Franconia</a> · <a href="https://www.franconianotch.org/">Visiting?</a> · <a href="/franconia-nh-gov/pr-preview/pr-20/archive/">Document archive</a></p>
     <p><a href="https://www.franconianotch.org/">Visiting? The Franconia Notch Chamber of Commerce has lodging, dining, and things to do.</a></p>
     
     <div class="season-controls">
