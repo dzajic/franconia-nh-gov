@@ -2,7 +2,7 @@
 layout: civic.njk
 title: "How to make a suggestion — Town of Franconia"
 heading: How to make a suggestion
-summary: "Three ways to tell the town about a wrong phone number, an old meeting time, or anything else on a page."
+summary: "How to tell the town about a wrong phone number, an old meeting time, or anything else on a page."
 permalink: /suggest/
 ---
 
@@ -24,6 +24,6 @@ Choose this if you would rather describe the problem than edit the page. It open
 
 ## Contact by email
 
-This writes to the person who maintains the page. A page can name that person with ownerEmail. A department page uses the email on that department when the departments list has one. Otherwise it uses the town address in the site data.
+This writes to the person who maintains the page. If the page belongs to a department that has an email in the departments list, that address is used. Otherwise the message goes to the town contact address in the site data. A page can also name someone directly with ownerEmail.
 
-The subject line is “Suggestion:” plus the page title, and the message includes the page’s address. If none of those is a real email address, the choice stays on the screen and does not open a mail program.
+The subject line is “Suggestion:” plus the page title, and the message includes the page’s address. When neither the department nor the town contact address is a real email, this choice is left off the dialog.

@@ -55,20 +55,14 @@
             <span class="suggest-option-help">Opens a GitHub issue with this page’s address filled in.</span>
           </a>
         </li>
+        {% if mailUrl %}
         <li>
-          {% if mailUrl %}
           <a class="suggest-option" href="{{ mailUrl }}">
             <span class="suggest-option-name">Contact by email</span>
             <span class="suggest-option-help">Emails this page’s owner, with the title and address filled in.</span>
           </a>
-          {% else %}
-          {# TODO: no owner email resolved. Set ownerEmail, a department email, or replace "[email]" in src/_data/site.js. #}
-          <p class="suggest-option suggest-option-pending">
-            <span class="suggest-option-name">Contact by email</span>
-            <span class="suggest-option-help">No email is listed for this page’s owner yet.</span>
-          </p>
-          {% endif %}
         </li>
+        {% endif %}
       </ul>
       <p class="suggest-more"><a href="{{ '/suggest/' | url }}">How to make a suggestion</a></p>
     </div>
