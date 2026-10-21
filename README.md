@@ -2,7 +2,7 @@
 
 A Markdown site for Franconia town services and a large public-document archive. It is an Eleventy 3 project with one hand-written CSS file. The official site is still [franconianh.gov](https://www.franconianh.gov/). `franconianh.org` redirects there.
 
-This repository is a design preview. It is not an official town publication.
+This repository is a design preview. It is not an official town publication. Parked and in-progress ideas are listed in [IDEAS.md](IDEAS.md).
 
 ## Preview
 
