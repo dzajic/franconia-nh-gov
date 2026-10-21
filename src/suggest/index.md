@@ -20,4 +20,4 @@ A town reviewer approves an edit before it appears on the site. Every change has
 
 ## Can I just email?
 
-Contact us is for the town’s Technology Committee. That committee is still being set up, so the button opens a short page instead of an email.
+Yes. Contact us emails the Technology Committee. The committee is not formed yet, so the address is temporary. The [contact page](/contact/) shows it.

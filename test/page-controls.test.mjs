@@ -33,14 +33,15 @@ test("text size lives in the page controls bar, not the header", () => {
   const guide = readFileSync(join(root, "src/suggest/index.md"), "utf8");
   const contact = readFileSync(join(root, "src/contact/index.md"), "utf8");
   assert.match(site, /Technology Committee \(TBD\)/);
-  assert.match(site, /TODO: set email to the Technology Committee/);
+  assert.match(site, /energy-commission\+suggestions@mail\.grokbot\.com/);
+  assert.match(site, /TODO: energy-commission\+suggestions@mail\.grokbot\.com is a temporary/);
   assert.match(guide, /Do I need an account\?/);
   assert.match(guide, /What happens after I suggest\?/);
   assert.match(guide, /Who reviews it\?/);
   assert.match(guide, /Can I just email\?/);
   assert.match(contact, /permalink: \/contact\//);
-  assert.match(contact, /TODO: site\.suggestionsContact\.email is empty/);
-  assert.doesNotMatch(contact, /@/);
+  assert.match(contact, /TODO: site\.suggestionsContact\.email is a temporary address/);
+  assert.match(contact, /site\.suggestionsContact\.email/);
 });
 
 test("a collapsed page-controls bar does not keep the full bottom padding", () => {
