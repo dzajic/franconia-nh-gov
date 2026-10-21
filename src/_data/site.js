@@ -20,8 +20,8 @@ export default {
   suggestions: "https://github.com/dzajic/franconia-nh-gov/issues",
   contact: {
     phone: "603-823-7752",
-    // TODO: replace "[email]" with the town office address. Suggest a change
-    // will not offer a mailto link until this is a real address.
+    // TODO: replace "[email]" with a real address. Suggest a change uses this
+    // only when the page has no ownerEmail and its department has no email.
     email: "[email]",
     address: "421 Main Street, PO Box 900, Franconia, NH 03580",
     hours: "[hours]",

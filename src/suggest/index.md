@@ -24,4 +24,6 @@ Choose this if you would rather describe the problem than edit the page. It open
 
 ## Contact by email
 
-You can also write to the town office. This site does not have the office email address yet.
+This writes to the person who maintains the page. A page can name that person with ownerEmail. A department page uses the email on that department when the departments list has one. Otherwise it uses the town address in the site data.
+
+The subject line is “Suggestion:” plus the page title, and the message includes the page’s address. If none of those is a real email address, the choice stays on the screen and does not open a mail program.

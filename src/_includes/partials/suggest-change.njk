@@ -1,7 +1,21 @@
 {%- set editUrl = page.inputPath | suggestEditUrl(suggestSource, site.repo) -%}
 {%- set pageAddress = site.origin + (page.url | url) -%}
 {%- set issueUrl = site.repo | suggestIssueUrl(pageAddress) -%}
-{%- set email = site.contact.email | contactEmail -%}
+{%- set bodySlug = archiveBody -%}
+{%- if not bodySlug and board and board.slug -%}{%- set bodySlug = board.slug -%}{%- endif -%}
+{%- if not bodySlug and body is string -%}{%- set bodySlug = body -%}{%- endif -%}
+{%- set explicitOwner = ownerEmail -%}
+{%- if not explicitOwner and board and board.ownerEmail -%}{%- set explicitOwner = board.ownerEmail -%}{%- endif -%}
+{%- set mailUrl = {
+  ownerEmail: explicitOwner,
+  pageUrl: page.url,
+  pageAddress: pageAddress,
+  bodySlug: bodySlug,
+  departments: departments,
+  bodies: bodies,
+  siteEmail: site.email or site.contact.email,
+  title: title
+} | suggestMailto -%}
 {%- if editUrl -%}
 <div class="page-controls" id="page-controls" data-pagefind-ignore>
   <div class="page-controls-bar" id="page-controls-panel">
@@ -42,16 +56,16 @@
           </a>
         </li>
         <li>
-          {% if email %}
-          <a class="suggest-option" href="mailto:{{ email }}">
+          {% if mailUrl %}
+          <a class="suggest-option" href="{{ mailUrl }}">
             <span class="suggest-option-name">Contact by email</span>
-            <span class="suggest-option-help">Sends a message to the town office.</span>
+            <span class="suggest-option-help">Emails this page’s owner, with the title and address filled in.</span>
           </a>
           {% else %}
-          {# TODO: site.contact.email is still the placeholder "[email]". Replace it in src/_data/site.js and this option becomes a mailto link. #}
+          {# TODO: no owner email resolved. Set ownerEmail, a department email, or replace "[email]" in src/_data/site.js. #}
           <p class="suggest-option suggest-option-pending">
             <span class="suggest-option-name">Contact by email</span>
-            <span class="suggest-option-help">The town email address is not published here yet.</span>
+            <span class="suggest-option-help">No email is listed for this page’s owner yet.</span>
           </p>
           {% endif %}
         </li>

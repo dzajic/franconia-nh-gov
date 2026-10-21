@@ -25,7 +25,8 @@ test("text size lives in the page controls bar, not the header", () => {
   assert.match(bar, /Make a general suggestion/);
   assert.match(bar, /Contact by email/);
   assert.match(bar, /How to make a suggestion/);
-  assert.match(bar, /TODO: site\.contact\.email/);
+  assert.match(bar, /TODO: no owner email resolved/);
+  assert.match(bar, /suggestMailto/);
   assert.doesNotMatch(bar, /suggest-info/);
   const site = readFileSync(join(root, "src/_data/site.js"), "utf8");
   const guide = readFileSync(join(root, "src/suggest/index.md"), "utf8");
