@@ -18,6 +18,16 @@ export default {
   archiveBaseUrl: archiveBase(),
   repo: "https://github.com/dzajic/franconia-nh-gov",
   suggestions: "https://github.com/dzajic/franconia-nh-gov/issues",
+  /**
+   * Where "Contact us" sends a suggestion.
+   * TODO: energy-commission+suggestions@mail.grokbot.com is a temporary
+   * address. The Technology Committee is not formed yet. Replace this
+   * with the committee's real address.
+   */
+  suggestionsContact: {
+    name: "Technology Committee (TBD)",
+    email: "energy-commission+suggestions@mail.grokbot.com",
+  },
   contact: {
     phone: "603-823-7752",
     email: "[email]",

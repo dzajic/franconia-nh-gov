@@ -1,4 +1,5 @@
 const { partitionArchive } = require("./lib/archive-window.cjs");
+const { suggestEditUrl, suggestFromData, suggestIssueUrl, contactEmail, suggestMailto } = require("./lib/suggest-source.cjs");
 const { archiveFileUrl, prefixAttributeUrls, withPrefix } = require("./lib/urls.cjs");
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -115,6 +116,15 @@ module.exports = function (eleventyConfig) {
     const found = (bodies || []).find((body) => body.slug === slug);
     return found ? found.shortName : slug || "";
   });
+  eleventyConfig.addFilter("suggestEditUrl", (inputPath, suggestSource, repo) =>
+    suggestEditUrl(inputPath, suggestSource, repo)
+  );
+  eleventyConfig.addFilter("suggestFromData", (inputPath, suggestSource) =>
+    suggestFromData(inputPath, suggestSource)
+  );
+  eleventyConfig.addFilter("suggestIssueUrl", (repo, pageUrl) => suggestIssueUrl(repo, pageUrl));
+  eleventyConfig.addFilter("contactEmail", (value) => contactEmail(value));
+  eleventyConfig.addFilter("suggestMailto", (options) => suggestMailto(options));
 
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addWatchTarget("src/assets");

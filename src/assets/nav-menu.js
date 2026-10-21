@@ -38,17 +38,11 @@
 
   var brand = hdr.querySelector(".brand-block") || hdr.querySelector(".brand");
   var search = hdr.querySelector(".search");
-  var textSize = hdr.querySelector(".text-size");
   if (brand) row.appendChild(muteClone(brand.cloneNode(true)));
   if (search) {
     var searchSpacer = document.createElement("div");
     searchSpacer.className = "search";
     row.appendChild(searchSpacer);
-  }
-  if (textSize) {
-    var textClone = muteClone(textSize.cloneNode(true));
-    textClone.removeAttribute("data-text-size-control");
-    row.appendChild(textClone);
   }
   var probeNav = document.createElement("nav");
   probeNav.className = "primary-nav";
