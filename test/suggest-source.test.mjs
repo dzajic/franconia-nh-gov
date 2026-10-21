@@ -8,6 +8,7 @@ const {
   suggestFromData,
   suggestEditUrl,
   suggestIssueUrl,
+  contactEmail,
 } = require("../lib/suggest-source.cjs");
 
 const REPO = "https://github.com/dzajic/franconia-nh-gov";
@@ -58,4 +59,12 @@ test("spaces in a path are encoded and the issue link is the new-issue form", ()
   );
   assert.equal(suggestIssueUrl(REPO), `${REPO}/issues/new`);
   assert.equal(suggestIssueUrl("not a url"), `${REPO}/issues/new`);
+  assert.equal(
+    suggestIssueUrl(REPO, "https://dzajic.github.io/franconia-nh-gov/police/"),
+    `${REPO}/issues/new?body=${encodeURIComponent("Page: https://dzajic.github.io/franconia-nh-gov/police/")}`
+  );
+  assert.equal(suggestIssueUrl(REPO, "javascript:alert(1)"), `${REPO}/issues/new`);
+  assert.equal(contactEmail("clerk@example.gov"), "clerk@example.gov");
+  assert.equal(contactEmail("[email]"), "");
+  assert.equal(contactEmail(""), "");
 });
