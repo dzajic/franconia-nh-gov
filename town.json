@@ -290,47 +290,56 @@
     {
       "name": "Town Clerk / Tax",
       "detail": "[phone] · [hours]",
-      "href": "/town-clerk-tax/"
+      "href": "/town-clerk-tax/",
+      "icon": "clerk"
     },
     {
       "name": "Selectmen",
       "detail": "[phone] · [hours]",
-      "href": "/board-of-selectmen/"
+      "href": "/board-of-selectmen/",
+      "icon": "gavel"
     },
     {
       "name": "Police",
       "detail": "[phone] · [hours]",
-      "href": "/police/"
+      "href": "/police/",
+      "icon": "badge"
     },
     {
       "name": "Fire",
       "detail": "[phone] · [hours]",
-      "href": "/fire/"
+      "href": "/fire/",
+      "icon": "flame"
     },
     {
       "name": "Highway",
       "detail": "[phone] · [hours]",
-      "href": "/highway-dept/"
+      "href": "/highway-dept/",
+      "icon": "road"
     },
     {
       "name": "Water",
       "detail": "[phone] · [hours]",
-      "href": "/water/"
+      "href": "/water/",
+      "icon": "drop"
     },
     {
       "name": "Cemetery",
       "detail": "[phone] · [hours]",
-      "href": "/cemetery/"
+      "href": "/cemetery/",
+      "icon": "stone"
     },
     {
       "name": "Transfer Station",
       "detail": "[phone] · [hours]",
-      "href": "/transfer-station/"
+      "href": "/transfer-station/",
+      "icon": "trash"
     },
     {
       "name": "Abbie Greenleaf Library",
       "detail": "[phone] · [hours]",
-      "href": "/abbie-greanleaf-library/"
+      "href": "/abbie-greanleaf-library/",
+      "icon": "book"
     }
   ],
   "forms": [
