@@ -1,21 +1,15 @@
 {%- set editUrl = page.inputPath | suggestEditUrl(suggestSource, site.repo) -%}
 {%- set pageAddress = site.origin + (page.url | url) -%}
 {%- set issueUrl = site.repo | suggestIssueUrl(pageAddress) -%}
-{%- set bodySlug = archiveBody -%}
-{%- if not bodySlug and board and board.slug -%}{%- set bodySlug = board.slug -%}{%- endif -%}
-{%- if not bodySlug and body is string -%}{%- set bodySlug = body -%}{%- endif -%}
-{%- set explicitOwner = ownerEmail -%}
-{%- if not explicitOwner and board and board.ownerEmail -%}{%- set explicitOwner = board.ownerEmail -%}{%- endif -%}
+{%- set committeeEmail = site.suggestionsContact.email | contactEmail -%}
+{%- set mailUrl = "" -%}
+{%- if committeeEmail -%}
 {%- set mailUrl = {
-  ownerEmail: explicitOwner,
-  pageUrl: page.url,
+  ownerEmail: committeeEmail,
   pageAddress: pageAddress,
-  bodySlug: bodySlug,
-  departments: departments,
-  bodies: bodies,
-  siteEmail: site.email or site.contact.email,
   title: title
 } | suggestMailto -%}
+{%- endif -%}
 {%- if editUrl -%}
 <div class="page-controls" id="page-controls" data-pagefind-ignore>
   <div class="page-controls-bar" id="page-controls-panel">
@@ -37,34 +31,22 @@
   <dialog id="suggest-change-dialog" class="suggest-dialog" aria-labelledby="suggest-change-title">
     <div class="suggest-dialog-body">
       <div class="suggest-dialog-top">
-        <h2 id="suggest-change-title">Suggest a change</h2>
+        <div class="suggest-dialog-heading">
+          <h2 id="suggest-change-title">Suggest a change</h2>
+          <a class="suggest-faq" href="{{ '/suggest/' | url }}">How this works</a>
+        </div>
         <form method="dialog">
           <button type="submit" class="suggest-close">Close</button>
         </form>
       </div>
       <ul class="suggest-options">
-        <li>
-          <a class="suggest-option" href="{{ editUrl }}" autofocus>
-            <span class="suggest-option-name">Edit this page</span>
-            <span class="suggest-option-help">{% if page.inputPath | suggestFromData(suggestSource) %}Opens the shared list this page is built from.{% else %}Opens this page’s text on GitHub.{% endif %}</span>
-          </a>
-        </li>
-        <li>
-          <a class="suggest-option" href="{{ issueUrl }}">
-            <span class="suggest-option-name">Make a general suggestion</span>
-            <span class="suggest-option-help">Opens a GitHub issue with this page’s address filled in.</span>
-          </a>
-        </li>
-        {% if mailUrl %}
-        <li>
-          <a class="suggest-option" href="{{ mailUrl }}">
-            <span class="suggest-option-name">Contact by email</span>
-            <span class="suggest-option-help">Emails this page’s owner, with the title and address filled in.</span>
-          </a>
-        </li>
-        {% endif %}
+        <li><a class="suggest-option" href="{{ editUrl }}" autofocus>Edit this page</a></li>
+        <li><a class="suggest-option" href="{{ issueUrl }}">Report an issue</a></li>
       </ul>
-      <p class="suggest-more"><a href="{{ '/suggest/' | url }}">How to make a suggestion</a></p>
+      <p class="suggest-account">Both need a free GitHub account.</p>
+      <ul class="suggest-options">
+        <li><a class="suggest-option" href="{% if mailUrl %}{{ mailUrl }}{% else %}{{ '/contact/' | url }}{% endif %}">Contact us</a></li>
+      </ul>
     </div>
   </dialog>
 </div>

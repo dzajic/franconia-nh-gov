@@ -18,11 +18,17 @@ export default {
   archiveBaseUrl: archiveBase(),
   repo: "https://github.com/dzajic/franconia-nh-gov",
   suggestions: "https://github.com/dzajic/franconia-nh-gov/issues",
+  /**
+   * Where "Contact us" sends a suggestion.
+   * TODO: set email to the Technology Committee's real address. Until then
+   * Contact us links to /contact/ and does not open a mail program.
+   */
+  suggestionsContact: {
+    name: "Technology Committee (TBD)",
+    email: "",
+  },
   contact: {
     phone: "603-823-7752",
-    // TODO: replace "[email]" with the town office address. Until this is a
-    // real address, Suggest a change omits Contact by email unless the page's
-    // department (or ownerEmail) has one.
     email: "[email]",
     address: "421 Main Street, PO Box 900, Franconia, NH 03580",
     hours: "[hours]",
