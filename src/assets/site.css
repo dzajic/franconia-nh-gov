@@ -475,19 +475,31 @@ main > section,
 
 .depts { display: grid; gap: 0.4rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .depts a {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  column-gap: 0.6rem;
+  align-items: center;
   background: var(--card);
   border: 1.5px solid var(--line);
   border-radius: 6px;
   min-height: 44px;
   padding: 0.65rem 0.7rem;
   height: 100%;
+  text-decoration: none;
 }
-.depts a:hover { border-color: var(--bark); background: var(--cream); }
-.depts a:active { background: #e7d7b4; border-color: var(--spr); }
-.depts b { display: block; font-size: 1.05rem; line-height: 1.3; text-wrap: balance; }
-.depts span { font-size: 0.875rem; line-height: 1.5; color: var(--muted); }
+.depts a:hover { border-color: var(--bark); background: var(--cream); text-decoration: none; }
+.depts a:active { background: #e7d7b4; border-color: var(--spr); text-decoration: none; }
+.depts svg {
+  display: block;
+  grid-row: span 2;
+  width: 2rem;
+  height: 2rem;
+  color: var(--blaze);
+  background: var(--spr);
+  border-radius: 4px;
+}
+.depts b { display: block; font-size: 1.05rem; line-height: 1.3; text-wrap: balance; text-decoration: none; }
+.depts span { font-size: 0.875rem; line-height: 1.5; color: var(--muted); text-decoration: none; }
 
 .dirs { display: grid; gap: 0.6rem; grid-template-columns: 1fr; }
 .dg { background: var(--card); border: 1.5px solid var(--spr); border-radius: 8px; overflow: hidden; }

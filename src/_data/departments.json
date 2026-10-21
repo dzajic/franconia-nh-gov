@@ -1,11 +1,11 @@
 [
-  { "name": "Town Clerk / Tax", "detail": "[phone] · [hours]", "href": "/town-clerk-tax/" },
-  { "name": "Selectmen", "detail": "[phone] · [hours]", "href": "/board-of-selectmen/" },
-  { "name": "Police", "detail": "[phone] · [hours]", "href": "/police/" },
-  { "name": "Fire", "detail": "[phone] · [hours]", "href": "/fire/" },
-  { "name": "Highway", "detail": "[phone] · [hours]", "href": "/highway-dept/" },
-  { "name": "Water", "detail": "[phone] · [hours]", "href": "/water/" },
-  { "name": "Cemetery", "detail": "[phone] · [hours]", "href": "/cemetery/" },
-  { "name": "Transfer Station", "detail": "[phone] · [hours]", "href": "/transfer-station/" },
-  { "name": "Abbie Greenleaf Library", "detail": "[phone] · [hours]", "href": "/abbie-greanleaf-library/" }
+  { "name": "Town Clerk / Tax", "detail": "[phone] · [hours]", "href": "/town-clerk-tax/", "icon": "clerk" },
+  { "name": "Selectmen", "detail": "[phone] · [hours]", "href": "/board-of-selectmen/", "icon": "gavel" },
+  { "name": "Police", "detail": "[phone] · [hours]", "href": "/police/", "icon": "badge" },
+  { "name": "Fire", "detail": "[phone] · [hours]", "href": "/fire/", "icon": "flame" },
+  { "name": "Highway", "detail": "[phone] · [hours]", "href": "/highway-dept/", "icon": "road" },
+  { "name": "Water", "detail": "[phone] · [hours]", "href": "/water/", "icon": "drop" },
+  { "name": "Cemetery", "detail": "[phone] · [hours]", "href": "/cemetery/", "icon": "stone" },
+  { "name": "Transfer Station", "detail": "[phone] · [hours]", "href": "/transfer-station/", "icon": "trash" },
+  { "name": "Abbie Greenleaf Library", "detail": "[phone] · [hours]", "href": "/abbie-greanleaf-library/", "icon": "book" }
 ]
