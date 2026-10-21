@@ -26,7 +26,7 @@
         } catch (err) {}
       })();
     </script>
-    <title>How to make a suggestion — Town of Franconia</title>
+    <title>How this works — Town of Franconia</title>
     <meta name="description" content="Town of Franconia, New Hampshire. Pay a bill, find a form, or read the latest minutes.">
     <link rel="canonical" href="https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-15/suggest/">
     <link rel="alternate" type="text/plain" href="/franconia-nh-gov/pr-preview/pr-15/llms.txt" title="llms.txt">
@@ -337,9 +337,9 @@
     
 <main id="main" class="in page civic" data-pagefind-body>
   <header class="civic-head">
-    <h1 class="page-title">How to make <span class="keep-together">a suggestion</span></h1>
+    <h1 class="page-title">How <span class="keep-together">this works</span></h1>
     
-    <p class="lede">How to tell the town about a wrong phone number, an old meeting time, or anything else on a page.</p>
+    <p class="lede">Short answers about suggesting a change.</p>
     
   </header>
 
@@ -347,17 +347,14 @@
 
   
   <div class="prose">
-    <p>Anyone can suggest a fix. You do not need special software. On any page, choose Suggest a change at the bottom of the screen.</p>
-<h2>Edit this page</h2>
-<p>You need a free GitHub account. GitHub is the website where these pages are written. It will help you sign up if you do not have an account yet.</p>
-<p>Edit this page opens that page’s text. If the page is built from a shared list, the link opens the list. Change this page’s entry, and leave the others as they are.</p>
-<p>Make your edit. Describe what you changed and why. Click Propose changes.</p>
-<p>A town reviewer approves it before it appears on the site. Every change has a public history. People can see what changed, and when.</p>
-<h2>Make a general suggestion</h2>
-<p>Choose this if you would rather describe the problem than edit the page. It opens a GitHub issue with the page’s address already filled in. A town reviewer reads the issue.</p>
-<h2>Contact by email</h2>
-<p>This writes to the person who maintains the page. If the page belongs to a department that has an email in the departments list, that address is used. Otherwise the message goes to the town contact address in the site data. A page can also name someone directly with ownerEmail.</p>
-<p>The subject line is “Suggestion:” plus the page title, and the message includes the page’s address. When neither the department nor the town contact address is a real email, this choice is left off the dialog.</p>
+    <h2>Do I need an account?</h2>
+<p>Edit this page and Report an issue need a free GitHub account. GitHub will help you sign up. Contact us does not.</p>
+<h2>What happens after I suggest?</h2>
+<p>Edit this page opens that page’s text. Describe the change and click Propose changes. Report an issue opens a GitHub issue with the page’s address filled in.</p>
+<h2>Who reviews it?</h2>
+<p>A town reviewer approves an edit before it appears on the site. Every change has a public history.</p>
+<h2>Can I just email?</h2>
+<p>Contact us is for the town’s Technology Committee. That committee is still being set up, so the button opens a short page instead of an email.</p>
 
   </div>
   
@@ -437,27 +434,22 @@
   <dialog id="suggest-change-dialog" class="suggest-dialog" aria-labelledby="suggest-change-title">
     <div class="suggest-dialog-body">
       <div class="suggest-dialog-top">
-        <h2 id="suggest-change-title">Suggest a change</h2>
+        <div class="suggest-dialog-heading">
+          <h2 id="suggest-change-title">Suggest a change</h2>
+          <a class="suggest-faq" href="/franconia-nh-gov/pr-preview/pr-15/suggest/">How this works</a>
+        </div>
         <form method="dialog">
           <button type="submit" class="suggest-close">Close</button>
         </form>
       </div>
       <ul class="suggest-options">
-        <li>
-          <a class="suggest-option" href="https://github.com/dzajic/franconia-nh-gov/edit/main/src/suggest/index.md" autofocus>
-            <span class="suggest-option-name">Edit this page</span>
-            <span class="suggest-option-help">Opens this page’s text on GitHub.</span>
-          </a>
-        </li>
-        <li>
-          <a class="suggest-option" href="https://github.com/dzajic/franconia-nh-gov/issues/new?body=Page%3A%20https%3A%2F%2Fdzajic.github.io%2Ffranconia-nh-gov%2Fpr-preview%2Fpr-15%2Fsuggest%2F">
-            <span class="suggest-option-name">Make a general suggestion</span>
-            <span class="suggest-option-help">Opens a GitHub issue with this page’s address filled in.</span>
-          </a>
-        </li>
-        
+        <li><a class="suggest-option" href="https://github.com/dzajic/franconia-nh-gov/edit/main/src/suggest/index.md" autofocus>Edit this page</a></li>
+        <li><a class="suggest-option" href="https://github.com/dzajic/franconia-nh-gov/issues/new?body=Page%3A%20https%3A%2F%2Fdzajic.github.io%2Ffranconia-nh-gov%2Fpr-preview%2Fpr-15%2Fsuggest%2F">Report an issue</a></li>
       </ul>
-      <p class="suggest-more"><a href="/franconia-nh-gov/pr-preview/pr-15/suggest/">How to make a suggestion</a></p>
+      <p class="suggest-account">Both need a free GitHub account.</p>
+      <ul class="suggest-options">
+        <li><a class="suggest-option" href="/franconia-nh-gov/pr-preview/pr-15/contact/">Contact us</a></li>
+      </ul>
     </div>
   </dialog>
 </div>
