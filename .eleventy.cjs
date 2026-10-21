@@ -1,4 +1,5 @@
 const { partitionArchive } = require("./lib/archive-window.cjs");
+const { suggestEditUrl, suggestFromData, suggestIssueUrl, contactEmail, suggestMailto } = require("./lib/suggest-source.cjs");
 const { archiveFileUrl, prefixAttributeUrls, withPrefix } = require("./lib/urls.cjs");
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -22,6 +23,23 @@ function splitRecordNote(html) {
     })
     .trim();
   return { visible, provenance: provenance.join("\n") };
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function balancedTitle(value) {
+  const text = String(value || "").trim().replace(/\s+/g, " ");
+  const words = text.split(" ").filter(Boolean);
+  if (words.length < 3) return escapeHtml(text);
+  const head = escapeHtml(words.slice(0, -2).join(" "));
+  const tail = escapeHtml(words.slice(-2).join(" "));
+  return `${head} <span class="keep-together">${tail}</span>`;
 }
 
 function recordHeading(title, committee) {
@@ -57,6 +75,7 @@ module.exports = function (eleventyConfig) {
   );
   eleventyConfig.addFilter("prettyDate", prettyDate);
   eleventyConfig.addFilter("recordHeading", recordHeading);
+  eleventyConfig.addFilter("balancedTitle", balancedTitle);
   eleventyConfig.addFilter("titleHead", (value) => {
     const text = String(value || "").trim();
     const index = text.lastIndexOf(" ");
@@ -97,6 +116,15 @@ module.exports = function (eleventyConfig) {
     const found = (bodies || []).find((body) => body.slug === slug);
     return found ? found.shortName : slug || "";
   });
+  eleventyConfig.addFilter("suggestEditUrl", (inputPath, suggestSource, repo) =>
+    suggestEditUrl(inputPath, suggestSource, repo)
+  );
+  eleventyConfig.addFilter("suggestFromData", (inputPath, suggestSource) =>
+    suggestFromData(inputPath, suggestSource)
+  );
+  eleventyConfig.addFilter("suggestIssueUrl", (repo, pageUrl) => suggestIssueUrl(repo, pageUrl));
+  eleventyConfig.addFilter("contactEmail", (value) => contactEmail(value));
+  eleventyConfig.addFilter("suggestMailto", (options) => suggestMailto(options));
 
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addWatchTarget("src/assets");

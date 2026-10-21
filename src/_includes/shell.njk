@@ -3,6 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("franconia-page-controls") === "closed") {
+            document.documentElement.classList.add("page-controls-collapsed");
+          }
+        } catch (err) {}
+        var px = { small: [14, 15], medium: [15, 16], large: [17, 17] };
+        function stepFrom(saved) {
+          if (saved === "small" || saved === "15" || saved === "16") return "small";
+          if (saved === "large" || saved === "22" || saved === "19") return "large";
+          if (saved === "medium" || saved === "18" || saved === "17" || saved === "16.5") return "medium";
+          return "";
+        }
+        try {
+          var step = stepFrom(localStorage.getItem("franconia-text-size"));
+          if (!step) return;
+          var narrow = window.matchMedia("(max-width: 640px)").matches;
+          document.documentElement.style.fontSize = px[step][narrow ? 1 : 0] + "px";
+          document.documentElement.setAttribute("data-text-size", step);
+        } catch (err) {}
+      })();
+    </script>
     <title>{{ title or "Franconia, NH" }}</title>
     <meta name="description" content="{{ description or home.description }}">
     <link rel="canonical" href="{{ site.origin }}{{ page.url | url }}">
@@ -30,7 +53,10 @@
     {% endif %}
     {% include "partials/header.njk" %}
     {{ content | safe }}
+    {% include "partials/suggest-change.njk" %}
     {% include "partials/footer.njk" %}
+    <script src="{{ '/assets/text-size.js' | url }}" defer></script>
+    <script src="{{ '/assets/nav-menu.js' | url }}" defer></script>
     {% if pageScript %}<script src="{{ pageScript | url }}" defer></script>{% endif %}
   </body>
 </html>

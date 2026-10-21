@@ -2,7 +2,7 @@
 layout: shell.njk
 ---
 <main id="main" class="in page" data-pagefind-body>
-  <h1 class="page-title">{{ title }}</h1>
+  <h1 class="page-title">{{ title | balancedTitle | safe }}</h1>
   {% if archiveBody %}
   <p class="more"><a href="{{ ('/archive/' + archiveBody + '/') | url }}">Documents for this page</a></p>
   {% endif %}
