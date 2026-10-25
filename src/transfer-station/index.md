@@ -46,8 +46,8 @@ blocksInBody: true
 | Days | Hours |
 | --- | --- |
 | Monday | 9:00–5:00 |
-| Tuesday and Wednesday | Closed |
-| Thursday and Friday | 9:00–5:00 |
+| Tuesday, Wednesday, and Thursday | Closed |
+| Friday | 9:00–5:00 |
 | Saturday and Sunday | 9:00–5:00 |
 
 {% include "partials/civic-lists.njk" %}

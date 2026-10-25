@@ -39,16 +39,18 @@ blocksInBody: true
 | Item | Detail |
 | --- | --- |
 | Phone | [603-823-7752](tel:+16038237752) |
+| Email | [townclerk@franconianh.gov](mailto:townclerk@franconianh.gov) |
 | Address | 421 Main Street, PO Box 900, Franconia, NH 03580 |
 
 ## Town Clerk hours
 
 | Days | Hours |
 | --- | --- |
-| Tuesday, Wednesday, and Thursday | 8:00–4:00 |
-| Friday | 8:00–1:00 |
+| Monday | Closed |
+| Tuesday, Wednesday, and Thursday | 8:00 a.m.–4:00 p.m. |
+| Friday | 8:00 a.m.–12:00 p.m. |
 
 {% include "partials/civic-groups.njk" %}
 {% include "partials/civic-lists.njk" %}
 
-Town Clerk hours above are as published on the [Notices](/notices/) page. The [Board of Selectmen](/board-of-selectmen/) page lists different Friday hours for that office.
+Town Clerk hours and email above are as published on the [town clerk page](https://www.franconianh.gov/town-clerktax.html).

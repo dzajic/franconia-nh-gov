@@ -76,7 +76,7 @@ figures:
 
 | Item | Detail |
 | --- | --- |
-| Phone | [(603) 823-7752 x102](tel:+16038237752) |
+| Phone | [(603) 823-2049](tel:+16038232049) |
 | Email | [[email protected]](/cdn-cgi/l/email-protection/) |
 
 ## Hours
