@@ -13,7 +13,7 @@ export function render(data) {
   const lines = [
     `# ${data.site.name}`,
     "> Demo redesign. Not the official site. Official site: https://www.franconianh.gov/ (franconianh.org redirects there).",
-    "> Values in [brackets] are unknown. Alert and homepage event dates are sample content from the design prototype.",
+    "> Values in [brackets] are unknown. Homepage events are posted town and library notices for the week of October 26, 2026.",
     "> The furnace-and-ridge mark and the silhouettes are original drawings, not traced from landmarks or surveys.",
     "",
   ];
@@ -22,7 +22,7 @@ export function render(data) {
     for (const page of group.pages) lines.push(link(data, page.href, page.title));
     lines.push("");
   }
-  lines.push("## Upcoming (sample)");
+  lines.push("## Upcoming");
   for (const event of data.events) {
     lines.push(`- ${event.date}: ${event.name}${event.sample ? " (sample)" : ""}`);
   }
