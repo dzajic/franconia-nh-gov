@@ -1,0 +1,601 @@
+{
+  "name": "Town of Franconia, New Hampshire",
+  "url": "https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-23/",
+  "officialUrl": "https://www.franconianh.gov/",
+  "note": "Generated from this site's data files. Values in [brackets] are unknown. Events and alerts marked sample are design-prototype content, not confirmed town notices. Phone and street address were copied from the previous public site.",
+  "contact": {
+    "phone": "603-823-5237",
+    "email": "townclerk@franconianh.gov",
+    "address": "421 Main Street, PO Box 900, Franconia, NH 03580",
+    "hours": "Closed Mondays. Tuesdays–Thursdays 8:00 a.m.–4:00 p.m. Fridays 8:00 a.m.–12:00 p.m."
+  },
+  "external_resources": [
+    {
+      "name": "Franconia Notch Chamber of Commerce",
+      "url": "https://www.franconianotch.org/",
+      "note": "Visiting? The Franconia Notch Chamber of Commerce has lodging, dining, and things to do."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Town Hall & Services",
+      "pages": [
+        {
+          "title": "Home",
+          "href": "/"
+        },
+        {
+          "title": "Town Facts",
+          "href": "/town-facts/"
+        },
+        {
+          "title": "Town Directory",
+          "href": "/town-directory/"
+        },
+        {
+          "title": "Voter Information",
+          "href": "/voter-information/"
+        },
+        {
+          "title": "Notices",
+          "href": "/notices/"
+        },
+        {
+          "title": "Town Clerk / Tax",
+          "href": "/town-clerk-tax/"
+        },
+        {
+          "title": "Events",
+          "href": "/events/"
+        }
+      ]
+    },
+    {
+      "heading": "Boards & Committees",
+      "pages": [
+        {
+          "title": "Selectmen",
+          "href": "/board-of-selectmen/"
+        },
+        {
+          "title": "Planning Board",
+          "href": "/planning-board/"
+        },
+        {
+          "title": "Capital Improvements",
+          "href": "/capital-improvements/"
+        },
+        {
+          "title": "Supervisors of the Checklist",
+          "href": "/supervisors-of-the-checklist/"
+        },
+        {
+          "title": "Safety Committee",
+          "href": "/safety-committee/"
+        },
+        {
+          "title": "Trustees of the Trust Funds",
+          "href": "/trustees-of-the-trust-funds/"
+        },
+        {
+          "title": "Zoning Board (ZBA)",
+          "href": "/zoning-board-of-adjustment/"
+        },
+        {
+          "title": "Conservation Commission",
+          "href": "/conservation-commission/"
+        },
+        {
+          "title": "Energy Commission",
+          "href": "/energy-commission/"
+        }
+      ]
+    },
+    {
+      "heading": "Safety & Public Works",
+      "pages": [
+        {
+          "title": "Police",
+          "href": "/police/"
+        },
+        {
+          "title": "Fire",
+          "href": "/fire/"
+        },
+        {
+          "title": "Highway",
+          "href": "/highway-dept/"
+        },
+        {
+          "title": "Water",
+          "href": "/water/"
+        },
+        {
+          "title": "Cemetery",
+          "href": "/cemetery/"
+        },
+        {
+          "title": "Transfer Station",
+          "href": "/transfer-station/"
+        }
+      ]
+    },
+    {
+      "heading": "Forms & Applications",
+      "pages": [
+        {
+          "title": "Building Permit",
+          "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/2016_building_permit_application.pdf"
+        },
+        {
+          "title": "Driveway Permit",
+          "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/driveway_permit_application.pdf"
+        },
+        {
+          "title": "Solar Permit",
+          "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/solar_pv_permit_application.pdf"
+        },
+        {
+          "title": "Demolition Permit",
+          "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/franconia_demolition_permit.pdf"
+        },
+        {
+          "title": "Generator Permit",
+          "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/generator_application.pdf"
+        },
+        {
+          "title": "Short-Term Rental",
+          "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/str_app_and_checklist.pdf"
+        },
+        {
+          "title": "Facilities Use",
+          "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/facilities_use_form.pdf"
+        },
+        {
+          "title": "Volunteer",
+          "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/request_to_volunteer.pdf"
+        }
+      ]
+    },
+    {
+      "heading": "Library, Museums & Outdoors",
+      "pages": [
+        {
+          "title": "Abbie Greenleaf Library",
+          "href": "/abbie-greanleaf-library/"
+        },
+        {
+          "title": "Heritage Museum",
+          "href": "/heritage-museum/"
+        },
+        {
+          "title": "Iron Furnace",
+          "href": "/iron-furnace/"
+        },
+        {
+          "title": "Dow Clock",
+          "href": "/dow-clock/"
+        },
+        {
+          "title": "Frost Place",
+          "href": "/frost-place/"
+        },
+        {
+          "title": "Trails & Parks",
+          "href": "/trails-parks/"
+        }
+      ]
+    },
+    {
+      "heading": "Records & Rules",
+      "pages": [
+        {
+          "title": "Archives",
+          "href": "/archive/"
+        },
+        {
+          "title": "Budgets",
+          "href": "/budgets/"
+        },
+        {
+          "title": "Ordinances & Regulations",
+          "href": "/ordinances-regulations/"
+        },
+        {
+          "title": "Meeting Minutes",
+          "href": "/meetings/"
+        }
+      ]
+    }
+  ],
+  "top_tasks": [
+    {
+      "title": "Pay taxes / register vehicle",
+      "detail": "Town Clerk & Tax Collector",
+      "href": "/town-clerk-tax/",
+      "icon": "pay"
+    },
+    {
+      "title": "Permits & forms",
+      "detail": "Building, driveway, solar & more",
+      "href": "/forms-applications/",
+      "icon": "form"
+    },
+    {
+      "title": "Meeting agendas & minutes",
+      "detail": "Every board, one place",
+      "href": "/archive/",
+      "icon": "minutes"
+    },
+    {
+      "title": "Trash & transfer station",
+      "detail": "Schedules and rules",
+      "href": "/transfer-station/",
+      "icon": "trash"
+    },
+    {
+      "title": "Contact the clerk",
+      "detail": "townclerk@franconianh.gov",
+      "phone": "603-823-5237",
+      "href": "/town-clerk-tax/",
+      "icon": "mail"
+    }
+  ],
+  "alerts": [
+    {
+      "text": "Mon Oct 26, 9:00 a.m.: ballot device test, Town Hall meeting room",
+      "href": "https://www.franconianh.gov/notices.html"
+    },
+    {
+      "text": "Mon Oct 26, 4:00 p.m.: Selectmen meet at Town Hall",
+      "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/october_26_2026_selectmens_agenda.pdf"
+    },
+    {
+      "text": "General Election Tue Nov 3: polls 8:00 a.m.–7:00 p.m., Franconia Town Hall",
+      "href": "https://www.franconianh.gov/voter-information.html"
+    }
+  ],
+  "events": [
+    {
+      "name": "Ballot counting device test",
+      "date": "2026-10-26",
+      "summary": "9:00 a.m., Town Hall meeting room. Public welcome.",
+      "description": "The Town Clerk's office will test the ImageCast Precinct 2 ballot counting device and count ballots for the November 3, 2026 State General Election. The session begins at 9:00 a.m. in the Meeting Room of the Town Hall. The public is welcome.",
+      "location": "Meeting Room, Franconia Town Hall",
+      "href": "https://www.franconianh.gov/notices.html"
+    },
+    {
+      "name": "Minecraft Monday",
+      "date": "2026-10-26",
+      "summary": "3:00 p.m., Abbie Greenleaf Library",
+      "description": "Regular Monday program at the Abbie Greenleaf Library, 3:00 p.m.",
+      "location": "Abbie Greenleaf Library, 439 Main Street, Franconia",
+      "href": "https://www.abbielibrary.org/"
+    },
+    {
+      "name": "Selectmen's meeting",
+      "date": "2026-10-26",
+      "summary": "4:00 p.m., Franconia Town Hall",
+      "description": "Board of Selectmen meeting on Monday, October 26, 2026, at 4:00 p.m. at Franconia Town Hall.",
+      "location": "Franconia Town Hall",
+      "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/october_26_2026_selectmens_agenda.pdf"
+    },
+    {
+      "name": "Story Time",
+      "date": "2026-10-27",
+      "summary": "11:00 a.m., Abbie Greenleaf Library",
+      "description": "Regular Tuesday story time at the Abbie Greenleaf Library, 11:00 a.m.",
+      "location": "Abbie Greenleaf Library, 439 Main Street, Franconia",
+      "href": "https://www.abbielibrary.org/"
+    },
+    {
+      "name": "Meditation",
+      "date": "2026-10-27",
+      "summary": "12 noon, Abbie Greenleaf Library",
+      "description": "Regular Tuesday meditation at the Abbie Greenleaf Library, 12 noon.",
+      "location": "Abbie Greenleaf Library, 439 Main Street, Franconia",
+      "href": "https://www.abbielibrary.org/"
+    },
+    {
+      "name": "Warrior Cats Book Club",
+      "date": "2026-10-28",
+      "summary": "3:00 p.m., Abbie Greenleaf Library",
+      "description": "Warrior Cats Book Club meets every Wednesday at 3:00 p.m. at the Abbie Greenleaf Library.",
+      "location": "Abbie Greenleaf Library, 439 Main Street, Franconia",
+      "href": "https://www.abbielibrary.org/news/2026/10/16/warrior-cats-book-club-every-wednesday-at-3-pm"
+    },
+    {
+      "name": "Spanish",
+      "date": "2026-10-29",
+      "summary": "11:00 a.m., Abbie Greenleaf Library",
+      "description": "Regular Thursday Spanish program at the Abbie Greenleaf Library, 11:00 a.m.",
+      "location": "Abbie Greenleaf Library, 439 Main Street, Franconia",
+      "href": "https://www.abbielibrary.org/"
+    },
+    {
+      "name": "Death Cafe",
+      "date": "2026-10-29",
+      "summary": "12 noon, Abbie Greenleaf Library. All are welcome.",
+      "description": "Death Cafe at the Abbie Greenleaf Library on October 29, 2026, at 12 noon. All are welcome.",
+      "location": "Abbie Greenleaf Library, 439 Main Street, Franconia",
+      "href": "https://www.abbielibrary.org/news/2026/10/13/death-cafe-october-29-at-12-noon"
+    }
+  ],
+  "departments": [
+    {
+      "name": "Town Clerk / Tax",
+      "phone": "603-823-5237",
+      "hours": "Tue–Thu 8–4 · Fri 8–12 · Closed Mon",
+      "href": "/town-clerk-tax/",
+      "icon": "clerk"
+    },
+    {
+      "name": "Selectmen",
+      "phone": "603-823-7752",
+      "hours": "Tue–Thu 8–4:30 · Fri 8–1 · Closed Mon",
+      "href": "/board-of-selectmen/",
+      "icon": "gavel"
+    },
+    {
+      "name": "Police",
+      "phone": "603-823-7025",
+      "href": "/police/",
+      "icon": "badge"
+    },
+    {
+      "name": "Fire",
+      "phone": "603-823-8821",
+      "href": "/fire/",
+      "icon": "flame"
+    },
+    {
+      "name": "Highway",
+      "phone": "603-616-9308",
+      "href": "/highway-dept/",
+      "icon": "road"
+    },
+    {
+      "name": "Water",
+      "phone": "603-823-2049",
+      "hours": "Tue 11–4 · or by appointment",
+      "href": "/water/",
+      "icon": "drop"
+    },
+    {
+      "name": "Cemetery",
+      "phone": "603-348-8421",
+      "href": "/cemetery/",
+      "icon": "stone"
+    },
+    {
+      "name": "Transfer Station",
+      "hours": "Mon, Fri–Sun 9–5 · Closed Tue–Thu",
+      "href": "/transfer-station/",
+      "icon": "trash"
+    },
+    {
+      "name": "Abbie Greenleaf Library",
+      "phone": "603-823-8424",
+      "hours": "Mon & Wed 1–5:30 · Tue & Thu 10–1 · Fri 12–3 · Sat 10–1",
+      "href": "/abbie-greanleaf-library/",
+      "icon": "book"
+    }
+  ],
+  "forms": [
+    {
+      "title": "Building Permit",
+      "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/2016_building_permit_application.pdf"
+    },
+    {
+      "title": "Driveway Permit",
+      "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/driveway_permit_application.pdf"
+    },
+    {
+      "title": "Solar Permit",
+      "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/solar_pv_permit_application.pdf"
+    },
+    {
+      "title": "Demolition Permit",
+      "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/franconia_demolition_permit.pdf"
+    },
+    {
+      "title": "Generator Permit",
+      "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/generator_application.pdf"
+    },
+    {
+      "title": "Short-Term Rental",
+      "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/str_app_and_checklist.pdf"
+    },
+    {
+      "title": "Facilities Use",
+      "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/facilities_use_form.pdf"
+    },
+    {
+      "title": "Volunteer",
+      "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/request_to_volunteer.pdf"
+    }
+  ],
+  "bodies": [
+    {
+      "slug": "selectboard",
+      "name": "Board of Selectmen",
+      "shortName": "Selectmen",
+      "kind": "board",
+      "page": "/board-of-selectmen/",
+      "phone": "603-823-7752",
+      "hours": "Closed Mondays. Tuesdays–Thursdays 8:00–4:30. Fridays 8:00–1:00.",
+      "hoursNote": "Hours as published on the Board of Selectmen page. The previous homepage listed Fridays until 1:30.",
+      "meets": "[schedule]"
+    },
+    {
+      "slug": "planning-board",
+      "name": "Planning Board",
+      "shortName": "Planning Board",
+      "kind": "board",
+      "page": "/planning-board/",
+      "meets": "2nd and last Tuesday of each month, 6:00pm"
+    },
+    {
+      "slug": "zoning-board",
+      "name": "Zoning Board of Adjustment",
+      "shortName": "Zoning Board",
+      "kind": "board",
+      "page": "/zoning-board-of-adjustment/",
+      "meets": "[schedule]"
+    },
+    {
+      "slug": "capital-improvements-committee",
+      "name": "Capital Improvements Committee",
+      "shortName": "Capital Improvements",
+      "kind": "committee",
+      "page": "/capital-improvements/",
+      "meets": "[schedule]"
+    },
+    {
+      "slug": "conservation-commission",
+      "name": "Conservation Commission",
+      "shortName": "Conservation Commission",
+      "kind": "board",
+      "page": "/conservation-commission/",
+      "meets": "[schedule]"
+    },
+    {
+      "slug": "energy-commission",
+      "name": "Energy Commission",
+      "shortName": "Energy Commission",
+      "kind": "board",
+      "page": "/energy-commission/",
+      "meets": "3rd Tuesday of each month, 4:30pm, Town Hall"
+    },
+    {
+      "slug": "recreation-board",
+      "name": "Recreation Board",
+      "shortName": "Recreation",
+      "kind": "board",
+      "page": "/httplafayetterecreationweeblycom/",
+      "meets": "[schedule]"
+    },
+    {
+      "slug": "trustees-of-trust-funds",
+      "name": "Trustees of the Trust Funds",
+      "shortName": "Trustees of the Trust Funds",
+      "kind": "board",
+      "page": "/trustees-of-the-trust-funds/",
+      "meets": "Third Wednesday of the month, Town Hall"
+    },
+    {
+      "slug": "safety-committee",
+      "name": "Safety Committee",
+      "shortName": "Safety Committee",
+      "kind": "committee",
+      "page": "/safety-committee/",
+      "meets": "Quarterly, rotating between town buildings"
+    },
+    {
+      "slug": "supervisors-of-checklist",
+      "name": "Supervisors of the Checklist",
+      "shortName": "Supervisors of the Checklist",
+      "kind": "board",
+      "page": "/supervisors-of-the-checklist/",
+      "meets": "[schedule]"
+    },
+    {
+      "slug": "cemetery-trustees",
+      "name": "Cemetery Trustees",
+      "shortName": "Cemetery",
+      "kind": "board",
+      "page": "/cemetery/",
+      "phone": "603-348-8421",
+      "phoneNote": "Published for Cemetery Trustee Jayne O'Connor (lot purchase or burial). Not a general town-hall number.",
+      "meets": "[schedule]"
+    },
+    {
+      "slug": "water-department",
+      "name": "Water Department",
+      "shortName": "Water",
+      "kind": "department",
+      "page": "/water/",
+      "phone": "(603) 823-2049",
+      "hours": "Tuesday 11am–4pm, or by appointment",
+      "meets": "Second Thursday of each month, 5:00pm, Town Hall"
+    },
+    {
+      "slug": "town-clerk",
+      "name": "Town Clerk / Tax Collector",
+      "shortName": "Town Clerk",
+      "kind": "department",
+      "page": "/town-clerk-tax/",
+      "meets": "[schedule]"
+    },
+    {
+      "slug": "fire-department",
+      "name": "Fire Department",
+      "shortName": "Fire",
+      "kind": "department",
+      "page": "/fire/",
+      "meets": "[schedule]"
+    },
+    {
+      "slug": "police-department",
+      "name": "Police Department",
+      "shortName": "Police",
+      "kind": "department",
+      "page": "/police/",
+      "meets": "[schedule]"
+    },
+    {
+      "slug": "highway-department",
+      "name": "Highway Department",
+      "shortName": "Highway",
+      "kind": "department",
+      "page": "/highway-dept/",
+      "meets": "[schedule]"
+    },
+    {
+      "slug": "transfer-station",
+      "name": "Transfer Station",
+      "shortName": "Transfer Station",
+      "kind": "department",
+      "page": "/transfer-station/",
+      "meets": "[schedule]"
+    },
+    {
+      "slug": "rink-feasibility-committee",
+      "name": "Rink Feasibility Committee",
+      "shortName": "Rink Feasibility",
+      "kind": "committee",
+      "page": "/rink-feasibility-committee/",
+      "meets": "[schedule]"
+    },
+    {
+      "slug": "heritage-museum",
+      "name": "Heritage Museum",
+      "shortName": "Heritage Museum",
+      "kind": "department",
+      "page": "/heritage-museum/",
+      "meets": "[schedule]"
+    },
+    {
+      "slug": "parks",
+      "name": "Trails & Parks",
+      "shortName": "Trails & Parks",
+      "kind": "department",
+      "page": "/trails-parks/",
+      "meets": "[schedule]"
+    },
+    {
+      "slug": "town",
+      "name": "Town-wide records",
+      "shortName": "Town",
+      "kind": "town",
+      "page": "/archives/",
+      "meets": "[schedule]"
+    }
+  ],
+  "archive": {
+    "index": "https://dzajic.github.io/franconia-nh-gov/pr-preview/pr-23/archive/index.json",
+    "baseUrl": "https://pub-436583bfa32248cb9f7762118b829267.r2.dev",
+    "sample": "Selectboard 2025-2026, Planning Board, and Energy Commission are imported. Other boards have pages and no files yet.",
+    "recentMonths": 12
+  }
+}
