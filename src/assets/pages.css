@@ -63,7 +63,13 @@
 .people .muted, .people .line { display: block; font-size: 0.9375rem; line-height: 1.5; color: var(--muted); }
 
 .link-section { margin-bottom: 1.15rem; }
-.link-grid { display: grid; gap: 0.4rem; }
+.link-grid {
+  display: grid;
+  gap: 0.4rem;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
 .link-grid a {
   display: flex;
   justify-content: flex-start;
