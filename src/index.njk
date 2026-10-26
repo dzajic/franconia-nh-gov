@@ -79,13 +79,11 @@ pageScript: /assets/season.js
     <ul class="depts">
       {% for dept in departments %}
       <li>
-        <a class="dept-id" href="{{ dept.href | url }}">{{ icon(dept.icon) }}<span>{{ dept.name }}</span></a>
-        {% if dept.phone or dept.hours %}
-        <div class="dept-meta">
+        <div class="dept-line">
+          <a class="dept-id" href="{{ dept.href | url }}">{{ icon(dept.icon) }}<span>{{ dept.name }}</span></a>
           {% if dept.phone %}<a class="dept-phone" href="{{ dept.phone | telHref }}">{{ icon("phone") }}<span>{{ dept.phone }}</span></a>{% endif %}
-          {% if dept.hours %}<p class="dept-hours">{{ icon("clock") }}<span>{{ dept.hours }}</span></p>{% endif %}
         </div>
-        {% endif %}
+        {% if dept.hours %}<p class="dept-hours">{{ icon("clock") }}<span>{{ dept.hours }}</span></p>{% endif %}
       </li>
       {% endfor %}
     </ul>
