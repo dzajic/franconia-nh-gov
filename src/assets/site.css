@@ -498,13 +498,13 @@ main > section,
   overflow: hidden;
 }
 .depts li {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  align-content: start;
-  gap: 0.1rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.2rem;
   min-width: 0;
   height: 100%;
-  padding: 0.45rem 0.85rem 0.6rem;
+  padding: 0.7rem 0.85rem 0.75rem;
   border-bottom: 1px solid var(--line);
 }
 .depts li:last-child { border-bottom: 0; }
@@ -522,7 +522,7 @@ main > section,
 }
 .dept-id span { min-width: 0; text-wrap: balance; }
 .dept-id:hover span { color: var(--rust); }
-.depts svg {
+.dept-id svg {
   display: block;
   flex: none;
   width: 1.75rem;
@@ -531,40 +531,40 @@ main > section,
   background: var(--spr);
   border-radius: 4px;
 }
+.dept-meta {
+  display: grid;
+  gap: 0.15rem;
+  margin-left: calc(1.75rem + 0.65rem);
+}
+.dept-phone,
 .dept-hours {
-  order: 1;
+  display: grid;
+  grid-template-columns: 1.15rem minmax(0, 1fr);
+  column-gap: 0.4rem;
+  align-items: start;
   margin: 0;
-  padding-left: calc(1.75rem + 0.65rem);
-  color: var(--muted);
-  font-size: 0.9375rem;
-  line-height: 1.35;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
 }
-.dept-phone {
-  order: 2;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 0.35rem 0.9rem;
-  border-radius: 999px;
-  background: var(--spr);
-  color: var(--cream);
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  text-decoration: none;
+.dept-meta svg {
+  display: block;
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-top: 0.18rem;
+  color: var(--spr);
+  background: none;
+  border-radius: 0;
 }
-.dept-phone:hover { background: var(--deep); color: var(--cream); }
-.dept-phone:active { background: #081c16; color: var(--cream); }
-@media (min-width: 700px) {
-  .depts li {
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-areas: "id phone" "hours hours";
-    align-items: center;
-  }
-  .dept-id { grid-area: id; }
-  .dept-phone { grid-area: phone; min-width: 9.25rem; }
-  .dept-hours { grid-area: hours; }
+.depts a.dept-phone {
+  color: var(--rust);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 1px;
 }
+.dept-phone:hover { color: var(--deep); }
+.dept-phone:active { color: var(--bark); }
+.dept-hours { color: var(--muted); }
 @media (min-width: 1100px) {
   .depts { grid-template-columns: 1fr 1fr; align-items: stretch; }
   .depts li:nth-child(odd):not(:last-child) { box-shadow: inset -1px 0 0 var(--line); }
