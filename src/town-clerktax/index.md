@@ -47,7 +47,7 @@ State Education&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &n
 **Total Tax Rate&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $18.50&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $12.95&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $12.20&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$14.35&nbsp; &nbsp; &nbsp; &nbsp;$15.98**  
 ​
 
-## ​CArol wills is thE Town Clerk/Tax Collector TOWNCLERK/TAX COLLECTOR&nbsp; **Office Hours ARE:**  **Closed Mondays** Tuesday - THURSDAY 8:00AM - 4:00PM FRIDAY 8:00AM - 1:00PM&nbsp; ​ 603-823-5237 603-823-5581 fax&nbsp;&nbsp;&nbsp;&nbsp; **[[email&nbsp;protected]​](/cdn-cgi/l/email-protection/)**
+## ​CArol wills is thE Town Clerk/Tax Collector TOWNCLERK/TAX COLLECTOR&nbsp; **Office Hours ARE:**  **Closed Mondays** Tuesday - THURSDAY 8:00AM - 4:00PM FRIDAY 8:00AM - 1:00PM&nbsp; ​ [603-823-5237](tel:+16038235237) [603-823-5581](tel:+16038235581) fax&nbsp;&nbsp;&nbsp;&nbsp; **[[email&nbsp;protected]​](/cdn-cgi/l/email-protection/)**
 [![Picture](http://www.franconianh.org/uploads/1/1/6/8/11680191/9334308.jpg)](http://app.sos.nh.gov/Public/AbsenteeBallot.aspx)
 
   

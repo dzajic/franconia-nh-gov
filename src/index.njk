@@ -13,7 +13,7 @@ pageScript: /assets/season.js
     <h2 id="t-h" class="sign"><span class="blaze" aria-hidden="true"></span>What do you need?</h2>
     <ul class="tasks">
       {% for task in tasks %}
-      <li><a href="{{ task.href | url }}">{{ icon(task.icon) }}<strong>{{ task.title }}</strong><span>{{ task.detail }}</span></a></li>
+      <li{% if task.phone %} class="task-contact"{% endif %}><a class="task-link" href="{{ task.href | url }}">{{ icon(task.icon) }}<strong>{{ task.title }}</strong><span>{{ task.detail }}</span></a>{% if task.phone %}<a class="tel-pill" href="{{ task.phone | telHref }}">{{ task.phone }}</a>{% endif %}</li>
       {% endfor %}
     </ul>
   </section>
@@ -78,7 +78,11 @@ pageScript: /assets/season.js
     <h2 id="d-h" class="sign"><span class="blaze" aria-hidden="true"></span>Departments</h2>
     <ul class="depts">
       {% for dept in departments %}
-      <li><a href="{{ dept.href | url }}">{{ icon(dept.icon) }}<span class="dept-copy"><b>{{ dept.name }}</b><span class="dept-detail">{{ dept.detail }}</span></span></a></li>
+      <li>
+        <a class="dept-id" href="{{ dept.href | url }}">{{ icon(dept.icon) }}<span>{{ dept.name }}</span></a>
+        {% if dept.phone %}<a class="dept-phone" href="{{ dept.phone | telHref }}">{{ dept.phone }}</a>{% endif %}
+        {% if dept.hours %}<p class="dept-hours">{{ dept.hours }}</p>{% endif %}
+      </li>
       {% endfor %}
     </ul>
   </section>

@@ -78,7 +78,7 @@ Come down to the fire station and talk to us. We might be able to fit you with a
 
 - You have been trained.
 - Everyone is leaving the building.
-- Someone has sounded the alarm or called 911.
+- Someone has sounded the alarm or called [911](tel:911).
 - You have a clear escape route in case you can't put out the fire.
 - You know what's burning and your extinguisher is right for the job.
 

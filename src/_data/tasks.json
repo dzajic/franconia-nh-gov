@@ -25,7 +25,8 @@
   },
   {
     "title": "Contact the clerk",
-    "detail": "603-823-5237 · townclerk@franconianh.gov",
+    "detail": "townclerk@franconianh.gov",
+    "phone": "603-823-5237",
     "href": "/town-clerk-tax/",
     "icon": "mail"
   }

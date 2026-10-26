@@ -1,11 +1,11 @@
 [
-  { "name": "Town Clerk / Tax", "detail": "603-823-5237 · Closed Mon; Tue–Thu 8:00 a.m.–4:00 p.m.; Fri 8:00 a.m.–12:00 p.m.", "href": "/town-clerk-tax/", "icon": "clerk" },
-  { "name": "Selectmen", "detail": "603-823-7752 · Closed Mon; Tue–Thu 8:00 a.m.–4:30 p.m.; Fri 8:00 a.m.–1:00 p.m.", "href": "/board-of-selectmen/", "icon": "gavel" },
-  { "name": "Police", "detail": "603-823-7025", "href": "/police/", "icon": "badge" },
-  { "name": "Fire", "detail": "603-823-8821", "href": "/fire/", "icon": "flame" },
-  { "name": "Highway", "detail": "603-616-9308", "href": "/highway-dept/", "icon": "road" },
-  { "name": "Water", "detail": "603-823-2049 · Tue 11:00 a.m.–4:00 p.m., or by appointment", "href": "/water/", "icon": "drop" },
-  { "name": "Cemetery", "detail": "603-348-8421", "href": "/cemetery/", "icon": "stone" },
-  { "name": "Transfer Station", "detail": "Mon, Fri–Sun 9:00 a.m.–5:00 p.m.; closed Tue–Thu", "href": "/transfer-station/", "icon": "trash" },
-  { "name": "Abbie Greenleaf Library", "detail": "603-823-8424 · Mon & Wed 1:00–5:30 p.m.; Tue & Thu 10:00 a.m.–1:00 p.m.; Fri 12:00–3:00 p.m.; Sat 10:00 a.m.–1:00 p.m.", "href": "/abbie-greanleaf-library/", "icon": "book" }
+  { "name": "Town Clerk / Tax", "phone": "603-823-5237", "hours": "Tue–Thu 8–4 · Fri 8–12 · Closed Mon", "href": "/town-clerk-tax/", "icon": "clerk" },
+  { "name": "Selectmen", "phone": "603-823-7752", "hours": "Tue–Thu 8–4:30 · Fri 8–1 · Closed Mon", "href": "/board-of-selectmen/", "icon": "gavel" },
+  { "name": "Police", "phone": "603-823-7025", "href": "/police/", "icon": "badge" },
+  { "name": "Fire", "phone": "603-823-8821", "href": "/fire/", "icon": "flame" },
+  { "name": "Highway", "phone": "603-616-9308", "href": "/highway-dept/", "icon": "road" },
+  { "name": "Water", "phone": "603-823-2049", "hours": "Tue 11–4 · or by appointment", "href": "/water/", "icon": "drop" },
+  { "name": "Cemetery", "phone": "603-348-8421", "href": "/cemetery/", "icon": "stone" },
+  { "name": "Transfer Station", "hours": "Mon, Fri–Sun 9–5 · Closed Tue–Thu", "href": "/transfer-station/", "icon": "trash" },
+  { "name": "Abbie Greenleaf Library", "phone": "603-823-8424", "hours": "Mon & Wed 1–5:30 · Tue & Thu 10–1 · Fri 12–3 · Sat 10–1", "href": "/abbie-greanleaf-library/", "icon": "book" }
 ]

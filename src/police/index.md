@@ -23,8 +23,8 @@ blocksInBody: true
 | Item | Detail |
 | --- | --- |
 | Emergency | [Dial 911](tel:911) |
-| Dispatch | 823-8123 |
-| Police station | 823-7025 |
+| Dispatch | [823-8123](tel:+16038238123) |
+| Police station | [823-7025](tel:+16038237025) |
 | Email | [[email protected]](/cdn-cgi/l/email-protection/) |
 | Mailing address | P.O. Box 900, Franconia, NH 03580 |
 

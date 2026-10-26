@@ -3,9 +3,17 @@ import { test } from "node:test";
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
-const { prefixAttributeUrls, withPrefix } = require("../lib/urls.cjs");
+const { prefixAttributeUrls, telHref, withPrefix } = require("../lib/urls.cjs");
 
 const PREFIX = "/franconia-nh-gov/pr-preview/pr-7";
+
+test("phone numbers become dialable tel links", () => {
+  assert.equal(telHref("603-823-5237"), "tel:+16038235237");
+  assert.equal(telHref("(603) 823-2049"), "tel:+16038232049");
+  assert.equal(telHref("823-8123"), "tel:+16038238123");
+  assert.equal(telHref("911"), "tel:911");
+  assert.equal(telHref(""), "");
+});
 
 test("preview prefix is applied once to root-relative links and archive urls", () => {
   const previous = process.env.ELEVENTY_PATH_PREFIX;

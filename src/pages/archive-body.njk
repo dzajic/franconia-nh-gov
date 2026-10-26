@@ -18,7 +18,7 @@ pageScript: /assets/archive-filter.js
   <h1 class="page-title">{{ board.name | balancedTitle | safe }}</h1>
   <div class="board-meta">
     {% if board.page %}<a href="{{ board.page | url }}">Department page</a>{% endif %}
-    <span>Phone: {{ board.phone or "[phone]" }}</span>
+    <span>Phone: {% if board.phone %}<a href="{{ board.phone | telHref }}">{{ board.phone }}</a>{% else %}[phone]{% endif %}</span>
     <span>Hours: {{ board.hours or "[hours]" }}</span>
     <span>Meets: {{ board.meets or "[schedule]" }}</span>
   </div>

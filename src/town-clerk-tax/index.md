@@ -53,4 +53,4 @@ blocksInBody: true
 {% include "partials/civic-groups.njk" %}
 {% include "partials/civic-lists.njk" %}
 
-Town Clerk phone, hours, and email above are as published on the [town clerk page](https://www.franconianh.gov/town-clerktax.html). The Selectmen's office line is 603-823-7752.
+Town Clerk phone, hours, and email above are as published on the [town clerk page](https://www.franconianh.gov/town-clerktax.html). The Selectmen's office line is [603-823-7752](tel:+16038237752).
