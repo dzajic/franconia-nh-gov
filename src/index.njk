@@ -13,7 +13,7 @@ pageScript: /assets/season.js
     <h2 id="t-h" class="sign"><span class="blaze" aria-hidden="true"></span>What do you need?</h2>
     <ul class="tasks">
       {% for task in tasks %}
-      <li{% if task.phone %} class="task-contact"{% endif %}><a class="task-link" href="{{ task.href | url }}">{{ icon(task.icon) }}<strong>{{ task.title }}</strong><span>{{ task.detail }}</span></a>{% if task.phone %}<a class="tel-pill" href="{{ task.phone | telHref }}">{{ task.phone }}</a>{% endif %}</li>
+      <li{% if task.phone %} class="task-contact"{% endif %}><a class="task-link" href="{{ task.href | url }}">{{ icon(task.icon) }}<strong>{{ task.title }}</strong><span>{{ task.detail }}</span></a>{% if task.phone %}<a class="task-tel" href="{{ task.phone | telHref }}">{{ task.phone }}</a>{% endif %}</li>
       {% endfor %}
     </ul>
   </section>

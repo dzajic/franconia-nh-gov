@@ -365,22 +365,47 @@ main > section,
 }
 .tasks a.task-link:hover { background: var(--deep); }
 .tasks a.task-link:active { background: #081c16; }
-.tasks li.task-contact { display: flex; flex-direction: column; gap: 0.4rem; }
-.tasks a.tel-pill {
-  display: flex;
+.tasks li.task-contact {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  column-gap: 0.6rem;
   align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-  border: 2px solid var(--spr);
-  background: var(--card);
-  color: var(--spr);
-  font-weight: 800;
-  text-decoration: none;
+  background: var(--spr);
+  color: var(--cream);
+  border-radius: 8px;
+  padding: 0.75rem 0.8rem;
+  border-bottom: 4px solid var(--blaze);
 }
-.tasks a.tel-pill:hover { background: var(--cream); }
-.tasks a.tel-pill:active { background: #e7d7b4; }
+.tasks li.task-contact a.task-link {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  column-gap: 0.6rem;
+  align-items: center;
+  height: auto;
+  min-height: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+.tasks li.task-contact:hover { background: var(--deep); }
+.tasks li.task-contact a.task-link:hover,
+.tasks li.task-contact a.task-link:active { background: none; }
+.tasks a.task-tel {
+  grid-column: 2;
+  justify-self: start;
+  margin-top: 0.12rem;
+  color: inherit;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.35;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 1px;
+}
+.tasks a.task-tel:hover { color: var(--blaze); }
+.tasks a.task-tel:active { color: var(--cream); }
 .tasks svg { grid-row: span 2; width: 2rem; height: 2rem; color: var(--blaze); }
 .tasks strong { display: block; font: 900 1.05rem/1.3 var(--sign); letter-spacing: 0.02em; text-wrap: balance; }
 .tasks span { font-size: 0.9375rem; }
@@ -635,6 +660,9 @@ main > section,
   .tasks li { min-width: 0; }
   .tasks li:first-child { grid-column: auto; }
   .tasks a.task-link { grid-template-columns: 1fr; row-gap: 0.3rem; padding: 0.8rem; }
+  .tasks li.task-contact { grid-template-columns: 1fr; row-gap: 0.12rem; padding: 0.8rem; }
+  .tasks li.task-contact a.task-link { grid-template-columns: 1fr; row-gap: 0.3rem; padding: 0; }
+  .tasks li.task-contact a.task-tel { grid-column: 1; margin-top: 0; }
   .tasks svg { grid-row: auto; }
   .dirs { grid-template-columns: repeat(3, 1fr); }
   .dg ul { columns: 1; }
