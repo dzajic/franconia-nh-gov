@@ -7,7 +7,7 @@ migrated: false
 ---
 
 | 
-## Emergency Dial 911 [Burn Permits are required.&nbsp;](http://nhdflweb.sovsportsnet.net/)&nbsp; ​ [**Police**](/police/)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**Fire**](/fire/)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**Life Squad**](/)
+## Emergency [Dial 911](tel:911) [Burn Permits are required.&nbsp;](http://nhdflweb.sovsportsnet.net/)&nbsp; ​ [**Police**](/police/)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**Fire**](/fire/)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**Life Squad**](/)
 
 [NH Homeland Security](http://www.nh.gov/safety/divisions/hsem/)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  
   

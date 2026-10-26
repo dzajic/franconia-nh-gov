@@ -38,7 +38,7 @@ blocksInBody: true
 
 | Item | Detail |
 | --- | --- |
-| Phone | [603-823-7752](tel:+16038237752) |
+| Phone | [603-823-5237](tel:+16038235237) |
 | Email | [townclerk@franconianh.gov](mailto:townclerk@franconianh.gov) |
 | Address | 421 Main Street, PO Box 900, Franconia, NH 03580 |
 
@@ -53,4 +53,4 @@ blocksInBody: true
 {% include "partials/civic-groups.njk" %}
 {% include "partials/civic-lists.njk" %}
 
-Town Clerk hours and email above are as published on the [town clerk page](https://www.franconianh.gov/town-clerktax.html).
+Town Clerk phone, hours, and email above are as published on the [town clerk page](https://www.franconianh.gov/town-clerktax.html). The Selectmen's office line is [603-823-7752](tel:+16038237752).

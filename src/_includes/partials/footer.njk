@@ -5,11 +5,11 @@
   {% endif %}
   <div class="in fi">
     {% if footerStyle == "simple" %}
-    <p><strong>Town of Franconia, New Hampshire</strong> · Clerk: {{ site.contact.phone }} · {{ site.contact.email }} · Hours: {{ site.contact.hours }}</p>
+    <p><strong>Town of Franconia, New Hampshire</strong> · Clerk: <a href="{{ site.contact.phone | telHref }}">{{ site.contact.phone }}</a> · {{ site.contact.email }} · Hours: {{ site.contact.hours }}</p>
     <p><a href="{{ '/' | url }}">← Town homepage</a> · <a href="{{ '/archive/' | url }}">Document archive</a></p>
     <p><a href="{{ site.visiting.url }}">{{ site.visiting.text }}</a></p>
     {% else %}
-    <p><strong>Town of Franconia, New Hampshire</strong><br>Clerk: {{ site.contact.phone }} · {{ site.contact.email }} · {{ site.contact.address }} · Hours: {{ site.contact.hours }}</p>
+    <p><strong>Town of Franconia, New Hampshire</strong><br>Clerk: <a href="{{ site.contact.phone | telHref }}">{{ site.contact.phone }}</a> · {{ site.contact.email }} · {{ site.contact.address }} · Hours: {{ site.contact.hours }}</p>
     <p><a href="{{ '/about/' | url }}">About Franconia</a> · <a href="{{ site.visiting.url }}">Visiting?</a> · <a href="{{ '/archive/' | url }}">Document archive</a></p>
     <p><a href="{{ site.visiting.url }}">{{ site.visiting.text }}</a></p>
     {% endif %}

@@ -65,4 +65,4 @@ Scrap Metal**
 **Remove non-metal parts&nbsp;  
 &nbsp;**  
 _**Questions? Call the Transfer Station at  
-823-5311. They want to help in any way they can.**_
+[823-5311](tel:+16038235311). They want to help in any way they can.**_

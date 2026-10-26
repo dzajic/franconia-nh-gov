@@ -22,7 +22,7 @@ sections:
     title: Town government
     icon: minutes
     paragraphs:
-      - "Town Hall is at 421 Main Street, PO Box 900, Franconia, NH 03580. The phone published on the previous site is 603-823-7752. Email is [email]."
+      - "Town Hall is at 421 Main Street, PO Box 900, Franconia, NH 03580. The phone published on the previous site is <a href=\"tel:+16038237752\">603-823-7752</a>. Email is [email]."
       - "The <a href=\"/board-of-selectmen/\">Board of Selectmen</a> page lists the office as closed Mondays, Tuesday through Thursday 8:00–4:30, and Friday 8:00–1:00. An older homepage said Friday until 1:30, so Friday’s closing time stays [hours] until those two pages agree. A 2026 candidate notice lists regular Town Clerk hours as Tuesday, Wednesday, and Thursday 8:00–4:00, and Friday 8:00–1:00."
       - "Town Meeting is where voters decide the budget and the warrant. The <a href=\"/voter-information/\">voter information</a> page listed the 2026 meeting for Tuesday, March 10, 2026, at Lafayette Regional School, with polls open 1:00–7:00 p.m. and the meeting at 7:05 p.m. The next meeting date is [town meeting date]."
       - "That notice listed openings for Selectman, Treasurer, Town Moderator, Trustee of the Trust Funds, Supervisor of the Checklist, Library Trustee, Cemetery Trustee, and Water Commissioner. Filing ran January 21–30, 2026. Agendas and minutes are in the <a href=\"/archive/\">document archive</a>. The Planning Board page says it meets on the second and last Tuesday of each month at 6:00 p.m."
@@ -32,7 +32,7 @@ sections:
     icon: mail
     paragraphs:
       - "The 2026 budget hearing notice names Lafayette Elementary School at 149 Main Street. The voter page and the links page also name Lafayette Regional School, and the links page points to <a href=\"http://www.lafayetteregional.org\">Lafayette Regional Elementary School</a>. Grades, enrollment, and the district are [school details]."
-      - "Charles H. Greenleaf presented the <a href=\"/abbie-greanleaf-library/\">Abbie Greenleaf Library</a> to the town in 1912 and named it for his wife Abbie. That page lists the phone as (603) 823-8424 and these hours: Monday and Wednesday 1:00–5:30 p.m., Tuesday and Thursday 10:00 a.m.–1:00 p.m., Friday 12:00–3:00 p.m., Saturday 10:00 a.m.–1:00 p.m. For anything newer, use the library’s own site, <a href=\"http://www.abbielibrary.org/\">abbielibrary.org</a>."
+      - "Charles H. Greenleaf presented the <a href=\"/abbie-greanleaf-library/\">Abbie Greenleaf Library</a> to the town in 1912 and named it for his wife Abbie. That page lists the phone as <a href=\"tel:+16038238424\">(603) 823-8424</a> and these hours: Monday and Wednesday 1:00–5:30 p.m., Tuesday and Thursday 10:00 a.m.–1:00 p.m., Friday 12:00–3:00 p.m., Saturday 10:00 a.m.–1:00 p.m. For anything newer, use the library’s own site, <a href=\"http://www.abbielibrary.org/\">abbielibrary.org</a>."
       - "Transfer station, water, highway, police, and fire each have a department page on this site. Hours this site has not confirmed stay [hours]."
   - id: history
     title: A short history
