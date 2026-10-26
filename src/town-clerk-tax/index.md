@@ -6,7 +6,6 @@ summary: "Pay a tax bill, register a vehicle, license a dog, or request a vital 
 permalink: /town-clerk-tax/
 groups:
   - heading: Online services
-    intro: "These links were published on the previous town homepage."
     links:
       - label: Pay taxes and town fees
         href: http://pay.eb2gov.com/FranconiaNH

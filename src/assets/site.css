@@ -762,7 +762,9 @@ body.about .brand-block { margin-right: auto; }
 .lede { max-width: 65ch; margin-bottom: 1rem; line-height: 1.55; }
 .prose { max-width: 65ch; padding-bottom: 2rem; line-height: 1.55; }
 .prose > * + * { margin-top: 0.8rem; }
-.prose h2, .prose h3 {
+/* Body-copy headings only. .sign already paints cream on the bark bar;
+   this rule is more specific than .sign and would put --spr on that bar. */
+.prose h2:not(.sign), .prose h3:not(.sign) {
   font-family: var(--sign);
   font-weight: 900;
   letter-spacing: 0.04em;
@@ -771,12 +773,12 @@ body.about .brand-block { margin-right: auto; }
   line-height: 1.25;
   margin-top: 1.4rem;
 }
-.prose h2 { font-size: 1.5rem; }
-.prose h3 { font-size: 1.2rem; }
+.prose h2:not(.sign) { font-size: 1.5rem; }
+.prose h3:not(.sign) { font-size: 1.2rem; }
 .prose a { color: var(--rust); }
 .prose :is(p, li, blockquote) a { text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
-.prose ul, .prose ol { padding-left: 1.2rem; }
-.prose ul { list-style: disc; }
+.prose ul:not(.link-grid), .prose ol { padding-left: 1.2rem; }
+.prose ul:not(.link-grid) { list-style: disc; }
 .prose ol { list-style: decimal; }
 .prose table { width: 100%; border-collapse: collapse; }
 .prose td, .prose th { vertical-align: top; padding: 0.25rem 0.4rem 0.25rem 0; }
