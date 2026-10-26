@@ -78,7 +78,7 @@ pageScript: /assets/season.js
     <h2 id="d-h" class="sign"><span class="blaze" aria-hidden="true"></span>Departments</h2>
     <ul class="depts">
       {% for dept in departments %}
-      <li><a href="{{ dept.href | url }}">{{ icon(dept.icon) }}<b>{{ dept.name }}</b><span>{{ dept.detail }}</span></a></li>
+      <li><a href="{{ dept.href | url }}">{{ icon(dept.icon) }}<span class="dept-copy"><b>{{ dept.name }}</b><span class="dept-detail">{{ dept.detail }}</span></span></a></li>
       {% endfor %}
     </ul>
   </section>
@@ -87,7 +87,7 @@ pageScript: /assets/season.js
     <div class="dirs">
       {% for group in directory %}
       <section class="dg" aria-labelledby="dg{{ loop.index0 }}">
-        <h3 id="dg{{ loop.index0 }}"><span class="blaze" aria-hidden="true"></span>{{ group.heading }}</h3>
+        <h3 id="dg{{ loop.index0 }}"><span class="blaze" aria-hidden="true"></span><span class="dg-title">{{ group.heading }}</span></h3>
         <ul>
           {% for item in group.pages %}
           <li><a href="{% if item.href | startsWith('/') %}{{ item.href | url }}{% else %}{{ item.href }}{% endif %}">{{ item.title }}</a></li>

@@ -1,6 +1,6 @@
 [
-  { "name": "Town Clerk / Tax", "detail": "603-823-7752 · Closed Mon; Tue–Thu 8:00 a.m.–4:00 p.m.; Fri 8:00 a.m.–12:00 p.m.", "href": "/town-clerk-tax/", "icon": "clerk" },
-  { "name": "Selectmen", "detail": "603-823-7752 · Closed Mon; Tue–Thu 8:00 a.m.–4:30 p.m.", "href": "/board-of-selectmen/", "icon": "gavel" },
+  { "name": "Town Clerk / Tax", "detail": "603-823-5237 · Closed Mon; Tue–Thu 8:00 a.m.–4:00 p.m.; Fri 8:00 a.m.–12:00 p.m.", "href": "/town-clerk-tax/", "icon": "clerk" },
+  { "name": "Selectmen", "detail": "603-823-7752 · Closed Mon; Tue–Thu 8:00 a.m.–4:30 p.m.; Fri 8:00 a.m.–1:00 p.m.", "href": "/board-of-selectmen/", "icon": "gavel" },
   { "name": "Police", "detail": "603-823-7025", "href": "/police/", "icon": "badge" },
   { "name": "Fire", "detail": "603-823-8821", "href": "/fire/", "icon": "flame" },
   { "name": "Highway", "detail": "603-616-9308", "href": "/highway-dept/", "icon": "road" },

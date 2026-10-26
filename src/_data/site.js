@@ -2,14 +2,14 @@ import { recentMonths } from "../../lib/archive-window.cjs";
 import { archiveBase, origin } from "../../lib/urls.cjs";
 
 /**
- * Contact values:
- * - phone stays 603-823-7752. The town homepage lists it for the Selectmen's
- *   office. The request for this demo treats it as the clerk phone.
+ * Contact values are the town clerk's, copied from franconianh.gov:
+ * - phone is 603-823-5237. The homepage, town directory, and town clerk page
+ *   all list that number for the Town Clerk and Tax Collector.
+ *   603-823-7752 is the Selectmen's office line, not the clerk.
  * - email is townclerk@franconianh.gov, decoded from the town clerk page and
  *   the town directory.
- * - hours are the town clerk's hours on the town clerk page. Selectmen's
- *   Friday closing time is not used: the homepage says 1:30 and the selectmen
- *   page says 1:00.
+ * - hours are the town clerk page: closed Mondays, Tuesday–Thursday
+ *   8:00 a.m.–4:00 p.m., Friday 8:00 a.m.–12:00 p.m.
  */
 const officialUrl = "https://www.franconianh.gov/";
 
@@ -32,7 +32,7 @@ export default {
     email: "energy-commission+suggestions@mail.grokbot.com",
   },
   contact: {
-    phone: "603-823-7752",
+    phone: "603-823-5237",
     email: "townclerk@franconianh.gov",
     address: "421 Main Street, PO Box 900, Franconia, NH 03580",
     hours: "Closed Mondays. Tuesdays–Thursdays 8:00 a.m.–4:00 p.m. Fridays 8:00 a.m.–12:00 p.m.",

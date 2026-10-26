@@ -34,7 +34,7 @@ export function render(data) {
   lines.push(`- [town.json](${absoluteUrl("/town.json")}): sections, events, contacts, bodies`);
   lines.push(`- [archive/index.json](${absoluteUrl("/archive/index.json")}): one record per imported document`);
   lines.push(`- Document files resolve under ${archiveBase()} (ARCHIVE_BASE_URL). PDFs are not in the git repository.`);
-  lines.push(`- Phone on file from the previous site: ${data.site.contact.phone}. Email: ${data.site.contact.email}. Hours: ${data.site.contact.hours}.`);
+  lines.push(`- Town clerk phone: ${data.site.contact.phone}. Email: ${data.site.contact.email}. Hours: ${data.site.contact.hours}.`);
   lines.push("");
   return lines.join("\n");
 }
