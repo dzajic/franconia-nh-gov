@@ -5,9 +5,9 @@
   "note": "Generated from this site's data files. Values in [brackets] are unknown. Events and alerts marked sample are design-prototype content, not confirmed town notices. Phone and street address were copied from the previous public site.",
   "contact": {
     "phone": "603-823-7752",
-    "email": "[email]",
+    "email": "townclerk@franconianh.gov",
     "address": "421 Main Street, PO Box 900, Franconia, NH 03580",
-    "hours": "[hours]"
+    "hours": "Closed Mondays. Tuesdays–Thursdays 8:00 a.m.–4:00 p.m. Fridays 8:00 a.m.–12:00 p.m."
   },
   "external_resources": [
     {
@@ -235,109 +235,143 @@
     },
     {
       "title": "Contact the clerk",
-      "detail": "[phone] · [email]",
+      "detail": "603-823-7752 · townclerk@franconianh.gov",
       "href": "/town-clerk-tax/",
       "icon": "mail"
     }
   ],
   "alerts": [
     {
-      "text": "General Election Nov 3, 2026: polls open · hours & location [hours / location]",
-      "href": "/events/",
-      "sample": true
+      "text": "Mon Oct 26, 9:00 a.m.: ballot device test, Town Hall meeting room",
+      "href": "https://www.franconianh.gov/notices.html"
     },
     {
-      "text": "Oct 22 checklist session",
-      "href": "/events/",
-      "sample": true
+      "text": "Mon Oct 26, 4:00 p.m.: Selectmen meet at Town Hall",
+      "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/october_26_2026_selectmens_agenda.pdf"
     },
     {
-      "text": "Oct 26 library hearing",
-      "href": "/events/",
-      "sample": true
+      "text": "General Election Tue Nov 3: polls 8:00 a.m.–7:00 p.m., Franconia Town Hall",
+      "href": "https://www.franconianh.gov/voter-information.html"
     }
   ],
   "events": [
     {
-      "name": "Supervisors of the Checklist session",
-      "date": "2026-10-22",
-      "summary": "Time and place: [time / location]",
-      "description": "Sample event from the design prototype, not a confirmed town notice. Voter checklist session. Time and place: [time / location].",
-      "location": "[location]",
-      "href": "/events/",
-      "sample": true
-    },
-    {
-      "name": "Library public hearing",
+      "name": "Ballot counting device test",
       "date": "2026-10-26",
-      "summary": "Abbie Greenleaf Library. Time and place: [time / location]",
-      "description": "Sample event from the design prototype, not a confirmed town notice. Public hearing concerning the Abbie Greenleaf Library. Time and place: [time / location].",
-      "location": "[location]",
-      "href": "/events/",
-      "sample": true
+      "summary": "9:00 a.m., Town Hall meeting room. Public welcome.",
+      "description": "The Town Clerk's office will test the ImageCast Precinct 2 ballot counting device and count ballots for the November 3, 2026 State General Election. The session begins at 9:00 a.m. in the Meeting Room of the Town Hall. The public is welcome.",
+      "location": "Meeting Room, Franconia Town Hall",
+      "href": "https://www.franconianh.gov/notices.html"
     },
     {
-      "name": "General Election",
-      "date": "2026-11-03",
-      "summary": "Polls open. Hours and location: [hours / location]",
-      "description": "Sample event from the design prototype, not a confirmed town notice. Polls open for the November 3 election. Polling hours and location: [hours / location].",
-      "location": "[location]",
-      "href": "/events/",
-      "sample": true
+      "name": "Minecraft Monday",
+      "date": "2026-10-26",
+      "summary": "3:00 p.m., Abbie Greenleaf Library",
+      "description": "Regular Monday program at the Abbie Greenleaf Library, 3:00 p.m.",
+      "location": "Abbie Greenleaf Library, 439 Main Street, Franconia",
+      "href": "https://www.abbielibrary.org/"
+    },
+    {
+      "name": "Selectmen's meeting",
+      "date": "2026-10-26",
+      "summary": "4:00 p.m., Franconia Town Hall",
+      "description": "Board of Selectmen meeting on Monday, October 26, 2026, at 4:00 p.m. at Franconia Town Hall.",
+      "location": "Franconia Town Hall",
+      "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/october_26_2026_selectmens_agenda.pdf"
+    },
+    {
+      "name": "Story Time",
+      "date": "2026-10-27",
+      "summary": "11:00 a.m., Abbie Greenleaf Library",
+      "description": "Regular Tuesday story time at the Abbie Greenleaf Library, 11:00 a.m.",
+      "location": "Abbie Greenleaf Library, 439 Main Street, Franconia",
+      "href": "https://www.abbielibrary.org/"
+    },
+    {
+      "name": "Meditation",
+      "date": "2026-10-27",
+      "summary": "12 noon, Abbie Greenleaf Library",
+      "description": "Regular Tuesday meditation at the Abbie Greenleaf Library, 12 noon.",
+      "location": "Abbie Greenleaf Library, 439 Main Street, Franconia",
+      "href": "https://www.abbielibrary.org/"
+    },
+    {
+      "name": "Warrior Cats Book Club",
+      "date": "2026-10-28",
+      "summary": "3:00 p.m., Abbie Greenleaf Library",
+      "description": "Warrior Cats Book Club meets every Wednesday at 3:00 p.m. at the Abbie Greenleaf Library.",
+      "location": "Abbie Greenleaf Library, 439 Main Street, Franconia",
+      "href": "https://www.abbielibrary.org/news/2026/10/16/warrior-cats-book-club-every-wednesday-at-3-pm"
+    },
+    {
+      "name": "Spanish",
+      "date": "2026-10-29",
+      "summary": "11:00 a.m., Abbie Greenleaf Library",
+      "description": "Regular Thursday Spanish program at the Abbie Greenleaf Library, 11:00 a.m.",
+      "location": "Abbie Greenleaf Library, 439 Main Street, Franconia",
+      "href": "https://www.abbielibrary.org/"
+    },
+    {
+      "name": "Death Cafe",
+      "date": "2026-10-29",
+      "summary": "12 noon, Abbie Greenleaf Library. All are welcome.",
+      "description": "Death Cafe at the Abbie Greenleaf Library on October 29, 2026, at 12 noon. All are welcome.",
+      "location": "Abbie Greenleaf Library, 439 Main Street, Franconia",
+      "href": "https://www.abbielibrary.org/news/2026/10/13/death-cafe-october-29-at-12-noon"
     }
   ],
   "departments": [
     {
       "name": "Town Clerk / Tax",
-      "detail": "[phone] · [hours]",
+      "detail": "603-823-7752 · Closed Mon; Tue–Thu 8:00 a.m.–4:00 p.m.; Fri 8:00 a.m.–12:00 p.m.",
       "href": "/town-clerk-tax/",
       "icon": "clerk"
     },
     {
       "name": "Selectmen",
-      "detail": "[phone] · [hours]",
+      "detail": "603-823-7752 · Closed Mon; Tue–Thu 8:00 a.m.–4:30 p.m.",
       "href": "/board-of-selectmen/",
       "icon": "gavel"
     },
     {
       "name": "Police",
-      "detail": "[phone] · [hours]",
+      "detail": "603-823-7025",
       "href": "/police/",
       "icon": "badge"
     },
     {
       "name": "Fire",
-      "detail": "[phone] · [hours]",
+      "detail": "603-823-8821",
       "href": "/fire/",
       "icon": "flame"
     },
     {
       "name": "Highway",
-      "detail": "[phone] · [hours]",
+      "detail": "603-616-9308",
       "href": "/highway-dept/",
       "icon": "road"
     },
     {
       "name": "Water",
-      "detail": "[phone] · [hours]",
+      "detail": "603-823-2049 · Tue 11:00 a.m.–4:00 p.m., or by appointment",
       "href": "/water/",
       "icon": "drop"
     },
     {
       "name": "Cemetery",
-      "detail": "[phone] · [hours]",
+      "detail": "603-348-8421",
       "href": "/cemetery/",
       "icon": "stone"
     },
     {
       "name": "Transfer Station",
-      "detail": "[phone] · [hours]",
+      "detail": "Mon, Fri–Sun 9:00 a.m.–5:00 p.m.; closed Tue–Thu",
       "href": "/transfer-station/",
       "icon": "trash"
     },
     {
       "name": "Abbie Greenleaf Library",
-      "detail": "[phone] · [hours]",
+      "detail": "603-823-8424 · Mon & Wed 1:00–5:30 p.m.; Tue & Thu 10:00 a.m.–1:00 p.m.; Fri 12:00–3:00 p.m.; Sat 10:00 a.m.–1:00 p.m.",
       "href": "/abbie-greanleaf-library/",
       "icon": "book"
     }
@@ -476,7 +510,7 @@
       "shortName": "Water",
       "kind": "department",
       "page": "/water/",
-      "phone": "(603) 823-7752 x102",
+      "phone": "(603) 823-2049",
       "hours": "Tuesday 11am–4pm, or by appointment",
       "meets": "Second Thursday of each month, 5:00pm, Town Hall"
     },

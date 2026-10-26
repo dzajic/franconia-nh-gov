@@ -1,6 +1,6 @@
 # Town of Franconia, New Hampshire
 > Demo redesign. Not the official site. Official site: https://www.franconianh.gov/ (franconianh.org redirects there).
-> Values in [brackets] are unknown. Alert and homepage event dates are sample content from the design prototype.
+> Values in [brackets] are unknown. Homepage events are posted town and library notices for the week of October 26, 2026.
 > The furnace-and-ridge mark and the silhouettes are original drawings, not traced from landmarks or surveys.
 
 ## Town Hall & Services
@@ -55,10 +55,15 @@
 - [Ordinances & Regulations](https://dzajic.github.io/franconia-nh-gov/ordinances-regulations/)
 - [Meeting Minutes](https://dzajic.github.io/franconia-nh-gov/meetings/)
 
-## Upcoming (sample)
-- 2026-10-22: Supervisors of the Checklist session (sample)
-- 2026-10-26: Library public hearing (sample)
-- 2026-11-03: General Election (sample)
+## Upcoming
+- 2026-10-26: Ballot counting device test
+- 2026-10-26: Minecraft Monday
+- 2026-10-26: Selectmen's meeting
+- 2026-10-27: Story Time
+- 2026-10-27: Meditation
+- 2026-10-28: Warrior Cats Book Club
+- 2026-10-29: Spanish
+- 2026-10-29: Death Cafe
 
 ## External resources
 - [Franconia Notch Chamber of Commerce](https://www.franconianotch.org/): Visiting? The Franconia Notch Chamber of Commerce has lodging, dining, and things to do.
@@ -67,4 +72,4 @@
 - [town.json](https://dzajic.github.io/franconia-nh-gov/town.json): sections, events, contacts, bodies
 - [archive/index.json](https://dzajic.github.io/franconia-nh-gov/archive/index.json): one record per imported document
 - Document files resolve under https://pub-436583bfa32248cb9f7762118b829267.r2.dev (ARCHIVE_BASE_URL). PDFs are not in the git repository.
-- Phone on file from the previous site: 603-823-7752. Email: [email]. Hours: [hours].
+- Phone on file from the previous site: 603-823-7752. Email: townclerk@franconianh.gov. Hours: Closed Mondays. Tuesdays–Thursdays 8:00 a.m.–4:00 p.m. Fridays 8:00 a.m.–12:00 p.m..
