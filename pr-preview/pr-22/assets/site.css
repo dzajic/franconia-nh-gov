@@ -489,100 +489,46 @@ main > section,
 .more a:hover { background: var(--cream); }
 .more a:active { background: #e7d7b4; }
 
-#depts > .sign { margin-bottom: 0.2rem; }
-.depts {
-  display: grid;
-  grid-template-columns: 1fr;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  overflow: hidden;
+#depts > .sign { margin-bottom: 0.35rem; }
+.dept-dir {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background: none;
+  font-size: 1rem;
+  line-height: 1.35;
 }
-.depts li {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 0.05rem;
-  min-width: 0;
-  height: 100%;
-  padding: 0.28rem 0.65rem;
+.dept-dir th,
+.dept-dir td {
+  text-align: left;
+  vertical-align: baseline;
+  padding: 0.32rem 1.35rem 0.32rem 0;
+  border: 0;
   border-bottom: 1px solid var(--line);
-}
-.depts li:last-child { border-bottom: 0; }
-.dept-line {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem 0.75rem;
-  min-width: 0;
-}
-.dept-id {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  min-width: 0;
-  flex: 1 1 auto;
-  color: inherit;
-  font-weight: 800;
-  font-size: 1rem;
-  line-height: 1.3;
-  text-decoration: none;
-}
-.dept-id span { min-width: 0; }
-.dept-id:hover span { color: var(--rust); }
-.dept-id svg {
-  display: block;
-  flex: none;
-  width: 1.15em;
-  height: 1.15em;
-  color: var(--blaze);
-  background: var(--spr);
-  border-radius: 3px;
-}
-.dept-phone {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  flex: none;
-  margin-left: auto;
-  font-size: 1rem;
   font-weight: 400;
-  line-height: 1.3;
   white-space: nowrap;
 }
-.dept-phone svg,
-.dept-hours svg {
-  display: block;
-  flex: none;
-  width: 1em;
-  height: 1em;
+.dept-dir th:last-child,
+.dept-dir td:last-child { width: 100%; padding-right: 0; }
+.dept-dir thead th {
+  font-weight: 700;
   color: var(--spr);
-  background: none;
-  border-radius: 0;
+  letter-spacing: 0.03em;
 }
-.depts a.dept-phone {
+.dept-dir tbody th { font-weight: 800; color: inherit; }
+.dept-dir tbody th a { color: inherit; font-weight: 800; }
+.dept-dir tbody th a:hover { color: var(--rust); }
+.dept-dir td.num { font-variant-numeric: tabular-nums; color: var(--muted); }
+.dept-dir a.tel {
   color: var(--rust);
+  font-variant-numeric: tabular-nums;
   text-decoration: underline;
   text-underline-offset: 0.15em;
   text-decoration-thickness: 1px;
 }
-.dept-phone:hover { color: var(--deep); }
-.dept-phone:active { color: var(--bark); }
-.dept-hours {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.3rem;
-  margin: 0 0 0 calc(1.15em + 0.4rem);
-  color: var(--muted);
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.3;
-}
-@media (min-width: 1100px) {
-  .depts { grid-template-columns: 1fr 1fr; align-items: stretch; }
-  .depts li:nth-child(odd):not(:last-child) { box-shadow: inset -1px 0 0 var(--line); }
-  .depts li:nth-last-child(2):nth-child(odd),
-  .depts li:last-child { border-bottom: 0; }
-}
+.dept-dir a.tel:hover { color: var(--deep); }
+.dept-dir a.tel:active { color: var(--bark); }
+.dept-dir td.hours { color: var(--muted); }
 
 .dirs { display: grid; gap: 0.6rem; grid-template-columns: 1fr; }
 .dg { background: var(--card); border: 1.5px solid var(--spr); border-radius: 8px; overflow: hidden; }
@@ -1174,14 +1120,6 @@ a.doc-row:active { background: #e7d7b4; }
 /* Narrow screens use a shorter heading ladder. The root stays 16px. */
 @media (max-width: 640px) {
   html { font-size: 16px; }
-  .dept-line {
-    flex-wrap: wrap;
-    row-gap: 0;
-    column-gap: 0.55rem;
-    padding-left: calc(1.15em + 0.4rem);
-  }
-  .dept-id { flex: 0 1 auto; margin-left: calc(-1 * (1.15em + 0.4rem)); }
-  .dept-phone { margin-left: 0; }
   body { line-height: 1.55; }
   h1, .page-title, .ahero h1 { font-size: 1.6rem; }
   h2, .sign, .story h2, .prose h2, .st h2, .visit h2 { font-size: 1.3rem; }
@@ -1190,6 +1128,12 @@ a.doc-row:active { background: #e7d7b4; }
   .tasks { grid-template-columns: 1fr; }
   .tasks li:first-child { grid-column: auto; }
   .forms { grid-template-columns: 1fr; }
+  .dept-dir, .dept-dir tbody, .dept-dir tr, .dept-dir th, .dept-dir td { display: block; width: auto; white-space: normal; }
+  .dept-dir thead { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  .dept-dir tbody tr { min-height: 44px; padding: 0.4rem 0; border-bottom: 1px solid var(--line); }
+  .dept-dir tbody th, .dept-dir tbody td { padding: 0; border: 0; }
+  .dept-dir tbody td { display: inline; }
+  .dept-dir td.hours.has::before { content: " · "; }
 }
 
 /* Collapsible primary nav. Without the nav-collapsed class (no JS), links stay visible. */
@@ -1459,9 +1403,9 @@ html[data-season="fall"] .season-motif .m-fall { display: block; }
 a[href^="mailto:"] {
   overflow-wrap: anywhere;
 }
-.prose :is(.link-grid, .tasks, .forms, .depts, .mins, .dg, .more, .doclist) a,
+.prose :is(.link-grid, .tasks, .forms, .mins, .dg, .more, .doclist) a,
 .prose :is(h1, h2, h3) a,
-:is(.link-grid, .tasks, .forms, .depts, .mins, .dg, .more, .doclist, .events, .nav-links) a {
+:is(.link-grid, .tasks, .forms, .mins, .dg, .more, .doclist, .events, .nav-links) a {
   text-decoration: none;
 }
 
