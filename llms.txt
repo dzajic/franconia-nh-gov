@@ -72,4 +72,4 @@
 - [town.json](https://dzajic.github.io/franconia-nh-gov/town.json): sections, events, contacts, bodies
 - [archive/index.json](https://dzajic.github.io/franconia-nh-gov/archive/index.json): one record per imported document
 - Document files resolve under https://pub-436583bfa32248cb9f7762118b829267.r2.dev (ARCHIVE_BASE_URL). PDFs are not in the git repository.
-- Phone on file from the previous site: 603-823-7752. Email: townclerk@franconianh.gov. Hours: Closed Mondays. Tuesdays–Thursdays 8:00 a.m.–4:00 p.m. Fridays 8:00 a.m.–12:00 p.m..
+- Town clerk phone: 603-823-5237. Email: townclerk@franconianh.gov. Hours: Closed Mondays. Tuesdays–Thursdays 8:00 a.m.–4:00 p.m. Fridays 8:00 a.m.–12:00 p.m..
