@@ -3,10 +3,13 @@ import { archiveBase, origin } from "../../lib/urls.cjs";
 
 /**
  * Contact values:
- * - phone and street address are copied from the migrated homepage and the
- *   Board of Selectmen page. They are not newly verified.
- * - email and office hours stay as placeholders. The old pages disagree about
- *   Friday closing time (1:00 vs 1:30), so hours are not asserted here.
+ * - phone stays 603-823-7752. The town homepage lists it for the Selectmen's
+ *   office. The request for this demo treats it as the clerk phone.
+ * - email is townclerk@franconianh.gov, decoded from the town clerk page and
+ *   the town directory.
+ * - hours are the town clerk's hours on the town clerk page. Selectmen's
+ *   Friday closing time is not used: the homepage says 1:30 and the selectmen
+ *   page says 1:00.
  */
 const officialUrl = "https://www.franconianh.gov/";
 
@@ -30,9 +33,9 @@ export default {
   },
   contact: {
     phone: "603-823-7752",
-    email: "[email]",
+    email: "townclerk@franconianh.gov",
     address: "421 Main Street, PO Box 900, Franconia, NH 03580",
-    hours: "[hours]",
+    hours: "Closed Mondays. Tuesdays–Thursdays 8:00 a.m.–4:00 p.m. Fridays 8:00 a.m.–12:00 p.m.",
   },
   /**
    * Archive pages expand this many months at build time.

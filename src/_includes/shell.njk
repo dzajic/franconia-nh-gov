@@ -46,7 +46,7 @@
         <b>Heads up</b>
         {% for alert in alerts %}
           {% if not loop.first %}<span class="dot" aria-hidden="true">·</span>{% endif %}
-          <a href="{{ alert.href | url }}">{{ alert.text }}</a>
+          <a href="{% if alert.href | startsWith('http') %}{{ alert.href }}{% else %}{{ alert.href | url }}{% endif %}">{{ alert.text }}</a>
         {% endfor %}
       </div>
     </aside>

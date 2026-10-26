@@ -1,29 +1,66 @@
 [
   {
-    "name": "Supervisors of the Checklist session",
-    "date": "2026-10-22",
-    "summary": "Time and place: [time / location]",
-    "description": "Sample event from the design prototype, not a confirmed town notice. Voter checklist session. Time and place: [time / location].",
-    "location": "[location]",
-    "href": "/events/",
-    "sample": true
-  },
-  {
-    "name": "Library public hearing",
+    "name": "Ballot counting device test",
     "date": "2026-10-26",
-    "summary": "Abbie Greenleaf Library. Time and place: [time / location]",
-    "description": "Sample event from the design prototype, not a confirmed town notice. Public hearing concerning the Abbie Greenleaf Library. Time and place: [time / location].",
-    "location": "[location]",
-    "href": "/events/",
-    "sample": true
+    "summary": "9:00 a.m., Town Hall meeting room. Public welcome.",
+    "description": "The Town Clerk's office will test the ImageCast Precinct 2 ballot counting device and count ballots for the November 3, 2026 State General Election. The session begins at 9:00 a.m. in the Meeting Room of the Town Hall. The public is welcome.",
+    "location": "Meeting Room, Franconia Town Hall",
+    "href": "https://www.franconianh.gov/notices.html"
   },
   {
-    "name": "General Election",
-    "date": "2026-11-03",
-    "summary": "Polls open. Hours and location: [hours / location]",
-    "description": "Sample event from the design prototype, not a confirmed town notice. Polls open for the November 3 election. Polling hours and location: [hours / location].",
-    "location": "[location]",
-    "href": "/events/",
-    "sample": true
+    "name": "Minecraft Monday",
+    "date": "2026-10-26",
+    "summary": "3:00 p.m., Abbie Greenleaf Library",
+    "description": "Regular Monday program at the Abbie Greenleaf Library, 3:00 p.m.",
+    "location": "Abbie Greenleaf Library, 439 Main Street, Franconia",
+    "href": "https://www.abbielibrary.org/"
+  },
+  {
+    "name": "Selectmen's meeting",
+    "date": "2026-10-26",
+    "summary": "4:00 p.m., Franconia Town Hall",
+    "description": "Board of Selectmen meeting on Monday, October 26, 2026, at 4:00 p.m. at Franconia Town Hall.",
+    "location": "Franconia Town Hall",
+    "href": "https://www.franconianh.gov/uploads/1/1/6/8/11680191/october_26_2026_selectmens_agenda.pdf"
+  },
+  {
+    "name": "Story Time",
+    "date": "2026-10-27",
+    "summary": "11:00 a.m., Abbie Greenleaf Library",
+    "description": "Regular Tuesday story time at the Abbie Greenleaf Library, 11:00 a.m.",
+    "location": "Abbie Greenleaf Library, 439 Main Street, Franconia",
+    "href": "https://www.abbielibrary.org/"
+  },
+  {
+    "name": "Meditation",
+    "date": "2026-10-27",
+    "summary": "12 noon, Abbie Greenleaf Library",
+    "description": "Regular Tuesday meditation at the Abbie Greenleaf Library, 12 noon.",
+    "location": "Abbie Greenleaf Library, 439 Main Street, Franconia",
+    "href": "https://www.abbielibrary.org/"
+  },
+  {
+    "name": "Warrior Cats Book Club",
+    "date": "2026-10-28",
+    "summary": "3:00 p.m., Abbie Greenleaf Library",
+    "description": "Warrior Cats Book Club meets every Wednesday at 3:00 p.m. at the Abbie Greenleaf Library.",
+    "location": "Abbie Greenleaf Library, 439 Main Street, Franconia",
+    "href": "https://www.abbielibrary.org/news/2026/10/16/warrior-cats-book-club-every-wednesday-at-3-pm"
+  },
+  {
+    "name": "Spanish",
+    "date": "2026-10-29",
+    "summary": "11:00 a.m., Abbie Greenleaf Library",
+    "description": "Regular Thursday Spanish program at the Abbie Greenleaf Library, 11:00 a.m.",
+    "location": "Abbie Greenleaf Library, 439 Main Street, Franconia",
+    "href": "https://www.abbielibrary.org/"
+  },
+  {
+    "name": "Death Cafe",
+    "date": "2026-10-29",
+    "summary": "12 noon, Abbie Greenleaf Library. All are welcome.",
+    "description": "Death Cafe at the Abbie Greenleaf Library on October 29, 2026, at 12 noon. All are welcome.",
+    "location": "Abbie Greenleaf Library, 439 Main Street, Franconia",
+    "href": "https://www.abbielibrary.org/news/2026/10/13/death-cafe-october-29-at-12-noon"
   }
 ]
