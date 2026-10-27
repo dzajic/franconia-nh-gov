@@ -1,6 +1,6 @@
 # Migration
 
-Why not now? The only waits are the town GitHub org (before any public link or invite) and about 1–2 months of that public preview (before `franconianh.gov` flips). Everything else starts now and runs in parallel.
+Why not now? The only waits are the town GitHub org (before any public link or invite) and the public preview until `franconianh.gov` flips on January 1, 2027. Everything else starts now and runs in parallel.
 
 Town Meeting on the voter page is published content. It is not a launch deadline.
 
@@ -29,7 +29,7 @@ Checked with public DNS, WHOIS, and a request to the live site. Anything not in 
 ## Steps
 
 1. **Town GitHub org** — the only gate for public links and invites
-   - Start now. Daniel creates the free org, requires 2FA for every member, sets the contact and billing email to a town address, transfers `dzajic/franconia-nh-gov`, and retargets the hardcoded `dzajic` URLs (`src/_data/site.js`, `lib/suggest-source.cjs`, `README.md`, `IDEAS.md`, `test/suggest-source.test.mjs`).
+   - Start now. Finish by early November so the public preview has about two months before January 1, 2027. Daniel creates the free org, requires 2FA for every member, sets the contact and billing email to a town address, transfers `dzajic/franconia-nh-gov`, and retargets the hardcoded `dzajic` URLs (`src/_data/site.js`, `lib/suggest-source.cjs`, `README.md`, `IDEAS.md`, `test/suggest-source.test.mjs`).
    - In parallel, not a gate: Town Administrator’s only task (free GitHub account on her town email, accept the owner invite, ~5 min), a third owner (working-group member or town staff), light Select Board OK, naming who holds the Weebly password, and confirming the Cloudflare login plus whether the Weebly plan can host `legacy.franconianh.gov`. Org name and the town mailbox are `TBD: ask`. Her directory email is still obfuscated.
    - If an owner leaves, a remaining owner removes them and invites a replacement. The town contact email stays on the org.
    - Informal working group, 2–3 people. Not an official committee.
@@ -37,11 +37,12 @@ Checked with public DNS, WHOIS, and a request to the live site. Anything not in 
    - Done = the repo is in the town org. Do not publish `dzajic.github.io`.
 2. **Same day, in parallel** — waits only on step 1
    - Public preview at `https://<org>.github.io/franconia-nh-gov/`. Suggest a change is open (Edit this page, Report an issue, or Contact us). How-to: [How this works](src/suggest/index.md).
-   - Whoever holds the Weebly login puts that link in the current site header the same day. The line says the switch is coming. Date stays TBD until it is set, then that person fills it in.
+   - Whoever holds the Weebly login puts that link in the current site header the same day. The line names January 1, 2027.
    - Page owners (the Weebly-password holders, table below) get their issues and sign up the same day. One minimal commit via Edit this page. Fix anything wrong, or add a Last reviewed line. Done = merged commit by the owner. No Last reviewed field on pages yet. Proposed, not added here: `Last reviewed: YYYY-MM-DD`.
    - None of these wait on each other. Unfinished page-owner edits do not hold the preview or the banner.
-3. **Domain flip** — the other wait: about 1–2 months after the preview is public
-   - `franconianh.gov` flips after that notice. The date is TBD until set, then it goes in the banner. Town Meeting does not set it. Page owners do not have to be finished.
+3. **Domain flip** — January 1, 2027
+   - `franconianh.gov` flips that day. Ownership by early November gives about two months of notice. Town Meeting does not set this date. Page owners do not have to be finished.
+   - The DNS flip is a small change. Daniel does it. Low traffic on the holiday is a plus.
    - Homepage-first: the new site becomes `franconianh.gov`. Pages already in the repo go the same day.
    - Same Weebly login swaps the header notice to the go-live text. The Weebly site is then the old site.
    - A page that is not ready links to the same page on `legacy.franconianh.gov`.
@@ -88,11 +89,11 @@ Archive is not an owner issue. Status, ownership, the header, and the department
 
 ## Weebly header notice
 
-Goes up the same day as step 1. Whoever holds the Weebly login edits the current site header. The link is the town preview, not `dzajic.github.io`. People suggest edits with the Suggest a change modal. When a switch date is set, edit the banner and replace “date TBD”.
+Goes up the same day as step 1. Whoever holds the Weebly login edits the current site header. The link is the town preview, not `dzajic.github.io`. People suggest edits with the Suggest a change modal. The banner names January 1, 2027.
 
 Stand-up (same day as the transfer):
 
-> A new town website is coming. Try it and suggest changes: \<link\>. franconianh.gov will switch to it (date TBD).
+> The new town website launches January 1, 2027. Preview it and suggest changes: \<link\>.
 
 After the domain flip (on the Weebly site, then the old site):
 
@@ -110,7 +111,7 @@ Tracker: https://github.com/dzajic/franconia-nh-gov/issues/58
 
 Top priority: ownership (town GitHub org and repo transfer). Daniel does it now. The Town Administrator’s invite runs in parallel.
 The same day the repo is in the town org, together: public preview at `https://<org>.github.io/franconia-nh-gov/`, that link in the Weebly header, and page-owner invites. Not `dzajic.github.io`.
-The only later wait is about 1–2 months of that preview before `franconianh.gov` flips. Switch date stays TBD until it is set. Page owners do not gate the flip.
+The only later wait is the public preview until `franconianh.gov` flips on January 1, 2027. Ownership transfer by early November gives about two months of notice. The DNS flip is a small change Daniel can do. Low traffic on the holiday is a plus. Page owners do not gate the flip.
 
 ### Town GitHub org
 
@@ -133,7 +134,7 @@ Assign once the Town Administrator joins GitHub.
 ### Weebly header notice
 
 Same day as the ownership transfer. Does not wait on page owners. Needs the Weebly login. Whoever holds that login does this.
-Put the stand-up line in the current site header. The link is the town preview, not `dzajic.github.io`. The line says the switch is coming, date TBD. Fill the date in once it is set. After the domain flip, switch to the old-site line.
+Put the stand-up line in the current site header. The link is the town preview, not `dzajic.github.io`. The line names January 1, 2027. After the domain flip, switch to the old-site line.
 Drafts are under Weebly header notice.
 
 Site: [https://www.franconianh.gov/](https://www.franconianh.gov/)
@@ -315,7 +316,7 @@ Running checklists. Items are already on the live pages or in this repo. Unknown
 Directory lists Elizabeth Staples, Town Office, `603-823-7752`. Email on that row is Cloudflare-obfuscated.
 
 - [ ] Ownership, label `town-administrator`. Only task: free GitHub account with her town email, accept the org-owner invite, turn on 2FA (~5 min). Assign once she joins GitHub.
-- [ ] Weebly header notice the same day as the transfer. Whoever holds the Weebly login posts the stand-up line (switch coming, date TBD). Fill the date in once set. Old-site line after the domain flip.
+- [ ] Weebly header notice the same day as the transfer. Whoever holds the Weebly login posts the stand-up line (launches January 1, 2027). Old-site line after the domain flip.
 
 - [ ] Phone `603-823-7752` and Town Office as the administrator contact
 - [ ] Real email. `TBD: ask`
@@ -523,7 +524,8 @@ Directory lists Elizabeth Staples, Town Office, `603-823-7752`. Email on that ro
 
 ### Working group
 
-- [ ] At least 3 GitHub org owners: Daniel, the Town Administrator, and one more working-group member or town staff. 2FA required for every org member. Daniel does the setup and the transfer.
+- [ ] At least 3 GitHub org owners: Daniel, the Town Administrator, and one more working-group member or town staff. 2FA required for every org member. Daniel does the setup and the transfer. Finish by early November so the preview has about two months before January 1, 2027.
+- [ ] Domain flip on January 1, 2027. The DNS change is small. Daniel does it. Low traffic on the holiday is a plus.
 - [ ] Light Select Board OK recorded
 - [ ] Not an official committee. Contact page and `site.suggestionsContact` still say Technology Committee and use the temporary grokbot address. `TBD: ask` what replaces them
 - [ ] Every Weebly-password holder named now. Sign-ups start the day the town org has the repo, in parallel with the public preview
