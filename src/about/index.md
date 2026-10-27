@@ -27,6 +27,102 @@ sections:
       - "Town Meeting is where voters decide the budget and the warrant. The <a href=\"/voter-information/\">voter information</a> page listed the 2026 meeting for Tuesday, March 10, 2026, at Lafayette Regional School, with polls open 1:00–7:00 p.m. and the meeting at 7:05 p.m. The next meeting date is [town meeting date]."
       - "That notice listed openings for Selectman, Treasurer, Town Moderator, Trustee of the Trust Funds, Supervisor of the Checklist, Library Trustee, Cemetery Trustee, and Water Commissioner. Filing ran January 21–30, 2026. Agendas and minutes are in the <a href=\"/archive/\">document archive</a>. The Planning Board page says it meets on the second and last Tuesday of each month at 6:00 p.m."
       - "To help outside a meeting, use the <a href=\"https://www.franconianh.gov/uploads/1/1/6/8/11680191/request_to_volunteer.pdf\">volunteer form</a>. The <a href=\"/fire/\">fire department</a> page asks for volunteer firefighters."
+    officersNote: "Term is the March town meeting when that seat is next elected. Years are the ones in the <a href=\"https://www.franconianh.gov/uploads/1/1/6/8/11680191/2025_town_report_proof.pdf\">2025 Town Report</a>, or the term length in the <a href=\"/archive/selectboard/2026/2026-selectboard-minutes-march-10-2026-town-meeting-minutes/\">March 10, 2026 town meeting minutes</a> for seats filled that day. Where franconianh.gov prints a year beside the name, it matches."
+    officers:
+      - office: Selectman
+        name: Dan Walker, Chair
+        href: /board-of-selectmen/
+        term: Expires March 2027
+      - office: Selectman
+        name: Eric Meth
+        href: /board-of-selectmen/
+        term: Expires March 2028
+      - office: Selectman
+        name: Eugene Leeds
+        href: /board-of-selectmen/
+        term: Expires March 2029
+      - office: Town Clerk / Tax Collector
+        name: Carol Wills
+        href: /town-clerk-tax/
+        term: Expires March 2027
+      - office: Town Moderator
+        name: James Walker
+        term: Expires March 2028
+      - office: Treasurer
+        name: Steven Plant
+        term: Expires March 2027
+      - office: Trustee of the Trust Funds
+        name: Carol Walker
+        href: /trustees-of-the-trust-funds/
+        term: Expires March 2027
+      - office: Trustee of the Trust Funds
+        name: Michael Betley
+        href: /trustees-of-the-trust-funds/
+        term: Expires March 2028
+      - office: Trustee of the Trust Funds
+        name: Janice Cole
+        href: /trustees-of-the-trust-funds/
+        term: Expires March 2029
+      - office: Supervisor of the Checklist
+        name: Lydia Cumbee
+        href: /supervisors-of-the-checklist/
+        term: Expires March 2028
+      - office: Supervisor of the Checklist
+        name: Stephen Schwartz
+        href: /supervisors-of-the-checklist/
+        term: Expires March 2030
+      - office: Supervisor of the Checklist
+        name: Monica Laflamme
+        href: /supervisors-of-the-checklist/
+        term: Expires March 2032
+      - office: Cemetery Trustee
+        name: Mary Brubaker
+        href: /cemetery/
+        term: Expires March 2027
+      - office: Cemetery Trustee
+        name: Chris Collman
+        href: /cemetery/
+        term: Expires March 2028
+      - office: Cemetery Trustee
+        name: Jayne O'Connor
+        href: /cemetery/
+        term: Expires March 2029
+      - office: Library Trustee
+        name: Alyssa Sherburn
+        href: /abbie-greanleaf-library/
+        term: Expires March 2027
+      - office: Library Trustee
+        name: Sally Small
+        href: /abbie-greanleaf-library/
+        term: Expires March 2027
+      - office: Library Trustee
+        name: Chuck Lovett
+        href: /abbie-greanleaf-library/
+        term: Expires March 2027
+      - office: Library Trustee
+        name: Jennifer Cao
+        href: /abbie-greanleaf-library/
+        term: Expires March 2028
+      - office: Library Trustee
+        name: Regina Fernandez-Llanio
+        href: /abbie-greanleaf-library/
+        term: Expires March 2028
+      - office: Library Trustee
+        name: Melinda Richmond
+        href: /abbie-greanleaf-library/
+        term: Expires March 2029
+      - office: Library Trustee
+        name: Sharon Penney
+        href: /abbie-greanleaf-library/
+        term: Expires March 2029
+      - office: Water Commissioner
+        name: Christopher Harris
+        href: /water/
+        term: Expires March 2027
+      - office: Water Commissioner
+        name: Thomas Allen
+        href: /water/
+        term: Expires March 2028
   - id: services
     title: Schools, library, and services
     icon: mail

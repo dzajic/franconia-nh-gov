@@ -35,6 +35,31 @@ layout: shell.njk
         {% for paragraph in section.paragraphs %}
         <p>{{ paragraph | prefixHrefs | safe }}</p>
         {% endfor %}
+        {% if section.officers and section.officers.length %}
+        <h3 id="officers">Town officers</h3>
+        <table class="officers">
+          <caption class="sr">Town officers. The Term column is when the term expires.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Office</th>
+              <th scope="col">Name</th>
+              <th scope="col">Term</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for person in section.officers %}
+            <tr>
+              <th scope="row">{% if person.href %}<a href="{{ person.href | url }}">{{ person.office }}</a>{% else %}{{ person.office }}{% endif %}</th>
+              <td>{{ person.name }}</td>
+              <td class="term">{{ person.term }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% if section.officersNote %}
+        <p class="note">{{ section.officersNote | prefixHrefs | safe }}</p>
+        {% endif %}
+        {% endif %}
       </div>
     </section>
     {% endif %}

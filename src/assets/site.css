@@ -722,6 +722,44 @@ body.about .brand-block { margin-right: auto; }
   margin-bottom: 0.6rem;
 }
 .st p { font-size: 1.0625rem; line-height: 1.55; margin-bottom: 0.7rem; max-width: 65ch; }
+.st h3 {
+  font: 900 1.2rem/1.25 var(--sign);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--spr);
+  margin: 1.15rem 0 0.45rem;
+}
+.officers {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.0625rem;
+  line-height: 1.45;
+  margin: 0 0 0.85rem;
+}
+.officers caption.sr { caption-side: bottom; }
+.officers th,
+.officers td {
+  text-align: left;
+  vertical-align: baseline;
+  padding: 0.4rem 0.85rem 0.4rem 0;
+  border-bottom: 1px solid var(--line);
+  font-weight: 400;
+}
+.officers thead th {
+  font-weight: 700;
+  color: var(--spr);
+  letter-spacing: 0.03em;
+}
+.officers tbody th { font-weight: 800; }
+.officers td.term { white-space: nowrap; }
+.officers a {
+  color: var(--rust);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 1px;
+}
+.st .note { margin-top: 0.2rem; }
 .forest {
   background: var(--cream);
   border: 2px solid var(--bark);
@@ -1164,6 +1202,34 @@ a.doc-row:active { background: #e7d7b4; }
   .dept-dir tbody th, .dept-dir tbody td { padding: 0; border: 0; }
   .dept-dir tbody td { display: inline; }
   .dept-dir td.hours.has::before { content: " · "; }
+  .officers,
+  .officers tbody,
+  .officers tr,
+  .officers th,
+  .officers td { display: block; width: auto; }
+  .officers thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .officers tbody tr { padding: 0.55rem 0; border-bottom: 1px solid var(--line); }
+  .officers tbody th,
+  .officers td { border: 0; padding: 0; }
+  .officers td.term { margin-top: 0.2rem; white-space: normal; }
+  .officers td.term::before {
+    content: "Term";
+    display: block;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    color: var(--spr);
+  }
 }
 
 /* Collapsible primary nav. Without the nav-collapsed class (no JS), links stay visible. */
