@@ -106,7 +106,7 @@ Go-live (on the Weebly site once it is the old site):
 
 ## Owner issues
 
-One issue per department or board page, plus the status, ownership, and header issues. Page-owner issues open only after the ownership issue is done. How-to: [How this works](src/suggest/index.md).
+One issue per department or board page, plus the status, ownership, town-administrator, and header issues. Page-owner issues open only after the ownership issue is done. How-to: [How this works](src/suggest/index.md).
 
 ### Status
 
