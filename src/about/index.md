@@ -32,97 +32,97 @@ sections:
       - office: Selectman
         name: Dan Walker, Chair
         href: /board-of-selectmen/
-        term: Expires March 2027
+        term: 2027
       - office: Selectman
         name: Eric Meth
         href: /board-of-selectmen/
-        term: Expires March 2028
+        term: 2028
       - office: Selectman
         name: Eugene Leeds
         href: /board-of-selectmen/
-        term: Expires March 2029
+        term: 2029
       - office: Town Clerk / Tax Collector
         name: Carol Wills
         href: /town-clerk-tax/
-        term: Expires March 2027
+        term: 2027
       - office: Town Moderator
         name: James Walker
-        term: Expires March 2028
+        term: 2028
       - office: Treasurer
         name: Steven Plant
-        term: Expires March 2027
+        term: 2027
       - office: Trustee of the Trust Funds
         name: Carol Walker
         href: /trustees-of-the-trust-funds/
-        term: Expires March 2027
+        term: 2027
       - office: Trustee of the Trust Funds
         name: Michael Betley
         href: /trustees-of-the-trust-funds/
-        term: Expires March 2028
+        term: 2028
       - office: Trustee of the Trust Funds
         name: Janice Cole
         href: /trustees-of-the-trust-funds/
-        term: Expires March 2029
+        term: 2029
       - office: Supervisor of the Checklist
         name: Lydia Cumbee
         href: /supervisors-of-the-checklist/
-        term: Expires March 2028
+        term: 2028
       - office: Supervisor of the Checklist
         name: Stephen Schwartz
         href: /supervisors-of-the-checklist/
-        term: Expires March 2030
+        term: 2030
       - office: Supervisor of the Checklist
         name: Monica Laflamme
         href: /supervisors-of-the-checklist/
-        term: Expires March 2032
+        term: 2032
       - office: Cemetery Trustee
         name: Mary Brubaker
         href: /cemetery/
-        term: Expires March 2027
+        term: 2027
       - office: Cemetery Trustee
         name: Chris Collman
         href: /cemetery/
-        term: Expires March 2028
+        term: 2028
       - office: Cemetery Trustee
         name: Jayne O'Connor
         href: /cemetery/
-        term: Expires March 2029
+        term: 2029
       - office: Library Trustee
         name: Alyssa Sherburn
         href: /abbie-greanleaf-library/
-        term: Expires March 2027
+        term: 2027
       - office: Library Trustee
         name: Sally Small
         href: /abbie-greanleaf-library/
-        term: Expires March 2027
+        term: 2027
       - office: Library Trustee
         name: Chuck Lovett
         href: /abbie-greanleaf-library/
-        term: Expires March 2027
+        term: 2027
       - office: Library Trustee
         name: Jennifer Cao
         href: /abbie-greanleaf-library/
-        term: Expires March 2028
+        term: 2028
       - office: Library Trustee
         name: Regina Fernandez-Llanio
         href: /abbie-greanleaf-library/
-        term: Expires March 2028
+        term: 2028
       - office: Library Trustee
         name: Melinda Richmond
         href: /abbie-greanleaf-library/
-        term: Expires March 2029
+        term: 2029
       - office: Library Trustee
         name: Sharon Penney
         href: /abbie-greanleaf-library/
-        term: Expires March 2029
+        term: 2029
       - office: Water Commissioner
         name: Christopher Harris
         href: /water/
-        term: Expires March 2027
+        term: 2027
       - office: Water Commissioner
         name: Thomas Allen
         href: /water/
-        term: Expires March 2028
+        term: 2028
   - id: services
     title: Schools, library, and services
     icon: mail

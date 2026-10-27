@@ -1223,7 +1223,7 @@ a.doc-row:active { background: #e7d7b4; }
   .officers td { border: 0; padding: 0; }
   .officers td.term { margin-top: 0.2rem; white-space: normal; }
   .officers td.term::before {
-    content: "Term";
+    content: "Term (exp.)";
     display: block;
     font-weight: 700;
     font-size: 1rem;
