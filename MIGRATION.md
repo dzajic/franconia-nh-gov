@@ -84,7 +84,7 @@ From `src/_data/bodies.json`, plus the library (homepage department, no body slu
 | Trails & Parks | department | `/trails-parks/` | TBD |
 | Town-wide records | town | `/archive/` | TBD |
 
-Archive is not an owner issue. The header issue and the department and board issues are below.
+Archive is not an owner issue. Status, ownership, the header, and the department and board issues are below.
 
 ## Weebly header notice
 
