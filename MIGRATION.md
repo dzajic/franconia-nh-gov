@@ -26,24 +26,21 @@ Checked with public DNS, WHOIS, and a request to the live site. Anything not in 
 
 ## Steps
 
-1. **OK and owners**
-   - Informal working group, 2–3 people. Not an official committee.
-   - Light Select Board OK.
-   - Find everyone with the Weebly password. Each becomes a page owner (table below).
-2. **Town GitHub org, then transfer**
+1. **Town GitHub org, then transfer** — top priority
+   - Informal working group, 2–3 people. Not an official committee. Light Select Board OK.
    - Org registered with a town email. Two or more owners, including town staff. Org name `TBD: ask`.
    - Transfer `dzajic/franconia-nh-gov` into that org.
    - Pages host becomes `https://<org>.github.io/franconia-nh-gov/` until the custom domain is attached.
    - Retarget hardcoded `dzajic` URLs: `src/_data/site.js` (`repo`, `suggestions`), `lib/suggest-source.cjs` (`DEFAULT_REPO`), `README.md` (`dzajic.github.io`, `/franconia-nh-gov`), `IDEAS.md` PR links, `test/suggest-source.test.mjs`.
-   - Preview: `.github/workflows/preview.yml` and `deploy.yml` already read `configure-pages`. After the move, confirm the preview comment URL uses the org host. `TBD: confirm` `base_path` is empty once `www.franconianh.gov` is the Pages domain (this deploy publishes the `gh-pages` branch; a project path on the custom domain would break links).
-   - Then, and only then: Weebly header notice, pre-launch text. Needs the Weebly login. Link is the town preview `https://<org>.github.io/franconia-nh-gov/`, not `dzajic.github.io`. Issue label `town-administrator`.
-   - Before go-live that preview is public. People suggest edits with the Suggest a change modal (Edit this page, Report an issue, or Contact us).
-3. **Onboarding**
-   - Nearly all department and board pages are already in this repo. One GitHub issue per page (bodies below). How-to: [How this works](src/suggest/index.md).
-   - Owner signs up for GitHub (free), then one minimal commit on their page via Suggest a change → Edit this page. Fix anything wrong, or add a Last reviewed line. That commit is the proof they can manage the page.
-   - Done = merged commit by the owner.
-   - No Last reviewed field on pages yet. Proposed, not added here: a plain line `Last reviewed: YYYY-MM-DD` on the page. The proof commit can add that line, or correct a real error instead.
-4. **DNS cutover**
+   - Preview workflows (`.github/workflows/preview.yml`, `deploy.yml`) already read `configure-pages`. After the move, confirm they use the org host. `TBD: confirm` `base_path` is empty once `www.franconianh.gov` is the Pages domain.
+   - Done = the repo is in the town org. Until then: no page-owner invites or sign-ups, no Weebly banner, no public preview link. Do not send anyone to `dzajic.github.io`.
+2. **Invites, banner, public preview** — depends on step 1
+   - Find everyone with the Weebly password. Each becomes a page owner (table below). Invite and sign-up only after step 1.
+   - One GitHub issue per page (bodies below). How-to: [How this works](src/suggest/index.md). Owner signs up (free), then one minimal commit via Suggest a change → Edit this page. Fix anything wrong, or add a Last reviewed line. Done = merged commit by the owner.
+   - No Last reviewed field on pages yet. Proposed, not added here: a plain line `Last reviewed: YYYY-MM-DD`. The proof commit can add that line, or correct a real error instead.
+   - Weebly header notice, pre-launch text. Needs the Weebly login. Link is the town preview `https://<org>.github.io/franconia-nh-gov/`, not `dzajic.github.io`. Issue label `town-administrator`.
+   - That preview is public before go-live. People suggest edits with the Suggest a change modal (Edit this page, Report an issue, or Contact us).
+3. **DNS cutover** — depends on step 1
    - Homepage-first: the new site becomes `franconianh.gov`. Pages already in the repo go the same day.
    - Same Weebly login swaps the header notice to the go-live text. The Weebly site is then the old site.
    - A page that is not ready links to the same page on `legacy.franconianh.gov`.
@@ -55,12 +52,12 @@ Checked with public DNS, WHOIS, and a request to the live site. Anything not in 
    - `legacy` CNAME or `A` to the target Weebly shows after the site address is `legacy.franconianh.gov`. `TBD: confirm` that target and that the plan accepts a subdomain as the site address.
    - Leave every mail record in the Verified list as it is. Leave `.org` DNS and mail as they are. After cutover, confirm `franconianh.org` still lands on the new site.
    - Rollback: put the web records back (`A` `199.34.228.75`, `www` CNAME `franconianh.gov`, remove `legacy` and any GitHub `AAAA`). Mail records stay.
-5. **Retire Weebly**
+4. **Retire Weebly**
    - When nothing on the new site still links to legacy, remove the `legacy` record and cancel the Weebly contract. `TBD: confirm` who holds the contract.
 
 ## Page owners
 
-From `src/_data/bodies.json`, plus the library (homepage department, no body slug). Owner is `TBD` until step 1.
+From `src/_data/bodies.json`, plus the library (homepage department, no body slug). Owner is `TBD`. Invites wait until step 1 is done.
 
 | Name | Kind | Page | Owner |
 | --- | --- | --- | --- |
@@ -91,7 +88,7 @@ Archive is not an owner issue. The header issue and the department and board iss
 
 ## Weebly header notice
 
-Depends on step 2. Someone with the Weebly login edits the current site header. The pre-launch link is the town org preview, not `dzajic.github.io`. Before go-live the preview is public. People suggest edits with the Suggest a change modal.
+Depends on step 1. Someone with the Weebly login edits the current site header. The pre-launch link is the town org preview, not `dzajic.github.io`. Before go-live the preview is public. People suggest edits with the Suggest a change modal.
 
 Pre-launch (after the transfer, before go-live):
 
@@ -105,21 +102,35 @@ Go-live (on the Weebly site once it is the old site):
 
 ## Owner issues
 
-One issue per department or board page, plus the town-administrator header issue. Paste the body. Page-owner how-to: [How this works](src/suggest/index.md).
+One issue per department or board page, plus the status, ownership, and header issues. Page-owner issues open only after the ownership issue is done. How-to: [How this works](src/suggest/index.md).
+
+### Status
+
+Top priority: ownership (town GitHub org and repo transfer).
+Blocked on that issue: page-owner invites and sign-ups, the Weebly header notice, and any public preview link.
+Those start only after the repo is in the town org. The public preview URL is then `https://<org>.github.io/franconia-nh-gov/`, not `dzajic.github.io`.
+
+### Town GitHub org
+
+Top priority. Called out in the status issue.
+
+Town email. Two or more owners, including town staff. Light Select Board OK. Org name `TBD: ask`.
+Transfer `dzajic/franconia-nh-gov`. Retarget the hardcoded `dzajic` URLs listed in step 1.
+Done = the repo is in the town org. Invites, the Weebly banner, and public preview links stay closed until then.
 
 ### Weebly header notice
 
 Label: `town-administrator`
 
-Needs the Weebly login. Do this only after the repo is in the town GitHub org.
-Put the pre-launch line in the current site header. The link is the town preview. Suggest a change on that preview is open to the public. At go-live, switch to the legacy line.
+Depends on the ownership issue. Needs the Weebly login.
+Put the pre-launch line in the current site header. The link is the town preview, not `dzajic.github.io`. Suggest a change on that preview is open to the public. At go-live, switch to the legacy line.
 Drafts are under Weebly header notice.
 
 Site: [https://www.franconianh.gov/](https://www.franconianh.gov/)
 
 ### Board of Selectmen
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -127,7 +138,7 @@ Page: [/board-of-selectmen/](src/board-of-selectmen/index.md)
 
 ### Town Clerk / Tax Collector
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -135,7 +146,7 @@ Page: [/town-clerk-tax/](src/town-clerk-tax/index.md)
 
 ### Police Department
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -143,7 +154,7 @@ Page: [/police/](src/police/index.md)
 
 ### Fire Department
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -151,7 +162,7 @@ Page: [/fire/](src/fire/index.md)
 
 ### Highway Department
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -159,7 +170,7 @@ Page: [/highway-dept/](src/highway-dept/index.md)
 
 ### Water Department
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -167,7 +178,7 @@ Page: [/water/](src/water/index.md)
 
 ### Cemetery Trustees
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -175,7 +186,7 @@ Page: [/cemetery/](src/cemetery/index.md)
 
 ### Transfer Station
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -183,7 +194,7 @@ Page: [/transfer-station/](src/transfer-station/index.md)
 
 ### Abbie Greenleaf Library
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -191,7 +202,7 @@ Page: [/abbie-greanleaf-library/](src/abbie-greanleaf-library/index.md)
 
 ### Planning Board
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -199,7 +210,7 @@ Page: [/planning-board/](src/planning-board/index.md)
 
 ### Zoning Board of Adjustment
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -207,7 +218,7 @@ Page: [/zoning-board-of-adjustment/](src/zoning-board-of-adjustment/index.md)
 
 ### Capital Improvements Committee
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -215,7 +226,7 @@ Page: [/capital-improvements/](src/capital-improvements/index.md)
 
 ### Conservation Commission
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -223,7 +234,7 @@ Page: [/conservation-commission/](src/conservation-commission/index.md)
 
 ### Energy Commission
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -231,7 +242,7 @@ Page: [/energy-commission/](src/energy-commission/index.md)
 
 ### Recreation Board
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -239,7 +250,7 @@ Page: [/httplafayetterecreationweeblycom/](src/httplafayetterecreationweeblycom/
 
 ### Trustees of the Trust Funds
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -247,7 +258,7 @@ Page: [/trustees-of-the-trust-funds/](src/trustees-of-the-trust-funds/index.md)
 
 ### Safety Committee
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -255,7 +266,7 @@ Page: [/safety-committee/](src/safety-committee/index.md)
 
 ### Supervisors of the Checklist
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -263,7 +274,7 @@ Page: [/supervisors-of-the-checklist/](src/supervisors-of-the-checklist/index.md
 
 ### Rink Feasibility Committee
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -271,7 +282,7 @@ Page: [/rink-feasibility-committee/](src/rink-feasibility-committee/index.md)
 
 ### Heritage Museum
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -279,7 +290,7 @@ Page: [/heritage-museum/](src/heritage-museum/index.md)
 
 ### Trails & Parks
 
-Sign up for GitHub (free).
+After step 1 (town org owns this repo): sign up for GitHub (free).
 Suggest a change → Edit this page. One minimal commit that proves you can manage it: fix anything wrong, or add `Last reviewed: YYYY-MM-DD`.
 Done = that commit merged, by you.
 
@@ -293,7 +304,7 @@ Running checklists. Items are already on the live pages or in this repo. Unknown
 
 Directory lists Elizabeth Staples, Town Office, `603-823-7752`. Email on that row is Cloudflare-obfuscated.
 
-- [ ] Weebly header notice, label `town-administrator`. Pre-launch text only after step 2. Go-live text when Weebly becomes the old site. Needs the Weebly login.
+- [ ] Weebly header notice, label `town-administrator`. Depends on step 1. Go-live text when Weebly becomes the old site. Needs the Weebly login.
 
 - [ ] Phone `603-823-7752` and Town Office as the administrator contact
 - [ ] Real email. `TBD: ask`
@@ -315,7 +326,7 @@ Directory lists Elizabeth Staples, Town Office, `603-823-7752`. Email on that ro
 - [ ] Homepage tasks: pay taxes / register vehicle, permits and forms, agendas and minutes, trash and transfer station, contact the clerk (`townclerk@franconianh.gov`, `603-823-5237`)
 - [ ] Homepage departments: clerk, selectmen, police, fire, highway, water, cemetery, transfer station, library, with the phones and hours in `departments.json`
 - [ ] Latest-minutes strip is only selectboard, planning board, conservation, energy (`home.json`). Other boards follow the link-back default
-- [ ] One onboarding issue per department/board page (bodies above). Done = merged commit by that owner. How-to: [How this works](src/suggest/index.md)
+- [ ] One onboarding issue per department/board page (bodies above). Open them only after step 1. Done = merged commit by that owner. How-to: [How this works](src/suggest/index.md)
 - [ ] Mail records in the Verified list unchanged after cutover
 - [ ] `franconianh.org` still redirects to the site, and its MX stays
 - [ ] Preview bar (`site.previewNotice`) off when this is the official site
@@ -504,8 +515,8 @@ Directory lists Elizabeth Staples, Town Office, `603-823-7752`. Email on that ro
 - [ ] 2–3 people. Includes town staff among the GitHub org owners (two or more owners)
 - [ ] Light Select Board OK recorded
 - [ ] Not an official committee. Contact page and `site.suggestionsContact` still say Technology Committee and use the temporary grokbot address. `TBD: ask` what replaces them
-- [ ] Every Weebly-password holder named in the owner table, with one issue per department/board page (bodies above)
-- [ ] Each of those issues closed by a merged commit from that owner. How-to: [How this works](src/suggest/index.md)
+- [ ] Every Weebly-password holder named in the owner table. Invites and sign-ups wait until the ownership issue is done
+- [ ] Each page-owner issue closed by a merged commit from that owner. How-to: [How this works](src/suggest/index.md)
 - [ ] Suggest a change still offers Edit this page, Report an issue, and Contact us (`/suggest/`)
 - [ ] A reviewer approves an edit before it is on the public site
 - [ ] PR previews still publish for same-repo pull requests and stay unpublished for forks
