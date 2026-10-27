@@ -27,8 +27,12 @@ Checked with public DNS, WHOIS, and a request to the live site. Anything not in 
 ## Steps
 
 1. **Town GitHub org, then transfer** — top priority
-   - Informal working group, 2–3 people. Not an official committee. Light Select Board OK.
-   - Org registered with a town email. Two or more owners, including town staff. Org name `TBD: ask`.
+   - Daniel creates the free GitHub org and does the setup and the repo transfer.
+   - Town Administrator’s only task: create a free GitHub account with her town email and accept the org-owner invite (~5 min). Email on the directory row is still obfuscated. `TBD: ask` the address.
+   - At least 3 org owners: Daniel, the Town Administrator, and one more (another working-group member or town staff). Require 2FA for every org member.
+   - Org contact and billing email is a town address, so the town is the contact of record. `TBD: ask` which mailbox.
+   - If an owner leaves, a remaining owner removes them and invites a replacement. The town contact email stays on the org.
+   - Informal working group, 2–3 people. Not an official committee. Light Select Board OK. Org name `TBD: ask`.
    - Transfer `dzajic/franconia-nh-gov` into that org.
    - Pages host becomes `https://<org>.github.io/franconia-nh-gov/` until the custom domain is attached.
    - Retarget hardcoded `dzajic` URLs: `src/_data/site.js` (`repo`, `suggestions`), `lib/suggest-source.cjs` (`DEFAULT_REPO`), `README.md` (`dzajic.github.io`, `/franconia-nh-gov`), `IDEAS.md` PR links, `test/suggest-source.test.mjs`.
@@ -38,7 +42,7 @@ Checked with public DNS, WHOIS, and a request to the live site. Anything not in 
    - Find everyone with the Weebly password. Each becomes a page owner (table below). Invite and sign-up only after step 1.
    - One GitHub issue per page (bodies below). How-to: [How this works](src/suggest/index.md). Owner signs up (free), then one minimal commit via Suggest a change → Edit this page. Fix anything wrong, or add a Last reviewed line. Done = merged commit by the owner.
    - No Last reviewed field on pages yet. Proposed, not added here: a plain line `Last reviewed: YYYY-MM-DD`. The proof commit can add that line, or correct a real error instead.
-   - Weebly header notice, pre-launch text. Needs the Weebly login. Link is the town preview `https://<org>.github.io/franconia-nh-gov/`, not `dzajic.github.io`. Issue label `town-administrator`.
+   - Weebly header notice, pre-launch text. Needs the Weebly login (whoever holds it). Link is the town preview `https://<org>.github.io/franconia-nh-gov/`, not `dzajic.github.io`.
    - That preview is public before go-live. People suggest edits with the Suggest a change modal (Edit this page, Report an issue, or Contact us).
 3. **DNS cutover** — depends on step 1
    - Homepage-first: the new site becomes `franconianh.gov`. Pages already in the repo go the same day.
@@ -106,7 +110,7 @@ One issue per department or board page, plus the status, ownership, and header i
 
 ### Status
 
-Top priority: ownership (town GitHub org and repo transfer).
+Top priority: ownership (town GitHub org and repo transfer). Daniel does the setup and the transfer. The Town Administrator accepts an owner invite.
 Blocked on that issue: page-owner invites and sign-ups, the Weebly header notice, and any public preview link.
 Those start only after the repo is in the town org. The public preview URL is then `https://<org>.github.io/franconia-nh-gov/`, not `dzajic.github.io`.
 
@@ -114,15 +118,23 @@ Those start only after the repo is in the town org. The public preview URL is th
 
 Top priority. Called out in the status issue.
 
-Town email. Two or more owners, including town staff. Light Select Board OK. Org name `TBD: ask`.
-Transfer `dzajic/franconia-nh-gov`. Retarget the hardcoded `dzajic` URLs listed in step 1.
+Daniel creates the free org, sets 2FA as required for every member, sets the contact and billing email to a town address, and transfers `dzajic/franconia-nh-gov`.
+At least 3 owners: Daniel, the Town Administrator, and one more working-group member or town staff.
+If an owner leaves, a remaining owner removes them and invites a replacement. The town contact email stays.
+Retarget the hardcoded `dzajic` URLs listed in step 1. Org name `TBD: ask`. Town mailbox `TBD: ask`.
 Done = the repo is in the town org. Invites, the Weebly banner, and public preview links stay closed until then.
 
-### Weebly header notice
+### Town Administrator: accept org owner invite
 
 Label: `town-administrator`
 
-Depends on the ownership issue. Needs the Weebly login.
+Only task (~5 min): create a free GitHub account with your town email and accept the org-owner invite. Turn on 2FA.
+Daniel creates the org and transfers the repo.
+Assign once the Town Administrator joins GitHub.
+
+### Weebly header notice
+
+Depends on the ownership issue. Needs the Weebly login. Whoever holds that login does this.
 Put the pre-launch line in the current site header. The link is the town preview, not `dzajic.github.io`. Suggest a change on that preview is open to the public. At go-live, switch to the legacy line.
 Drafts are under Weebly header notice.
 
@@ -304,7 +316,8 @@ Running checklists. Items are already on the live pages or in this repo. Unknown
 
 Directory lists Elizabeth Staples, Town Office, `603-823-7752`. Email on that row is Cloudflare-obfuscated.
 
-- [ ] Weebly header notice, label `town-administrator`. Depends on step 1. Go-live text when Weebly becomes the old site. Needs the Weebly login.
+- [ ] Ownership, label `town-administrator`. Only task: free GitHub account with her town email, accept the org-owner invite, turn on 2FA (~5 min). Assign once she joins GitHub.
+- [ ] Weebly header notice depends on step 1. Whoever holds the Weebly login posts it. Go-live text when Weebly becomes the old site.
 
 - [ ] Phone `603-823-7752` and Town Office as the administrator contact
 - [ ] Real email. `TBD: ask`
@@ -512,7 +525,7 @@ Directory lists Elizabeth Staples, Town Office, `603-823-7752`. Email on that ro
 
 ### Working group
 
-- [ ] 2–3 people. Includes town staff among the GitHub org owners (two or more owners)
+- [ ] At least 3 GitHub org owners: Daniel, the Town Administrator, and one more working-group member or town staff. 2FA required for every org member. Daniel does the setup and the transfer.
 - [ ] Light Select Board OK recorded
 - [ ] Not an official committee. Contact page and `site.suggestionsContact` still say Technology Committee and use the temporary grokbot address. `TBD: ask` what replaces them
 - [ ] Every Weebly-password holder named in the owner table. Invites and sign-ups wait until the ownership issue is done
