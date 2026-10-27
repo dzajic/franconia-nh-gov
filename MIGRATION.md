@@ -106,6 +106,8 @@ One issue per department or board page, plus the status, ownership, town-adminis
 
 ### Status
 
+Tracker: https://github.com/dzajic/franconia-nh-gov/issues/58
+
 Top priority: ownership (town GitHub org and repo transfer). Daniel does it now. The Town Administrator’s invite runs in parallel.
 The same day the repo is in the town org, together: public preview at `https://<org>.github.io/franconia-nh-gov/`, that link in the Weebly header, and page-owner invites. Not `dzajic.github.io`.
 The only later wait is about 1–2 months of that preview before `franconianh.gov` flips. Switch date stays TBD until it is set. Page owners do not gate the flip.
