@@ -4,32 +4,32 @@
 > The furnace-and-ridge mark and the silhouettes are original drawings, not traced from landmarks or surveys.
 
 ## Town Hall & Services
-- [Home](https://dzajic.github.io/franconia-nh-gov/)
-- [Town Facts](https://dzajic.github.io/franconia-nh-gov/town-facts/)
-- [Town Directory](https://dzajic.github.io/franconia-nh-gov/town-directory/)
-- [Voter Information](https://dzajic.github.io/franconia-nh-gov/voter-information/)
-- [Notices](https://dzajic.github.io/franconia-nh-gov/notices/)
-- [Town Clerk / Tax](https://dzajic.github.io/franconia-nh-gov/town-clerk-tax/)
-- [Events](https://dzajic.github.io/franconia-nh-gov/events/)
+- [Home](https://franconia-nh.github.io/franconia-nh-gov/)
+- [Town Facts](https://franconia-nh.github.io/franconia-nh-gov/town-facts/)
+- [Town Directory](https://franconia-nh.github.io/franconia-nh-gov/town-directory/)
+- [Voter Information](https://franconia-nh.github.io/franconia-nh-gov/voter-information/)
+- [Notices](https://franconia-nh.github.io/franconia-nh-gov/notices/)
+- [Town Clerk / Tax](https://franconia-nh.github.io/franconia-nh-gov/town-clerk-tax/)
+- [Events](https://franconia-nh.github.io/franconia-nh-gov/events/)
 
 ## Boards & Committees
-- [Selectmen](https://dzajic.github.io/franconia-nh-gov/board-of-selectmen/)
-- [Planning Board](https://dzajic.github.io/franconia-nh-gov/planning-board/)
-- [Capital Improvements](https://dzajic.github.io/franconia-nh-gov/capital-improvements/)
-- [Supervisors of the Checklist](https://dzajic.github.io/franconia-nh-gov/supervisors-of-the-checklist/)
-- [Safety Committee](https://dzajic.github.io/franconia-nh-gov/safety-committee/)
-- [Trustees of the Trust Funds](https://dzajic.github.io/franconia-nh-gov/trustees-of-the-trust-funds/)
-- [Zoning Board (ZBA)](https://dzajic.github.io/franconia-nh-gov/zoning-board-of-adjustment/)
-- [Conservation Commission](https://dzajic.github.io/franconia-nh-gov/conservation-commission/)
-- [Energy Commission](https://dzajic.github.io/franconia-nh-gov/energy-commission/)
+- [Selectmen](https://franconia-nh.github.io/franconia-nh-gov/board-of-selectmen/)
+- [Planning Board](https://franconia-nh.github.io/franconia-nh-gov/planning-board/)
+- [Capital Improvements](https://franconia-nh.github.io/franconia-nh-gov/capital-improvements/)
+- [Supervisors of the Checklist](https://franconia-nh.github.io/franconia-nh-gov/supervisors-of-the-checklist/)
+- [Safety Committee](https://franconia-nh.github.io/franconia-nh-gov/safety-committee/)
+- [Trustees of the Trust Funds](https://franconia-nh.github.io/franconia-nh-gov/trustees-of-the-trust-funds/)
+- [Zoning Board (ZBA)](https://franconia-nh.github.io/franconia-nh-gov/zoning-board-of-adjustment/)
+- [Conservation Commission](https://franconia-nh.github.io/franconia-nh-gov/conservation-commission/)
+- [Energy Commission](https://franconia-nh.github.io/franconia-nh-gov/energy-commission/)
 
 ## Safety & Public Works
-- [Police](https://dzajic.github.io/franconia-nh-gov/police/)
-- [Fire](https://dzajic.github.io/franconia-nh-gov/fire/)
-- [Highway](https://dzajic.github.io/franconia-nh-gov/highway-dept/)
-- [Water](https://dzajic.github.io/franconia-nh-gov/water/)
-- [Cemetery](https://dzajic.github.io/franconia-nh-gov/cemetery/)
-- [Transfer Station](https://dzajic.github.io/franconia-nh-gov/transfer-station/)
+- [Police](https://franconia-nh.github.io/franconia-nh-gov/police/)
+- [Fire](https://franconia-nh.github.io/franconia-nh-gov/fire/)
+- [Highway](https://franconia-nh.github.io/franconia-nh-gov/highway-dept/)
+- [Water](https://franconia-nh.github.io/franconia-nh-gov/water/)
+- [Cemetery](https://franconia-nh.github.io/franconia-nh-gov/cemetery/)
+- [Transfer Station](https://franconia-nh.github.io/franconia-nh-gov/transfer-station/)
 
 ## Forms & Applications
 - [Building Permit](https://www.franconianh.gov/uploads/1/1/6/8/11680191/2016_building_permit_application.pdf)
@@ -42,18 +42,18 @@
 - [Volunteer](https://www.franconianh.gov/uploads/1/1/6/8/11680191/request_to_volunteer.pdf)
 
 ## Library, Museums & Outdoors
-- [Abbie Greenleaf Library](https://dzajic.github.io/franconia-nh-gov/abbie-greanleaf-library/)
-- [Heritage Museum](https://dzajic.github.io/franconia-nh-gov/heritage-museum/)
-- [Iron Furnace](https://dzajic.github.io/franconia-nh-gov/iron-furnace/)
-- [Dow Clock](https://dzajic.github.io/franconia-nh-gov/dow-clock/)
-- [Frost Place](https://dzajic.github.io/franconia-nh-gov/frost-place/)
-- [Trails & Parks](https://dzajic.github.io/franconia-nh-gov/trails-parks/)
+- [Abbie Greenleaf Library](https://franconia-nh.github.io/franconia-nh-gov/abbie-greanleaf-library/)
+- [Heritage Museum](https://franconia-nh.github.io/franconia-nh-gov/heritage-museum/)
+- [Iron Furnace](https://franconia-nh.github.io/franconia-nh-gov/iron-furnace/)
+- [Dow Clock](https://franconia-nh.github.io/franconia-nh-gov/dow-clock/)
+- [Frost Place](https://franconia-nh.github.io/franconia-nh-gov/frost-place/)
+- [Trails & Parks](https://franconia-nh.github.io/franconia-nh-gov/trails-parks/)
 
 ## Records & Rules
-- [Archives](https://dzajic.github.io/franconia-nh-gov/archive/)
-- [Budgets](https://dzajic.github.io/franconia-nh-gov/budgets/)
-- [Ordinances & Regulations](https://dzajic.github.io/franconia-nh-gov/ordinances-regulations/)
-- [Meeting Minutes](https://dzajic.github.io/franconia-nh-gov/meetings/)
+- [Archives](https://franconia-nh.github.io/franconia-nh-gov/archive/)
+- [Budgets](https://franconia-nh.github.io/franconia-nh-gov/budgets/)
+- [Ordinances & Regulations](https://franconia-nh.github.io/franconia-nh-gov/ordinances-regulations/)
+- [Meeting Minutes](https://franconia-nh.github.io/franconia-nh-gov/meetings/)
 
 ## Upcoming
 - 2026-10-26: Ballot counting device test
@@ -69,7 +69,7 @@
 - [Franconia Notch Chamber of Commerce](https://www.franconianotch.org/): Visiting? The Franconia Notch Chamber of Commerce has lodging, dining, and things to do.
 
 ## Data
-- [town.json](https://dzajic.github.io/franconia-nh-gov/town.json): sections, events, contacts, bodies
-- [archive/index.json](https://dzajic.github.io/franconia-nh-gov/archive/index.json): one record per imported document
+- [town.json](https://franconia-nh.github.io/franconia-nh-gov/town.json): sections, events, contacts, bodies
+- [archive/index.json](https://franconia-nh.github.io/franconia-nh-gov/archive/index.json): one record per imported document
 - Document files resolve under https://pub-436583bfa32248cb9f7762118b829267.r2.dev (ARCHIVE_BASE_URL). PDFs are not in the git repository.
 - Town clerk phone: 603-823-5237. Email: townclerk@franconianh.gov. Hours: Closed Mondays. Tuesdays–Thursdays 8:00 a.m.–4:00 p.m. Fridays 8:00 a.m.–12:00 p.m..

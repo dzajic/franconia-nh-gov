@@ -1,6 +1,6 @@
 {
   "name": "Town of Franconia, New Hampshire",
-  "url": "https://dzajic.github.io/franconia-nh-gov/",
+  "url": "https://franconia-nh.github.io/franconia-nh-gov/",
   "officialUrl": "https://www.franconianh.gov/",
   "note": "Generated from this site's data files. Values in [brackets] are unknown. Events and alerts marked sample are design-prototype content, not confirmed town notices. Phone and street address were copied from the previous public site.",
   "contact": {
@@ -593,7 +593,7 @@
     }
   ],
   "archive": {
-    "index": "https://dzajic.github.io/franconia-nh-gov/archive/index.json",
+    "index": "https://franconia-nh.github.io/franconia-nh-gov/archive/index.json",
     "baseUrl": "https://pub-436583bfa32248cb9f7762118b829267.r2.dev",
     "sample": "Selectboard 2025-2026, Planning Board, and Energy Commission are imported. Other boards have pages and no files yet.",
     "recentMonths": 12
