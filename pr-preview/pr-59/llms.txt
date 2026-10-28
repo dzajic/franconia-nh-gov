@@ -1,0 +1,75 @@
+# Town of Franconia, New Hampshire
+> Demo redesign. Not the official site. Official site: https://www.franconianh.gov/ (franconianh.org redirects there).
+> Values in [brackets] are unknown. Homepage events are posted town and library notices for the week of October 26, 2026.
+> The furnace-and-ridge mark and the silhouettes are original drawings, not traced from landmarks or surveys.
+
+## Town Hall & Services
+- [Home](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/)
+- [Town Facts](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/town-facts/)
+- [Town Directory](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/town-directory/)
+- [Voter Information](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/voter-information/)
+- [Notices](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/notices/)
+- [Town Clerk / Tax](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/town-clerk-tax/)
+- [Events](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/events/)
+
+## Boards & Committees
+- [Selectmen](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/board-of-selectmen/)
+- [Planning Board](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/planning-board/)
+- [Capital Improvements](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/capital-improvements/)
+- [Supervisors of the Checklist](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/supervisors-of-the-checklist/)
+- [Safety Committee](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/safety-committee/)
+- [Trustees of the Trust Funds](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/trustees-of-the-trust-funds/)
+- [Zoning Board (ZBA)](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/zoning-board-of-adjustment/)
+- [Conservation Commission](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/conservation-commission/)
+- [Energy Commission](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/energy-commission/)
+
+## Safety & Public Works
+- [Police](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/police/)
+- [Fire](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/fire/)
+- [Highway](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/highway-dept/)
+- [Water](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/water/)
+- [Cemetery](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/cemetery/)
+- [Transfer Station](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/transfer-station/)
+
+## Forms & Applications
+- [Building Permit](https://www.franconianh.gov/uploads/1/1/6/8/11680191/2016_building_permit_application.pdf)
+- [Driveway Permit](https://www.franconianh.gov/uploads/1/1/6/8/11680191/driveway_permit_application.pdf)
+- [Solar Permit](https://www.franconianh.gov/uploads/1/1/6/8/11680191/solar_pv_permit_application.pdf)
+- [Demolition Permit](https://www.franconianh.gov/uploads/1/1/6/8/11680191/franconia_demolition_permit.pdf)
+- [Generator Permit](https://www.franconianh.gov/uploads/1/1/6/8/11680191/generator_application.pdf)
+- [Short-Term Rental](https://www.franconianh.gov/uploads/1/1/6/8/11680191/str_app_and_checklist.pdf)
+- [Facilities Use](https://www.franconianh.gov/uploads/1/1/6/8/11680191/facilities_use_form.pdf)
+- [Volunteer](https://www.franconianh.gov/uploads/1/1/6/8/11680191/request_to_volunteer.pdf)
+
+## Library, Museums & Outdoors
+- [Abbie Greenleaf Library](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/abbie-greanleaf-library/)
+- [Heritage Museum](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/heritage-museum/)
+- [Iron Furnace](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/iron-furnace/)
+- [Dow Clock](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/dow-clock/)
+- [Frost Place](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/frost-place/)
+- [Trails & Parks](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/trails-parks/)
+
+## Records & Rules
+- [Archives](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/archive/)
+- [Budgets](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/budgets/)
+- [Ordinances & Regulations](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/ordinances-regulations/)
+- [Meeting Minutes](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/meetings/)
+
+## Upcoming
+- 2026-10-26: Ballot counting device test
+- 2026-10-26: Minecraft Monday
+- 2026-10-26: Selectmen's meeting
+- 2026-10-27: Story Time
+- 2026-10-27: Meditation
+- 2026-10-28: Warrior Cats Book Club
+- 2026-10-29: Spanish
+- 2026-10-29: Death Cafe
+
+## External resources
+- [Franconia Notch Chamber of Commerce](https://www.franconianotch.org/): Visiting? The Franconia Notch Chamber of Commerce has lodging, dining, and things to do.
+
+## Data
+- [town.json](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/town.json): sections, events, contacts, bodies
+- [archive/index.json](https://franconia-nh.github.io/franconia-nh-gov/pr-preview/pr-59/archive/index.json): one record per imported document
+- Document files resolve under https://pub-436583bfa32248cb9f7762118b829267.r2.dev (ARCHIVE_BASE_URL). PDFs are not in the git repository.
+- Town clerk phone: 603-823-5237. Email: townclerk@franconianh.gov. Hours: Closed Mondays. Tuesdays–Thursdays 8:00 a.m.–4:00 p.m. Fridays 8:00 a.m.–12:00 p.m..
