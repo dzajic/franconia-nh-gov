@@ -19,8 +19,8 @@ export default {
   officialUrl,
   origin: origin(),
   archiveBaseUrl: archiveBase(),
-  repo: "https://github.com/dzajic/franconia-nh-gov",
-  suggestions: "https://github.com/dzajic/franconia-nh-gov/issues",
+  repo: "https://github.com/franconia-nh/franconia-nh-gov",
+  suggestions: "https://github.com/franconia-nh/franconia-nh-gov/issues",
   /**
    * Where "Contact us" sends a suggestion.
    * TODO: energy-commission+suggestions@mail.grokbot.com is a temporary

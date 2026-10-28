@@ -13,7 +13,7 @@ const {
   suggestMailto,
 } = require("../lib/suggest-source.cjs");
 
-const REPO = "https://github.com/dzajic/franconia-nh-gov";
+const REPO = "https://github.com/franconia-nh/franconia-nh-gov";
 
 test("a content page links to its input path without the leading dot-slash", () => {
   assert.equal(suggestEditPath("./src/police/index.md"), "src/police/index.md");
@@ -62,8 +62,8 @@ test("spaces in a path are encoded and the issue link is the new-issue form", ()
   assert.equal(suggestIssueUrl(REPO), `${REPO}/issues/new`);
   assert.equal(suggestIssueUrl("not a url"), `${REPO}/issues/new`);
   assert.equal(
-    suggestIssueUrl(REPO, "https://dzajic.github.io/franconia-nh-gov/police/"),
-    `${REPO}/issues/new?body=${encodeURIComponent("Page: https://dzajic.github.io/franconia-nh-gov/police/")}`
+    suggestIssueUrl(REPO, "https://franconia-nh.github.io/franconia-nh-gov/police/"),
+    `${REPO}/issues/new?body=${encodeURIComponent("Page: https://franconia-nh.github.io/franconia-nh-gov/police/")}`
   );
   assert.equal(suggestIssueUrl(REPO, "javascript:alert(1)"), `${REPO}/issues/new`);
   assert.equal(contactEmail("clerk@example.gov"), "clerk@example.gov");
@@ -96,11 +96,11 @@ test("owner email prefers the page, then its department, then the site", () => {
   assert.equal(resolveOwnerEmail({ ...shared, pageUrl: "/library/" }), "clerk@example.gov");
   const mail = suggestMailto({
     ...shared,
-    pageAddress: "https://dzajic.github.io/franconia-nh-gov/police/",
+    pageAddress: "https://franconia-nh.github.io/franconia-nh-gov/police/",
     title: "Police — Town of Franconia",
   });
   assert.equal(
     mail,
-    "mailto:chief@example.gov?subject=Suggestion%3A%20Police%20%E2%80%94%20Town%20of%20Franconia&body=https%3A%2F%2Fdzajic.github.io%2Ffranconia-nh-gov%2Fpolice%2F"
+    "mailto:chief@example.gov?subject=Suggestion%3A%20Police%20%E2%80%94%20Town%20of%20Franconia&body=https%3A%2F%2Ffranconia-nh.github.io%2Ffranconia-nh-gov%2Fpolice%2F"
   );
 });
