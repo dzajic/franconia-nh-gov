@@ -154,7 +154,7 @@ Pull requests run `.github/workflows/preview.yml`. A pull request from this repo
 
 Root-relative links in page Markdown are prefixed at build time, along with navigation, assets, the Pagefind script, and `/archive/index.json`. Search result links use that same prefix.
 
-The Pages base path (for this project, `/franconia-nh-gov`) is taken from `actions/configure-pages` and passed as `ELEVENTY_PATH_PREFIX`. Local preview does not set that variable, so links stay at the server root. `SITE_URL` is the Pages origin (`https://dzajic.github.io`), used for canonical URLs, the sitemap, and the JSON feeds.
+The Pages base path (for this project, `/franconia-nh-gov`) is taken from `actions/configure-pages` and passed as `ELEVENTY_PATH_PREFIX`. Local preview does not set that variable, so links stay at the server root. `SITE_URL` is the Pages origin (`https://franconia-nh.github.io`), used for canonical URLs, the sitemap, and the JSON feeds.
 
 GitHub Pages serves the `gh-pages` branch from `/ (root)`. Set that once under **Settings → Pages → Build and deployment → Source: Deploy from a branch**, branch `gh-pages`, folder `/ (root)`, after the first successful `main` deploy has created the branch. **Settings → Actions → General → Workflow permissions** should be **Read and write permissions**, so the workflows can push to `gh-pages` and comment on pull requests.
 

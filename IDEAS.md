@@ -1,6 +1,6 @@
 # Ideas
 
-Parked ideas for the town site. Measure them against PRINCIPLES.md (draft in [PR #16](https://github.com/dzajic/franconia-nh-gov/pull/16)).
+Parked ideas for the town site. Measure them against PRINCIPLES.md (draft in [PR #16](https://github.com/franconia-nh/franconia-nh-gov/pull/16)).
 
 ## Resident input
 
@@ -18,11 +18,11 @@ Parked ideas for the town site. Measure them against PRINCIPLES.md (draft in [PR
 
 ## Photos
 
-- Resident photo contest and living library ([PR #17](https://github.com/dzajic/franconia-nh-gov/pull/17))
+- Resident photo contest and living library ([PR #17](https://github.com/franconia-nh/franconia-nh-gov/pull/17))
 
 ## AI
 
-- Daily town recap ([PR #18](https://github.com/dzajic/franconia-nh-gov/pull/18))
+- Daily town recap ([PR #18](https://github.com/franconia-nh/franconia-nh-gov/pull/18))
 - Live summary minutes per board
 
 ## Infrastructure
